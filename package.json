@@ -4,10 +4,11 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-	"build": "npm run build:css && remix build",
-	"build:css": "tailwindcss -i ./app/tailwind.css -o ./app/tailwind.output.css --minify",
-	"dev": "concurrently \"npm run dev:css\" \"remix dev\"",
-	"dev:css": "tailwindcss -i ./app/tailwind.css -o ./app/tailwind.output.css --watch",
+    "build": "npm run build:css && remix build && remix-ssg build",
+	"build:ssg": "remix-ssg build",
+    "build:css": "tailwindcss -i ./app/tailwind.css -o ./app/tailwind.output.css --minify",
+    "dev": "concurrently \"npm run dev:css\" \"remix dev\"",
+    "dev:css": "tailwindcss -i ./app/tailwind.css -o ./app/tailwind.output.css --watch",
     "start": "remix-serve ./build/server/index.js",
     "typecheck": "tsc"
   },
@@ -34,6 +35,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "postcss": "^8.5.3",
+    "remix-ssg": "^0.0.8",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.1.6",
     "vite": "^6.0.0",

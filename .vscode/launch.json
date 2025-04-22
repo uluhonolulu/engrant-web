@@ -1,0 +1,46 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+	{
+		"name": "Launch Program",
+		"program": "${workspaceFolder}/app.js",
+		"request": "launch",
+		"skipFiles": [
+			"<node_internals>/**"
+		],
+		"type": "node"
+	},
+    {
+      "name": "Debug Current File",
+      "type": "node",
+      "request": "launch",
+      "program": "${file}",
+    //   "cwd": "${workspaceFolder}",
+      "skipFiles": ["<node_internals>/**"],
+      "console": "integratedTerminal",
+      "sourceMaps": true
+    },
+    {
+      "name": "Debug Remix",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/remix",
+      "args": ["dev"],
+      "cwd": "${workspaceFolder}",
+      "skipFiles": ["<node_internals>/**"],
+      "console": "integratedTerminal",
+      "sourceMaps": true
+    },
+    {
+      "name": "Debug Build",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/remix",
+      "args": ["build"],
+      "cwd": "${workspaceFolder}",
+      "skipFiles": ["<node_internals>/**"],
+      "console": "integratedTerminal",
+      "sourceMaps": true
+    }
+  ]
+} 

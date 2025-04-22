@@ -1,0 +1,37 @@
+name: Debug Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Debug Build
+        run: |
+          echo "Current directory structure:"
+          ls -la
+          echo "Package.json contents:"
+          cat package.json
+          echo "Remix config:"
+          cat remix.config.js
+          echo "SSG config:"
+          cat remix-ssg.config.js
+          echo "Static web app config:"
+          cat staticwebapp.config.json
+          
+      - name: Run Build
+        run: npm run build 
