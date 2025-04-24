@@ -2,7 +2,7 @@ import * as React from "react"
 
 const IndexPage = () => {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen font- border-2 border-black">
       {/* Hero Section */}
       <div className="relative h-[600px]">
         {/* Background Image */}
@@ -22,7 +22,7 @@ const IndexPage = () => {
           <nav className="p-6">
             <div className="container mx-auto">
               <div className="flex items-center text-primary-600 font-bold text-xl">
-                <span className="text-primary-500 mr-2">💡</span>
+                <span className="text-red-500 mr-2">💡</span>
                 Engrant
               </div>
             </div>
@@ -33,7 +33,7 @@ const IndexPage = () => {
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl font-bold text-neutral-800 mb-4">
                 No more sleepless nights before proposal submission deadline
-              </h1>
+      </h1>
               <p className="text-xl text-neutral-600 mb-8">
                 Transform Fragmented Partner Inputs into Fund-Ready European Grant Proposals
               </p>
