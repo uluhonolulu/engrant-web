@@ -9,8 +9,8 @@
   ],
   "scripts": {
     "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
+    "start": "gatsby develop --stats-children",
+    "build": "gatsby build --stats-children",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
