@@ -1,15 +1,17 @@
 import * as React from "react"
+import { StaticImage } from 'gatsby-plugin-image'
+import { Link } from 'gatsby'
 
 const IndexPage = () => {
   return (
-    <main className="min-h-screen font- border-2 border-black">
+    <main className="min-h-screen">
       {/* Hero Section */}
       <div className="relative h-[600px]">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img 
-            src="/images/hero-bg.jpg" 
-            alt="Documents on desk" 
+          <StaticImage 
+            src="../images/hero-bg.jpg" 
+            alt="Hero background" 
             className="w-full h-full object-cover"
           />
           {/* Overlay */}
@@ -128,9 +130,10 @@ const IndexPage = () => {
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold mb-4">Contact Us</h4>
-                <p className="text-primary-100">Email: info@engrant.com</p>
-                <p className="text-primary-100">Phone: +123-456-7890</p>
+                <h4 className="font-semibold mb-4">Legal</h4>
+                <ul className="space-y-2">
+                  <li><Link to="/privacy-policy" className="hover:text-primary-200">Privacy Policy</Link></li>
+                </ul>
               </div>
             </div>
           </div>
