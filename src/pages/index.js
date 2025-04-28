@@ -15,7 +15,7 @@ const IndexPage = () => {
             className="w-full h-full object-cover"
           />
           {/* Overlay */}
-          <div className="absolute inset-0 bg-white/80"></div>
+          <div className="absolute inset-0  w-xl my-auto"></div>
         </div>
 
         {/* Content */}
@@ -31,19 +31,17 @@ const IndexPage = () => {
           </nav>
 
           {/* Hero Content */}
-          <div className="container mx-auto px-6 pt-20">
-            <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold text-neutral-800 mb-4">
-                No more sleepless nights before proposal submission deadline
-      </h1>
-              <p className="text-xl text-neutral-600 mb-8">
-                Transform Fragmented Partner Inputs into Fund-Ready European Grant Proposals
-              </p>
-              <button className="bg-primary-500 text-white px-8 py-3 rounded hover:bg-primary-600 transition-colors">
-                Get early access
-              </button>
-            </div>
-          </div>
+			<div className="container mx-auto bg-white/80 px-6 pt-20 pb-10 rounded-4xl text-center">
+				<h1 className="text-4xl md:text-5xl font-bold text-neutral-800 mb-4">
+					No more sleepless nights before proposal submission deadlines
+				</h1>
+				<p className="text-xl text-neutral-600 font-bold mb-8">
+					Transform Fragmented Partner Inputs into Fund-Ready European Grant Proposals
+				</p>
+				<a href="https://calendly.com/uluhonolulu/30min" className="bg-blue-500 text-white px-8 py-3 rounded-full hover:bg-blue-600 transition-colors">
+					Get early access
+				</a>
+			</div>
         </div>
       </div>
 
@@ -110,29 +108,29 @@ const IndexPage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary-600 text-white py-12">
+      <footer className="bg-blue-600 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <h3 className="text-xl font-bold mb-4">Engrant</h3>
-              <p className="text-primary-100">
+              <p className="text-blue-100">
                 Transforming fragmented inputs into successful proposals.
               </p>
             </div>
             <div className="grid grid-cols-2">
-              <div>
+              {/* <div>
                 <h4 className="font-semibold mb-4">Quick Links</h4>
                 <ul className="space-y-2">
-                  <li><a href="/" className="hover:text-primary-200">Home</a></li>
-                  <li><a href="/about" className="hover:text-primary-200">About</a></li>
-                  <li><a href="/services" className="hover:text-primary-200">Services</a></li>
-                  <li><a href="/contact" className="hover:text-primary-200">Contact</a></li>
+                  <li><a href="/" className="hover:text-blue-200">Home</a></li>
+                  <li><a href="/about" className="hover:text-blue-200">About</a></li>
+                  <li><a href="/services" className="hover:text-blue-200">Services</a></li>
+                  <li><a href="/contact" className="hover:text-blue-200">Contact</a></li>
                 </ul>
-              </div>
+              </div> */}
               <div>
                 <h4 className="font-semibold mb-4">Legal</h4>
                 <ul className="space-y-2">
-                  <li><Link to="/privacy-policy" className="hover:text-primary-200">Privacy Policy</Link></li>
+                  <li><Link to="/privacy-policy" className="hover:text-blue-200">Privacy Policy</Link></li>
                 </ul>
               </div>
             </div>
