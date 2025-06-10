@@ -20,7 +20,7 @@ const BookPage = () => {
       </nav>
 
       {/* Main Content */}
-      <main className="flex-grow flex items-center justify-center">
+      <main className="grow flex items-center justify-center">
         <div className="text-center py-20 px-4 max-w-3xl mx-auto">
             <motion.div 
                 initial={{ opacity: 0, y: 20 }} 

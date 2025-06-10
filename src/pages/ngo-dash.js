@@ -100,7 +100,7 @@ const NgoDashPage = () => {
                     { title: "Track Progress Weekly", description: "Your team enters key numbers in under 2 minutes/week. You see progress instantly." }
                 ].map((step, index) => (
                     <motion.div key={step.title} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: index * 0.3 }} className="flex items-start space-x-4">
-                        <div className="flex-shrink-0 bg-primary-100 text-primary-600 rounded-full h-12 w-12 flex items-center justify-center font-bold text-xl">{index + 1}</div>
+                        <div className="shrink-0 bg-primary-100 text-primary-600 rounded-full h-12 w-12 flex items-center justify-center font-bold text-xl">{index + 1}</div>
                         <div>
                             <h3 className="text-xl font-semibold text-neutral-800">{step.title}</h3>
                             <p className="text-neutral-600 mt-1">{step.description}</p>
@@ -141,7 +141,7 @@ const NgoDashPage = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {features.map((feature, index) => (
               <motion.div key={feature.title} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} className="flex items-start space-x-4">
-                <div className="flex-shrink-0 bg-green-100 text-green-600 rounded-lg h-12 w-12 flex items-center justify-center">
+                <div className="shrink-0 bg-green-100 text-green-600 rounded-lg h-12 w-12 flex items-center justify-center">
                   {React.cloneElement(feature.icon, { className: 'w-6 h-6' })}
                 </div>
                 <div>
