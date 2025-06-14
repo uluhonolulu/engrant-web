@@ -34,7 +34,7 @@ export default function Pricing() {
                             </li>
                         </ul>
                         <button className="w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                            Join Waiting List - 50% Off Forever
+                            Join the Waiting List - 50% Off Forever
                         </button>
                     </div>
                     <div>
