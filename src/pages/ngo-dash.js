@@ -3,6 +3,8 @@ import { Link } from 'gatsby';
 import { CheckCircle2, ShieldCheck, UploadCloud, Target, TrendingUp, FileText, Cog, Users, BarChart } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { BarChart as RechartsBarChart, PieChart, XAxis, YAxis, Tooltip, Legend, CartesianGrid, ResponsiveContainer, Cell } from 'recharts';
+import { ClerkProvider } from '@clerk/clerk-react';
+import WaitingList from '../components/WaitingList';
 
 const NgoDashPage = () => {
   const painPoints = [
@@ -237,32 +239,16 @@ const NgoDashPage = () => {
       {/* Waiting List Section */}
       <section id="waitlist" className="py-20 bg-neutral-800 text-white px-4">
         <div className="container mx-auto text-center max-w-2xl">
-          <h2 className="text-4xl font-bold mb-4">Be First to Transform Your Grant Tracking</h2>
-          <p className="text-neutral-300 text-lg mb-8">Join the waiting list for early access and a lifetime 50% discount. We're launching soon.</p>
+          <h2 className="text-4xl font-bold mb-4">Join the Waitlist</h2>
+          <p className="text-neutral-300 text-lg mb-8">Get early access and a lifetime 50% discount. We're launching soon.</p>
           
-          {/* 
-            TODO: Replace this form with the Clerk waitlist component.
-            You will need to install the necessary Clerk packages, e.g., `@clerk/clerk-react`.
-            Then, import and render your Clerk component here.
-            
-            Example:
-            import { ClerkProvider, SignUp } from "@clerk/clerk-react";
-
-            // In your component return:
-            <ClerkProvider publishableKey={YOUR_CLERK_PUBLISHABLE_KEY}>
-              <SignUp signInUrl="/sign-in" />
+          <div className="max-w-md mx-auto">
+            <ClerkProvider publishableKey={process.env.GATSBY_CLERK_PUBLISHABLE_KEY}>
+              <WaitingList />
             </ClerkProvider>
-
-            For a waitlist, you might have a custom component or flow.
-            Refer to Clerk's documentation for the most up-to-date implementation.
-          */}
-          <div className="bg-white rounded-lg p-2 max-w-md mx-auto shadow-2xl">
-             <form className="flex">
-                <input type="email" placeholder="Enter your email" className="w-full px-4 py-3 text-neutral-800 rounded-l-md focus:outline-none focus:ring-2 focus:ring-primary-500" />
-                <button type="submit" className="bg-primary-600 text-white px-6 py-3 rounded-r-md hover:bg-primary-700 font-semibold transition-colors">Join Waitlist</button>
-             </form>
           </div>
-          <p className="text-sm text-neutral-400 mt-4">We're launching soon. Waitlist members get first access.</p>
+
+          <p className="text-sm text-neutral-400 mt-8">We're launching soon. Waitlist members get first access.</p>
         </div>
       </section>
 
