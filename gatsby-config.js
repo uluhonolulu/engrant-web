@@ -1,7 +1,7 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
-
+debugger;
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
@@ -29,6 +29,12 @@ module.exports = {
         icon: 'src/images/icon.png',
       },
     },
-    'gatsby-plugin-clerk'
+    // {
+	// 	resolve: `gatsby-plugin-clerk`,
+	// 	options: {
+	// 	  frontendApi: process.env.GATSBY_CLERK_PUBLISHABLE_KEY, 
+	// 	},
+
+	// }
   ],
 };

@@ -1,17 +1,10 @@
 import React from 'react';
 import { DynamicIcon } from 'lucide-react/dynamic';
-import { ClerkProvider, Waitlist  } from '@clerk/clerk-react';
+import { ClerkProvider, SignIn, Waitlist  } from '@clerk/clerk-react';
 import WaitingList from '../WaitingList';
 
 
 export default function WaitlistCTA() {
-    const [email, setEmail] = React.useState('');
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        alert('Thank you for joining our waitlist! We\'ll be in touch soon.');
-        setEmail('');
-    };
 
     return (
         <section data-name="waitlist-cta" data-file="components/WaitlistCTA.js" className="py-20 bg-neutral-600">
@@ -24,9 +17,7 @@ export default function WaitlistCTA() {
                     Sign up now for early access and exclusive benefits.
                 </p>
 				<div className="max-w-md mx-auto">
-					<ClerkProvider publishableKey={process.env.GATSBY_CLERK_PUBLISHABLE_KEY} waitlistUrl="http://localhost" >
-					<Waitlist  />
-					</ClerkProvider>
+					<Waitlist/>
 				</div>
             </div>
         </section>
