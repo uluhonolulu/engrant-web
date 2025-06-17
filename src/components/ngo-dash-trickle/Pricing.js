@@ -2,6 +2,10 @@ import React from 'react';
 import { DynamicIcon } from 'lucide-react/dynamic';
 
 export default function Pricing() {
+    const scrollToWaitlist = () => {
+        document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' });
+    };
+
     return (
         <section id="pricing" data-name="pricing" data-file="components/Pricing.js" className="py-20 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,7 +37,9 @@ export default function Pricing() {
                                 Need an additional nonprofit discount? Just ask.
                             </li>
                         </ul>
-                        <button className="w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                        <button 
+                            onClick={scrollToWaitlist}
+                            className="w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors cursor-pointer">
                             Join the Waiting List - 50% Off Forever
                         </button>
                     </div>

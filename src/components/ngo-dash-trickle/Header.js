@@ -4,6 +4,10 @@ import { DynamicIcon } from 'lucide-react/dynamic';
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
+    const scrollToWaitlist = () => {
+        document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' });
+    };
+
     return (
         <header data-name="header" data-file="components/Header.js" className="fixed w-full top-0 z-50 glass-effect">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -23,7 +27,9 @@ export default function Header() {
                     </nav>
                     
                     <div className="hidden md:flex">
-                        <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
+                        <button 
+                            onClick={scrollToWaitlist}
+                            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-semibold cursor-pointer">
                             Join the Waiting List
                         </button>
                     </div>

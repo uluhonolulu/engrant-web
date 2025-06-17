@@ -1,6 +1,9 @@
 import React from 'react';
 
 export default function Hero() {
+    const scrollToWaitlist = () => {
+        document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' });
+    };
 	
     return (
         <section data-name="hero" data-file="components/Hero.js" className="nonprofit-gradient min-h-screen flex items-center relative overflow-hidden pt-20">
@@ -15,7 +18,9 @@ export default function Hero() {
                             Track grant outcomes in real-time with dashboards that build themselves from your grant agreements
                         </p>
                         <div className="mb-8">
-                            <button className="bg-yellow-400 text-blue-900 px-8 py-4 rounded-lg font-semibold hover:bg-yellow-300 transition-colors text-lg waitlist-glow">
+                            <button 
+                                onClick={scrollToWaitlist}
+                                className="bg-yellow-400 text-blue-900 px-8 py-4 rounded-lg font-semibold hover:bg-yellow-300 transition-colors text-lg waitlist-glow cursor-pointer">
                                 Join the Waiting List
                             </button>
                             <p className="text-sm text-blue-200 mt-3">
