@@ -19,12 +19,12 @@ export default function Pricing() {
                     <div className="bg-gray-50 p-8 rounded-2xl">
                         <div className="text-center mb-8">
                             <p className="text-gray-600 mb-2">Regular price:</p>
-                            <p className="text-3xl font-bold text-gray-400 line-through">$200/month</p>
+                            <p className="text-3xl font-bold text-gray-400 line-through">$100/month</p>
                             <p className="text-sm text-gray-500">(coming soon)</p>
                         </div>
                         <div className="text-center mb-8">
                             <p className="text-blue-600 font-semibold mb-2">Waitlist price:</p>
-                            <p className="text-5xl font-bold text-blue-600">$100/month</p>
+                            <p className="text-5xl font-bold text-blue-600">$49/month</p>
                             <p className="text-blue-600 font-semibold">for lifetime</p>
                         </div>
                         
