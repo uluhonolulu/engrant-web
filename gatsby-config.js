@@ -29,6 +29,16 @@ module.exports = {
         icon: 'src/images/icon.png',
       },
     },
+    {
+      resolve: '@tmttn/gatsby-plugin-linkedin-insight',
+      options: {
+        partnerId: '8526737',
+
+		// Include LinkedIn Insight in development.
+		// Defaults to false meaning LinkedIn Insight will only be loaded in production.
+		includeInDevelopment: true
+      },
+    },
     // {
 	// 	resolve: `gatsby-plugin-clerk`,
 	// 	options: {

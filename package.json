@@ -17,6 +17,7 @@
   "dependencies": {
     "@clerk/clerk-react": "^5.31.9",
     "@tailwindcss/postcss": "^4.1.8",
+    "@tmttn/gatsby-plugin-linkedin-insight": "github:tmttn/gatsby-plugin-linkedin-insight",
     "autoprefixer": "^10.4.21",
     "framer-motion": "^12.16.0",
     "gatsby": "^5.14.1",
