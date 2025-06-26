@@ -16,7 +16,7 @@ export default function Features() {
         {
             icon: "file-text",
             title: "Generate Reports",
-            description: "Generate comprehensive reports with just a few clicks to share with your stakeholders."
+            description: "Reports are automatically generated and sent to your board, keeping everyone informed without manual effort."
         }
     ];
 

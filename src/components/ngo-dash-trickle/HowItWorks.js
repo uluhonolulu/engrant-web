@@ -16,7 +16,7 @@ export default function HowItWorks() {
         {
             number: "03",
             title: "Track Progress",
-            description: "Enter your data weekly and get automatic alerts for any potential issues or compliance concerns."
+            description: "Enter your data weekly and track the progress in real time for any potential issues or compliance concerns."
         }
     ];
 
