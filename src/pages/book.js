@@ -2,15 +2,15 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { motion } from 'framer-motion';
 import { Calendar, ArrowRight, Gift } from 'lucide-react';
+import logo from '../images/Logo_transparent_bg.png';
 
 const BookPage = () => {
   return (
     <div className="bg-white text-neutral-700 font-sans min-h-screen flex flex-col">
       {/* Navigation */}
       <nav className="p-6 container mx-auto flex justify-between items-center">
-        <div className="flex items-center text-primary-600 font-bold text-xl">
-          <span className="text-green-500 mr-2 text-2xl">💡</span>
-          Engrant
+        <div className="flex items-center">
+          <img src={logo} alt="EnGrant Logo" className="h-36 w-auto rounded-lg align-middle" />
         </div>
         <div>
           <Link to="/ngo-dash" className="text-primary-600 hover:text-primary-700 font-semibold">

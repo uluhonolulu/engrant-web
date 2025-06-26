@@ -17,7 +17,7 @@ export default function WaitlistCTA() {
                     Sign up now for early access and exclusive benefits.
                 </p>
 				<div className="max-w-md mx-auto">
-					<Waitlist/>
+					<Waitlist afterJoinWaitlistUrl="/dashboard"/>
 				</div>
             </div>
         </section>
