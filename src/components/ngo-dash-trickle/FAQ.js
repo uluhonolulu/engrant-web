@@ -14,6 +14,10 @@ export default function FAQ() {
         {
             question: "Is my data secure?",
             answer: "Yes, we take data security seriously. We use secure cloud storage and don't require any personal client information. You can export your data anytime."
+        },
+        {
+            question: "What if I have existing data I want to bring into EnGrant?",
+            answer: "No worries! If you have existing data, just let us know and we'll handle importing your data into EnGrant for you."
         }
     ];
 
