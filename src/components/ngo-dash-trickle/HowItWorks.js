@@ -1,5 +1,6 @@
 import React from 'react';
 import { DynamicIcon } from 'lucide-react/dynamic';
+import dashboardPreview from '../../images/dashboard-preview.png';
 
 export default function HowItWorks() {
     const steps = [
@@ -50,7 +51,7 @@ export default function HowItWorks() {
                 
                 <div className="mt-16">
                     <img 
-                        src="/dashboard-preview.png" 
+                        src={dashboardPreview} 
                         alt="Dashboard Preview" 
                         className="rounded-lg shadow-xl max-w-4xl mx-auto"
                     />
