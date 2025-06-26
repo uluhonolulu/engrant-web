@@ -34,12 +34,12 @@ const BookPage = () => {
                     You're on the list! Thank you.
                 </h1>
                 <p className="text-xl text-neutral-600 mb-8">
-                    Want to skip the line and get immediate access?
+                    Want to skip the line and get early access when we launch in early July 2025?
                 </p>
                 <div className="bg-neutral-50 p-8 rounded-2xl shadow-lg border">
                     <h2 className="text-2xl font-semibold text-neutral-800 mb-4">Get a Free, Personalized Onboarding</h2>
                     <p className="text-neutral-600 mb-8">
-                        As a thank you for being an early supporter, we're offering a free, 30-minute onboarding call. We'll personally help you set up your first grant dashboard and give you immediate access to Engrant today.
+                        As a thank you for being an early supporter, we're offering a free, 30-minute onboarding call. We'll personally help you set up your first grant dashboard and give you early access when Engrant launches in early July 2025.
                     </p>
                     <a 
                         href="https://calendly.com/uluhonolulu/30min" 
