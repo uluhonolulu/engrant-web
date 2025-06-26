@@ -1,5 +1,6 @@
 import React from 'react';
 import { DynamicIcon } from 'lucide-react/dynamic';
+import logo from '../../images/Logo_transparent_bg.png';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -12,11 +13,8 @@ export default function Header() {
         <header data-name="header" data-file="components/Header.js" className="fixed w-full top-0 z-50 glass-effect">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center py-4">
-                    <div className="flex items-center space-x-2">
-                        <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                            <DynamicIcon name="bar-chart-3" className="w-5 h-5 text-white" />
-                        </div>
-                        <span className="text-xl font-bold text-gray-900">EnGrant</span>
+                    <div className="flex items-center pt-2">
+                        <img src={logo} alt="EnGrant Logo" className="h-36 w-auto rounded-lg align-middle" />
                     </div>
                     
                     <nav className="hidden md:flex space-x-8">
