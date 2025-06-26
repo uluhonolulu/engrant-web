@@ -13,8 +13,8 @@ export default function Header() {
         <header data-name="header" data-file="components/Header.js" className="fixed w-full top-0 z-50 glass-effect">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center py-4">
-                    <div className="flex items-center pt-2">
-                        <img src={logo} alt="EnGrant Logo" className="h-36 w-auto rounded-lg align-middle" />
+                    <div className="flex items-center">
+                        <img src={logo} alt="EnGrant Logo" className="h-auto w-28 rounded-lg align-middle" />
                     </div>
                     
                     <nav className="hidden md:flex space-x-8">
