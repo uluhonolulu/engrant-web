@@ -16,6 +16,9 @@ export default function WaitlistCTA() {
                     Be among the first to experience our revolutionary grant tracking solution. 
                     Sign up now for early access and exclusive benefits.
                 </p>
+                <p className="text-lg text-yellow-200 mb-8 max-w-2xl mx-auto font-semibold">
+                    Get a <span className="text-yellow-300">2-week free trial</span> when you join the waitlist!
+                </p>
 				<div className="max-w-md mx-auto">
 					<Waitlist afterJoinWaitlistUrl="/book"/>
 				</div>

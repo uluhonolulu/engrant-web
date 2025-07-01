@@ -26,6 +26,9 @@ export default function Hero() {
                             <p className="text-sm text-blue-200 mt-3">
                                 Be first to access • 50% lifetime discount for early adopters
                             </p>
+                            <p className="text-sm text-yellow-200 mt-1 font-semibold">
+                                Includes a <span className="text-yellow-300">2-week free trial</span> for all new users
+                            </p>
                         </div>
                     </div>
                     <div className="relative">

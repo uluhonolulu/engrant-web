@@ -13,6 +13,9 @@ export default function Pricing() {
                     <h2 className="text-4xl font-bold text-gray-900 mb-4">
                         Join the Waiting List for 50% Off Forever
                     </h2>
+                    <p className="text-lg text-yellow-600 font-semibold">
+                        All plans include a <span className="text-yellow-500">2-week free trial</span> — try it risk-free!
+                    </p>
                 </div>
                 
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
