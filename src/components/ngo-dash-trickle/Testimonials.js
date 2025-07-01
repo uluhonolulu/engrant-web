@@ -7,19 +7,19 @@ export default function Testimonials() {
         {
             name: "Maria Rodriguez",
             role: "Executive Director, Community Food Bank",
-            content: "FundMatch helped us discover 15 new funding sources we never knew existed. We secured $180K in our first quarter!",
+            content: "EnGrant saved us 15 hours per grant report. Our board gets real-time updates without us lifting a finger!",
             avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80"
         },
         {
             name: "David Kim",
             role: "Founder, Youth Education Alliance",
-            content: "The AI matching is incredible. We went from 2 grant applications to 12, and our success rate doubled.",
+            content: "We went from dreading quarterly reports to having them auto-generated. Our compliance rate is now 100%.",
             avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80"
         },
         {
             name: "Sarah Johnson",
             role: "Development Manager, Animal Rescue Network",
-            content: "FundMatch transformed our fundraising. We found donors who are passionate about animal welfare and raised $250K.",
+            content: "The dashboard shows exactly where we stand on every grant. No more late-night panic sessions before deadlines.",
             avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
         }
     ];
@@ -33,7 +33,7 @@ export default function Testimonials() {
                         Real Success Stories
                     </h2>
                     <p className="text-xl text-gray-600">
-                        See how nonprofits are transforming their fundraising with FundMatch
+                        See how nonprofits are transforming their grant tracking with EnGrant
                     </p>
                 </div>
                 

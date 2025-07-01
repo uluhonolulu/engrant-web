@@ -7,10 +7,8 @@ import Features from '../components/ngo-dash-trickle/Features';
 import Pricing from '../components/ngo-dash-trickle/Pricing';
 import Trust from '../components/ngo-dash-trickle/Trust';
 import FAQ from '../components/ngo-dash-trickle/FAQ';
-import WaitlistCTA from '../components/ngo-dash-trickle/WaitlistCTA';
-import Footer from '../components/ngo-dash-trickle/Footer';
 import Testimonials from '../components/ngo-dash-trickle/Testimonials';
-import { ClerkProvider, Waitlist, SignIn  } from '@clerk/clerk-react';
+import BottomCTA from '../components/ngo-dash-trickle/BottomCTA';
 
 
 const NgoDashTricklePage = () => {
@@ -78,10 +76,7 @@ const NgoDashTricklePage = () => {
         <Pricing />
         <Trust />
         <FAQ />
-		<ClerkProvider publishableKey={process.env.GATSBY_CLERK_PUBLISHABLE_KEY}  >
-      		<WaitlistCTA />
-  		</ClerkProvider>
-        <Footer />
+        <BottomCTA />
       </div>
     </>
   );

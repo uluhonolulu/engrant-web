@@ -5,8 +5,8 @@ import logo from '../../images/Logo_transparent_bg.png';
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-    const scrollToWaitlist = () => {
-        document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' });
+    const navigateToWaitlist = () => {
+        window.location.href = '/waitlist';
     };
 
     return (
@@ -26,9 +26,9 @@ export default function Header() {
                     
                     <div className="hidden md:flex">
                         <button 
-                            onClick={scrollToWaitlist}
+                            onClick={navigateToWaitlist}
                             className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-semibold cursor-pointer">
-                            Join the Waiting List
+                            Reserve Your 50% Discount
                         </button>
                     </div>
                     

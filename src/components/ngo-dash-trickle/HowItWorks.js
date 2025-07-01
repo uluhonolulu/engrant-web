@@ -26,10 +26,10 @@ export default function HowItWorks() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                        How It Works
+                        From Paper Chaos to Dashboard Peace in 3 Steps
                     </h2>
                     <p className="text-xl text-gray-600">
-                        Three simple steps to transform your grant tracking
+                        Setup takes 5 minutes, saves you 10+ hours per grant
                     </p>
                 </div>
                 

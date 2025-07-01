@@ -2,8 +2,8 @@ import React from 'react';
 import { DynamicIcon } from 'lucide-react/dynamic';
 
 export default function Pricing() {
-    const scrollToWaitlist = () => {
-        document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' });
+    const navigateToWaitlist = () => {
+        window.location.href = '/waitlist';
     };
 
     return (
@@ -11,7 +11,7 @@ export default function Pricing() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                        Join the Waiting List for 50% Off Forever
+                        First 25 Nonprofits Get 50% Off Lifetime
                     </h2>
                     <p className="text-lg text-yellow-600 font-semibold">
                         All plans include a <span className="text-yellow-500">2-week free trial</span> — try it risk-free!
@@ -26,7 +26,7 @@ export default function Pricing() {
                             <p className="text-sm text-gray-500">(coming soon)</p>
                         </div>
                         <div className="text-center mb-8">
-                            <p className="text-blue-600 font-semibold mb-2">Waitlist price:</p>
+                            <p className="text-blue-600 font-semibold mb-2">Early bird price:</p>
                             <p className="text-5xl font-bold text-blue-600">$49/month</p>
                             <p className="text-blue-600 font-semibold">for lifetime</p>
                         </div>
@@ -41,9 +41,9 @@ export default function Pricing() {
                             </li>
                         </ul>
                         <button 
-                            onClick={scrollToWaitlist}
+                            onClick={navigateToWaitlist}
                             className="w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors cursor-pointer">
-                            Join the Waiting List - 50% Off Forever
+                            Reserve Your 50% Discount
                         </button>
                     </div>
                     <div>

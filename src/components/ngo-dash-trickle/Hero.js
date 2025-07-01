@@ -1,8 +1,8 @@
 import React from 'react';
 
 export default function Hero() {
-    const scrollToWaitlist = () => {
-        document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' });
+    const navigateToWaitlist = () => {
+        window.location.href = '/waitlist';
     };
 	
     return (
@@ -19,12 +19,12 @@ export default function Hero() {
                         </p>
                         <div className="mb-8">
                             <button 
-                                onClick={scrollToWaitlist}
+                                onClick={navigateToWaitlist}
                                 className="bg-yellow-400 text-blue-900 px-8 py-4 rounded-lg font-semibold hover:bg-yellow-300 transition-colors text-lg waitlist-glow cursor-pointer">
-                                Join the Waiting List
+                                Get Your Dashboard
                             </button>
                             <p className="text-sm text-blue-200 mt-3">
-                                Be first to access • 50% lifetime discount for early adopters
+                                First 25 nonprofits get 50% lifetime discount
                             </p>
                             <p className="text-sm text-yellow-200 mt-1 font-semibold">
                                 Includes a <span className="text-yellow-300">2-week free trial</span> for all new users

@@ -26,10 +26,10 @@ export default function PainPoints() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                        Common Pain Points
+                        Are You Drowning in Grant Paperwork?
                     </h2>
                     <p className="text-xl text-gray-600">
-                        We understand the challenges you face
+                        You're spending 80% of your time on reporting, not serving your community
                     </p>
                 </div>
                 
