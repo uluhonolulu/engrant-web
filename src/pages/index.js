@@ -17,19 +17,6 @@ import {
 
 const IndexPage = () => {
   React.useEffect(() => {
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
 
     // Intersection Observer for fade-in animations
     const observerOptions = {
@@ -500,7 +487,7 @@ const IndexPage = () => {
       <header>
         <nav className="container">
           <a href="#" className="logo">Engrant</a>
-          <a href="#cta" className="cta-button">Start Your Project</a>
+          <a href="https://app.engrant.eu/" className="cta-button">Start Your Project</a>
         </nav>
       </header>
 
@@ -509,7 +496,7 @@ const IndexPage = () => {
         <div className="container">
           <h1>Stop Chasing Partners.<br />Start Winning EU Proposals.</h1>
           <p className="subheadline">Smart forms that guide partners to provide complete, evaluation-ready inputs</p>
-          <a href="#cta" className="hero-cta">Get Started with Your Next Proposal</a>
+          <a href="https://app.engrant.eu/" className="hero-cta">Get Started with Your Next Proposal</a>
           <p className="price-tag">€100 for your first project (50% off) • €200 beta price • AI-powered generation included</p>
         </div>
       </section>
@@ -739,7 +726,7 @@ const IndexPage = () => {
         <div className="container">
           <h2>Ready to Transform Your Next Proposal?</h2>
           <p>Join innovative freelancers and agencies winning more EU projects with less stress</p>
-          <a href="#" className="final-cta">Start Your First Project - €100 (50% Off)</a>
+          <a href="https://app.engrant.eu/" className="final-cta">Start Your First Project - €100 (50% Off)</a>
           <p style={{color: 'rgba(255,255,255,0.8)', fontSize: '16px', marginTop: '20px'}}>First project €100 • Then €200 beta price • Price increases after launch</p>
         </div>
       </section>
@@ -747,8 +734,8 @@ const IndexPage = () => {
       {/* Footer */}
       <footer>
         <div className="container">
-          <p>&copy; 2024 Engrant. Making EU proposals collaborative, not chaotic.</p>
-          <p>Questions? <a href="mailto:hello@engrant.eu">hello@engrant.eu</a></p>
+          <p>&copy; 2025 Engrant. Making EU proposals collaborative, not chaotic.</p>
+          <p>Questions? <a href="mailto:founder@engrant.eu">founder@engrant.eu</a> | <Link to="/privacy-policy">Privacy Policy</Link></p>
         </div>
       </footer>
     </>
