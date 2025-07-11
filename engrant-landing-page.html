@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engrant - Stop Chasing Partners. Start Winning EU Proposals.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2563eb;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(37, 99, 235, 0.4);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+            padding: 140px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-30px, 30px) rotate(180deg); }
+        }
+        
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2563eb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .hero .subheadline {
+            font-size: 24px;
+            color: #64748b;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease-out 0.2s;
+            animation-fill-mode: both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 25px rgba(37, 99, 235, 0.4);
+            animation: fadeInUp 0.8s ease-out 0.4s;
+            animation-fill-mode: both;
+        }
+        
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 35px rgba(37, 99, 235, 0.5);
+        }
+        
+        .price-tag {
+            display: inline-block;
+            margin-top: 20px;
+            color: #64748b;
+            font-size: 16px;
+            animation: fadeInUp 0.8s ease-out 0.6s;
+            animation-fill-mode: both;
+        }
+        
+        /* Problem Section */
+        .problem {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 60px;
+            color: #1a1a1a;
+        }
+        
+        .pain-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .pain-point {
+            text-align: center;
+            padding: 40px 30px;
+            border-radius: 20px;
+            background: #f8fafc;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pain-point::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2563eb, #1d4ed8);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .pain-point:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .pain-point:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .pain-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .pain-point h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+        
+        .pain-point p {
+            color: #64748b;
+            line-height: 1.8;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .step {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .step h3 {
+            margin-top: 20px;
+            margin-bottom: 15px;
+            font-size: 22px;
+            color: #1a1a1a;
+        }
+        
+        .step p {
+            color: #64748b;
+            line-height: 1.8;
+        }
+        
+        /* Features */
+        .features {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .feature {
+            padding: 30px;
+            border-radius: 15px;
+            background: #f8fafc;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .feature:hover {
+            border-color: #2563eb;
+            background: white;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .feature h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+        
+        .feature p {
+            color: #64748b;
+            line-height: 1.8;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2563eb 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.1); }
+        }
+        
+        .cta-section h2 {
+            font-size: 48px;
+            color: white;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-section p {
+            font-size: 20px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .final-cta {
+            display: inline-block;
+            background: white;
+            color: #2563eb;
+            padding: 18px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 6px 25px rgba(255,255,255,0.3);
+        }
+        
+        .final-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 35px rgba(255,255,255,0.4);
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            padding: 40px 0;
+            text-align: center;
+            color: #94a3b8;
+        }
+        
+        footer p {
+            margin-bottom: 10px;
+        }
+        
+        footer a {
+            color: #2563eb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: #1d4ed8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero .subheadline {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .cta-section h2 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">Engrant</a>
+            <a href="#cta" class="cta-button">Start Free Trial</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Stop Chasing Partners.<br>Start Winning EU Proposals.</h1>
+            <p class="subheadline">Smart forms that guide partners to provide complete, evaluation-ready inputs</p>
+            <a href="#cta" class="hero-cta">Get Started with Your Next Proposal</a>
+            <p class="price-tag">€200 per project • AI-powered generation included</p>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <h2 class="section-title">The Partner Coordination Nightmare</h2>
+            <p style="text-align: center; font-size: 20px; color: #64748b; max-width: 800px; margin: 0 auto;">
+                As a proposal writer, you know the drill. Hours wasted chasing partners, 
+                incomplete inputs arriving at the last minute, and the constant struggle 
+                to align everyone with evaluation criteria.
+            </p>
+            <div class="pain-points">
+                <div class="pain-point">
+                    <div class="pain-icon">⏰</div>
+                    <h3>Time Drain</h3>
+                    <p>Endless emails, calls, and reminders just to get basic information from partners</p>
+                </div>
+                <div class="pain-point">
+                    <div class="pain-icon">🧩</div>
+                    <h3>Incomplete Inputs</h3>
+                    <p>Partners submit fragmented information that doesn't match proposal requirements</p>
+                </div>
+                <div class="pain-point">
+                    <div class="pain-icon">🎯</div>
+                    <h3>Missed Criteria</h3>
+                    <p>Critical evaluation points get overlooked when partners don't understand what's needed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">From Chaos to Complete Proposal in 4 Steps</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Upload & Analyze</h3>
+                    <p>Import your call template and existing materials. Engrant's AI analyzes requirements and identifies gaps.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Collect Missing Inputs</h3>
+                    <p>Smart forms are sent to partners based on their roles. No chasing - just automated collection.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Generate & Refine</h3>
+                    <p>AI creates your complete proposal or specific sections. Get feedback, iterate, and export to Google Docs.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Submit with Confidence</h3>
+                    <p>Your proposal is complete, aligned with evaluation criteria, and ready to win.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Built for Winning Proposals</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI Proposal Generation</h3>
+                    <p>Generate complete proposals or specific sections based on all inputs. Get AI feedback and improvement suggestions.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📋</div>
+                    <h3>Smart Form Generation</h3>
+                    <p>Automatically creates targeted questions based on call requirements and partner expertise</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Gap Analysis</h3>
+                    <p>AI identifies missing critical information and automatically assigns collection tasks to the right partners</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📄</div>
+                    <h3>Google Docs Integration</h3>
+                    <p>Automatic draft creation in Google Docs with quality assessment and regeneration based on edits</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">👥</div>
+                    <h3>Partner Recommendations</h3>
+                    <p>AI-powered suggestions for consortium composition and evaluation of partner effectiveness</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📁</div>
+                    <h3>Multi-Format Support</h3>
+                    <p>Upload PDFs, Word docs, Excel sheets, PowerPoints - Engrant processes them all</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Benefits Section -->
+    <section class="benefits" style="padding: 80px 0; background: #f8fafc;">
+        <div class="container">
+            <h2 class="section-title">More Than Just Input Collection</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-top: 60px;">
+                <div>
+                    <div style="margin-bottom: 30px;">
+                        <h3 style="font-size: 24px; margin-bottom: 10px; color: #1a1a1a;">🎯 Complete Proposal Generation</h3>
+                        <p style="color: #64748b; line-height: 1.8;">Don't just collect inputs - generate entire proposal sections or complete proposals with AI that understands EU evaluation criteria.</p>
+                    </div>
+                    <div style="margin-bottom: 30px;">
+                        <h3 style="font-size: 24px; margin-bottom: 10px; color: #1a1a1a;">📊 Quality Assessment</h3>
+                        <p style="color: #64748b; line-height: 1.8;">Get detailed feedback on what's strong, what's improved, and what needs work before submission.</p>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 24px; margin-bottom: 10px; color: #1a1a1a;">🔗 Seamless Workflow</h3>
+                        <p style="color: #64748b; line-height: 1.8;">From Excel budget sheets to technical PDFs - import any format. Export polished drafts directly to Google Docs.</p>
+                    </div>
+                </div>
+                <div style="background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%); padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);">
+                    <h4 style="font-size: 20px; margin-bottom: 20px; color: #1e293b;">What makes Engrant different:</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                            <span style="color: #2563eb; margin-right: 10px;">✓</span>
+                            <span style="color: #475569;">AI trained on successful EU proposals</span>
+                        </li>
+                        <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                            <span style="color: #2563eb; margin-right: 10px;">✓</span>
+                            <span style="color: #475569;">Automatic partner recommendations</span>
+                        </li>
+                        <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                            <span style="color: #2563eb; margin-right: 10px;">✓</span>
+                            <span style="color: #475569;">Real-time consortium evaluation</span>
+                        </li>
+                        <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                            <span style="color: #2563eb; margin-right: 10px;">✓</span>
+                            <span style="color: #475569;">Similar proposal analysis for insights</span>
+                        </li>
+                        <li style="display: flex; align-items: flex-start;">
+                            <span style="color: #2563eb; margin-right: 10px;">✓</span>
+                            <span style="color: #475569;">GDPR-compliant with encryption</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" style="padding: 80px 0; background: white;">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div style="max-width: 800px; margin: 0 auto; margin-top: 60px;">
+                <div style="margin-bottom: 40px; padding: 30px; background: #f8fafc; border-radius: 15px; border-left: 4px solid #2563eb;">
+                    <h3 style="font-size: 20px; margin-bottom: 15px; color: #1a1a1a;">Will the AI-generated content sound generic?</h3>
+                    <p style="color: #64748b; line-height: 1.8; margin: 0;">Modern AI creates sophisticated, contextual content based on your specific inputs and call requirements. After generation, Engrant runs an automatic evaluation highlighting strengths and areas for your manual enhancement. You always have full control to edit and refine.</p>
+                </div>
+                
+                <div style="margin-bottom: 40px; padding: 30px; background: #f8fafc; border-radius: 15px; border-left: 4px solid #2563eb;">
+                    <h3 style="font-size: 20px; margin-bottom: 15px; color: #1a1a1a;">What if partners refuse to fill out forms?</h3>
+                    <p style="color: #64748b; line-height: 1.8; margin: 0;">No problem! Partners can receive simple emails with specific questions instead of forms. They can also use Google Docs if they prefer. We adapt to their workflow, not the other way around.</p>
+                </div>
+                
+                <div style="margin-bottom: 40px; padding: 30px; background: #f8fafc; border-radius: 15px; border-left: 4px solid #2563eb;">
+                    <h3 style="font-size: 20px; margin-bottom: 15px; color: #1a1a1a;">Can I use Engrant mid-project?</h3>
+                    <p style="color: #64748b; line-height: 1.8; margin: 0;">Absolutely! Upload all your existing materials - emails, drafts, partner inputs - and Engrant will analyze what you have and identify what's missing. Works with Horizon Europe, EIC, and other grant types.</p>
+                </div>
+                
+                <div style="margin-bottom: 40px; padding: 30px; background: #f8fafc; border-radius: 15px; border-left: 4px solid #2563eb;">
+                    <h3 style="font-size: 20px; margin-bottom: 15px; color: #1a1a1a;">Why only €200? What's the catch?</h3>
+                    <p style="color: #64748b; line-height: 1.8; margin: 0;">You're joining during our beta phase! This special pricing helps us refine the platform with real users. The price will increase after the official launch, but you lock in this rate for your current project.</p>
+                </div>
+                
+                <div style="margin-bottom: 40px; padding: 30px; background: #f8fafc; border-radius: 15px; border-left: 4px solid #2563eb;">
+                    <h3 style="font-size: 20px; margin-bottom: 15px; color: #1a1a1a;">Is my proposal data secure?</h3>
+                    <p style="color: #64748b; line-height: 1.8; margin: 0;">Your data is stored on Microsoft Azure servers in the EU with enterprise-grade encryption. We use private AI models on AWS, ensuring your innovative ideas stay confidential. Full GDPR compliance is built in.</p>
+                </div>
+                
+                <div style="margin-bottom: 40px; padding: 30px; background: #f8fafc; border-radius: 15px; border-left: 4px solid #2563eb;">
+                    <h3 style="font-size: 20px; margin-bottom: 15px; color: #1a1a1a;">How long does the process take?</h3>
+                    <p style="color: #64748b; line-height: 1.8; margin: 0;">Initial setup takes about 30 minutes. Partner forms are generated instantly. Most partners complete their inputs within 2-3 days. Full proposal generation takes minutes, not hours. You control the timeline.</p>
+                </div>
+                
+                <div style="margin-bottom: 40px; padding: 30px; background: #f8fafc; border-radius: 15px; border-left: 4px solid #2563eb;">
+                    <h3 style="font-size: 20px; margin-bottom: 15px; color: #1a1a1a;">Can I export to my required format?</h3>
+                    <p style="color: #64748b; line-height: 1.8; margin: 0;">Yes! Generate drafts directly to Google Docs for easy editing and sharing. Export to PDF or Word for submission. The content is structured to match standard EU proposal templates.</p>
+                </div>
+                
+                <div style="padding: 30px; background: #f8fafc; border-radius: 15px; border-left: 4px solid #2563eb;">
+                    <h3 style="font-size: 20px; margin-bottom: 15px; color: #1a1a1a;">What support is available?</h3>
+                    <p style="color: #64748b; line-height: 1.8; margin: 0;">During beta, you get direct access to our team via email. We typically respond within hours on business days. The AI can also be retrained for specific technical domains if needed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="cta">
+        <div class="container">
+            <h2>Ready to Transform Your Next Proposal?</h2>
+            <p>Join innovative freelancers and agencies winning more EU projects with less stress</p>
+            <a href="#" class="final-cta">Start Your First Project - €200 Beta Price</a>
+            <p style="color: rgba(255,255,255,0.8); font-size: 16px; margin-top: 20px;">Limited-time beta pricing • Price increases after launch</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Engrant. Making EU proposals collaborative, not chaotic.</p>
+            <p>Questions? <a href="mailto:hello@engrant.eu">hello@engrant.eu</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.pain-point, .step, .feature').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
