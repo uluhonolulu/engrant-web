@@ -199,7 +199,6 @@ const IndexPage = () => {
         }
         
         .price-tag {
-          display: inline-block;
           margin-top: 20px;
           color: #64748b;
           font-size: 16px;
@@ -501,7 +500,7 @@ const IndexPage = () => {
       <header>
         <nav className="container">
           <a href="#" className="logo">Engrant</a>
-          <a href="#cta" className="cta-button">Start Free Trial</a>
+          <a href="#cta" className="cta-button">Start Your Project</a>
         </nav>
       </header>
 
@@ -511,7 +510,7 @@ const IndexPage = () => {
           <h1>Stop Chasing Partners.<br />Start Winning EU Proposals.</h1>
           <p className="subheadline">Smart forms that guide partners to provide complete, evaluation-ready inputs</p>
           <a href="#cta" className="hero-cta">Get Started with Your Next Proposal</a>
-          <p className="price-tag">€200 per project • AI-powered generation included</p>
+          <p className="price-tag">€100 for your first project (50% off) • €200 beta price • AI-powered generation included</p>
         </div>
       </section>
 
@@ -740,8 +739,8 @@ const IndexPage = () => {
         <div className="container">
           <h2>Ready to Transform Your Next Proposal?</h2>
           <p>Join innovative freelancers and agencies winning more EU projects with less stress</p>
-          <a href="#" className="final-cta">Start Your First Project - €200 Beta Price</a>
-          <p style={{color: 'rgba(255,255,255,0.8)', fontSize: '16px', marginTop: '20px'}}>Limited-time beta pricing • Price increases after launch</p>
+          <a href="#" className="final-cta">Start Your First Project - €100 (50% Off)</a>
+          <p style={{color: 'rgba(255,255,255,0.8)', fontSize: '16px', marginTop: '20px'}}>First project €100 • Then €200 beta price • Price increases after launch</p>
         </div>
       </section>
 
