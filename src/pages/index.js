@@ -1,5 +1,19 @@
 import * as React from "react"
 import { Link } from 'gatsby'
+import { 
+  Clock, 
+  Puzzle, 
+  Target, 
+  Bot, 
+  Clipboard, 
+  Search, 
+  FileText, 
+  Users, 
+  Folder,
+  BarChart3,
+  Link as LinkIcon,
+  Check
+} from 'lucide-react'
 
 const IndexPage = () => {
   React.useEffect(() => {
@@ -248,6 +262,15 @@ const IndexPage = () => {
         .pain-icon {
           font-size: 48px;
           margin-bottom: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 80px;
+          height: 80px;
+          margin: 0 auto 20px;
+          background: linear-gradient(135deg, #2563eb, #1d4ed8);
+          border-radius: 20px;
+          color: white;
         }
         
         .pain-point h3 {
@@ -503,17 +526,23 @@ const IndexPage = () => {
           </p>
           <div className="pain-points">
             <div className="pain-point">
-              <div className="pain-icon">⏰</div>
+              <div className="pain-icon">
+                <Clock size={32} />
+              </div>
               <h3>Time Drain</h3>
               <p>Endless emails, calls, and reminders just to get basic information from partners</p>
             </div>
             <div className="pain-point">
-              <div className="pain-icon">🧩</div>
+              <div className="pain-icon">
+                <Puzzle size={32} />
+              </div>
               <h3>Incomplete Inputs</h3>
               <p>Partners submit fragmented information that doesn't match proposal requirements</p>
             </div>
             <div className="pain-point">
-              <div className="pain-icon">🎯</div>
+              <div className="pain-icon">
+                <Target size={32} />
+              </div>
               <h3>Missed Criteria</h3>
               <p>Critical evaluation points get overlooked when partners don't understand what's needed</p>
             </div>
@@ -556,32 +585,44 @@ const IndexPage = () => {
           <h2 className="section-title">Built for Winning Proposals</h2>
           <div className="feature-grid">
             <div className="feature">
-              <div className="feature-icon">🤖</div>
+              <div className="feature-icon">
+                <Bot size={28} />
+              </div>
               <h3>AI Proposal Generation</h3>
               <p>Generate complete proposals or specific sections based on all inputs. Get AI feedback and improvement suggestions.</p>
             </div>
             <div className="feature">
-              <div className="feature-icon">📋</div>
+              <div className="feature-icon">
+                <Clipboard size={28} />
+              </div>
               <h3>Smart Form Generation</h3>
               <p>Automatically creates targeted questions based on call requirements and partner expertise</p>
             </div>
             <div className="feature">
-              <div className="feature-icon">🔍</div>
+              <div className="feature-icon">
+                <Search size={28} />
+              </div>
               <h3>Gap Analysis</h3>
               <p>AI identifies missing critical information and automatically assigns collection tasks to the right partners</p>
             </div>
             <div className="feature">
-              <div className="feature-icon">📄</div>
+              <div className="feature-icon">
+                <FileText size={28} />
+              </div>
               <h3>Google Docs Integration</h3>
               <p>Automatic draft creation in Google Docs with quality assessment and regeneration based on edits</p>
             </div>
             <div className="feature">
-              <div className="feature-icon">👥</div>
+              <div className="feature-icon">
+                <Users size={28} />
+              </div>
               <h3>Partner Recommendations</h3>
               <p>AI-powered suggestions for consortium composition and evaluation of partner effectiveness</p>
             </div>
             <div className="feature">
-              <div className="feature-icon">📁</div>
+              <div className="feature-icon">
+                <Folder size={28} />
+              </div>
               <h3>Multi-Format Support</h3>
               <p>Upload PDFs, Word docs, Excel sheets, PowerPoints - Engrant processes them all</p>
             </div>
@@ -596,15 +637,24 @@ const IndexPage = () => {
           <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center', marginTop: '60px'}}>
             <div>
               <div style={{marginBottom: '30px'}}>
-                <h3 style={{fontSize: '24px', marginBottom: '10px', color: '#1a1a1a'}}>🎯 Complete Proposal Generation</h3>
+                <h3 style={{fontSize: '24px', marginBottom: '10px', color: '#1a1a1a', display: 'flex', alignItems: 'center', gap: '10px'}}>
+                  <Target size={24} style={{color: '#2563eb'}} />
+                  Complete Proposal Generation
+                </h3>
                 <p style={{color: '#64748b', lineHeight: '1.8'}}>Don't just collect inputs - generate entire proposal sections or complete proposals with AI that understands EU evaluation criteria.</p>
               </div>
               <div style={{marginBottom: '30px'}}>
-                <h3 style={{fontSize: '24px', marginBottom: '10px', color: '#1a1a1a'}}>📊 Quality Assessment</h3>
+                <h3 style={{fontSize: '24px', marginBottom: '10px', color: '#1a1a1a', display: 'flex', alignItems: 'center', gap: '10px'}}>
+                  <BarChart3 size={24} style={{color: '#2563eb'}} />
+                  Quality Assessment
+                </h3>
                 <p style={{color: '#64748b', lineHeight: '1.8'}}>Get detailed feedback on what's strong, what's improved, and what needs work before submission.</p>
               </div>
               <div>
-                <h3 style={{fontSize: '24px', marginBottom: '10px', color: '#1a1a1a'}}>🔗 Seamless Workflow</h3>
+                <h3 style={{fontSize: '24px', marginBottom: '10px', color: '#1a1a1a', display: 'flex', alignItems: 'center', gap: '10px'}}>
+                  <LinkIcon size={24} style={{color: '#2563eb'}} />
+                  Seamless Workflow
+                </h3>
                 <p style={{color: '#64748b', lineHeight: '1.8'}}>From Excel budget sheets to technical PDFs - import any format. Export polished drafts directly to Google Docs.</p>
               </div>
             </div>
@@ -612,23 +662,23 @@ const IndexPage = () => {
               <h4 style={{fontSize: '20px', marginBottom: '20px', color: '#1e293b'}}>What makes Engrant different:</h4>
               <ul style={{listStyle: 'none', padding: 0}}>
                 <li style={{marginBottom: '15px', display: 'flex', alignItems: 'flex-start'}}>
-                  <span style={{color: '#2563eb', marginRight: '10px'}}>✓</span>
+                  <Check size={16} style={{color: '#2563eb', marginRight: '10px', marginTop: '2px', flexShrink: 0}} />
                   <span style={{color: '#475569'}}>AI trained on successful EU proposals</span>
                 </li>
                 <li style={{marginBottom: '15px', display: 'flex', alignItems: 'flex-start'}}>
-                  <span style={{color: '#2563eb', marginRight: '10px'}}>✓</span>
+                  <Check size={16} style={{color: '#2563eb', marginRight: '10px', marginTop: '2px', flexShrink: 0}} />
                   <span style={{color: '#475569'}}>Automatic partner recommendations</span>
                 </li>
                 <li style={{marginBottom: '15px', display: 'flex', alignItems: 'flex-start'}}>
-                  <span style={{color: '#2563eb', marginRight: '10px'}}>✓</span>
+                  <Check size={16} style={{color: '#2563eb', marginRight: '10px', marginTop: '2px', flexShrink: 0}} />
                   <span style={{color: '#475569'}}>Real-time consortium evaluation</span>
                 </li>
                 <li style={{marginBottom: '15px', display: 'flex', alignItems: 'flex-start'}}>
-                  <span style={{color: '#2563eb', marginRight: '10px'}}>✓</span>
+                  <Check size={16} style={{color: '#2563eb', marginRight: '10px', marginTop: '2px', flexShrink: 0}} />
                   <span style={{color: '#475569'}}>Similar proposal analysis for insights</span>
                 </li>
                 <li style={{display: 'flex', alignItems: 'flex-start'}}>
-                  <span style={{color: '#2563eb', marginRight: '10px'}}>✓</span>
+                  <Check size={16} style={{color: '#2563eb', marginRight: '10px', marginTop: '2px', flexShrink: 0}} />
                   <span style={{color: '#475569'}}>GDPR-compliant with encryption</span>
                 </li>
               </ul>
