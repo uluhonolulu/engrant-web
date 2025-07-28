@@ -535,14 +535,25 @@ const HorizonResearchPage = () => {
           </div>
         </section>
 
-
+        {/* Separator Section */}
+        <section className="py-12 bg-gradient-to-r from-neutral-50 to-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <div className="inline-flex items-center space-x-6 text-neutral-700">
+                <div className="h-px bg-neutral-300 flex-1"></div>
+                <span className="text-2xl font-semibold">Ready to get started?</span>
+                <div className="h-px bg-neutral-300 flex-1"></div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-eublue to-eublue-dark text-white">
+        <section className="py-20" style={{background: 'linear-gradient(135deg, #004494 0%, #003366 100%)'}}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Your Research Deserves to Be Funded</h2>
-              <p className="text-xl opacity-90 mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Your Research Deserves to Be Funded</h2>
+              <p className="text-xl text-white/90 mb-8">
                 Don't let proposal writing be the barrier between your brilliant research and the funding it deserves. Start your Horizon Europe proposal today and submit with confidence.
               </p>
               <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
@@ -554,15 +565,15 @@ const HorizonResearchPage = () => {
                 </button>
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8">
-                <div className="flex items-center">
+                <div className="flex items-center text-white">
                   <i className="fa-regular fa-clock text-yellow-400 mr-2"></i>
                   <span>14-day free trial</span>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center text-white">
                   <i className="fa-solid fa-shield-check text-yellow-400 mr-2"></i>
                   <span>No credit card required</span>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center text-white">
                   <i className="fa-solid fa-headset text-yellow-400 mr-2"></i>
                   <span>Priority support</span>
                 </div>
