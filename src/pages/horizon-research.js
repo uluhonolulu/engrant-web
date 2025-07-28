@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
+import { Helmet } from 'react-helmet';
 import logo from '../images/Logo_transparent_bg.png';
 
 const HorizonResearchPage = () => {
@@ -21,6 +22,10 @@ const HorizonResearchPage = () => {
   };
   return (
     <>
+      <Helmet>
+        <title>Horizon Europe Proposal Writing | AI Assistant for Researchers | Engrant</title>
+        <meta name="description" content="Transform your research into funded Horizon Europe projects with AI writing assistance in weeks, not months. Step-by-step guidance from concept to submission." />
+      </Helmet>
       {/* Custom styles for this page */}
       <style jsx global>{`
         .highlighted-section {
@@ -198,9 +203,9 @@ const HorizonResearchPage = () => {
                     No grant writer? No problem. Create winning Horizon Europe proposals with AI assistance tailored for researchers. Go from concept to submission in weeks, not months.
                   </p>
                   <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
-                    <button className="bg-eublue hover:bg-eublue-dark text-white text-lg font-semibold px-8 py-4 rounded-lg transition duration-200 text-center">
+                    <a href="https://app.engrant.eu/" target="_blank" rel="noopener noreferrer" className="bg-eublue hover:bg-eublue-dark text-white text-lg font-semibold px-8 py-4 rounded-lg transition duration-200 text-center inline-block">
                       Start Your Proposal Today
-                    </button>
+                    </a>
                     <button className="bg-white border border-neutral-300 hover:border-eublue text-neutral-700 hover:text-eublue text-lg font-semibold px-8 py-4 rounded-lg transition duration-200 text-center flex items-center justify-center">
                       <i className="fa-solid fa-play mr-2 text-sm"></i> See How It Works
                     </button>
@@ -557,9 +562,9 @@ const HorizonResearchPage = () => {
                 Don't let proposal writing be the barrier between your brilliant research and the funding it deserves. Start your Horizon Europe proposal today and submit with confidence.
               </p>
               <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
-                <button className="bg-white text-eublue hover:bg-neutral-100 text-lg font-semibold px-8 py-4 rounded-lg transition duration-200">
+                <a href="https://app.engrant.eu/" target="_blank" rel="noopener noreferrer" className="bg-white text-eublue hover:bg-neutral-100 text-lg font-semibold px-8 py-4 rounded-lg transition duration-200 inline-block text-center">
                   Start Your Proposal Today
-                </button>
+                </a>
                 <button className="bg-transparent border-2 border-white hover:bg-white/10 text-white text-lg font-semibold px-8 py-4 rounded-lg transition duration-200">
                   Schedule a Demo
                 </button>
@@ -586,66 +591,39 @@ const HorizonResearchPage = () => {
       {/* Footer */}
       <footer className="bg-neutral-900 text-neutral-400 py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
+          <div className="flex flex-col md:flex-row justify-between items-start">
+            <div className="mb-6 md:mb-0">
               <div className="flex items-center mb-4">
                 <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center mr-2">
                   <span className="text-eublue font-bold text-xl">E</span>
                 </div>
                 <span className="text-white font-bold text-2xl">Engrant</span>
               </div>
-              <p className="mb-4">
+              <p className="text-neutral-400 mb-4 max-w-md">
                 AI-powered grant writing assistant for researchers. Turn your expertise into funded Horizon Europe projects.
               </p>
-              <div className="flex space-x-4">
-                <span className="text-neutral-400 hover:text-white cursor-pointer">
-                  <i className="fa-brands fa-twitter"></i>
-                </span>
-                <span className="text-neutral-400 hover:text-white cursor-pointer">
-                  <i className="fa-brands fa-linkedin"></i>
-                </span>
-                <span className="text-neutral-400 hover:text-white cursor-pointer">
-                  <i className="fa-brands fa-facebook"></i>
-                </span>
-              </div>
             </div>
             
-            <div>
-              <h3 className="text-white font-semibold mb-4">Product</h3>
-              <ul className="space-y-2">
-                <li><span className="hover:text-white cursor-pointer">Features</span></li>
-                <li><span className="hover:text-white cursor-pointer">How It Works</span></li>
-                <li><span className="hover:text-white cursor-pointer">Pricing</span></li>
-
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-white font-semibold mb-4">Resources</h3>
-              <ul className="space-y-2">
-                <li><span className="hover:text-white cursor-pointer">Blog</span></li>
-                <li><span className="hover:text-white cursor-pointer">Horizon Europe Guide</span></li>
-                <li><span className="hover:text-white cursor-pointer">Webinars</span></li>
-                <li><span className="hover:text-white cursor-pointer">Documentation</span></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-white font-semibold mb-4">Company</h3>
-              <ul className="space-y-2">
-                <li><span className="hover:text-white cursor-pointer">About Us</span></li>
-                <li><span className="hover:text-white cursor-pointer">Contact</span></li>
-                <li><span className="hover:text-white cursor-pointer">Privacy Policy</span></li>
-                <li><span className="hover:text-white cursor-pointer">Terms of Service</span></li>
-              </ul>
+            <div className="flex items-center">
+              <a 
+                href="https://www.linkedin.com/company/engrant/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-neutral-400 hover:text-white transition duration-200"
+                aria-label="Follow us on LinkedIn"
+              >
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </a>
             </div>
           </div>
           
-          <div className="border-t border-neutral-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p>© 2023 Engrant. All rights reserved.</p>
+          <div className="border-t border-neutral-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-neutral-500">© 2025 Engrant. All rights reserved.</p>
             <div className="flex items-center mt-4 md:mt-0">
               <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="EU Flag" className="h-5 mr-2" />
-              <span>Compliant with Horizon Europe guidelines</span>
+              <span className="text-neutral-500">Compliant with Horizon Europe guidelines</span>
             </div>
           </div>
         </div>
