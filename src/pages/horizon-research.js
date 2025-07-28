@@ -1,8 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import logo from '../images/Logo_transparent_bg.png';
 
 const HorizonResearchPage = () => {
+  const [activeModal, setActiveModal] = useState(null);
+
+  const featureDetails = {
+    aiWriting: {
+      title: "AI Writing Assistant",
+      description: "Our AI combines structural guidance with content generation. It breaks down complex Horizon Europe requirements into manageable steps, then helps you write each section using language patterns from successful proposals. You provide the research expertise, we provide the grant writing expertise."
+    },
+    qualityControl: {
+      title: "Smart Quality Control", 
+      description: "Every section you write gets instantly assessed against key Horizon Europe evaluation factors: scientific rigor, innovation potential, feasibility, and impact pathways. Our AI identifies gaps, suggests improvements, and ensures your proposal addresses all evaluator expectations before submission."
+    },
+    partnerCoordination: {
+      title: "Partner Coordination Hub",
+      description: "Stop chasing partners with endless emails. Our system identifies exactly what information you need from each partner, generates personalized forms and shared documents, and automatically incorporates their responses into the correct proposal sections. Partners get clear guidance, you get properly formatted content."
+    }
+  };
   return (
     <>
       {/* Custom styles for this page */}
@@ -73,7 +89,88 @@ const HorizonResearchPage = () => {
         .to-eublue-dark {
           --tw-gradient-to: #003366;
         }
+
+        .modal-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: 1000;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 1rem;
+        }
+
+        .modal-content {
+          background: white;
+          border-radius: 0.75rem;
+          padding: 2rem;
+          max-width: 500px;
+          width: 100%;
+          max-height: 80vh;
+          overflow-y: auto;
+          position: relative;
+        }
+
+        .modal-close {
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          background: none;
+          border: none;
+          font-size: 1.5rem;
+          cursor: pointer;
+          color: #6b7280;
+          padding: 0.25rem;
+          border-radius: 0.25rem;
+          transition: color 0.2s;
+        }
+
+        .modal-close:hover {
+          color: #374151;
+        }
       `}</style>
+
+      {/* Modal */}
+      {activeModal && (
+        <div className="modal-overlay" onClick={() => setActiveModal(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button 
+              className="modal-close" 
+              onClick={() => setActiveModal(null)}
+              aria-label="Close modal"
+            >
+              ×
+            </button>
+            <div className="text-center mb-6">
+              <div className="text-eublue mb-4">
+                <i className={`fa-solid ${
+                  activeModal === 'aiWriting' ? 'fa-robot' : 
+                  activeModal === 'qualityControl' ? 'fa-chart-line' : 
+                  'fa-users'
+                } text-4xl`}></i>
+              </div>
+              <h3 className="text-2xl font-bold text-neutral-800 mb-4">
+                {featureDetails[activeModal].title}
+              </h3>
+            </div>
+            <p className="text-neutral-700 leading-relaxed">
+              {featureDetails[activeModal].description}
+            </p>
+            <div className="mt-8 text-center">
+              <button 
+                className="bg-eublue hover:bg-eublue-dark text-white font-semibold px-6 py-3 rounded-lg transition duration-200"
+                onClick={() => setActiveModal(null)}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="bg-white text-neutral-700 font-sans min-h-screen flex flex-col">
         {/* Navigation */}
@@ -137,34 +234,7 @@ const HorizonResearchPage = () => {
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-blue-400 to-eublue h-2"></div>
         </section>
 
-        {/* Trust Signals */}
-        <section className="bg-neutral-50 py-10">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-8">
-              <p className="text-neutral-600 font-medium">Trusted by researchers across Europe</p>
-            </div>
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-eublue">500+</div>
-                <p className="text-neutral-600">Proposals Created</p>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-eublue">85%</div>
-                <p className="text-neutral-600">Success Rate</p>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-eublue">€120M</div>
-                <p className="text-neutral-600">Funding Secured</p>
-              </div>
-              <div className="text-center">
-                <div className="flex items-center justify-center">
-                  <i className="fa-solid fa-certificate text-yellow-400 text-2xl mr-2"></i>
-                  <span className="text-eublue font-semibold">EU Compliant</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+
 
         {/* Pain Point Section */}
         <section className="py-16 bg-white">
@@ -266,26 +336,16 @@ const HorizonResearchPage = () => {
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition duration-300">
                 <div className="text-eublue mb-4">
-                  <i className="fa-solid fa-lightbulb text-3xl"></i>
+                  <i className="fa-solid fa-robot text-3xl"></i>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Step-by-Step AI Guidance</h3>
+                <h3 className="text-xl font-semibold mb-3">AI Writing Assistant</h3>
                 <p className="text-neutral-600 mb-4">
-                  Get intelligent suggestions for each section as you write, with examples from successful proposals and EU evaluator insights.
+                  Get step-by-step guidance through every section with AI that generates content in evaluator-friendly "EU funding language" based on your research.
                 </p>
-                <span className="text-eublue font-medium inline-flex items-center cursor-pointer">
-                  Learn more <i className="fa-solid fa-arrow-right ml-1 text-sm"></i>
-                </span>
-              </div>
-              
-              <div className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition duration-300">
-                <div className="text-eublue mb-4">
-                  <i className="fa-solid fa-pen-fancy text-3xl"></i>
-                </div>
-                <h3 className="text-xl font-semibold mb-3">Write Like a Pro</h3>
-                <p className="text-neutral-600 mb-4">
-                  AI trained on successful Horizon Europe proposals generates content in EU funding language that resonates with evaluators.
-                </p>
-                <span className="text-eublue font-medium inline-flex items-center cursor-pointer">
+                <span 
+                  className="text-eublue font-medium inline-flex items-center cursor-pointer hover:text-eublue-dark transition duration-200"
+                  onClick={() => setActiveModal('aiWriting')}
+                >
                   Learn more <i className="fa-solid fa-arrow-right ml-1 text-sm"></i>
                 </span>
               </div>
@@ -294,39 +354,14 @@ const HorizonResearchPage = () => {
                 <div className="text-eublue mb-4">
                   <i className="fa-solid fa-chart-line text-3xl"></i>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Real-time Evaluation</h3>
+                <h3 className="text-xl font-semibold mb-3">Smart Quality Control</h3>
                 <p className="text-neutral-600 mb-4">
-                  Get instant feedback against Horizon Europe criteria with specific improvement suggestions to maximize your score.
+                  Get real-time evaluation against Horizon Europe criteria with specific improvement suggestions to maximize your proposal score.
                 </p>
-                <span className="text-eublue font-medium inline-flex items-center cursor-pointer">
-                  Learn more <i className="fa-solid fa-arrow-right ml-1 text-sm"></i>
-                </span>
-              </div>
-            </div>
-            
-            <div className="mt-12 grid md:grid-cols-3 gap-8">
-              <div className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition duration-300">
-                <div className="text-eublue mb-4">
-                  <i className="fa-solid fa-pen-fancy text-3xl"></i>
-                </div>
-                <h3 className="text-xl font-semibold mb-3">Write Like a Pro</h3>
-                <p className="text-neutral-600 mb-4">
-                  AI trained on successful Horizon Europe proposals generates content in EU funding language that resonates with evaluators.
-                </p>
-                <span className="text-eublue font-medium inline-flex items-center cursor-pointer">
-                  Learn more <i className="fa-solid fa-arrow-right ml-1 text-sm"></i>
-                </span>
-              </div>
-              
-              <div className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition duration-300">
-                <div className="text-eublue mb-4">
-                  <i className="fa-solid fa-chart-line text-3xl"></i>
-                </div>
-                <h3 className="text-xl font-semibold mb-3">Real-time Evaluation</h3>
-                <p className="text-neutral-600 mb-4">
-                  Get instant feedback against Horizon Europe criteria with specific improvement suggestions to maximize your score.
-                </p>
-                <span className="text-eublue font-medium inline-flex items-center cursor-pointer">
+                <span 
+                  className="text-eublue font-medium inline-flex items-center cursor-pointer hover:text-eublue-dark transition duration-200"
+                  onClick={() => setActiveModal('qualityControl')}
+                >
                   Learn more <i className="fa-solid fa-arrow-right ml-1 text-sm"></i>
                 </span>
               </div>
@@ -335,11 +370,14 @@ const HorizonResearchPage = () => {
                 <div className="text-eublue mb-4">
                   <i className="fa-solid fa-users text-3xl"></i>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Consortium Building</h3>
+                <h3 className="text-xl font-semibold mb-3">Partner Coordination Hub</h3>
                 <p className="text-neutral-600 mb-4">
-                  Smart partner finding and automated coordination of partner inputs without endless email chains.
+                  Streamline consortium management with automated partner input collection and smart integration of contributions into your proposal.
                 </p>
-                <span className="text-eublue font-medium inline-flex items-center cursor-pointer">
+                <span 
+                  className="text-eublue font-medium inline-flex items-center cursor-pointer hover:text-eublue-dark transition duration-200"
+                  onClick={() => setActiveModal('partnerCoordination')}
+                >
                   Learn more <i className="fa-solid fa-arrow-right ml-1 text-sm"></i>
                 </span>
               </div>
@@ -467,10 +505,10 @@ const HorizonResearchPage = () => {
               </div>
               
               <div className="grid grid-cols-4 gap-4">
-                <div className="text-center">
-                  <div className="font-medium">Week 1</div>
-                  <p className="text-sm text-neutral-600">Proposal structure & AI setup</p>
-                </div>
+                                  <div className="text-center">
+                    <div className="font-medium">Week 1</div>
+                    <p className="text-sm text-neutral-600">Consortium building & idea refinement</p>
+                  </div>
                 <div className="text-center">
                   <div className="font-medium">Week 2-3</div>
                   <p className="text-sm text-neutral-600">Draft core sections with AI</p>
@@ -497,82 +535,7 @@ const HorizonResearchPage = () => {
           </div>
         </section>
 
-        {/* Testimonials */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Success Stories from Researchers Like You</h2>
-              <p className="text-xl text-neutral-700 max-w-3xl mx-auto">
-                Hear from researchers who secured Horizon Europe funding with Engrant's help.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-accent-light rounded-xl p-8 shadow-sm">
-                <div className="flex items-center mb-6">
-                  <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg" alt="Dr. Michael Chen" className="w-16 h-16 rounded-full mr-4" />
-                  <div>
-                    <h4 className="font-semibold text-lg">Dr. Michael Chen</h4>
-                    <p className="text-neutral-600">Molecular Biology Researcher</p>
-                    <p className="text-eublue font-medium">University of Copenhagen</p>
-                  </div>
-                </div>
-                <p className="text-neutral-700 mb-4">
-                  "As a first-time coordinator, I was overwhelmed by the Horizon Europe requirements. Engrant's AI helped me structure my proposal perfectly and generate content that resonated with evaluators. We secured €3.2M in funding!"
-                </p>
-                <div className="flex items-center text-yellow-400">
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                </div>
-              </div>
-              
-              <div className="bg-accent-light rounded-xl p-8 shadow-sm">
-                <div className="flex items-center mb-6">
-                  <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg" alt="Prof. Sophia Martinez" className="w-16 h-16 rounded-full mr-4" />
-                  <div>
-                    <h4 className="font-semibold text-lg">Prof. Sophia Martinez</h4>
-                    <p className="text-neutral-600">Climate Science Department</p>
-                    <p className="text-eublue font-medium">Technical University of Madrid</p>
-                  </div>
-                </div>
-                <p className="text-neutral-700 mb-4">
-                  "Our grant writer was unavailable, and we had just 3 weeks until the deadline. Engrant helped us create a compelling proposal from scratch. The AI guidance on impact pathways was particularly valuable."
-                </p>
-                <div className="flex items-center text-yellow-400">
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star-half-stroke"></i>
-                </div>
-              </div>
-              
-              <div className="bg-accent-light rounded-xl p-8 shadow-sm">
-                <div className="flex items-center mb-6">
-                  <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-8.jpg" alt="Dr. Thomas Weber" className="w-16 h-16 rounded-full mr-4" />
-                  <div>
-                    <h4 className="font-semibold text-lg">Dr. Thomas Weber</h4>
-                    <p className="text-neutral-600">Research Manager</p>
-                    <p className="text-eublue font-medium">Fraunhofer Institute</p>
-                  </div>
-                </div>
-                <p className="text-neutral-700 mb-4">
-                  "The partner coordination features saved us countless hours of back-and-forth emails. Engrant transformed our technical research into EU-friendly language that scored high on all evaluation criteria."
-                </p>
-                <div className="flex items-center text-yellow-400">
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+
 
         {/* CTA Section */}
         <section className="py-20 bg-gradient-to-br from-eublue to-eublue-dark text-white">
@@ -642,7 +605,7 @@ const HorizonResearchPage = () => {
                 <li><span className="hover:text-white cursor-pointer">Features</span></li>
                 <li><span className="hover:text-white cursor-pointer">How It Works</span></li>
                 <li><span className="hover:text-white cursor-pointer">Pricing</span></li>
-                <li><span className="hover:text-white cursor-pointer">Success Stories</span></li>
+
               </ul>
             </div>
             
