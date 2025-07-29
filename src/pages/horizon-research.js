@@ -540,18 +540,87 @@ const HorizonResearchPage = () => {
           </div>
         </section>
 
-        {/* Separator Section */}
-        <section className="py-12 bg-gradient-to-r from-neutral-50 to-white">
+        {/* Pricing Section */}
+        <section className="py-20 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <div className="inline-flex items-center space-x-6 text-neutral-700">
-                <div className="h-px bg-neutral-300 flex-1"></div>
-                <span className="text-2xl font-semibold">Ready to get started?</span>
-                <div className="h-px bg-neutral-300 flex-1"></div>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
+              <p className="text-xl text-neutral-700 max-w-3xl mx-auto">
+                Get started with AI-powered Horizon Europe proposal writing. No hidden fees, no surprises.
+              </p>
+            </div>
+            
+            <div className="max-w-md mx-auto">
+              <div className="bg-white rounded-2xl shadow-xl border border-neutral-200 p-8 relative overflow-hidden">
+                {/* Discount Badge */}
+                <div className="absolute top-0 right-0 bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-2 rounded-bl-lg font-semibold text-sm">
+                  50% OFF
+                </div>
+                
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold text-neutral-800 mb-2">Proposal Writing Assistant</h3>
+                  <p className="text-neutral-600 mb-6">Complete your Horizon Europe proposal with AI guidance</p>
+                  
+                  <div className="mb-6">
+                    <div className="flex items-center justify-center space-x-3 mb-2">
+                      <span className="text-3xl font-bold text-eublue">€200</span>
+                      <span className="text-lg text-neutral-500 line-through">€400</span>
+                    </div>
+                    <p className="text-sm text-neutral-500">Limited time offer until August 15th</p>
+                  </div>
+                </div>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                      <i className="fa-solid fa-check text-green-600 text-xs"></i>
+                    </div>
+                    <span className="text-neutral-700">AI-powered writing assistance</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                      <i className="fa-solid fa-check text-green-600 text-xs"></i>
+                    </div>
+                    <span className="text-neutral-700">Step-by-step guidance</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                      <i className="fa-solid fa-check text-green-600 text-xs"></i>
+                    </div>
+                    <span className="text-neutral-700">Partner coordination tools</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                      <i className="fa-solid fa-check text-green-600 text-xs"></i>
+                    </div>
+                    <span className="text-neutral-700">Real-time quality evaluation</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                      <i className="fa-solid fa-check text-green-600 text-xs"></i>
+                    </div>
+                    <span className="text-neutral-700">14-day free trial</span>
+                  </div>
+                </div>
+                
+                <a 
+                  href="https://app.engrant.eu/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block w-full bg-eublue hover:bg-eublue-dark text-white text-lg font-semibold py-4 px-6 rounded-lg transition duration-200 text-center"
+                >
+                  Start Your Proposal Today
+                </a>
+                
+                <p className="text-xs text-neutral-500 text-center mt-4">
+                  No credit card required • Cancel anytime
+                </p>
               </div>
             </div>
           </div>
         </section>
+
+
 
         {/* CTA Section */}
         <section className="py-20" style={{background: 'linear-gradient(135deg, #004494 0%, #003366 100%)'}}>
