@@ -5,6 +5,7 @@ import logo from '../images/Logo_transparent_bg.png';
 
 const HorizonResearchPage = () => {
   const [activeModal, setActiveModal] = useState(null);
+  const [showVideoModal, setShowVideoModal] = useState(false);
 
   const featureDetails = {
     aiWriting: {
@@ -137,9 +138,70 @@ const HorizonResearchPage = () => {
         .modal-close:hover {
           color: #374151;
         }
+
+        .video-modal-close {
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          background: none;
+          border: none;
+          font-size: 1.5rem;
+          cursor: pointer;
+          color: #6b7280;
+          padding: 0.25rem;
+          border-radius: 0.25rem;
+          transition: color 0.2s;
+        }
+
+        .video-modal-close:hover {
+          color: #374151;
+        }
+
+        .video-modal-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(0, 0, 0, 0.8);
+          z-index: 2000;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 1rem;
+        }
+
+        .video-modal-content {
+          background: white;
+          border-radius: 0.75rem;
+          padding: 2rem;
+          max-width: 800px;
+          width: 100%;
+          max-height: 90vh;
+          overflow-y: auto;
+          position: relative;
+        }
+
+        .video-container {
+          position: relative;
+          width: 100%;
+          height: 0;
+          padding-bottom: 56.25%; /* 16:9 aspect ratio */
+          margin-bottom: 1rem;
+        }
+
+        .video-container iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: none;
+          border-radius: 0.5rem;
+        }
       `}</style>
 
-      {/* Modal */}
+      {/* Feature Modal */}
       {activeModal && (
         <div className="modal-overlay" onClick={() => setActiveModal(null)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -177,6 +239,50 @@ const HorizonResearchPage = () => {
         </div>
       )}
 
+      {/* Video Modal */}
+      {showVideoModal && (
+        <div className="video-modal-overlay" onClick={() => setShowVideoModal(false)}>
+          <div className="video-modal-content" onClick={(e) => e.stopPropagation()}>
+                         <button 
+               className="video-modal-close" 
+               onClick={() => setShowVideoModal(false)}
+               aria-label="Close video modal"
+             >
+               ×
+             </button>
+            <div className="text-center mb-6">
+              <h3 className="text-2xl font-bold text-neutral-800 mb-4">
+                See How Engrant Works
+              </h3>
+              <p className="text-neutral-600">
+                Watch our quick demo to see how AI-powered proposal writing works
+              </p>
+            </div>
+                         <div className="video-container">
+               {/* WowTo embed - using their official embed code */}
+               <iframe 
+                 src="https://app.wowto.ai/embed/M4fTiHwNN&locale=first"
+                 width="100%"
+                 height="100%"
+                 frameBorder="0"
+                 sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-presentation"
+                 allowFullScreen
+                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                 title="Engrant Demo Video"
+               />
+             </div>
+                         <div className="text-center mt-6">
+               <button 
+                 className="bg-eublue hover:bg-eublue-dark text-white font-semibold px-6 py-3 rounded-lg transition duration-200 cursor-pointer"
+                 onClick={() => setShowVideoModal(false)}
+               >
+                 Close
+               </button>
+             </div>
+          </div>
+        </div>
+      )}
+
       <div className="bg-white text-neutral-700 font-sans min-h-screen flex flex-col">
         {/* Navigation */}
         <nav className="p-6 container mx-auto flex justify-between items-center">
@@ -206,9 +312,12 @@ const HorizonResearchPage = () => {
                     <a href="https://app.engrant.eu/" target="_blank" rel="noopener noreferrer" className="bg-eublue hover:bg-eublue-dark text-white text-lg font-semibold px-8 py-4 rounded-lg transition duration-200 text-center inline-block">
                       Start Your Proposal Today
                     </a>
-                    <button className="bg-white border border-neutral-300 hover:border-eublue text-neutral-700 hover:text-eublue text-lg font-semibold px-8 py-4 rounded-lg transition duration-200 text-center flex items-center justify-center">
-                      <i className="fa-solid fa-play mr-2 text-sm"></i> See How It Works
-                    </button>
+                                         <button 
+                       className="bg-white border border-neutral-300 hover:border-eublue text-neutral-700 hover:text-eublue text-lg font-semibold px-8 py-4 rounded-lg transition duration-200 text-center flex items-center justify-center cursor-pointer"
+                       onClick={() => setShowVideoModal(true)}
+                     >
+                       <i className="fa-solid fa-play mr-2 text-sm"></i> See How It Works
+                     </button>
                   </div>
                   <div className="flex items-center space-x-6">
                     <div className="flex items-center">
