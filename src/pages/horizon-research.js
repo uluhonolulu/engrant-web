@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import { Check, Play, X, Clock, Shield, Headphones, Lightbulb, ArrowRight, Users, Robot, TrendingUp } from 'lucide-react';
 import logo from '../images/Logo_transparent_bg.png';
+import comparisonImage from '../images/kevin-yudhistira-alloni-WBU233kGI6g-unsplash.jpg';
 
 const HorizonResearchPage = () => {
   const [activeModal, setActiveModal] = useState(null);
@@ -401,8 +402,10 @@ const HorizonResearchPage = () => {
               
               <div className="order-1 md:order-2">
                 <div className="relative">
-                  <img className="w-full rounded-lg shadow-lg" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/8ab3e14cbc-bb600fad69e616113ba9.png" alt="split screen showing stressed researcher with messy papers vs confident researcher using organized digital tool, professional academic setting" />
-                  <div className="absolute -bottom-4 right-4 bg-white shadow-lg rounded-lg py-2 px-4">
+                  <div className="overflow-hidden rounded-lg shadow-lg">
+                    <img className="w-full" style={{ objectPosition: 'center 50%', objectFit: 'cover', height: '80%', marginTop: '-10%', marginBottom: '-10%' }} src={comparisonImage} alt="split screen showing stressed researcher with messy papers vs confident researcher using organized digital tool, professional academic setting" />
+                  </div>
+                  <div className="absolute -bottom-4 right-4 bg-white shadow-lg rounded-lg py-2 px-4 z-10">
                     <div className="flex items-center">
                       <div className="mr-3">
                         <div className="text-xl font-bold text-red-500">12 weeks</div>
