@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import { Helmet } from 'react-helmet';
+import { Check, Play, X, Clock, Shield, Headphones, Lightbulb, ArrowRight, Users, Robot, TrendingUp } from 'lucide-react';
 import logo from '../images/Logo_transparent_bg.png';
 
 const HorizonResearchPage = () => {
@@ -283,69 +284,52 @@ const HorizonResearchPage = () => {
         </div>
       )}
 
-      <div className="bg-white text-neutral-700 font-sans min-h-screen flex flex-col">
-        {/* Navigation */}
-        <nav className="p-6 container mx-auto flex justify-between items-center">
-          <div className="flex items-center">
-            <img src={logo} alt="EnGrant Logo" className="h-36 w-auto rounded-lg align-middle" />
-          </div>
-          <div>
-            <Link to="/" className="text-primary-600 hover:text-primary-700 font-semibold">
-              &larr; Back to Home
-            </Link>
-          </div>
-        </nav>
-
-        {/* Hero Section */}
-        <section className="bg-gradient-to-br from-accent-light to-white h-[650px] relative overflow-hidden">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24">
-            <div className="flex flex-col md:flex-row items-center">
-              <div className="md:w-1/2 mb-10 md:mb-0">
-                <div className="max-w-xl">
-                  <h1 className="text-4xl md:text-5xl font-bold text-neutral-800 mb-6 leading-tight">
-                    Turn Research Excellence Into Funded Projects
-                  </h1>
-                  <p className="text-xl text-neutral-600 mb-8">
-                    No grant writer? No problem. Create winning Horizon Europe proposals with AI assistance tailored for researchers. Go from concept to submission in weeks, not months.
-                  </p>
-                  <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
-                    <a href="https://app.engrant.eu/" target="_blank" rel="noopener noreferrer" className="bg-eublue hover:bg-eublue-dark text-white text-lg font-semibold px-8 py-4 rounded-lg transition duration-200 text-center inline-block">
-                      Start Your Proposal Today
-                    </a>
-                                         <button 
-                       className="bg-white border border-neutral-300 hover:border-eublue text-neutral-700 hover:text-eublue text-lg font-semibold px-8 py-4 rounded-lg transition duration-200 text-center flex items-center justify-center cursor-pointer"
-                       onClick={() => setShowVideoModal(true)}
-                     >
-                       <i className="fa-solid fa-play mr-2 text-sm"></i> See How It Works
-                     </button>
-                  </div>
-                  <div className="flex items-center space-x-6">
+             <div className="bg-white text-neutral-700 font-sans min-h-screen flex flex-col">
+         {/* Hero Section */}
+        <section className="bg-gradient-to-br from-blue-100 to-blue-200 min-h-screen relative overflow-hidden flex items-center">
+          <div className="absolute inset-0 bg-[url('/finished.png')] bg-center bg-cover" style={{ backgroundPosition: 'center 70%' }}></div>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="text-center">
+                                            <div className="bg-white/45 backdrop-blur-sm rounded-2xl p-8 mb-8 max-w-6xl mx-auto relative">
+                 <h1 className="text-4xl md:text-5xl font-bold text-neutral-800 mb-6 leading-tight">
+                   Turn Research Excellence Into Funded Projects
+                 </h1>
+                 <p className="text-xl text-neutral-600 mb-8">
+                   No grant writer? No problem. Create winning Horizon Europe proposals with AI assistance tailored for researchers. Go from concept to submission in weeks, not months.
+                 </p>
+                 <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
+                   <a href="https://app.engrant.eu/" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-blue-800 to-blue-600 hover:from-blue-900 hover:to-blue-700 text-white text-lg font-semibold px-8 py-4 rounded-full transition duration-200 text-center inline-block shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                     Start Your Proposal Today
+                   </a>
+                                       <button 
+                      className="bg-white/90 border border-neutral-300 hover:border-blue-600 text-neutral-700 hover:text-blue-600 text-lg font-semibold px-8 py-4 rounded-full transition duration-200 text-center flex items-center justify-center cursor-pointer shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                      onClick={() => setShowVideoModal(true)}
+                    >
+                      <Play className="w-4 h-4 mr-2" /> See How It Works
+                    </button>
+                 </div>
+                                   <div className="flex items-center justify-center space-x-6">
                     <div className="flex items-center">
                       <div className="bg-green-100 rounded-full p-1">
-                        <i className="fa-solid fa-check text-green-600"></i>
+                        <Check className="w-4 h-4 text-green-800" />
                       </div>
                       <span className="ml-2 text-neutral-700">No learning curve</span>
                     </div>
                     <div className="flex items-center">
                       <div className="bg-green-100 rounded-full p-1">
-                        <i className="fa-solid fa-check text-green-600"></i>
+                        <Check className="w-4 h-4 text-green-800" />
                       </div>
                       <span className="ml-2 text-neutral-700">14-day free trial</span>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div className="md:w-1/2 relative">
-                <div className="bg-white rounded-xl shadow-xl p-4 max-w-lg mx-auto">
-                  <img className="w-full rounded-lg" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/ccf9cff45c-10c24c6cfdbc68ec0bba.png" alt="researcher looking relieved at computer with Horizon Europe proposal on screen, professional academic setting, EU blue accents" />
-                  <div className="absolute -bottom-4 -left-4 bg-accent-yellow text-eublue-dark font-bold py-2 px-4 rounded-lg transform rotate-[-2deg] shadow-md">
-                    <span className="text-sm">Complete proposals in weeks, not months!</span>
-                  </div>
-                </div>
-              </div>
+                 
+                 {/* Logo in bottom right corner */}
+                 <div className="absolute bottom-4 right-4">
+                   <img src={logo} alt="Engrant Logo" className="h-6 w-auto" />
+                 </div>
+               </div>
             </div>
           </div>
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-blue-400 to-eublue h-2"></div>
         </section>
 
 
