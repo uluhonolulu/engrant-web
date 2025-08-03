@@ -426,6 +426,72 @@ const HorizonResearchPage = () => {
           </div>
         </section>
 
+        {/* Security Section */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                                 <h2 className="text-3xl font-bold mb-4">Your Research Data is Protected</h2>
+                <p className="text-xl text-neutral-700">
+                  Your research data and intellectual property are protected with enterprise-grade security measures.
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="bg-blue-50 rounded-lg p-6">
+                  <div className="flex items-center mb-4">
+                    <Shield className="w-6 h-6 text-blue-600 mr-3" />
+                    <h3 className="text-lg font-semibold text-neutral-800">Data Protection</h3>
+                  </div>
+                  <ul className="space-y-3">
+                    <li className="flex items-start">
+                      <Check className="w-4 h-4 text-green-500 mt-1 mr-3" />
+                      <span className="text-neutral-700">Data stays in EU (Azure/AWS EU regions)</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="w-4 h-4 text-green-500 mt-1 mr-3" />
+                      <span className="text-neutral-700">Private AI models (not publicly available APIs)</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="w-4 h-4 text-green-500 mt-1 mr-3" />
+                      <span className="text-neutral-700">No training on your data</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="w-4 h-4 text-green-500 mt-1 mr-3" />
+                      <span className="text-neutral-700">Delete everything after project is finished</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="bg-green-50 rounded-lg p-6">
+                  <div className="flex items-center mb-4">
+                    <Shield className="w-6 h-6 text-green-600 mr-3" />
+                    <h3 className="text-lg font-semibold text-neutral-800">Compliance & Trust</h3>
+                  </div>
+                  <ul className="space-y-3">
+                    <li className="flex items-start">
+                      <Check className="w-4 h-4 text-green-500 mt-1 mr-3" />
+                      <span className="text-neutral-700">GDPR compliant data handling</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="w-4 h-4 text-green-500 mt-1 mr-3" />
+                      <span className="text-neutral-700">End-to-end encryption</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="w-4 h-4 text-green-500 mt-1 mr-3" />
+                      <span className="text-neutral-700">Regular security audits</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="w-4 h-4 text-green-500 mt-1 mr-3" />
+                      <span className="text-neutral-700">Transparent data policies</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Features Section */}
         <section className="py-20 bg-accent-light">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
