@@ -798,14 +798,19 @@ const HorizonResearchPage = () => {
                 <a href="https://app.engrant.eu/" target="_blank" rel="noopener noreferrer" className="bg-white text-eublue hover:bg-neutral-100 text-lg font-semibold px-8 py-4 rounded-lg transition duration-200 inline-block text-center">
                   Start Your Proposal Today
                 </a>
-                <a 
-                  href="https://calendly.com/uluhonolulu/30min"
-                  target="_blank"
-                  rel="noopener noreferrer" 
-                  className="bg-transparent border-2 border-white hover:bg-white/10 text-white text-lg font-semibold px-8 py-4 rounded-lg transition duration-200"
-                >
-                  Schedule a Demo
-                </a>
+                                 <a 
+                   href="https://calendly.com/uluhonolulu/30min"
+                   target="_blank"
+                   rel="noopener noreferrer" 
+                   className="bg-transparent border-2 border-white hover:bg-white/10 text-white text-lg font-semibold px-8 py-4 rounded-lg transition duration-200"
+                   onClick={() => {
+                     if (window.lintrk) {
+                       window.lintrk('track', { conversion_id: 23158817 });
+                     }
+                   }}
+                 >
+                   Schedule a Demo
+                 </a>
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8">
                 <div className="flex items-center text-white">
