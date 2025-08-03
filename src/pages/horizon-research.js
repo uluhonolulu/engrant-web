@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import { Helmet } from 'react-helmet';
-import { Check, Play, X, Clock, Shield, Headphones, Lightbulb, ArrowRight, Users, Robot, TrendingUp } from 'lucide-react';
+import { Check, Play, X, Clock, Shield, Headphones, Lightbulb, ArrowRight, Users, Robot, Bot, TrendingUp, AlertCircle, Zap } from 'lucide-react';
 import logo from '../images/Logo_transparent_bg.png';
 import comparisonImage from '../images/kevin-yudhistira-alloni-WBU233kGI6g-unsplash.jpg';
 
@@ -216,11 +216,13 @@ const HorizonResearchPage = () => {
             </button>
             <div className="text-center mb-6">
               <div className="text-eublue mb-4">
-                <i className={`fa-solid ${
-                  activeModal === 'aiWriting' ? 'fa-robot' : 
-                  activeModal === 'qualityControl' ? 'fa-chart-line' : 
-                  'fa-users'
-                } text-4xl`}></i>
+                {activeModal === 'aiWriting' ? (
+                  <Robot className="w-12 h-12 mx-auto" />
+                ) : activeModal === 'qualityControl' ? (
+                  <TrendingUp className="w-12 h-12 mx-auto" />
+                ) : (
+                  <Users className="w-12 h-12 mx-auto" />
+                )}
               </div>
               <h3 className="text-2xl font-bold text-neutral-800 mb-4">
                 {featureDetails[activeModal].title}
@@ -351,23 +353,23 @@ const HorizonResearchPage = () => {
                   <h3 className="text-xl font-semibold text-red-700 mb-3">Without Engrant</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start">
-                      <i className="fa-solid fa-xmark text-red-500 mt-1 mr-2"></i>
+                      <X className="w-4 h-4 text-red-500 mt-1 mr-2" />
                       <span>Weeks spent deciphering complex EU templates and requirements</span>
                     </li>
                     <li className="flex items-start">
-                      <i className="fa-solid fa-xmark text-red-500 mt-1 mr-2"></i>
+                      <X className="w-4 h-4 text-red-500 mt-1 mr-2" />
                       <span>Missing critical sections that evaluators look for</span>
                     </li>
                     <li className="flex items-start">
-                      <i className="fa-solid fa-xmark text-red-500 mt-1 mr-2"></i>
+                      <X className="w-4 h-4 text-red-500 mt-1 mr-2" />
                       <span>Using academic language instead of "EU funding language"</span>
                     </li>
                     <li className="flex items-start">
-                      <i className="fa-solid fa-xmark text-red-500 mt-1 mr-2"></i>
+                      <X className="w-4 h-4 text-red-500 mt-1 mr-2" />
                       <span>Endless email chains coordinating partner contributions</span>
                     </li>
                     <li className="flex items-start">
-                      <i className="fa-solid fa-xmark text-red-500 mt-1 mr-2"></i>
+                      <X className="w-4 h-4 text-red-500 mt-1 mr-2" />
                       <span>Rushed submission with formatting errors</span>
                     </li>
                   </ul>
@@ -377,23 +379,23 @@ const HorizonResearchPage = () => {
                   <h3 className="text-xl font-semibold text-green-700 mb-3">With Engrant</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start">
-                      <i className="fa-solid fa-check text-green-500 mt-1 mr-2"></i>
+                      <Check className="w-4 h-4 text-green-500 mt-1 mr-2" />
                       <span>AI instantly analyzes call requirements and creates templates</span>
                     </li>
                     <li className="flex items-start">
-                      <i className="fa-solid fa-check text-green-500 mt-1 mr-2"></i>
+                      <Check className="w-4 h-4 text-green-500 mt-1 mr-2" />
                       <span>Step-by-step guidance through every required section</span>
                     </li>
                     <li className="flex items-start">
-                      <i className="fa-solid fa-check text-green-500 mt-1 mr-2"></i>
+                      <Check className="w-4 h-4 text-green-500 mt-1 mr-2" />
                       <span>Content generation in evaluator-friendly "EU language"</span>
                     </li>
                     <li className="flex items-start">
-                      <i className="fa-solid fa-check text-green-500 mt-1 mr-2"></i>
+                      <Check className="w-4 h-4 text-green-500 mt-1 mr-2" />
                       <span>Streamlined partner coordination and input management</span>
                     </li>
                     <li className="flex items-start">
-                      <i className="fa-solid fa-check text-green-500 mt-1 mr-2"></i>
+                      <Check className="w-4 h-4 text-green-500 mt-1 mr-2" />
                       <span>Polished, complete submission with time to spare</span>
                     </li>
                   </ul>
@@ -411,7 +413,7 @@ const HorizonResearchPage = () => {
                         <div className="text-xl font-bold text-red-500">12 weeks</div>
                         <div className="text-xs text-neutral-500">Without AI</div>
                       </div>
-                      <i className="fa-solid fa-arrow-right text-neutral-400"></i>
+                      <ArrowRight className="w-4 h-4 text-neutral-400" />
                       <div className="ml-3">
                         <div className="text-xl font-bold text-green-500">6 weeks</div>
                         <div className="text-xs text-neutral-500">With Engrant</div>
@@ -437,7 +439,7 @@ const HorizonResearchPage = () => {
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition duration-300">
                 <div className="text-eublue mb-4">
-                  <i className="fa-solid fa-robot text-3xl"></i>
+                  <Bot className="w-8 h-8" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">AI Writing Assistant</h3>
                 <p className="text-neutral-600 mb-4">
@@ -447,13 +449,13 @@ const HorizonResearchPage = () => {
                   className="text-eublue font-medium inline-flex items-center cursor-pointer hover:text-eublue-dark transition duration-200"
                   onClick={() => setActiveModal('aiWriting')}
                 >
-                  Learn more <i className="fa-solid fa-arrow-right ml-1 text-sm"></i>
+                  Learn more <ArrowRight className="w-3 h-3 ml-1" />
                 </span>
               </div>
               
               <div className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition duration-300">
                 <div className="text-eublue mb-4">
-                  <i className="fa-solid fa-chart-line text-3xl"></i>
+                  <TrendingUp className="w-8 h-8" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Smart Quality Control</h3>
                 <p className="text-neutral-600 mb-4">
@@ -463,13 +465,13 @@ const HorizonResearchPage = () => {
                   className="text-eublue font-medium inline-flex items-center cursor-pointer hover:text-eublue-dark transition duration-200"
                   onClick={() => setActiveModal('qualityControl')}
                 >
-                  Learn more <i className="fa-solid fa-arrow-right ml-1 text-sm"></i>
+                  Learn more <ArrowRight className="w-3 h-3 ml-1" />
                 </span>
               </div>
               
               <div className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition duration-300">
                 <div className="text-eublue mb-4">
-                  <i className="fa-solid fa-users text-3xl"></i>
+                  <Users className="w-8 h-8" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Partner Coordination Hub</h3>
                 <p className="text-neutral-600 mb-4">
@@ -479,7 +481,7 @@ const HorizonResearchPage = () => {
                   className="text-eublue font-medium inline-flex items-center cursor-pointer hover:text-eublue-dark transition duration-200"
                   onClick={() => setActiveModal('partnerCoordination')}
                 >
-                  Learn more <i className="fa-solid fa-arrow-right ml-1 text-sm"></i>
+                  Learn more <ArrowRight className="w-3 h-3 ml-1" />
                 </span>
               </div>
             </div>
@@ -525,7 +527,7 @@ const HorizonResearchPage = () => {
                   </p>
                   <div className="bg-neutral-50 rounded-lg p-4 border border-neutral-200">
                     <div className="flex items-center text-sm text-neutral-600">
-                      <i className="fa-solid fa-clock mr-2"></i>
+                      <Clock className="w-4 h-4 mr-2" />
                       <span>Time saved: 1-2 weeks of partner coordination emails</span>
                     </div>
                   </div>
@@ -545,7 +547,7 @@ const HorizonResearchPage = () => {
                   </p>
                   <div className="bg-neutral-50 rounded-lg p-4 border border-neutral-200">
                     <div className="flex items-center text-sm text-neutral-600">
-                      <i className="fa-solid fa-clock mr-2"></i>
+                      <Clock className="w-4 h-4 mr-2" />
                       <span>Time saved: 1-2 weeks of initial drafting</span>
                     </div>
                   </div>
@@ -565,7 +567,7 @@ const HorizonResearchPage = () => {
                   </p>
                   <div className="bg-neutral-50 rounded-lg p-4 border border-neutral-200">
                     <div className="flex items-center text-sm text-neutral-600">
-                      <i className="fa-solid fa-clock mr-2"></i>
+                      <Clock className="w-4 h-4 mr-2" />
                       <span>Time saved: 2-3 days of formatting and coordination setup</span>
                     </div>
                   </div>
@@ -626,7 +628,7 @@ const HorizonResearchPage = () => {
               
               <div className="mt-8 bg-green-50 border border-green-200 rounded-lg p-4">
                 <div className="flex items-start">
-                  <i className="fa-solid fa-lightbulb text-yellow-500 mt-1 mr-3 text-xl"></i>
+                  <Lightbulb className="w-5 h-5 text-yellow-500 mt-1 mr-3" />
                   <p className="text-neutral-700">
                     <span className="font-medium">Quick Start Tip:</span> Begin with Engrant at least 6 weeks before your deadline for optimal results. Our users typically complete proposals in 4-6 weeks.
                   </p>
@@ -669,31 +671,31 @@ const HorizonResearchPage = () => {
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center">
                     <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                      <i className="fa-solid fa-check text-green-600 text-xs"></i>
+                      <Check className="w-3 h-3 text-green-600" />
                     </div>
                     <span className="text-neutral-700">AI-powered writing assistance</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                      <i className="fa-solid fa-check text-green-600 text-xs"></i>
+                      <Check className="w-3 h-3 text-green-600" />
                     </div>
                     <span className="text-neutral-700">Step-by-step guidance</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                      <i className="fa-solid fa-check text-green-600 text-xs"></i>
+                      <Check className="w-3 h-3 text-green-600" />
                     </div>
                     <span className="text-neutral-700">Partner coordination tools</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                      <i className="fa-solid fa-check text-green-600 text-xs"></i>
+                      <Check className="w-3 h-3 text-green-600" />
                     </div>
                     <span className="text-neutral-700">Real-time quality evaluation</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                      <i className="fa-solid fa-check text-green-600 text-xs"></i>
+                      <Check className="w-3 h-3 text-green-600" />
                     </div>
                     <span className="text-neutral-700">14-day free trial</span>
                   </div>
@@ -741,15 +743,15 @@ const HorizonResearchPage = () => {
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8">
                 <div className="flex items-center text-white">
-                  <i className="fa-regular fa-clock text-yellow-400 mr-2"></i>
+                  <Clock className="w-4 h-4 text-yellow-400 mr-2" />
                   <span>14-day free trial</span>
                 </div>
                 <div className="flex items-center text-white">
-                  <i className="fa-solid fa-shield-check text-yellow-400 mr-2"></i>
+                  <Shield className="w-4 h-4 text-yellow-400 mr-2" />
                   <span>No credit card required</span>
                 </div>
                 <div className="flex items-center text-white">
-                  <i className="fa-solid fa-headset text-yellow-400 mr-2"></i>
+                  <Headphones className="w-4 h-4 text-yellow-400 mr-2" />
                   <span>Priority support</span>
                 </div>
               </div>
