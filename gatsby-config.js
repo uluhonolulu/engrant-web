@@ -8,7 +8,7 @@ debugger;
 module.exports = {
   siteMetadata: {
     title: `Engrant`,
-    siteUrl: `https://www.engrant.com`,
+    siteUrl: `https://engrant.eu`,
   },
   plugins: [
     `gatsby-plugin-postcss`,
@@ -34,9 +34,9 @@ module.exports = {
       options: {
         partnerId: '8526737',
 
-		// Include LinkedIn Insight in development.
-		// Defaults to false meaning LinkedIn Insight will only be loaded in production.
-		includeInDevelopment: true
+        // Include LinkedIn Insight in development.
+        // Defaults to false meaning LinkedIn Insight will only be loaded in production.
+        includeInDevelopment: true
       },
     },
     {

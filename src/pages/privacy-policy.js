@@ -70,7 +70,7 @@ const PrivacyPolicyPage = () => {
             If you have any questions about this Privacy Policy or wish to exercise your rights under GDPR, please contact us at:
           </p>
           <p className="mt-4">
-            Email: founder@engrant.com<br />
+            Email: founder@engrant.eu<br />
             Address: Belmonto 17C-1, Vilnius, Lithuania
           </p>
         </div>
