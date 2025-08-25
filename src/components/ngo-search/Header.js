@@ -23,8 +23,8 @@ const Header = () => {
             <a href="#pricing" className="text-neutral-600 hover:text-neutral-800 transition-colors">
               Pricing
             </a>
-            <a href="#signin" className="text-neutral-600 hover:text-neutral-800 transition-colors">
-              Sign In
+            <a href="#faq" className="text-neutral-600 hover:text-neutral-800 transition-colors">
+              FAQ
             </a>
           </nav>
 
@@ -35,7 +35,7 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium inline-block">
-              Start Free Trial
+              Get Funded
             </a>
           </div>
         </div>

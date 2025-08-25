@@ -13,8 +13,8 @@ const Pricing = () => {
         <div id="pricing-cards" className="grid md:grid-cols-3 gap-8">
           {/* Free Plan */}
           <div className="bg-white rounded-xl shadow-lg p-8">
-            <h3 className="text-2xl font-bold text-neutral-900 mb-2">Try It First</h3>
-            <div className="text-4xl font-bold text-primary-700 mb-2">Free</div>
+            <h3 className="text-xl font-bold text-neutral-900 mb-2">Try It First</h3>
+            <div className="text-3xl font-bold text-primary-700 mb-2">Free</div>
             <p className="text-neutral-600 mb-6">3 searches included</p>
             
             <div className="space-y-3 mb-8">
@@ -40,9 +40,13 @@ const Pricing = () => {
               </div>
             </div>
             
-            <button className="w-full bg-neutral-100 hover:bg-neutral-200 text-neutral-800 py-3 px-6 rounded-lg font-semibold transition-colors">
-              Start Free Trial
-            </button>
+            <a 
+              href="https://app.engrant.eu/nonprofits?utm_source=landing&utm_medium=pricing&utm_campaign=free_trial"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full bg-neutral-100 hover:bg-neutral-200 text-neutral-800 py-3 px-6 rounded-lg font-semibold transition-colors inline-block text-center">
+              Try 3 Free Searches
+            </a>
           </div>
           
           {/* Pay-What-You-Can Plan */}
@@ -51,9 +55,9 @@ const Pricing = () => {
               <span className="bg-primary-700 text-white px-4 py-1 rounded-full text-sm font-medium">MOST FLEXIBLE</span>
             </div>
             
-            <h3 className="text-2xl font-bold text-neutral-900 mb-2">For Nonprofits</h3>
-            <div className="text-4xl font-bold text-primary-700 mb-2">€20-50<span className="text-lg text-neutral-600">/month</span></div>
-            <p className="text-neutral-600 mb-6">You choose what works</p>
+            <h3 className="text-xl font-bold text-neutral-900 mb-2">For Small Nonprofits</h3>
+            <div className="text-3xl font-bold text-primary-700 mb-2">Name Your Price</div>
+            <p className="text-neutral-600 mb-6">€20-50 suggested</p>
             
             <div className="space-y-3 mb-8">
               <div className="flex items-center">
@@ -78,15 +82,19 @@ const Pricing = () => {
               </div>
             </div>
             
-            <button className="w-full bg-primary-600 hover:bg-primary-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors">
-              Get Started
-            </button>
+            <a 
+              href="https://app.engrant.eu/nonprofits?utm_source=landing&utm_medium=pricing&utm_campaign=nonprofit_plan"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full bg-primary-600 hover:bg-primary-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors inline-block text-center">
+              Start Finding Grants
+            </a>
           </div>
           
           {/* Professional Plan */}
           <div className="bg-white rounded-xl shadow-lg p-8">
-            <h3 className="text-2xl font-bold text-neutral-900 mb-2">Professional</h3>
-            <div className="text-4xl font-bold text-primary-700 mb-2">€50<span className="text-lg text-neutral-600">/month</span></div>
+            <h3 className="text-xl font-bold text-neutral-900 mb-2">Professional</h3>
+            <div className="text-3xl font-bold text-primary-700 mb-2">€50<span className="text-lg text-neutral-600">/month</span></div>
             <p className="text-neutral-600 mb-6">For serious grant seekers</p>
             
             <div className="space-y-3 mb-8">
@@ -112,9 +120,13 @@ const Pricing = () => {
               </div>
             </div>
             
-            <button className="w-full bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors">
-              Go Professional
-            </button>
+            <a 
+              href="https://app.engrant.eu/nonprofits?utm_source=landing&utm_medium=pricing&utm_campaign=professional_plan"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors inline-block text-center">
+              Get AI Proposal Drafts
+            </a>
           </div>
         </div>
         

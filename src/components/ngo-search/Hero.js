@@ -49,7 +49,7 @@ const Hero = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 shadow-lg inline-block">
-                Get Your First Search Results
+                Find Your Perfect Grant
               </a>
               <p className="text-neutral-600 mt-3 mb-0">No registration required • 3 free searches</p>
             </div>
