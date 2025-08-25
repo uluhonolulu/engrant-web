@@ -768,7 +768,7 @@ const HorizonResearchPage = () => {
                 </div>
                 
                 <a 
-                  href="https://app.engrant.eu/" 
+                  href="https://app.engrant.eu/nonprofits" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="block w-full bg-eublue hover:bg-eublue-dark text-white text-lg font-semibold py-4 px-6 rounded-lg transition duration-200 text-center"

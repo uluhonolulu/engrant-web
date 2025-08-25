@@ -12,9 +12,13 @@ const FinalCTA = () => {
           Join smart nonprofits who find better grants in minutes, not weeks
         </p>
         
-        <button className="bg-white text-primary-700 hover:bg-neutral-100 px-10 py-4 rounded-lg text-xl font-bold transition-colors duration-200 shadow-lg">
+        <a 
+          href="https://app.engrant.eu/nonprofits"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-white text-primary-700 hover:bg-neutral-100 px-10 py-4 rounded-lg text-xl font-bold transition-colors duration-200 shadow-lg inline-block">
           Get Your First Matches Free
-        </button>
+        </a>
         
         <p className="text-primary-100 mt-6">
           No registration required • 3 free searches • Takes just minutes

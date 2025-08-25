@@ -77,7 +77,7 @@ const Pricing = () => {
               </div>
             </div>
             
-            <button className="w-full bg-primary-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors">
+            <button className="w-full bg-primary-600 hover:bg-primary-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors">
               Get Started
             </button>
           </div>

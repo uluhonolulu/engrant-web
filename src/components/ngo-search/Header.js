@@ -30,9 +30,13 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="flex items-center space-x-4">
-            <button className="bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium">
+            <a 
+              href="https://app.engrant.eu/nonprofits"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium inline-block">
               Start Free Trial
-            </button>
+            </a>
           </div>
         </div>
       </div>
