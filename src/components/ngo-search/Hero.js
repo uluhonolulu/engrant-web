@@ -1,4 +1,5 @@
 import React from 'react';
+import { Search, Clock, Target, TrendingUp, Brain } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -7,7 +8,7 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div id="hero-content">
             <div className="inline-flex items-center px-4 py-2 bg-primary-100 text-primary-800 rounded-full text-sm font-medium mb-6">
-              <i className="fa-solid fa-search mr-2"></i>
+              <Search className="mr-2" />
               No registration required to start searching
             </div>
             
@@ -21,22 +22,22 @@ const Hero = () => {
             
             <div id="value-bullets" className="space-y-4 mb-8">
               <div className="flex items-center text-lg">
-                <i className="fa-solid fa-clock text-primary mr-3"></i>
+                <Clock className="text-primary mr-3" />
                 <span className="font-semibold text-neutral-900 mr-2">2-4 weeks → 15 minutes</span>
                 <span className="text-neutral-700">- From weeks of searching to minutes</span>
               </div>
               <div className="flex items-center text-lg">
-                <i className="fa-solid fa-bullseye text-green-600 mr-3"></i>
+                <Target className="text-green-600 mr-3" />
                 <span className="font-semibold text-neutral-900 mr-2">Find the hidden 70%</span>
                 <span className="text-neutral-700">- Discover grants others miss</span>
               </div>
               <div className="flex items-center text-lg">
-                <i className="fa-solid fa-chart-line text-primary mr-3"></i>
+                <TrendingUp className="text-primary mr-3" />
                 <span className="font-semibold text-neutral-900 mr-2">2-4x higher success rates</span>
                 <span className="text-neutral-700">- Match like the consultants do</span>
               </div>
               <div className="flex items-center text-lg">
-                <i className="fa-solid fa-brain text-green-600 mr-3"></i>
+                <Brain className="text-green-600 mr-3" />
                 <span className="font-semibold text-neutral-900 mr-2">AI that learns your mission</span>
                 <span className="text-neutral-700">- Gets smarter with every search</span>
               </div>

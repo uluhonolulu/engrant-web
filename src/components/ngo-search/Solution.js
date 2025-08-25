@@ -1,4 +1,5 @@
 import React from 'react';
+import { Search, Database, Target, Brain } from 'lucide-react';
 
 const Solution = () => {
   return (
@@ -16,28 +17,28 @@ const Solution = () => {
             
             <div className="space-y-4">
               <div className="flex items-start">
-                <i className="fa-solid fa-search text-primary-600 mt-1 mr-4"></i>
+                <Search className="text-primary-600 mt-1 mr-4" />
                 <div>
                   <div className="font-semibold text-neutral-900">Deep AI Research</div>
                   <div className="text-neutral-600">Not just keyword matching</div>
                 </div>
               </div>
               <div className="flex items-start">
-                <i className="fa-solid fa-database text-green-600 mt-1 mr-4"></i>
+                <Database className="text-green-600 mt-1 mr-4" />
                 <div>
                   <div className="font-semibold text-neutral-900">27,000+ Opportunities</div>
                   <div className="text-neutral-600">Complete EU funding landscape</div>
                 </div>
               </div>
               <div className="flex items-start">
-                <i className="fa-solid fa-bullseye text-purple-600 mt-1 mr-4"></i>
+                <Target className="text-purple-600 mt-1 mr-4" />
                 <div>
                   <div className="font-semibold text-neutral-900">Top 10 Curated Matches</div>
                   <div className="text-neutral-600">Quality over quantity</div>
                 </div>
               </div>
               <div className="flex items-start">
-                <i className="fa-solid fa-brain text-indigo-600 mt-1 mr-4"></i>
+                <Brain className="text-indigo-600 mt-1 mr-4" />
                 <div>
                   <div className="font-semibold text-neutral-900">Learning Algorithm</div>
                   <div className="text-neutral-600">Gets better with your feedback</div>

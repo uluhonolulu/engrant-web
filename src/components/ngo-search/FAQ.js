@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ChevronDown } from 'lucide-react';
 
 const FAQ = () => {
   const [openItems, setOpenItems] = useState(new Set());
@@ -57,9 +58,9 @@ const FAQ = () => {
                 <span className="font-semibold text-neutral-900">
                   {item.question}
                 </span>
-                <i className={`fa-solid fa-chevron-down text-neutral-500 transition-transform ${
+                <ChevronDown className={`text-neutral-500 transition-transform ${
                   openItems.has(index) ? 'rotate-180' : ''
-                }`}></i>
+                }`} />
               </button>
               <div className={`px-6 pb-4 text-neutral-700 transition-all duration-300 ${
                 openItems.has(index) ? 'block' : 'hidden'

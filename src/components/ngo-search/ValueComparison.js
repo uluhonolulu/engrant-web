@@ -1,4 +1,5 @@
 import React from 'react';
+import { X, Check } from 'lucide-react';
 
 const ValueComparison = () => {
   return (
@@ -16,27 +17,27 @@ const ValueComparison = () => {
               </h3>
               <div className="space-y-4">
                 <div className="flex items-center">
-                  <i className="fa-solid fa-times text-red-500 mr-3"></i>
+                  <X className="text-red-500 mr-3" />
                   <span className="text-neutral-700">2-4 weeks of manual searching</span>
                 </div>
                 <div className="flex items-center">
-                  <i className="fa-solid fa-times text-red-500 mr-3"></i>
+                  <X className="text-red-500 mr-3" />
                   <span className="text-neutral-700">Miss 70% of opportunities</span>
                 </div>
                 <div className="flex items-center">
-                  <i className="fa-solid fa-times text-red-500 mr-3"></i>
+                  <X className="text-red-500 mr-3" />
                   <span className="text-neutral-700">8-20% success rates</span>
                 </div>
                 <div className="flex items-center">
-                  <i className="fa-solid fa-times text-red-500 mr-3"></i>
+                  <X className="text-red-500 mr-3" />
                   <span className="text-neutral-700">€50-250/hour for consultants</span>
                 </div>
                 <div className="flex items-center">
-                  <i className="fa-solid fa-times text-red-500 mr-3"></i>
+                  <X className="text-red-500 mr-3" />
                   <span className="text-neutral-700">Static database searches</span>
                 </div>
                 <div className="flex items-center">
-                  <i className="fa-solid fa-times text-red-500 mr-3"></i>
+                  <X className="text-red-500 mr-3" />
                   <span className="text-neutral-700">Information overload</span>
                 </div>
               </div>
@@ -48,27 +49,27 @@ const ValueComparison = () => {
               </h3>
               <div className="space-y-4">
                 <div className="flex items-center">
-                  <i className="fa-solid fa-check text-green-500 mr-3"></i>
+                  <Check className="text-green-500 mr-3" />
                   <span className="text-neutral-700">15 minutes to curated matches</span>
                 </div>
                 <div className="flex items-center">
-                  <i className="fa-solid fa-check text-green-500 mr-3"></i>
+                  <Check className="text-green-500 mr-3" />
                   <span className="text-neutral-700">Find hidden grants others miss</span>
                 </div>
                 <div className="flex items-center">
-                  <i className="fa-solid fa-check text-green-500 mr-3"></i>
+                  <Check className="text-green-500 mr-3" />
                   <span className="text-neutral-700">Match like consultants (2-4x better)</span>
                 </div>
                 <div className="flex items-center">
-                  <i className="fa-solid fa-check text-green-500 mr-3"></i>
+                  <Check className="text-green-500 mr-3" />
                   <span className="text-neutral-700">AI expertise at fraction of cost</span>
                 </div>
                 <div className="flex items-center">
-                  <i className="fa-solid fa-check text-green-500 mr-3"></i>
+                  <Check className="text-green-500 mr-3" />
                   <span className="text-neutral-700">AI that learns your mission</span>
                 </div>
                 <div className="flex items-center">
-                  <i className="fa-solid fa-check text-green-500 mr-3"></i>
+                  <Check className="text-green-500 mr-3" />
                   <span className="text-neutral-700">Top 10 curated matches</span>
                 </div>
               </div>

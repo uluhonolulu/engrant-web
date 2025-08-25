@@ -1,4 +1,5 @@
 import React from 'react';
+import { Check, X, Heart } from 'lucide-react';
 
 const Pricing = () => {
   return (
@@ -18,23 +19,23 @@ const Pricing = () => {
             
             <div className="space-y-3 mb-8">
               <div className="flex items-center">
-                <i className="fa-solid fa-check text-green-500 mr-3"></i>
+                <Check className="text-green-500 mr-3" />
                 <span className="text-neutral-700">Core search functionality</span>
               </div>
               <div className="flex items-center">
-                <i className="fa-solid fa-check text-green-500 mr-3"></i>
+                <Check className="text-green-500 mr-3" />
                 <span className="text-neutral-700">AI training & feedback</span>
               </div>
               <div className="flex items-center">
-                <i className="fa-solid fa-check text-green-500 mr-3"></i>
+                <Check className="text-green-500 mr-3" />
                 <span className="text-neutral-700">Basic match explanations</span>
               </div>
               <div className="flex items-center">
-                <i className="fa-solid fa-times text-neutral-400 mr-3"></i>
+                <X className="text-neutral-400 mr-3" />
                 <span className="text-neutral-400">Email alerts</span>
               </div>
               <div className="flex items-center">
-                <i className="fa-solid fa-times text-neutral-400 mr-3"></i>
+                <X className="text-neutral-400 mr-3" />
                 <span className="text-neutral-400">Proposal drafts</span>
               </div>
             </div>
@@ -56,23 +57,23 @@ const Pricing = () => {
             
             <div className="space-y-3 mb-8">
               <div className="flex items-center">
-                <i className="fa-solid fa-check text-green-500 mr-3"></i>
+                <Check className="text-green-500 mr-3" />
                 <span className="text-neutral-700">Unlimited searches</span>
               </div>
               <div className="flex items-center">
-                <i className="fa-solid fa-check text-green-500 mr-3"></i>
+                <Check className="text-green-500 mr-3" />
                 <span className="text-neutral-700">AI training & feedback</span>
               </div>
               <div className="flex items-center">
-                <i className="fa-solid fa-check text-green-500 mr-3"></i>
+                <Check className="text-green-500 mr-3" />
                 <span className="text-neutral-700">Weekly email alerts</span>
               </div>
               <div className="flex items-center">
-                <i className="fa-solid fa-check text-green-500 mr-3"></i>
+                <Check className="text-green-500 mr-3" />
                 <span className="text-neutral-700">Full match explanations</span>
               </div>
               <div className="flex items-center">
-                <i className="fa-solid fa-times text-neutral-400 mr-3"></i>
+                <X className="text-neutral-400 mr-3" />
                 <span className="text-neutral-400">Proposal drafts</span>
               </div>
             </div>
@@ -90,23 +91,23 @@ const Pricing = () => {
             
             <div className="space-y-3 mb-8">
               <div className="flex items-center">
-                <i className="fa-solid fa-check text-green-500 mr-3"></i>
+                <Check className="text-green-500 mr-3" />
                 <span className="text-neutral-700">Everything in Pay-What-You-Can</span>
               </div>
               <div className="flex items-center">
-                <i className="fa-solid fa-check text-green-500 mr-3"></i>
+                <Check className="text-green-500 mr-3" />
                 <span className="text-neutral-700">Daily priority alerts</span>
               </div>
               <div className="flex items-center">
-                <i className="fa-solid fa-check text-green-500 mr-3"></i>
+                <Check className="text-green-500 mr-3" />
                 <span className="text-neutral-700">AI proposal draft generation</span>
               </div>
               <div className="flex items-center">
-                <i className="fa-solid fa-check text-green-500 mr-3"></i>
+                <Check className="text-green-500 mr-3" />
                 <span className="text-neutral-700">Priority support</span>
               </div>
               <div className="flex items-center">
-                <i className="fa-solid fa-check text-green-500 mr-3"></i>
+                <Check className="text-green-500 mr-3" />
                 <span className="text-neutral-700">Advanced analytics</span>
               </div>
             </div>
@@ -119,7 +120,7 @@ const Pricing = () => {
         
         <div className="text-center mt-8">
           <p className="text-neutral-600">
-            <i className="fa-solid fa-heart text-green-500 mr-2"></i>
+            <Heart className="text-green-500 mr-2 inline" />
             Nonprofit-friendly pricing • Cancel anytime • Success fee option available (1% of grants won)
           </p>
         </div>
