@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <section id="hero" className="bg-gradient-to-br from-primary-50 via-white to-green-50 h-[700px] flex items-center">
+    <section id="hero" className="bg-gradient-to-br from-primary-50 via-white to-green-50 min-h-[700px] flex items-center pb-20 pt-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div id="hero-content">
@@ -42,7 +42,7 @@ const Hero = () => {
               </div>
             </div>
             
-            <div id="hero-cta">
+            <div id="hero-cta" className="mb-8">
               <a 
                 href="https://app.engrant.eu/nonprofits"
                 target="_blank"
@@ -50,7 +50,7 @@ const Hero = () => {
                 className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 shadow-lg inline-block">
                 Get Your First Search Results
               </a>
-              <p className="text-neutral-600 mt-3">No registration required • 3 free searches</p>
+              <p className="text-neutral-600 mt-3 mb-0">No registration required • 3 free searches</p>
             </div>
           </div>
           
