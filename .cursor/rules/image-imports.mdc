@@ -1,0 +1,12 @@
+---
+description: Image import guidelines for React/Gatsby projects
+globs: ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"]
+alwaysApply: true
+---
+
+Always import images using ES6 imports (import imageName from 'path/to/image.png')
+Never use direct src paths like "/src/images/image.png" as they won't work in bundled builds
+
+Examples:
+✅ Correct: import logo from '../../images/logo.png'; then use src={logo}
+❌ Wrong: src="/src/images/image.png"
