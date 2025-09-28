@@ -1,5 +1,6 @@
 import React from 'react';
 import { Search, Database, Target, Brain } from 'lucide-react';
+import gotitImage from '../../images/gotit.png';
 
 const Solution = () => {
   return (
@@ -50,7 +51,7 @@ const Solution = () => {
           <div className="mt-12 lg:mt-0">
             <img 
               className="w-full h-auto rounded-2xl shadow-xl" 
-              src="https://storage.googleapis.com/uxpilot-auth.appspot.com/52e74dd4b1-7029acae420f973020ba.png" 
+              src={gotitImage} 
               alt="AI technology analyzing EU grant documents with interconnected nodes showing funding opportunities" 
             />
           </div>
