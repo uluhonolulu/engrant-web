@@ -1,6 +1,6 @@
 import React from 'react';
 import { Search, Clock, Target, TrendingUp, Brain } from 'lucide-react';
-import ngoSearchHero from '../../images/ngo-search-hero.png';
+import ngoSearchHero from '../../images/ngo-search-hero.jpg';
 
 // RULE: Always import images using ES6 imports (import imageName from 'path/to/image.png')
 // Never use direct src paths like "/src/images/image.png" as they won't work in bundled builds
@@ -64,7 +64,7 @@ const Hero = () => {
               <img 
                 className="w-full h-96 rounded-xl shadow-2xl object-cover" 
                 src={ngoSearchHero} 
-                alt="EU grants search interface showing AI-powered grant discovery with modern dashboard design" 
+                alt="Diverse team working together on community projects - Photo by Rineshkumar Ghirao on Unsplash" 
               />
               <div className="absolute -bottom-4 -right-4 bg-white p-4 rounded-lg shadow-xl">
                 <div className="text-2xl font-bold text-primary">27,000+</div>

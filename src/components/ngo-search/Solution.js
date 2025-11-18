@@ -1,6 +1,6 @@
 import React from 'react';
 import { Search, Database, Target, Brain } from 'lucide-react';
-import gotitImage from '../../images/gotit.png';
+import gotitImage from '../../images/gotit.jpg';
 
 const Solution = () => {
   return (
@@ -52,7 +52,7 @@ const Solution = () => {
             <img 
               className="w-full h-auto rounded-2xl shadow-xl" 
               src={gotitImage} 
-              alt="AI technology analyzing EU grant documents with interconnected nodes showing funding opportunities" 
+              alt="Person working on research and finding opportunities - Photo by dd dd on Unsplash" 
             />
           </div>
         </div>
