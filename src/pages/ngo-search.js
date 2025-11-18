@@ -50,4 +50,12 @@ const NGOSearchPage = () => {
 
 export default NGOSearchPage;
 
-export const Head = () => <title>NGO Search - Engrant</title>;
+export const Head = () => (
+  <>
+    <title>AI Grant Search for Nonprofits | Find EU Funding in Minutes - Engrant</title>
+    <meta 
+      name="description" 
+      content="Discover hidden EU grants for nonprofits with AI-powered search. Find matches in 15 minutes from 27,000+ opportunities. No registration required. Start your free search today." 
+    />
+  </>
+);
