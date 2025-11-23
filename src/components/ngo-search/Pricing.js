@@ -41,7 +41,7 @@ const Pricing = () => {
             </div>
             
             <a 
-              href="https://app.engrant.eu/nonprofits?utm_source=landing&utm_medium=pricing&utm_campaign=free_trial"
+              href="https://app.engrant.eu/?utm_source=landing&utm_medium=pricing&utm_campaign=free_trial"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full bg-neutral-100 hover:bg-neutral-200 text-neutral-800 py-3 px-6 rounded-lg font-semibold transition-colors inline-block text-center">
@@ -83,7 +83,7 @@ const Pricing = () => {
             </div>
             
             <a 
-              href="https://app.engrant.eu/nonprofits?utm_source=landing&utm_medium=pricing&utm_campaign=nonprofit_plan"
+              href="https://app.engrant.eu/?utm_source=landing&utm_medium=pricing&utm_campaign=nonprofit_plan"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full bg-primary-600 hover:bg-primary-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors inline-block text-center">
@@ -121,7 +121,7 @@ const Pricing = () => {
             </div>
             
             <a 
-              href="https://app.engrant.eu/nonprofits?utm_source=landing&utm_medium=pricing&utm_campaign=professional_plan"
+              href="https://app.engrant.eu/?utm_source=landing&utm_medium=pricing&utm_campaign=professional_plan"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors inline-block text-center">

@@ -13,7 +13,7 @@ const FinalCTA = () => {
         </p>
         
         <a 
-          href="https://app.engrant.eu/nonprofits"
+          href="https://app.engrant.eu/"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-white text-primary-700 hover:bg-neutral-100 px-10 py-4 rounded-lg text-xl font-bold transition-colors duration-200 shadow-lg inline-block">

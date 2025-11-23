@@ -49,7 +49,7 @@ const Hero = () => {
             
             <div id="hero-cta" className="mb-8">
               <a 
-                href="https://app.engrant.eu/nonprofits"
+                href="https://app.engrant.eu/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 shadow-lg inline-block">
