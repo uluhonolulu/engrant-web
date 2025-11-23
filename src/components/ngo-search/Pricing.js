@@ -133,7 +133,7 @@ const Pricing = () => {
         <div className="text-center mt-8">
           <p className="text-neutral-600">
             <Heart className="text-green-500 mr-2 inline" />
-            Nonprofit-friendly pricing • Cancel anytime • Success fee option available (1% of grants won)
+            Nonprofit-friendly pricing • Cancel anytime • 2-week trial with no credit card upfront
           </p>
         </div>
       </div>
