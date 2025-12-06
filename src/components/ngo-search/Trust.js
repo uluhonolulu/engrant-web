@@ -14,8 +14,8 @@ const Trust = () => {
             <div className="text-neutral-700">Funders in our database</div>
           </div>
           <div className="bg-green-50 p-6 rounded-xl">
-            <div className="text-4xl font-bold text-green-600 mb-2">10</div>
-            <div className="text-neutral-700">Curated matches per search</div>
+            <div className="text-2xl font-bold text-green-600 mb-2">Curated matches</div>
+            <div className="text-neutral-700">Not 300+ irrelevant results</div>
           </div>
           <div className="bg-primary-50 p-6 rounded-xl">
             <div className="text-4xl font-bold text-primary-600 mb-2">15 min</div>

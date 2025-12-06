@@ -23,7 +23,7 @@ const Pricing = () => {
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3" />
-                <span className="text-neutral-700">10 curated matches per search</span>
+                <span className="text-neutral-700">Curated matches per search</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3" />

@@ -9,7 +9,7 @@ const FinalCTA = () => {
         </h2>
         
         <p className="text-xl mb-10 text-blue-100">
-          Get your 10 best-fit grants in 15 minutes. Spend your time writing proposals, not scrolling databases.
+          Get your best-fit grants in 15 minutes. Spend your time writing proposals, not scrolling databases.
         </p>
         
         <a 
@@ -17,7 +17,7 @@ const FinalCTA = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="bg-white text-primary-700 hover:bg-neutral-100 px-10 py-4 rounded-lg text-xl font-bold transition-colors duration-200 shadow-lg inline-block">
-          Get My 10 Grants
+          Get my matches
         </a>
         
         <p className="text-primary-100 mt-6">

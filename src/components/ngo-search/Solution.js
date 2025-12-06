@@ -9,7 +9,7 @@ const Solution = () => {
         <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
           <div>
             <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-6">
-              Your 10 best-fit grants. Every time.
+              Your best-fit grants. Every time.
             </h2>
             
             <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
@@ -34,7 +34,7 @@ const Solution = () => {
               <div className="flex items-start">
                 <Target className="text-purple-600 mt-1 mr-4" />
                 <div>
-                  <div className="font-semibold text-neutral-900">10 curated matches</div>
+                  <div className="font-semibold text-neutral-900">Curated matches</div>
                   <div className="text-neutral-600">Only grants you're actually eligible for</div>
                 </div>
               </div>

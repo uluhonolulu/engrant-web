@@ -33,7 +33,7 @@ const FAQ = () => {
     },
     {
       question: "How quickly can I get started?",
-      answer: "Sign up in under a minute. Describe your mission, and you'll have your 10 curated matches within 15 minutes."
+      answer: "Sign up in under a minute. Describe your mission, and you'll have your curated matches within 15 minutes."
     },
     {
       question: "What if I only need one grant?",

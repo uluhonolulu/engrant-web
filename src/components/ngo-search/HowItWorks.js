@@ -14,7 +14,7 @@ const HowItWorks = () => {
       icon: Target,
       bgColor: 'bg-green-100',
       iconColor: 'text-green-600',
-      title: 'Get your 10 matches in minutes',
+      title: 'Get your matches in minutes',
       description: 'Our AI researches your organization online, then searches 400,000+ funders to find grants that match your mission, geography, and capacity—not just keywords.'
     },
     {

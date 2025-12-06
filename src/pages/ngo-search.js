@@ -54,10 +54,10 @@ export default NGOSearchPage;
 
 export const Head = () => (
   <>
-    <title>10 Perfect Grants in 15 Minutes | Engrant</title>
+    <title>Only the Grants That Fit in 15 Minutes | Engrant</title>
     <meta 
       name="description" 
-      content="Stop scrolling through 300 irrelevant results. Engrant's AI finds your 10 best-fit grants in minutes and explains why each one fits your mission." 
+      content="Stop scrolling through 300 irrelevant results. Engrant's AI finds your best-fit grants in minutes and explains why each one fits your mission." 
     />
   </>
 );

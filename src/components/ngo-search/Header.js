@@ -35,7 +35,7 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium inline-block">
-              Get My 10 Grants
+              Get my matches
             </a>
           </div>
         </div>

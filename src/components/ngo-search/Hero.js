@@ -12,7 +12,7 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div id="hero-content">
             <h1 className="text-4xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight">
-              10 perfect grants. 15 minutes.
+              Only the grants that fit. In 15 minutes.
             </h1>
             
             <h2 className="text-xl lg:text-2xl text-neutral-700 mb-8 leading-relaxed">
@@ -27,7 +27,7 @@ const Hero = () => {
               </div>
               <div className="flex items-center text-lg">
                 <Target className="text-green-600 mr-3" />
-                <span className="font-semibold text-neutral-900 mr-2">Only 10, not 300</span>
+                <span className="font-semibold text-neutral-900 mr-2">A shortlist, not 300</span>
                 <span className="text-neutral-700">- Quality over quantity</span>
               </div>
               <div className="flex items-center text-lg">
@@ -48,7 +48,7 @@ const Hero = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 shadow-lg inline-block">
-                Get My 10 Grants
+                Get my matches
               </a>
               <p className="text-neutral-600 mt-3 mb-0">14-day free trial • No credit card required</p>
             </div>
