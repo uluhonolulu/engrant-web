@@ -6,6 +6,7 @@ import Solution from '../components/ngo-search/Solution';
 import HowItWorks from '../components/ngo-search/HowItWorks';
 import ValueComparison from '../components/ngo-search/ValueComparison';
 import Pricing from '../components/ngo-search/Pricing';
+import WhoThisIsFor from '../components/ngo-search/WhoThisIsFor';
 import Trust from '../components/ngo-search/Trust';
 import FAQ from '../components/ngo-search/FAQ';
 import FinalCTA from '../components/ngo-search/FinalCTA';
@@ -40,6 +41,7 @@ const NGOSearchPage = () => {
         <HowItWorks />
         <ValueComparison />
         <Pricing />
+        <WhoThisIsFor />
         <Trust />
         <FAQ />
         <FinalCTA />
@@ -52,10 +54,10 @@ export default NGOSearchPage;
 
 export const Head = () => (
   <>
-    <title>AI Grant Search for Nonprofits | Find EU Funding in Minutes - Engrant</title>
+    <title>10 Perfect Grants in 15 Minutes | Engrant</title>
     <meta 
       name="description" 
-      content="Discover hidden EU grants for nonprofits with AI-powered search. Find matches in 15 minutes from 27,000+ opportunities. No registration required. Start your free search today." 
+      content="Stop scrolling through 300 irrelevant results. Engrant's AI finds your 10 best-fit grants in minutes and explains why each one fits your mission." 
     />
   </>
 );

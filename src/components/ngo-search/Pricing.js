@@ -1,110 +1,37 @@
 import React from 'react';
-import { Check, X, Heart } from 'lucide-react';
+import { Check } from 'lucide-react';
 
 const Pricing = () => {
   return (
     <section id="pricing" className="py-20 bg-neutral-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-neutral-900 mb-4">Choose Your Plan</h2>
-          <p className="text-xl text-neutral-700">Start with 3 free searches. No credit card required.</p>
+          <h2 className="text-4xl font-bold text-neutral-900 mb-4">One simple plan. Built for nonprofits.</h2>
+          <p className="text-xl text-neutral-700">Less than one hour of consultant time. Cancel anytime.</p>
         </div>
         
-        <div id="pricing-cards" className="grid md:grid-cols-3 gap-8">
-          {/* Free Plan */}
+        <div id="pricing-cards" className="max-w-md mx-auto">
           <div className="bg-white rounded-xl shadow-lg p-8">
-            <h3 className="text-xl font-bold text-neutral-900 mb-2">Try It First</h3>
-            <div className="text-3xl font-bold text-primary-700 mb-2">Free</div>
-            <p className="text-neutral-600 mb-6">3 searches included</p>
+            <h3 className="text-xl font-bold text-neutral-900 mb-2">GRANT DISCOVERY PRO</h3>
+            <div className="text-3xl font-bold text-primary-700 mb-2">$47<span className="text-lg text-neutral-600">/month</span></div>
+            <p className="text-neutral-600 mb-6">14-day free trial included</p>
             
             <div className="space-y-3 mb-8">
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3" />
-                <span className="text-neutral-700">Core search functionality</span>
+                <span className="text-neutral-700">Unlimited grant searches</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3" />
-                <span className="text-neutral-700">AI training & feedback</span>
+                <span className="text-neutral-700">10 curated matches per search</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3" />
-                <span className="text-neutral-700">Basic match explanations</span>
-              </div>
-              <div className="flex items-center">
-                <X className="text-neutral-400 mr-3" />
-                <span className="text-neutral-400">Email alerts</span>
-              </div>
-              <div className="flex items-center">
-                <X className="text-neutral-400 mr-3" />
-                <span className="text-neutral-400">Proposal drafts</span>
-              </div>
-            </div>
-            
-            <a 
-              href="https://app.engrant.eu/?utm_source=landing&utm_medium=pricing&utm_campaign=free_trial"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full bg-neutral-100 hover:bg-neutral-200 text-neutral-800 py-3 px-6 rounded-lg font-semibold transition-colors inline-block text-center">
-              Try 3 Free Searches
-            </a>
-          </div>
-          
-          {/* Pay-What-You-Can Plan */}
-          <div className="bg-white rounded-xl shadow-lg p-8 relative border-2 border-primary-700">
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-              <span className="bg-primary-700 text-white px-4 py-1 rounded-full text-sm font-medium">MOST FLEXIBLE</span>
-            </div>
-            
-            <h3 className="text-xl font-bold text-neutral-900 mb-2">For Small Nonprofits</h3>
-            <div className="text-3xl font-bold text-primary-700 mb-2">Name Your Price</div>
-            <p className="text-neutral-600 mb-6">€20-50 suggested</p>
-            
-            <div className="space-y-3 mb-8">
-              <div className="flex items-center">
-                <Check className="text-green-500 mr-3" />
-                <span className="text-neutral-700">Unlimited searches</span>
+                <span className="text-neutral-700">AI that learns your constraints</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3" />
-                <span className="text-neutral-700">AI training & feedback</span>
-              </div>
-              <div className="flex items-center">
-                <Check className="text-green-500 mr-3" />
-                <span className="text-neutral-700">Weekly email alerts</span>
-              </div>
-              <div className="flex items-center">
-                <Check className="text-green-500 mr-3" />
-                <span className="text-neutral-700">Full match explanations</span>
-              </div>
-              <div className="flex items-center">
-                <X className="text-neutral-400 mr-3" />
-                <span className="text-neutral-400">Proposal drafts</span>
-              </div>
-            </div>
-            
-            <a 
-              href="https://app.engrant.eu/?utm_source=landing&utm_medium=pricing&utm_campaign=nonprofit_plan"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full bg-primary-600 hover:bg-primary-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors inline-block text-center">
-              Start Finding Grants
-            </a>
-          </div>
-          
-          {/* Professional Plan */}
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <h3 className="text-xl font-bold text-neutral-900 mb-2">Professional</h3>
-            <div className="text-3xl font-bold text-primary-700 mb-2">€50<span className="text-lg text-neutral-600">/month</span></div>
-            <p className="text-neutral-600 mb-6">For serious grant seekers</p>
-            
-            <div className="space-y-3 mb-8">
-              <div className="flex items-center">
-                <Check className="text-green-500 mr-3" />
-                <span className="text-neutral-700">Everything in Pay-What-You-Can</span>
-              </div>
-              <div className="flex items-center">
-                <Check className="text-green-500 mr-3" />
-                <span className="text-neutral-700">Daily priority alerts</span>
+                <span className="text-neutral-700">Requirements in plain English</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3" />
@@ -112,28 +39,27 @@ const Pricing = () => {
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3" />
-                <span className="text-neutral-700">Priority support</span>
+                <span className="text-neutral-700">Match explanations and eligibility breakdown</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3" />
-                <span className="text-neutral-700">Advanced analytics</span>
+                <span className="text-neutral-700">Priority email support</span>
               </div>
             </div>
             
             <a 
-              href="https://app.engrant.eu/?utm_source=landing&utm_medium=pricing&utm_campaign=professional_plan"
+              href="https://app.engrant.eu/?utm_source=landing&utm_medium=pricing&utm_campaign=free_trial"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors inline-block text-center">
-              Get AI Proposal Drafts
+              className="w-full bg-primary-600 hover:bg-primary-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors inline-block text-center">
+              Start Finding Grants
             </a>
           </div>
         </div>
         
         <div className="text-center mt-8">
           <p className="text-neutral-600">
-            <Heart className="text-green-500 mr-2 inline" />
-            Nonprofit-friendly pricing • Cancel anytime • 2-week trial with no credit card upfront
+            No credit card required to start • Proposal drafts included • Cancel anytime
           </p>
         </div>
       </div>

@@ -17,27 +17,35 @@ const FAQ = () => {
   const faqData = [
     {
       question: "How is this different from other grant databases?",
-      answer: "Unlike traditional databases that require manual searching, Engrant's AI actively matches your unique mission with opportunities, including the 70% of grants others miss. We find different grants, not just the same ones faster."
+      answer: "Traditional databases show you 300+ results and leave you to filter. Engrant shows you 10 curated matches that actually fit your mission, geography, and capacity. Each match includes eligibility requirements in plain English and an explanation of why it fits—so you can decide in seconds, not hours."
     },
     {
       question: "How does the AI understand my nonprofit?",
-      answer: "You describe your mission in plain language, and our AI researches your organization online. As you mark grants as relevant or not, it learns your specific needs—getting smarter with each search."
+      answer: "You describe your mission in plain language, and our AI researches your organization online. When you save or reject grants, you tell us why—\"wrong geographic focus,\" \"amount too large,\" \"requires consortium partner.\" The AI learns your real constraints, not just keywords."
     },
     {
       question: "What about data privacy?",
-      answer: "Every nonprofit is unique, so your data is used for your searches only. We never share your information with other organizations or use it to help competitors."
+      answer: "Your data is used for your searches only. We never share your information with other organizations or use it to help competitors. Every nonprofit is unique, and we treat your data that way."
     },
     {
       question: "Do I need technical skills?",
-      answer: "If you can write an email, you can use Engrant. There's nothing to learn—it's much easier than traditional search tools."
+      answer: "If you can write an email, you can use Engrant. Describe your mission in plain language—that's it."
     },
     {
       question: "How quickly can I get started?",
-      answer: "You can get your first matches in minutes without even registering. Just describe your mission and go."
+      answer: "Sign up in under a minute. Describe your mission, and you'll have your 10 curated matches within 15 minutes."
     },
     {
       question: "What if I only need one grant?",
-      answer: "Perfect! You only need to win one. Many nonprofits find that one ideal grant through Engrant that makes all the difference."
+      answer: "Perfect. You only need to win one. Many nonprofits find that one ideal grant through Engrant that makes all the difference."
+    },
+    {
+      question: "How much does it cost?",
+      answer: "$47/month with a 14-day free trial. No credit card required to start. That's less than one hour of consultant time—and you can cancel anytime. Proposal drafts included."
+    },
+    {
+      question: "Do you have grants for [my sector/region]?",
+      answer: "We cover foundation, corporate, and government grants from 400,000+ funders across North America, Europe, and beyond. When you describe your mission and location, our AI filters to opportunities you're actually eligible for."
     }
   ];
 
@@ -45,7 +53,7 @@ const FAQ = () => {
     <section id="faq" className="py-20 bg-neutral-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-neutral-900 text-center mb-16">
-          Frequently Asked Questions
+          Questions? Answers.
         </h2>
         
         <div className="space-y-4">

@@ -18,27 +18,27 @@ const ValueComparison = () => {
               <div className="space-y-4">
                 <div className="flex items-center">
                   <X className="text-red-500 mr-3" />
-                  <span className="text-neutral-700">2-4 weeks of manual searching</span>
+                  <span className="text-neutral-700">300+ results to filter through</span>
                 </div>
                 <div className="flex items-center">
                   <X className="text-red-500 mr-3" />
-                  <span className="text-neutral-700">Miss 70% of opportunities</span>
+                  <span className="text-neutral-700">15+ hours/week searching</span>
                 </div>
                 <div className="flex items-center">
                   <X className="text-red-500 mr-3" />
-                  <span className="text-neutral-700">8-20% success rates</span>
+                  <span className="text-neutral-700">1 in 3 applications to ineligible grants</span>
                 </div>
                 <div className="flex items-center">
                   <X className="text-red-500 mr-3" />
-                  <span className="text-neutral-700">€50-250/hour for consultants</span>
+                  <span className="text-neutral-700">Clunky interfaces, constant clicking</span>
                 </div>
                 <div className="flex items-center">
                   <X className="text-red-500 mr-3" />
-                  <span className="text-neutral-700">Static database searches</span>
+                  <span className="text-neutral-700">Confusing eligibility requirements</span>
                 </div>
                 <div className="flex items-center">
                   <X className="text-red-500 mr-3" />
-                  <span className="text-neutral-700">Information overload</span>
+                  <span className="text-neutral-700">$60-250/hour for consultants</span>
                 </div>
               </div>
             </div>
@@ -50,27 +50,27 @@ const ValueComparison = () => {
               <div className="space-y-4">
                 <div className="flex items-center">
                   <Check className="text-green-500 mr-3" />
-                  <span className="text-neutral-700">15 minutes to curated matches</span>
+                  <span className="text-neutral-700">10 curated matches</span>
                 </div>
                 <div className="flex items-center">
                   <Check className="text-green-500 mr-3" />
-                  <span className="text-neutral-700">Find hidden grants others miss</span>
+                  <span className="text-neutral-700">15 minutes to results</span>
                 </div>
                 <div className="flex items-center">
                   <Check className="text-green-500 mr-3" />
-                  <span className="text-neutral-700">Match like consultants (2-4x better)</span>
+                  <span className="text-neutral-700">Only grants you qualify for</span>
                 </div>
                 <div className="flex items-center">
                   <Check className="text-green-500 mr-3" />
-                  <span className="text-neutral-700">AI expertise at fraction of cost</span>
+                  <span className="text-neutral-700">Describe your mission, get matches</span>
                 </div>
                 <div className="flex items-center">
                   <Check className="text-green-500 mr-3" />
-                  <span className="text-neutral-700">AI that learns your mission</span>
+                  <span className="text-neutral-700">Requirements in plain English</span>
                 </div>
                 <div className="flex items-center">
                   <Check className="text-green-500 mr-3" />
-                  <span className="text-neutral-700">Top 10 curated matches</span>
+                  <span className="text-neutral-700">$47/month, cancel anytime</span>
                 </div>
               </div>
             </div>

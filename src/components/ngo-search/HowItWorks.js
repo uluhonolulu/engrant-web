@@ -8,28 +8,28 @@ const HowItWorks = () => {
       bgColor: 'bg-primary-100',
       iconColor: 'text-primary-600',
       title: 'Tell us about your mission',
-      description: 'Describe your nonprofit and current project in plain language - if you can write an email, you can use Engrant.'
+      description: 'Describe your nonprofit, who you serve, and what you need funding for. If you can write an email, you can use Engrant.'
     },
     {
       icon: Target,
       bgColor: 'bg-green-100',
       iconColor: 'text-green-600',
-      title: 'Get your top 10 matches in minutes',
-      description: 'Our AI searches 27,000+ EU funding opportunities and finds the hidden gems others miss - including past successful applications from similar nonprofits.'
+      title: 'Get your 10 matches in minutes',
+      description: 'Our AI researches your organization online, then searches 400,000+ funders to find grants that match your mission, geography, and capacity—not just keywords.'
     },
     {
       icon: Brain,
       bgColor: 'bg-purple-100',
       iconColor: 'text-purple-600',
-      title: 'Train your AI with feedback',
-      description: 'Mark grants as irrelevant and explain why. Your AI gets smarter with each search, understanding your unique needs better than any database.'
+      title: 'Save or reject with feedback',
+      description: 'Keep grants worth pursuing. Reject ones that don\'t fit and tell us why—wrong geography, amount too large, need consortium partner. Your AI learns your real constraints.'
     },
     {
       icon: Rocket,
       bgColor: 'bg-indigo-100',
       iconColor: 'text-indigo-600',
-      title: 'Focus on the best opportunities',
-      description: 'Each match shows why it fits your mission, eligibility requirements, and deadlines - so you can spend time applying instead of searching.'
+      title: 'Focus on writing, not searching',
+      description: 'Each match shows eligibility in plain English, estimated effort level, deadline, and why it fits. Spend your time on proposals, not research.'
     }
   ];
 
@@ -40,10 +40,6 @@ const HowItWorks = () => {
           <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-4">
             How Engrant Works
           </h2>
-          <div className="flex items-center justify-center">
-            <Check className="text-green-600 mr-2" />
-            <span className="text-lg text-green-700 font-medium">No registration required to start searching</span>
-          </div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

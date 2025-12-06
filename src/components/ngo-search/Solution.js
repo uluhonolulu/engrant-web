@@ -9,40 +9,40 @@ const Solution = () => {
         <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
           <div>
             <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-6">
-              Get your perfect EU funding matches in minutes, not weeks
+              Your 10 best-fit grants. Every time.
             </h2>
             
             <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
-              Engrant's AI does the searching so you can focus on changing the world. Our deep research technology understands your unique mission and finds grants that others miss—including successful applications from similar nonprofits.
+              Describe your nonprofit in plain language. Engrant's AI researches your organization, searches 400,000+ funders, and returns only the grants that match your mission, geography, and capacity. Each match includes eligibility requirements translated to plain English—so you can decide in seconds, not hours.
             </p>
             
             <div className="space-y-4">
               <div className="flex items-start">
                 <Search className="text-primary-600 mt-1 mr-4" />
                 <div>
-                  <div className="font-semibold text-neutral-900">Deep AI Research</div>
-                  <div className="text-neutral-600">Not just keyword matching</div>
+                  <div className="font-semibold text-neutral-900">Requirements translated</div>
+                  <div className="text-neutral-600">Eligibility criteria in plain language</div>
                 </div>
               </div>
               <div className="flex items-start">
                 <Database className="text-green-600 mt-1 mr-4" />
                 <div>
-                  <div className="font-semibold text-neutral-900">27,000+ Opportunities</div>
-                  <div className="text-neutral-600">Complete EU funding landscape</div>
+                  <div className="font-semibold text-neutral-900">400,000+ funders</div>
+                  <div className="text-neutral-600">Foundation, corporate, and government</div>
                 </div>
               </div>
               <div className="flex items-start">
                 <Target className="text-purple-600 mt-1 mr-4" />
                 <div>
-                  <div className="font-semibold text-neutral-900">Top 10 Curated Matches</div>
-                  <div className="text-neutral-600">Quality over quantity</div>
+                  <div className="font-semibold text-neutral-900">10 curated matches</div>
+                  <div className="text-neutral-600">Only grants you're actually eligible for</div>
                 </div>
               </div>
               <div className="flex items-start">
                 <Brain className="text-indigo-600 mt-1 mr-4" />
                 <div>
-                  <div className="font-semibold text-neutral-900">Learning Algorithm</div>
-                  <div className="text-neutral-600">Gets better with your feedback</div>
+                  <div className="font-semibold text-neutral-900">AI that learns</div>
+                  <div className="text-neutral-600">Tell us why grants don't fit—we remember</div>
                 </div>
               </div>
             </div>
