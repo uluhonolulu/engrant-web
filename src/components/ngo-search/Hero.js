@@ -7,38 +7,50 @@ import ngoSearchHero from '../../images/ngo-search-hero.jpg';
 
 const Hero = () => {
   return (
-    <section id="hero" className="bg-gradient-to-br from-primary-50 via-white to-green-50 min-h-[700px] flex items-center pb-20 pt-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <section id="hero" className="hero-gradient min-h-[720px] flex items-center pb-24 pt-12 relative overflow-hidden">
+      {/* Decorative organic shapes */}
+      <div className="absolute top-20 right-0 w-96 h-96 bg-teal-200/20 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-amber-200/20 rounded-full blur-3xl"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div id="hero-content">
-            <h1 className="text-4xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight">
+            <h1 className="text-4xl lg:text-[3.5rem] font-bold text-slate-800 mb-6 leading-[1.15] tracking-tight">
               Only the grants that fit. In 15 minutes.
             </h1>
             
-            <h2 className="text-xl lg:text-2xl text-neutral-700 mb-8 leading-relaxed">
+            <h2 className="text-xl lg:text-2xl text-neutral-600 mb-10 leading-relaxed font-normal">
               Stop scrolling through 300 irrelevant results. Engrant's AI matches your mission to grants you're actually eligible for—then explains each one in plain English.
             </h2>
             
-            <div id="value-bullets" className="space-y-4 mb-8">
-              <div className="flex items-center text-lg">
-                <Clock className="text-primary mr-3" />
-                <span className="font-semibold text-neutral-900 mr-2">15 min to matches</span>
-                <span className="text-neutral-700">- Not weeks of searching</span>
+            <div id="value-bullets" className="space-y-5 mb-10">
+              <div className="flex items-center text-lg group">
+                <div className="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center mr-4 group-hover:bg-teal-200 transition-colors">
+                  <Clock className="text-teal-600 w-5 h-5" />
+                </div>
+                <span className="font-semibold text-slate-800 mr-2">15 min to matches</span>
+                <span className="text-neutral-500">— Not weeks of searching</span>
               </div>
-              <div className="flex items-center text-lg">
-                <Target className="text-green-600 mr-3" />
-                <span className="font-semibold text-neutral-900 mr-2">A shortlist, not 300</span>
-                <span className="text-neutral-700">- Quality over quantity</span>
+              <div className="flex items-center text-lg group">
+                <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center mr-4 group-hover:bg-amber-200 transition-colors">
+                  <Target className="text-amber-600 w-5 h-5" />
+                </div>
+                <span className="font-semibold text-slate-800 mr-2">A shortlist, not 300</span>
+                <span className="text-neutral-500">— Quality over quantity</span>
               </div>
-              <div className="flex items-center text-lg">
-                <TrendingUp className="text-primary mr-3" />
-                <span className="font-semibold text-neutral-900 mr-2">Plain English requirements</span>
-                <span className="text-neutral-700">- No more decoding bureaucracy</span>
+              <div className="flex items-center text-lg group">
+                <div className="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center mr-4 group-hover:bg-teal-200 transition-colors">
+                  <TrendingUp className="text-teal-600 w-5 h-5" />
+                </div>
+                <span className="font-semibold text-slate-800 mr-2">Plain English requirements</span>
+                <span className="text-neutral-500">— No more decoding bureaucracy</span>
               </div>
-              <div className="flex items-center text-lg">
-                <Brain className="text-green-600 mr-3" />
-                <span className="font-semibold text-neutral-900 mr-2">Learns what doesn't fit</span>
-                <span className="text-neutral-700">- Gets smarter with your feedback</span>
+              <div className="flex items-center text-lg group">
+                <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center mr-4 group-hover:bg-amber-200 transition-colors">
+                  <Brain className="text-amber-600 w-5 h-5" />
+                </div>
+                <span className="font-semibold text-slate-800 mr-2">Learns what doesn't fit</span>
+                <span className="text-neutral-500">— Gets smarter with your feedback</span>
               </div>
             </div>
             
@@ -47,23 +59,28 @@ const Hero = () => {
                 href="https://app.engrant.eu/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 shadow-lg inline-block">
+                className="btn-primary text-white px-10 py-4 rounded-full text-lg font-semibold shadow-lg inline-block">
                 Get my matches
               </a>
-              <p className="text-neutral-600 mt-3 mb-0">14-day free trial • No credit card required</p>
+              <p className="text-neutral-500 mt-4 mb-0 flex items-center">
+                <span className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2"></span>
+                14-day free trial • No credit card required
+              </p>
             </div>
           </div>
           
           <div id="hero-visual" className="hidden lg:block">
             <div className="relative">
+              {/* Decorative frame */}
+              <div className="absolute -inset-4 bg-gradient-to-br from-teal-200/40 to-amber-200/40 rounded-3xl transform rotate-2"></div>
               <img 
-                className="w-full h-96 rounded-xl shadow-2xl object-cover" 
+                className="relative w-full h-[420px] rounded-2xl shadow-2xl object-cover" 
                 src={ngoSearchHero} 
                 alt="Diverse team working together on community projects - Photo by Rineshkumar Ghirao on Unsplash" 
               />
-              <div className="absolute -bottom-4 -right-4 bg-white p-4 rounded-lg shadow-xl">
-                <div className="text-2xl font-bold text-primary">400,000+</div>
-                <div className="text-sm text-neutral-600">funders</div>
+              <div className="absolute -bottom-6 -right-6 bg-white p-5 rounded-2xl warm-shadow-lg border border-amber-100">
+                <div className="text-3xl font-bold text-teal-600">400,000+</div>
+                <div className="text-sm text-neutral-500 font-medium">funders in our database</div>
               </div>
             </div>
           </div>
