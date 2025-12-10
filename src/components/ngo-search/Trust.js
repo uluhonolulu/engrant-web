@@ -8,11 +8,7 @@ const Trust = () => {
           The numbers
         </h2>
         
-        <div id="trust-stats" className="grid md:grid-cols-4 gap-8 text-center">
-          <div className="bg-primary-50 p-6 rounded-xl">
-            <div className="text-4xl font-bold text-primary-600 mb-2">400,000+</div>
-            <div className="text-neutral-700">Funders in our database</div>
-          </div>
+        <div id="trust-stats" className="grid md:grid-cols-3 gap-8 text-center">
           <div className="bg-green-50 p-6 rounded-xl">
             <div className="text-2xl font-bold text-green-600 mb-2">Curated matches</div>
             <div className="text-neutral-700">Not 300+ irrelevant results</div>

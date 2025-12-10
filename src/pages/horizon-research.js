@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import { Check, Play, X, Clock, Shield, Headphones, Lightbulb, ArrowRight, Users, Robot, Bot, TrendingUp, AlertCircle, Zap } from 'lucide-react';
-import logo from '../images/Logo_transparent_bg.png';
+import logo from '../images/logo-horizontal-remove-background.com.png';
 import comparisonImage from '../images/kevin-yudhistira-alloni-WBU233kGI6g-unsplash.jpg';
 
 const HorizonResearchPage = () => {

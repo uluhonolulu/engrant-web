@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { motion } from 'framer-motion';
 import { Calendar, ArrowRight, Gift } from 'lucide-react';
-import logo from '../images/Logo_transparent_bg.png';
+import logo from '../images/logo-horizontal-remove-background.com.png';
 
 const BookPage = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { DynamicIcon } from 'lucide-react/dynamic';
-import logo from '../../images/Logo_transparent_bg.png';
+import logo from '../../images/logo-horizontal-remove-background.com.png';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
