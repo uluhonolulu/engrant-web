@@ -1,6 +1,6 @@
 import React from 'react';
-import { Clock, Target, TrendingUp, Brain } from 'lucide-react';
-import ngoSearchHero from '../../images/ngo-search-hero.jpg';
+import { Clock, Target, TrendingUp, Brain, Eye } from 'lucide-react';
+import engrantCondensed from '../../images/Engrant-condensed.png';
 
 // RULE: Always import images using ES6 imports (import imageName from 'path/to/image.png')
 // Never use direct src paths like "/src/images/image.png" as they won't work in bundled builds
@@ -23,34 +23,51 @@ const Hero = () => {
               Stop scrolling through 300 irrelevant results. Engrant's AI matches your mission to grants you're actually eligible for—then explains each one in plain English.
             </h2>
             
-            <div id="value-bullets" className="space-y-5 mb-10">
-              <div className="flex items-center text-lg group">
-                <div className="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center mr-4 group-hover:bg-teal-200 transition-colors">
-                  <Clock className="text-teal-600 w-5 h-5" />
+            <div id="value-bullets" className="space-y-4 mb-10">
+              <div className="flex items-center text-base group">
+                <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center mr-3 group-hover:bg-teal-200 transition-colors flex-shrink-0">
+                  <Clock className="text-teal-600 w-4 h-4" />
                 </div>
-                <span className="font-semibold text-slate-800 mr-2">15 min to matches</span>
-                <span className="text-neutral-500">— Not weeks of searching</span>
+                <div className="flex-1">
+                  <span className="font-semibold text-slate-800">15 min to matches</span>
+                  <span className="text-neutral-500"> — Not weeks of searching</span>
+                </div>
               </div>
-              <div className="flex items-center text-lg group">
-                <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center mr-4 group-hover:bg-amber-200 transition-colors">
-                  <Target className="text-amber-600 w-5 h-5" />
+              <div className="flex items-center text-base group">
+                <div className="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center mr-3 group-hover:bg-amber-200 transition-colors flex-shrink-0">
+                  <Target className="text-amber-600 w-4 h-4" />
                 </div>
-                <span className="font-semibold text-slate-800 mr-2">A shortlist, not 300</span>
-                <span className="text-neutral-500">— Quality over quantity</span>
+                <div className="flex-1">
+                  <span className="font-semibold text-slate-800">A shortlist, not 300</span>
+                  <span className="text-neutral-500"> — Quality over quantity</span>
+                </div>
               </div>
-              <div className="flex items-center text-lg group">
-                <div className="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center mr-4 group-hover:bg-teal-200 transition-colors">
-                  <TrendingUp className="text-teal-600 w-5 h-5" />
+              <div className="flex items-center text-base group">
+                <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center mr-3 group-hover:bg-teal-200 transition-colors flex-shrink-0">
+                  <TrendingUp className="text-teal-600 w-4 h-4" />
                 </div>
-                <span className="font-semibold text-slate-800 mr-2">Plain English requirements</span>
-                <span className="text-neutral-500">— No more decoding bureaucracy</span>
+                <div className="flex-1">
+                  <span className="font-semibold text-slate-800">Plain English requirements</span>
+                  <span className="text-neutral-500"> — No more decoding bureaucracy</span>
+                </div>
               </div>
-              <div className="flex items-center text-lg group">
-                <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center mr-4 group-hover:bg-amber-200 transition-colors">
-                  <Brain className="text-amber-600 w-5 h-5" />
+              <div className="flex items-center text-base group">
+                <div className="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center mr-3 group-hover:bg-amber-200 transition-colors flex-shrink-0">
+                  <Eye className="text-amber-600 w-4 h-4" />
                 </div>
-                <span className="font-semibold text-slate-800 mr-2">Learns what doesn't fit</span>
-                <span className="text-neutral-500">— Gets smarter with your feedback</span>
+                <div className="flex-1">
+                  <span className="font-semibold text-slate-800">Context before commitment</span>
+                  <span className="text-neutral-500"> — See considerations upfront</span>
+                </div>
+              </div>
+              <div className="flex items-center text-base group">
+                <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center mr-3 group-hover:bg-teal-200 transition-colors flex-shrink-0">
+                  <Brain className="text-teal-600 w-4 h-4" />
+                </div>
+                <div className="flex-1">
+                  <span className="font-semibold text-slate-800">Learns what doesn't fit</span>
+                  <span className="text-neutral-500"> — Gets smarter with your feedback</span>
+                </div>
               </div>
             </div>
             
@@ -74,9 +91,9 @@ const Hero = () => {
               {/* Decorative frame */}
               <div className="absolute -inset-4 bg-gradient-to-br from-teal-200/40 to-amber-200/40 rounded-3xl transform rotate-2"></div>
               <img 
-                className="relative w-full h-[420px] rounded-2xl shadow-2xl object-cover" 
-                src={ngoSearchHero} 
-                alt="Diverse team working together on community projects - Photo by Rineshkumar Ghirao on Unsplash" 
+                className="relative w-full h-[420px] rounded-2xl shadow-2xl object-cover object-left" 
+                src={engrantCondensed} 
+                alt="Engrant grant matching interface" 
               />
               <div className="absolute -bottom-6 -right-6 bg-white p-5 rounded-2xl warm-shadow-lg border border-amber-100">
                 <div className="text-3xl font-bold text-teal-600">400,000+</div>

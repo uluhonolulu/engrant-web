@@ -1,5 +1,6 @@
 import React from 'react';
 import { Edit, Target, Brain, Rocket } from 'lucide-react';
+import engrantExpanded from '../../images/Engrant-expanded.png';
 
 const HowItWorks = () => {
   const steps = [
@@ -24,8 +25,8 @@ const HowItWorks = () => {
     {
       icon: Rocket,
       step: '04',
-      title: 'Focus on writing, not searching',
-      description: 'Each match shows eligibility in plain English, estimated effort level, deadline, and why it fits. Spend your time on proposals, not research.'
+      title: 'See the full picture before you commit',
+      description: 'Each match includes eligibility in plain English, estimated effort level, deadline, why it fits—and critical considerations like payment schedules, competition levels, and potential red flags.'
     }
   ];
 
@@ -71,6 +72,18 @@ const HowItWorks = () => {
               </div>
             );
           })}
+        </div>
+        
+        {/* Expanded screenshot under Step 4 */}
+        <div className="mt-16 flex justify-center">
+          <div className="relative max-w-5xl w-full">
+            <div className="absolute -inset-4 bg-gradient-to-br from-teal-200/40 to-amber-200/40 rounded-3xl transform rotate-2"></div>
+            <img 
+              src={engrantExpanded} 
+              alt="Engrant grant matching interface - expanded view" 
+              className="relative rounded-2xl shadow-2xl w-full"
+            />
+          </div>
         </div>
       </div>
     </section>
