@@ -28,8 +28,6 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             <a 
               href="https://app.engrant.eu/"
-              target="_blank"
-              rel="noopener noreferrer"
               className="btn-primary text-white px-6 py-2.5 rounded-full font-semibold inline-block shadow-md">
               Get my matches
             </a>

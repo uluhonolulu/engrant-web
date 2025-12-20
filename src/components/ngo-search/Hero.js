@@ -74,8 +74,6 @@ const Hero = () => {
             <div id="hero-cta" className="mb-8">
               <a 
                 href="https://app.engrant.eu/"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="btn-primary text-white px-10 py-4 rounded-full text-lg font-semibold shadow-lg inline-block">
                 Get my matches
               </a>
