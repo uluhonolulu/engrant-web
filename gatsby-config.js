@@ -101,6 +101,24 @@ module.exports = {
         dataLayerName: "dataLayer",
       },
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "G-9GKK3JW135",
+        ],
+        pluginConfig: {
+          head: true,
+        },
+        gtagConfig: {
+          cookie_domain: '.engrant.eu',
+          cookie_flags: 'SameSite=None;Secure',
+          linker: {
+            domains: ['engrant.eu', 'app.engrant.eu'],
+          },
+        },
+      },
+    },
     // {
 	// 	resolve: `gatsby-plugin-clerk`,
 	// 	options: {
