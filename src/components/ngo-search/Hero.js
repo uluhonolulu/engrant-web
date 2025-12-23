@@ -74,6 +74,13 @@ const Hero = () => {
             <div id="hero-cta" className="mb-8">
               <a 
                 href="https://app.engrant.eu/"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.gtag) {
+                    window.gtag('event', 'cta_click', {
+                      location: 'hero'
+                    });
+                  }
+                }}
                 className="btn-primary text-white px-10 py-4 rounded-full text-lg font-semibold shadow-lg inline-block">
                 Get my matches
               </a>

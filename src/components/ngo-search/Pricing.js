@@ -80,6 +80,13 @@ const Pricing = () => {
               
               <a 
                 href="https://app.engrant.eu/?utm_source=landing&utm_medium=pricing&utm_campaign=free_trial"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.gtag) {
+                    window.gtag('event', 'cta_click', {
+                      location: 'pricing'
+                    });
+                  }
+                }}
                 className="w-full btn-primary text-white py-4 px-6 rounded-full font-semibold text-lg inline-block text-center shadow-lg">
                 Start Finding Grants
               </a>

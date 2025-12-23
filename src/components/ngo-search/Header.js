@@ -28,6 +28,13 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             <a 
               href="https://app.engrant.eu/"
+              onClick={() => {
+                if (typeof window !== 'undefined' && window.gtag) {
+                  window.gtag('event', 'cta_click', {
+                    location: 'header'
+                  });
+                }
+              }}
               className="btn-primary text-white px-6 py-2.5 rounded-full font-semibold inline-block shadow-md">
               Get my matches
             </a>
