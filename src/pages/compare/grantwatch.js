@@ -1,13 +1,13 @@
 import React from 'react';
 import { 
   Check, X, ChevronDown, Clock, Search, AlertTriangle, 
-  Target, Users, Zap, BarChart3, Shield, Lock,
-  Sparkles, FileText, DollarSign, Eye, Award, TrendingUp, Mountain
+  Target, Users, Zap, BarChart3, Shield,
+  Sparkles, FileText, DollarSign, Eye, Award, TrendingUp, Scroll
 } from 'lucide-react';
 import logo from '../../images/logo-horizontal-remove-background.com.png';
 import engrantExpanded from '../../images/Engrant-expanded.png';
 
-const InstrumentlComparisonPage = () => {
+const GrantWatchComparisonPage = () => {
   return (
     <>
       <style jsx global>{`
@@ -121,7 +121,7 @@ const Header = () => {
                 if (typeof window !== 'undefined' && window.gtag) {
                   window.gtag('event', 'cta_click', {
                     location: 'header',
-                    page: 'instrumentl_comparison'
+                    page: 'grantwatch_comparison'
                   });
                 }
               }}
@@ -145,15 +145,15 @@ const Hero = () => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
         <div className="inline-flex items-center bg-amber-100 text-amber-700 px-4 py-2 rounded-full text-sm font-medium mb-8">
           <Sparkles className="w-4 h-4 mr-2" />
-          Instrumentl Alternative
+          GrantWatch Alternative
         </div>
         
         <h1 className="text-4xl lg:text-[3.5rem] font-bold text-slate-800 mb-6 leading-[1.15] tracking-tight">
-          Is Instrumentl overkill for your nonprofit?
+          Tired of manually filtering through thousands of GrantWatch listings?
         </h1>
         
         <p className="text-xl lg:text-2xl text-neutral-600 mb-10 leading-relaxed font-normal max-w-3xl mx-auto">
-          Get AI-powered grant discovery at $47/month—not $179-899. Engrant shows you 10-20 highly relevant grants with fit scores and red flags, without the enterprise complexity.
+          Engrant uses AI to find 10-20 high-fit grants with match scores, eligibility checks, and red flags already evaluated—so you can skip the research and start applying.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
@@ -163,14 +163,14 @@ const Hero = () => {
               if (typeof window !== 'undefined' && window.gtag) {
                 window.gtag('event', 'cta_click', {
                   location: 'hero',
-                  page: 'instrumentl_comparison'
+                  page: 'grantwatch_comparison'
                 });
               }
             }}
             className="btn-primary text-white px-10 py-4 rounded-full text-lg font-semibold shadow-lg inline-block">
-            Try Engrant Free for 2 Weeks
+            Try Engrant Free
           </a>
-          <a href="#comparison" className="text-teal-700 hover:text-teal-800 font-medium flex items-center group">
+          <a href="#key-differences" className="text-teal-700 hover:text-teal-800 font-medium flex items-center group">
             See how it works
             <ChevronDown className="w-5 h-5 ml-1 group-hover:translate-y-1 transition-transform" />
           </a>
@@ -189,39 +189,39 @@ const Hero = () => {
 const ProblemSection = () => {
   const problems = [
     {
-      icon: DollarSign,
-      title: "$179-899/month is enterprise pricing",
-      description: "Instrumentl's pricing starts at $179/month and goes up to $899/month for the Advanced plan. For small nonprofits, this is often prohibitive.",
-      quote: "We actually find that Instrumentl is indeed overkill for smaller nonprofits.",
-      quoteSource: "Instrumentl Support Team",
-      sourceUrl: "https://financesonline.com/instrumentl/",
-      engrantAlternative: "$47/month gets you AI-powered discovery"
+      icon: Scroll,
+      title: "Endless Scrolling, Limited Filtering",
+      description: "While the information subscribers have access to within each grant record is extremely helpful, the trickiest part for us was finding relevant grants. The platform's search and filter functionalities are fairly limited, which can complicate and slow down your research process.",
+      quote: "While the information subscribers have access to within each grant record is extremely helpful, the trickiest part for us was finding relevant grants. The platform's search and filter functionalities are fairly limited, which can complicate and slow down your research process.",
+      quoteSource: "Learn Grant Writing database review",
+      sourceUrl: "https://learngrantwriting.org/grant-databases/",
+      engrantAlternative: "10-20 pre-evaluated grants, not 10,000 to scroll through"
     },
     {
-      icon: BarChart3,
-      title: "Too many results, too little clarity",
-      description: "Instrumentl provides access to 20,000+ opportunities, but users report difficulty filtering out opportunities that aren't a perfect match.",
-      quote: "There is such a wealth of information in Instrumentl, it can be difficult to filter out opportunities that aren't a perfect match for mission, goals, or proximity.",
-      quoteSource: "Software Advice Review",
-      sourceUrl: "https://www.softwareadvice.com/grant-management/instrumentl-profile/",
-      engrantAlternative: "10-20 pre-evaluated grants, not 300 possibilities"
+      icon: Search,
+      title: "Manual Evaluation Required",
+      description: "GrantWatch requires manual searching and filtering. You must evaluate each opportunity yourself, which often includes outdated or irrelevant listings mixed in with current ones.",
+      quote: "GrantWatch requires manual searching and filtering... Limited RFPs, may include outdated or irrelevant opportunities.",
+      quoteSource: "Instrumentl comparison analysis",
+      sourceUrl: "https://www.instrumentl.com/blog/grant-research-databases",
+      engrantAlternative: "AI does the evaluation—fit scores, red flags, and match reasons included"
     },
     {
-      icon: Mountain,
-      title: "Weeks to learn, not minutes",
-      description: "The platform's comprehensive features come with a steep learning curve that takes time to master.",
-      quote: "The app is complex because of its rich features. It took us a few weeks to learn how to use it effectively.",
-      quoteSource: "Software Advice Review",
-      sourceUrl: "https://www.softwareadvice.com/grant-management/instrumentl-profile/",
-      engrantAlternative: "Enter your org name → get results in minutes"
+      icon: Target,
+      title: "No Fit Assessment",
+      description: "GrantWatch does not offer recipient profiles or intelligent matching, which help streamline the grant search. You're left to determine fit yourself by reading through each listing.",
+      quote: "Does not offer recipient profiles or intelligent matching, which help streamline the grant search.",
+      quoteSource: "Grant database comparison report",
+      sourceUrl: "https://www.fundingforgood.org/blog/comparing-grant-research-databases",
+      engrantAlternative: "AI-generated fit scores show why each grant matches your organization"
     },
     {
-      icon: Lock,
-      title: "The good stuff costs extra",
-      description: "Key features like Peer Prospecting require the Pro plan at $499/month. Advanced 990 insights require Standard at $299/month.",
+      icon: Clock,
+      title: "Cheap But Time-Expensive",
+      description: "GrantWatch saves you money at $249/year—it's genuinely the most affordable paid grant database. But if you spend 15+ hours/week manually filtering results, is it really saving you anything?",
       quote: null,
       quoteSource: null,
-      engrantAlternative: "All features included at $47/month"
+      engrantAlternative: "Save 10+ hours per week on manual research—time worth more than the price difference"
     }
   ];
 
@@ -234,7 +234,7 @@ const ProblemSection = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-            Why Nonprofits Are Looking for Instrumentl Alternatives
+            Why Nonprofits Are Looking for GrantWatch Alternatives
           </h2>
         </div>
         
@@ -281,28 +281,23 @@ const ProblemSection = () => {
 // Comparison Table Section
 const ComparisonTable = () => {
   const features = [
-    { category: "Setup & Onboarding", feature: "Setup time", engrant: "Enter org name/URL → AI researches automatically", instrumentl: "Create project → set keywords → refine matches", engrantCheck: true, instrumentlCheck: "partial" },
-    { category: "Setup & Onboarding", feature: "Learning curve", engrant: "Minimal – results in minutes", instrumentl: "Several weeks to master all features", engrantCheck: true, instrumentlCheck: false },
-    { category: "Search & Results", feature: "Results approach", engrant: "10-20 pre-evaluated, high-fit grants", instrumentl: "100s of matches to manually evaluate", engrantCheck: true, instrumentlCheck: false },
-    { category: "Search & Results", feature: "Fit assessment", engrant: "AI-generated fit score with detailed reasons", instrumentl: "Match indicators, requires manual review", engrantCheck: true, instrumentlCheck: "partial" },
-    { category: "Search & Results", feature: "Eligibility screening", engrant: "Flags disqualifiers before you apply", instrumentl: "Sometimes shows ineligible opportunities", engrantCheck: true, instrumentlCheck: "partial" },
-    { category: "Intelligence & Insights", feature: "Competition level", engrant: "Shows High/Medium/Low competition", instrumentl: "Not available", engrantCheck: true, instrumentlCheck: false },
-    { category: "Intelligence & Insights", feature: "Application effort estimate", engrant: "Shows effort level required", instrumentl: "Not available", engrantCheck: true, instrumentlCheck: false },
-    { category: "Intelligence & Insights", feature: "Red flags & warnings", engrant: "Proactive warnings (consortium required, etc.)", instrumentl: "Requirements listed but not flagged", engrantCheck: true, instrumentlCheck: "partial" },
-    { category: "Intelligence & Insights", feature: "Funder openness to new grantees", engrant: "Clearly indicated", instrumentl: "Available in funder profiles", engrantCheck: true, instrumentlCheck: true },
-    { category: "Intelligence & Insights", feature: "Past recipients like you", engrant: "Shows similar orgs that got funded", instrumentl: "Peer Prospecting (Pro plan, $499/mo)", engrantCheck: true, instrumentlCheck: true },
-    { category: "Data & Freshness", feature: "Data source", engrant: "Real-time web search (always current)", instrumentl: "Curated database (updated weekly)", engrantCheck: true, instrumentlCheck: "partial" },
-    { category: "Data & Freshness", feature: "Database size", engrant: "Searches entire web", instrumentl: "20,000+ RFPs, 400,000+ funder profiles", engrantCheck: true, instrumentlCheck: true },
-    { category: "Data & Freshness", feature: "990 Data", engrant: "Key insights surfaced in match reasons", instrumentl: "Full interactive 990 reports", engrantCheck: true, instrumentlCheck: true },
-    { category: "Grant Management", feature: "Deadline tracking", engrant: "Basic tracking", instrumentl: "Full calendar with integrations", engrantCheck: true, instrumentlCheck: true },
-    { category: "Grant Management", feature: "Team collaboration", engrant: "Basic (coming soon)", instrumentl: "Full team features with roles", engrantCheck: "partial", instrumentlCheck: true },
-    { category: "Grant Management", feature: "Application workflow", engrant: "Not included", instrumentl: "Full lifecycle management", engrantCheck: false, instrumentlCheck: true },
-    { category: "Grant Management", feature: "AI writing assistance", engrant: "Not included", instrumentl: "Apply Advisor (learns from your apps)", engrantCheck: false, instrumentlCheck: true },
-    { category: "Learning & Improvement", feature: "Learns from feedback", engrant: "Improves based on saves/rejects", instrumentl: "Improves match relevance", engrantCheck: true, instrumentlCheck: "partial" },
-    { category: "Pricing", feature: "Starting price", engrant: "$47/month ($37/month annually)", instrumentl: "$179/month (annual commitment)", engrantCheck: true, instrumentlCheck: false },
-    { category: "Pricing", feature: "Full features price", engrant: "$47/month", instrumentl: "$499/month (Pro)", engrantCheck: true, instrumentlCheck: false },
-    { category: "Pricing", feature: "Free trial", engrant: "2 weeks, no credit card", instrumentl: "14 days", engrantCheck: true, instrumentlCheck: true },
-    { category: "Best For", feature: "Target user", engrant: "Solo development directors, small teams", instrumentl: "Grant teams, consultants, universities", engrantCheck: true, instrumentlCheck: true },
+    { category: "Setup & Onboarding", feature: "Setup time", engrant: "Enter org name/URL → AI researches automatically", grantwatch: "Manual profile creation + category selection", engrantCheck: true, grantwatchCheck: false },
+    { category: "Setup & Onboarding", feature: "Learning curve", engrant: "Minimal — results in minutes", grantwatch: "Moderate — requires learning SMART search", engrantCheck: true, grantwatchCheck: false },
+    { category: "Search & Results", feature: "Search approach", engrant: "AI-curated 10-20 high-fit grants", grantwatch: "10,000+ grants requiring manual filtering", engrantCheck: true, grantwatchCheck: false },
+    { category: "Search & Results", feature: "Fit assessment", engrant: "AI-generated fit score with match reasons", grantwatch: "No fit scoring", engrantCheck: true, grantwatchCheck: false },
+    { category: "Search & Results", feature: "Eligibility screening", engrant: "Flags disqualifiers before you apply", grantwatch: "Manual eligibility checking required", engrantCheck: true, grantwatchCheck: false },
+    { category: "Intelligence & Insights", feature: "Competition level", engrant: "Shows High/Medium/Low", grantwatch: "Not available", engrantCheck: true, grantwatchCheck: false },
+    { category: "Intelligence & Insights", feature: "Effort estimate", engrant: "Shows application effort level", grantwatch: "Not available", engrantCheck: true, grantwatchCheck: false },
+    { category: "Intelligence & Insights", feature: "Red flags & warnings", engrant: "Proactive warnings surfaced", grantwatch: "Not available", engrantCheck: true, grantwatchCheck: false },
+    { category: "Intelligence & Insights", feature: "Funder openness", engrant: "\"Open to new grantees\" indicated", grantwatch: "Basic 990 data only", engrantCheck: true, grantwatchCheck: "partial" },
+    { category: "Intelligence & Insights", feature: "Past recipients like you", engrant: "Shows similar orgs that got funded", grantwatch: "Not available", engrantCheck: true, grantwatchCheck: false },
+    { category: "Data & Freshness", feature: "Data source", engrant: "Real-time AI search (always current)", grantwatch: "Curated database (updated daily)", engrantCheck: true, grantwatchCheck: "partial" },
+    { category: "Data & Freshness", feature: "Database size", engrant: "Searches live web", grantwatch: "~10,000 active grants", engrantCheck: true, grantwatchCheck: true },
+    { category: "Data & Freshness", feature: "Grant types", engrant: "Foundation, corporate, state, local", grantwatch: "Foundation, corporate, federal, state, city", engrantCheck: true, grantwatchCheck: true },
+    { category: "Learning & Improvement", feature: "Learns from feedback", engrant: "Improves based on saves/rejects", grantwatch: "No learning system", engrantCheck: true, grantwatchCheck: false },
+    { category: "Pricing", feature: "Price", engrant: "$47/month (or $37/month annually)", grantwatch: "$22/week, $49/month, or $249/year", engrantCheck: true, grantwatchCheck: "partial" },
+    { category: "Pricing", feature: "Free trial", engrant: "Yes, 2 weeks, no credit card", grantwatch: "No free trial", engrantCheck: true, grantwatchCheck: false },
+    { category: "Pricing", feature: "Grant management", engrant: "Coming soon", grantwatch: "Not available", engrantCheck: "partial", grantwatchCheck: false },
   ];
 
   let currentCategory = '';
@@ -318,11 +313,11 @@ const ComparisonTable = () => {
             Side-by-Side Comparison
           </div>
           <h2 className="text-3xl lg:text-5xl font-bold text-slate-800 mb-4">
-            Engrant vs Instrumentl: Which Is Better?
+            Engrant vs GrantWatch: Which Is Better?
           </h2>
           <p className="text-xl text-neutral-600 mb-4">A side-by-side comparison for nonprofit grant seekers in 2025</p>
           <p className="text-neutral-500 max-w-3xl mx-auto italic">
-            Instrumentl is an excellent full-lifecycle platform. We recommend it for larger organizations needing comprehensive workflow management. Here's how we compare for grant discovery:
+            GrantWatch is genuinely the most affordable paid grant database on the market. If your organization has dedicated research staff and time to manually evaluate hundreds of opportunities, it's a solid budget choice.
           </p>
         </div>
         
@@ -340,7 +335,7 @@ const ComparisonTable = () => {
                 </span>
               </div>
               <div className="p-4 md:p-6">
-                <span className="font-semibold text-slate-600">Instrumentl</span>
+                <span className="font-semibold text-slate-600">GrantWatch</span>
               </div>
             </div>
             
@@ -384,18 +379,18 @@ const ComparisonTable = () => {
                     <div className="p-4 md:p-5">
                       <div className="flex items-start gap-2 md:gap-3">
                         <div className={`w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${
-                          row.instrumentlCheck === true ? 'bg-teal-100' : 
-                          row.instrumentlCheck === 'partial' ? 'bg-amber-100' : 'bg-rose-50'
+                          row.grantwatchCheck === true ? 'bg-teal-100' : 
+                          row.grantwatchCheck === 'partial' ? 'bg-amber-100' : 'bg-rose-50'
                         }`}>
-                          {row.instrumentlCheck === true ? (
+                          {row.grantwatchCheck === true ? (
                             <Check className="text-teal-600 w-3 h-3 md:w-4 md:h-4" />
-                          ) : row.instrumentlCheck === 'partial' ? (
+                          ) : row.grantwatchCheck === 'partial' ? (
                             <span className="text-amber-600 text-xs font-bold">~</span>
                           ) : (
                             <X className="text-rose-400 w-3 h-3 md:w-4 md:h-4" />
                           )}
                         </div>
-                        <span className="text-neutral-600 text-sm md:text-base">{row.instrumentl}</span>
+                        <span className="text-neutral-600 text-sm md:text-base">{row.grantwatch}</span>
                       </div>
                     </div>
                   </div>
@@ -412,28 +407,28 @@ const ComparisonTable = () => {
 // Key Differences Section (4 Subsections)
 const KeyDifferences = () => {
   return (
-    <section id="features" className="section-cream py-24">
+    <section id="key-differences" className="section-cream py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* 4A: Setup That Respects Your Time */}
+        {/* 4A: Setup & Onboarding */}
         <div className="mb-32">
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
             <div>
               <div className="inline-flex items-center bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Zap className="w-4 h-4 mr-2" />
-                Effortless Setup
+                Setup & Onboarding
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-6 leading-tight">
-                From organization name to relevant grants in minutes—not weeks
+                Engrant knows your organization before you start searching
               </h2>
               <p className="text-lg text-neutral-600 mb-6 leading-relaxed">
-                With Instrumentl, you create a project, select keywords, choose geographic areas, and review matches. It's thorough—but it takes time to learn and optimize.
+                With GrantWatch, you create an account, select categories of interest, choose your location filters, then search manually. You need to define your organization through search filters each time.
               </p>
               <p className="text-lg text-neutral-600 mb-6 leading-relaxed">
-                Engrant works differently. Enter your organization name or website URL. Our AI researches your mission, programs, geography, and characteristics automatically. Within minutes, you're reviewing grants that actually fit—not setting up search parameters.
+                Engrant works differently. Enter your organization's name or website URL. Our AI automatically researches your mission, geography, programs, and characteristics. GrantWatch needs you to define your organization through search filters. Engrant knows your organization before you start searching.
               </p>
               <p className="text-neutral-500 italic">
-                For solo development directors managing 8-10 responsibilities, those setup hours matter.
+                For solo development directors managing multiple responsibilities, those setup hours matter.
               </p>
             </div>
             
@@ -464,7 +459,7 @@ const KeyDifferences = () => {
           </div>
         </div>
         
-        {/* 4B: Quality Over Quantity */}
+        {/* 4B: Results Quality */}
         <div className="mb-32">
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
             <div className="order-2 lg:order-1">
@@ -481,24 +476,25 @@ const KeyDifferences = () => {
             <div className="order-1 lg:order-2 mb-12 lg:mb-0">
               <div className="inline-flex items-center bg-amber-100 text-amber-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Target className="w-4 h-4 mr-2" />
-                Quality Over Quantity
+                Results Quality
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-6 leading-tight">
-                10 grants you can actually pursue, not 300 to sort through
+                GrantWatch tells you a grant exists. Engrant tells you if it's worth your time.
               </h2>
               <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
-                Instrumentl gives you access to 20,000+ active opportunities. That's powerful—if you have time to evaluate them.
+                A GrantWatch result shows you basic information: grant title, funder, amount, deadline, and a link to view full details. You still need to research whether you're eligible, if it's worth your time, and what the competition looks like.
               </p>
               <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
-                Engrant takes a different approach. We show you 10-20 grants at a time, each with:
+                An Engrant result includes all of that, plus:
               </p>
               
               <div className="space-y-4">
                 {[
-                  { icon: Award, label: "Fit score", desc: "Why this grant matches your organization" },
-                  { icon: TrendingUp, label: "Competition level", desc: "High, Medium, or Low" },
-                  { icon: Clock, label: "Effort estimate", desc: "Quick application vs. major undertaking" },
-                  { icon: AlertTriangle, label: "Red flags", desc: "Consortium required? First-time grantees excluded?" },
+                  { icon: Award, label: "87% Match Score", desc: "Immediate visual indicator of fit" },
+                  { icon: Check, label: "Match Reasons", desc: "Your geographic focus (Virginia) + serves youth + budget fits" },
+                  { icon: AlertTriangle, label: "Red Flags", desc: "Requires 501(c)(3) status for 3+ years" },
+                  { icon: BarChart3, label: "Competition Level", desc: "Medium (typical 40 applicants)" },
+                  { icon: Users, label: "Past Recipients", desc: "Arlington Youth Services, Richmond Community Center" },
                 ].map((item, index) => {
                   const Icon = item.icon;
                   return (
@@ -514,15 +510,11 @@ const KeyDifferences = () => {
                   );
                 })}
               </div>
-              
-              <p className="text-neutral-600 mt-6">
-                You save or reject each grant, and our system learns your preferences. No more scrolling through hundreds of "maybes."
-              </p>
             </div>
           </div>
         </div>
         
-        {/* 4C: See Who Funds Organizations Like Yours */}
+        {/* 4C: Unique Feature - Past Recipients Like You */}
         <div className="mb-32">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -531,68 +523,101 @@ const KeyDifferences = () => {
                 Past Recipients
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-4 leading-tight">
-                Past recipients like you—without the $499/month paywall
+                Does this funder actually give to organizations like mine?
               </h2>
               <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-                One of Instrumentl's best features is Peer Prospecting—seeing which funders support organizations similar to yours. But it requires the Pro plan at $499/month.
+                Engrant analyzes 990 data to show which organizations similar to yours have received funding from each funder. This helps you answer the critical question: "Does this funder actually give to organizations like mine?"
               </p>
             </div>
             
             <div className="bg-white rounded-3xl p-8 warm-shadow-lg border border-teal-100">
-              <p className="text-lg text-neutral-600 mb-6">
-                Engrant includes this intelligence in every plan. When we show you a grant, we show you similar organizations that received funding. You see immediately whether funders support organizations at your scale and stage.
-              </p>
-              
-              <div className="bg-teal-50 rounded-xl p-6 border border-teal-100">
-                <h3 className="font-semibold text-slate-700 mb-4">Example: Past recipients similar to your organization:</h3>
-                <div className="space-y-3">
-                  {[
-                    { name: "Brooklyn Community Housing Alliance", amount: "$4,500", year: "2024" },
-                    { name: "Sunset Park Neighbors Coalition", amount: "$3,200", year: "2024" },
-                    { name: "East Harlem Youth Initiative", amount: "$5,000", year: "2023" },
-                  ].map((recipient, index) => (
-                    <div key={index} className="flex items-center justify-between bg-white rounded-lg p-4 border border-teal-100">
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center">
-                          <Check className="w-4 h-4 text-teal-600" />
-                        </div>
-                        <span className="font-medium text-slate-700">{recipient.name}</span>
+              <h3 className="font-semibold text-slate-700 mb-6">Example: Past recipients similar to your organization:</h3>
+              <div className="space-y-4">
+                {[
+                  { name: "Arlington Youth Services", amount: "$4,500", year: "2024" },
+                  { name: "Richmond Community Center", amount: "$3,200", year: "2024" },
+                  { name: "Virginia Youth Development", amount: "$5,000", year: "2023" },
+                ].map((recipient, index) => (
+                  <div key={index} className="flex items-center justify-between bg-teal-50 rounded-xl p-4 border border-teal-100">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center">
+                        <Check className="w-4 h-4 text-teal-600" />
                       </div>
-                      <div className="text-right">
-                        <span className="font-bold text-teal-600">{recipient.amount}</span>
-                        <span className="text-neutral-500 text-sm ml-2">({recipient.year})</span>
-                      </div>
+                      <span className="font-medium text-slate-700">{recipient.name}</span>
                     </div>
-                  ))}
-                </div>
+                    <div className="text-right">
+                      <span className="font-bold text-teal-600">{recipient.amount}</span>
+                      <span className="text-neutral-500 text-sm ml-2">({recipient.year})</span>
+                    </div>
+                  </div>
+                ))}
               </div>
               
               <p className="text-neutral-600 mt-6 italic">
-                No tiers. No upsells. One price for everything.
+                GrantWatch doesn't offer this insight. You're left to research funder history yourself.
               </p>
             </div>
           </div>
         </div>
         
-        {/* 4D: Real-Time Search vs. Database Snapshots */}
+        {/* 4D: Time Investment Reality */}
         <div>
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center bg-amber-100 text-amber-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
-              <Zap className="w-4 h-4 mr-2" />
-              Always Current
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center bg-amber-100 text-amber-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                <Clock className="w-4 h-4 mr-2" />
+                Time Investment
+              </div>
+              <h2 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-6 leading-tight">
+                The real cost of "affordable" grant databases
+              </h2>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-6 leading-tight">
-              Real-time grants, not a dusty database
-            </h2>
-            <p className="text-lg text-neutral-600 leading-relaxed max-w-2xl mx-auto mb-4">
-              Instrumentl maintains a curated database of 20,000+ opportunities, updated weekly by their research team. It's comprehensive and well-organized.
-            </p>
-            <p className="text-lg text-teal-700 font-medium max-w-2xl mx-auto">
-              Engrant searches the live web for each query. When a new RFP posts, you see it immediately—not after next week's database update. When a deadline changes, you know instantly.
-            </p>
-            <p className="text-neutral-600 mt-4 max-w-2xl mx-auto">
-              For time-sensitive grant deadlines, real-time matters.
-            </p>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+                <h3 className="text-xl font-bold text-slate-700 mb-6">With GrantWatch (typical workflow):</h3>
+                <ol className="space-y-4 text-neutral-600">
+                  {[
+                    "Search database → 15 min",
+                    "Scroll through results → 30 min",
+                    "Click into each grant for details → 45 min",
+                    "Evaluate eligibility manually → 60 min",
+                    "Research funder 990s separately → 45 min",
+                    "Decide if worth pursuing → 15 min",
+                  ].map((step, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <span className="font-bold text-slate-400">{index + 1}.</span>
+                      <span>{step}</span>
+                    </li>
+                  ))}
+                </ol>
+                <div className="mt-6 pt-6 border-t border-slate-300">
+                  <p className="text-lg font-bold text-slate-700">Total: 3.5 hours per session</p>
+                  <p className="text-sm text-neutral-500 mt-1">Multiple times/week = 10-15 hours/week</p>
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-br from-teal-50 to-teal-100/50 rounded-2xl p-8 border border-teal-100">
+                <h3 className="text-xl font-bold text-teal-700 mb-6">With Engrant:</h3>
+                <ol className="space-y-4 text-neutral-700">
+                  {[
+                    "View pre-matched grants → 5 min",
+                    "Review fit scores and explanations → 15 min",
+                    "Save promising grants, reject others → 10 min",
+                    "Done → 30 min total",
+                  ].map((step, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
+                      <span>{step}</span>
+                    </li>
+                  ))}
+                </ol>
+                <div className="mt-6 pt-6 border-t border-teal-200">
+                  <p className="text-lg font-bold text-teal-700">Time saved: 10+ hours per week</p>
+                  <p className="text-sm text-teal-600 mt-1">At $40/hour loaded cost = $4,160/year recovered</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -611,7 +636,7 @@ const HonestAssessment = () => {
             Honest Comparison
           </div>
           <h2 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-4">
-            When Instrumentl might be better vs. when Engrant is better
+            When GrantWatch might be better vs. when Engrant is better
           </h2>
           <p className="text-lg text-neutral-600">We believe in honest comparisons. Here's when each tool makes sense.</p>
         </div>
@@ -620,19 +645,17 @@ const HonestAssessment = () => {
           <div className="bg-slate-50 rounded-3xl p-8 border border-slate-100">
             <h3 className="text-xl font-bold text-slate-700 mb-6 flex items-center">
               <span className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center mr-3">
-                <span className="text-slate-600 font-bold">I</span>
+                <span className="text-slate-600 font-bold">G</span>
               </span>
-              Use Instrumentl if you:
+              Use GrantWatch if you:
             </h3>
             <ul className="space-y-4">
               {[
-                "Have a $3,000-10,000+ annual budget for grant tools",
-                "Need full grant lifecycle management (application tracking, reporting, budget spenddown)",
-                "Work with a grant team of 3+ people who need collaboration features",
-                "Are a grant consultant managing multiple nonprofit clients",
-                "Need AI-powered proposal writing assistance",
-                "Want deep historical 990 analysis across decades of data",
-                "Are a university or large institution with complex grant portfolios"
+                "Have dedicated grant research staff with time for manual filtering",
+                "Your budget absolutely cannot exceed $249/year for grant tools",
+                "You're comfortable spending 10-15 hours/week on grant research",
+                "You primarily need federal grants (GrantWatch has good federal coverage)",
+                "You're a grant writing consultant who needs raw database access"
               ].map((item, index) => (
                 <li key={index} className="flex items-start gap-3 text-neutral-600">
                   <span className="w-1.5 h-1.5 bg-slate-400 rounded-full mt-2 flex-shrink-0"></span>
@@ -641,7 +664,7 @@ const HonestAssessment = () => {
               ))}
             </ul>
             <p className="text-neutral-500 text-sm mt-6 italic">
-              Instrumentl's comprehensive platform justifies its price for organizations that will use all its features.
+              GrantWatch is genuinely the most affordable paid grant database. But 'cheap' and 'cost-effective' aren't the same thing when you factor in time.
             </p>
           </div>
           
@@ -654,13 +677,12 @@ const HonestAssessment = () => {
             </h3>
             <ul className="space-y-4">
               {[
-                "Are a solo development director or small team (1-2 people)",
-                "Have limited technology budget (<$100/month)",
-                "Need to find grants fast, not manage a complex pipeline",
-                "Are overwhelmed by information overload in current tools",
-                "Want AI to do the evaluation work, not just the searching",
-                "Don't have weeks to learn a new platform",
-                "Need accurate filtering (no federal grants when you exclude federal funding)"
+                "Are a solo development professional juggling multiple responsibilities",
+                "You value time savings over lowest possible price",
+                "You want to know WHY a grant matches, not just that it exists",
+                "You're frustrated with information overload and irrelevant results",
+                "You need to quickly identify high-probability opportunities",
+                "Your organization is under $5M budget with limited grant staff"
               ].map((item, index) => (
                 <li key={index} className="flex items-start gap-3 text-neutral-700">
                   <Check className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
@@ -669,7 +691,7 @@ const HonestAssessment = () => {
               ))}
             </ul>
             <p className="text-teal-700 font-medium mt-6 italic">
-              Engrant is purpose-built for the 90% of nonprofits that can't justify $179-899/month.
+              Engrant is purpose-built for the 90% of nonprofits that can't afford to spend 10+ hours per week on manual research.
             </p>
           </div>
         </div>
@@ -683,15 +705,15 @@ const Testimonials = () => {
   const quotes = [
     {
       quote: "I spend more time searching for grants than I do actually writing them, and half the ones I find don't even fit our mission.",
-      attribution: "Sarah, Development Director, $2.3M nonprofit"
+      attribution: "Development Director, mid-sized nonprofit"
     },
     {
-      quote: "We told all of them that we didn't accept federal funding, and I would say 90% of what we got back was federal funding requests.",
-      attribution: "Barbara K., Grant Writer, Healthcare Free Clinic"
+      quote: "The trickiest part for us was finding relevant grants. The platform's search and filter functionalities are fairly limited.",
+      attribution: "Learn Grant Writing on GrantWatch"
     },
     {
-      quote: "If they didn't know much about us, how are you gonna figure it out?",
-      attribution: "Nonprofit Grant Coordinator on shallow profiling in competitor tools"
+      quote: "Information overload is all too real during grant research.",
+      attribution: "Instrumentl industry analysis"
     }
   ];
 
@@ -729,7 +751,7 @@ const Testimonials = () => {
         <div className="bg-white rounded-2xl p-8 warm-shadow border border-teal-100">
           <div className="grid md:grid-cols-3 gap-6 text-center">
             <div>
-              <div className="text-3xl font-bold text-teal-600 mb-2">5+</div>
+              <div className="text-3xl font-bold text-teal-600 mb-2">10+</div>
               <div className="text-neutral-600">hours/week saved on grant research</div>
             </div>
             <div>
@@ -738,7 +760,7 @@ const Testimonials = () => {
             </div>
             <div>
               <div className="text-3xl font-bold text-teal-600 mb-2">$47</div>
-              <div className="text-neutral-600">per month—not $179-899</div>
+              <div className="text-neutral-600">per month—not $249/year</div>
             </div>
           </div>
         </div>
@@ -768,51 +790,58 @@ const PricingComparison = () => {
         </div>
         
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
-          {/* Instrumentl Card */}
+          {/* GrantWatch Card */}
           <div className="bg-slate-50 rounded-3xl p-8 border border-slate-200">
-            <h3 className="text-xl font-bold text-slate-700 mb-6">Instrumentl</h3>
+            <h3 className="text-xl font-bold text-slate-700 mb-6">GrantWatch</h3>
             
             <div className="space-y-4">
               <div className="bg-white rounded-xl p-5 border border-slate-100">
-                <div className="text-sm font-semibold text-slate-500 mb-1">BASIC</div>
+                <div className="text-sm font-semibold text-slate-500 mb-1">WEEKLY</div>
                 <div className="flex items-baseline">
-                  <span className="text-3xl font-bold text-slate-700">$179</span>
-                  <span className="text-neutral-500 ml-1">/month</span>
+                  <span className="text-3xl font-bold text-slate-700">$22</span>
+                  <span className="text-neutral-500 ml-1">/week</span>
                 </div>
-                <p className="text-sm text-neutral-500 mt-1">($2,148/year)</p>
+                <p className="text-sm text-neutral-500 mt-1">Short-term access</p>
               </div>
               
               <div className="bg-white rounded-xl p-5 border border-slate-100">
-                <div className="text-sm font-semibold text-slate-500 mb-1">STANDARD</div>
+                <div className="text-sm font-semibold text-slate-500 mb-1">MONTHLY</div>
                 <div className="flex items-baseline">
-                  <span className="text-3xl font-bold text-slate-700">$299</span>
+                  <span className="text-3xl font-bold text-slate-700">$49</span>
                   <span className="text-neutral-500 ml-1">/month</span>
                 </div>
-                <p className="text-sm text-neutral-500 mt-1">($3,588/year)</p>
               </div>
               
               <div className="bg-white rounded-xl p-5 border border-slate-100">
-                <div className="text-sm font-semibold text-slate-500 mb-1">PRO</div>
+                <div className="text-sm font-semibold text-slate-500 mb-1">QUARTERLY</div>
                 <div className="flex items-baseline">
-                  <span className="text-3xl font-bold text-slate-700">$499</span>
-                  <span className="text-neutral-500 ml-1">/month</span>
+                  <span className="text-3xl font-bold text-slate-700">$100</span>
+                  <span className="text-neutral-500 ml-1">/quarter</span>
                 </div>
-                <p className="text-sm text-neutral-500 mt-1">($5,988/year)</p>
-                <p className="text-xs text-amber-600 mt-2">Peer Prospecting included</p>
               </div>
               
-              <div className="bg-white rounded-xl p-5 border border-slate-100">
-                <div className="text-sm font-semibold text-slate-500 mb-1">ADVANCED</div>
+              <div className="bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl p-5 border border-slate-300">
+                <div className="text-sm font-semibold text-slate-600 mb-1">ANNUAL (BEST VALUE)</div>
                 <div className="flex items-baseline">
-                  <span className="text-3xl font-bold text-slate-700">$899</span>
-                  <span className="text-neutral-500 ml-1">/month</span>
+                  <span className="text-3xl font-bold text-slate-800">$249</span>
+                  <span className="text-neutral-600 ml-1">/year</span>
                 </div>
-                <p className="text-sm text-neutral-500 mt-1">($10,788/year)</p>
               </div>
               
-              <p className="text-sm text-neutral-500 italic mt-4">
-                All plans require annual commitment • Additional users: $5/month each
-              </p>
+              <div className="space-y-2 mt-4 text-sm">
+                <div className="flex items-center gap-2 text-neutral-600">
+                  <X className="w-4 h-4 text-rose-400" />
+                  No free trial
+                </div>
+                <div className="flex items-center gap-2 text-neutral-600">
+                  <X className="w-4 h-4 text-rose-400" />
+                  No fit scoring or AI matching
+                </div>
+                <div className="flex items-center gap-2 text-neutral-600">
+                  <Check className="w-4 h-4 text-slate-400" />
+                  10,000+ active grants to search
+                </div>
+              </div>
             </div>
           </div>
           
@@ -835,19 +864,18 @@ const PricingComparison = () => {
                   <span className="text-xl text-neutral-500 ml-2">/month</span>
                 </div>
                 <p className="text-teal-600 font-medium mt-2">
-                  Or $37/month when billed annually ($444/year)
+                  Or $37/month billed annually ($444/year)
                 </p>
               </div>
               
               <div className="space-y-3 mb-8">
                 {[
-                  "All features included",
-                  "AI-powered matching",
-                  "Pre-evaluated grants with fit scores",
-                  "Learning recommendations",
+                  "2-week free trial, no credit card",
+                  "AI fit scores and match explanations",
+                  "Pre-evaluated grants (10-20 curated matches)",
+                  "Red flags and competition indicators",
                   "Past recipients like you",
-                  "Real-time search",
-                  "2-week free trial"
+                  "Learning recommendations"
                 ].map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <div className="w-6 h-6 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0">
@@ -864,7 +892,7 @@ const PricingComparison = () => {
                   if (typeof window !== 'undefined' && window.gtag) {
                     window.gtag('event', 'cta_click', {
                       location: 'pricing',
-                      page: 'instrumentl_comparison'
+                      page: 'grantwatch_comparison'
                     });
                   }
                 }}
@@ -883,7 +911,7 @@ const PricingComparison = () => {
         <div className="mt-10 max-w-2xl mx-auto">
           <div className="bg-amber-50 border border-amber-100 rounded-xl p-6">
             <p className="text-amber-800 text-center font-medium leading-relaxed">
-              At $47/month, Engrant costs <strong>74% less</strong> than Instrumentl's Basic plan and <strong>91% less</strong> than their Pro plan.
+              GrantWatch costs $195 less per year. But if Engrant saves you just 2 hours per week at your $40/hour loaded cost, that's $4,160/year in recovered time. The question isn't 'Which is cheaper?' It's 'Which saves you more?'
             </p>
           </div>
         </div>
@@ -898,36 +926,36 @@ const FAQSection = () => {
 
   const faqs = [
     {
-      question: "What is the best alternative to Instrumentl?",
-      answer: "For small-to-medium nonprofits focused on grant discovery (not full lifecycle management), Engrant is the leading Instrumentl alternative. At $47/month vs Instrumentl's $179-899/month, Engrant provides AI-powered grant matching with fit scores, competition levels, and red flag warnings. It's designed for solo development directors and small teams who need relevant grants fast, without weeks of learning curve."
+      question: "What is the best alternative to GrantWatch?",
+      answer: "Engrant is the best GrantWatch alternative for nonprofits who want pre-evaluated grant matches instead of manual database searching. Unlike GrantWatch's 10,000+ listing approach, Engrant uses AI to deliver 10-20 high-fit grants with match scores, eligibility checks, and red flags already assessed. At $47/month (or $37/month billed annually), Engrant costs more than GrantWatch ($249/year) but saves 10+ hours per week on manual research—making it ideal for overworked development professionals."
     },
     {
-      question: "How much does Instrumentl cost?",
-      answer: "Instrumentl pricing starts at $179/month for the Basic plan, with Standard at $299/month, Pro at $499/month, and Advanced at $899/month. All plans require annual payment upfront. Key features like Peer Prospecting (seeing who funds similar organizations) require the Pro plan at $499/month. Additional users cost $5/month each."
+      question: "How much does GrantWatch cost?",
+      answer: "GrantWatch pricing in 2025: Weekly: $22/week, Monthly: $49/month, Quarterly: $100/quarter, Annual: $249/year (best value). GrantWatch is the most affordable paid grant database, but requires significant manual filtering time."
     },
     {
-      question: "What's the difference between Instrumentl and Engrant?",
-      answer: "Instrumentl is a comprehensive full-lifecycle grant management platform with 20,000+ opportunities, workflow tracking, team collaboration, and AI proposal writing. It's built for larger organizations with dedicated grant staff and costs $179-899/month. Engrant is a focused grant discovery tool that uses AI to find and pre-evaluate grants for small nonprofits. It shows 10-20 high-fit grants with fit scores and red flags, costs $47/month, and requires no setup or learning curve. It's built for solo development directors who need results in minutes, not a platform to master."
+      question: "What's the difference between GrantWatch and Engrant?",
+      answer: "GrantWatch is a budget-friendly grant database with 10,000+ listings that you filter and evaluate manually. Engrant is an AI-powered grant discovery platform that automatically researches your organization and delivers 10-20 pre-evaluated matches with fit scores, eligibility flags, and competition indicators. GrantWatch saves you money; Engrant saves you time."
     },
     {
-      question: "Is Instrumentl worth it for small nonprofits?",
-      answer: "It depends on your needs and budget. Instrumentl's own support team has stated: 'We actually find that Instrumentl is indeed overkill for smaller nonprofits.' For organizations with $5M+ budgets, dedicated grant staff, and need for full workflow management, Instrumentl provides excellent value. For small nonprofits ($1-5M budget) with solo development directors who primarily need to find grants quickly, tools like Engrant provide similar discovery capabilities at a fraction of the cost ($47/month vs $179-899/month)."
+      question: "Is GrantWatch worth it for small nonprofits?",
+      answer: "GrantWatch is worth it for small nonprofits IF you have dedicated time for grant research (10-15 hours/week) and strong filtering skills. At $249/year, it's the most affordable paid option. However, if you're a solo development professional with limited time, Engrant's pre-evaluated approach ($444/year) typically saves enough hours to justify the difference."
     },
     {
-      question: "How can I find grants faster than using Instrumentl?",
-      answer: "If you're spending hours scrolling through Instrumentl's 100+ matches looking for the right fit, Engrant offers a faster approach. Instead of giving you a database to search, Engrant: (1) Researches your organization automatically (no keyword setup), (2) Shows 10-20 pre-evaluated grants at a time, (3) Provides fit scores explaining why each grant matches, (4) Flags red flags and disqualifiers upfront, (5) Learns from your saves/rejects to improve future results. Most users find relevant grants in minutes, not hours—without learning a complex platform."
+      question: "How can I find grants faster than using GrantWatch?",
+      answer: "To find grants faster than GrantWatch's manual search approach, use Engrant's AI-powered matching. Instead of filtering through thousands of listings, Engrant automatically researches your organization and delivers 10-20 high-fit opportunities with match reasons, red flags, and competition levels already evaluated. Most users reduce their grant research time from 10-15 hours/week to under 2 hours."
     },
     {
-      question: "What grant database has the best filtering for small nonprofits?",
-      answer: "Small nonprofits often struggle with databases that return hundreds of results requiring manual filtering. Engrant addresses this with AI-powered pre-filtering that: excludes grant types you specify (no federal grants when you say no federal), checks geographic eligibility accurately (state-level precision), surfaces red flags before you invest time (consortium requirements, first-time grantee restrictions), and shows competition levels so you can prioritize winnable grants. Unlike databases that match on keywords alone, Engrant evaluates actual eligibility criteria."
+      question: "What grant database has the best AI matching for small nonprofits?",
+      answer: "Engrant offers the best AI matching for small nonprofits seeking pre-evaluated grant opportunities. Unlike traditional databases like GrantWatch (manual filtering), Candid FDO (historical research focus), or Instrumentl ($299-899/month enterprise pricing), Engrant provides AI-generated fit scores, eligibility screening, and competition indicators at $47/month—purpose-built for organizations without dedicated grant research staff."
     },
     {
-      question: "Does Instrumentl have a cheaper alternative?",
-      answer: "Yes. For grant discovery specifically, several alternatives cost less than Instrumentl's $179/month starting price: Engrant ($47/month — AI-powered discovery with fit scores and pre-evaluation), GrantStation ($199/year — Basic database with educational resources), GrantWatch ($199/year — Broad database with basic search), Foundation Directory Online ($55/month Essential — Large funder database, free at libraries). Engrant is positioned between budget options and Instrumentl—offering AI intelligence without enterprise pricing."
+      question: "Does GrantWatch have AI features?",
+      answer: "GrantWatch recently added AI Grant Search, AI Foundation Search, and AI Grant Writing tools to their platform. However, these features assist with searching their existing database rather than providing the pre-evaluated match scores, eligibility screening, and competition analysis that Engrant generates automatically for each grant."
     },
     {
-      question: "Can I use Engrant and Instrumentl together?",
-      answer: "Yes. Some organizations use Engrant for rapid discovery and initial filtering, then use Instrumentl's workflow tools for managing applications they've committed to pursue. If you have Instrumentl for its lifecycle management but find discovery overwhelming, Engrant can serve as your focused front-end for finding grants worth pursuing."
+      question: "Which is better for busy grant writers: GrantWatch or Engrant?",
+      answer: "For busy grant writers managing multiple responsibilities, Engrant is typically better because it eliminates manual research time. GrantWatch requires you to search, filter, and evaluate grants yourself—often 10-15 hours/week. Engrant does this evaluation automatically, showing you only high-fit grants with match reasons and red flags already assessed. The price difference ($249/year vs $444/year) is usually recovered in time savings within the first month."
     }
   ];
 
@@ -939,7 +967,7 @@ const FAQSection = () => {
             Frequently Asked Questions
           </div>
           <h2 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-4">
-            Common Questions About Instrumentl Alternatives
+            Common Questions About GrantWatch Alternatives
           </h2>
           <p className="text-lg text-neutral-600">
             Answers to help you choose the right grant discovery tool for your nonprofit.
@@ -979,44 +1007,34 @@ const FAQSection = () => {
 const SourcesSection = () => {
   const sources = [
     {
-      title: "Instrumentl Official Pricing",
-      url: "https://www.instrumentl.com/pricing",
-      description: "Official pricing page showing Basic ($179/month), Standard ($299/month), Pro ($499/month), and Advanced ($899/month) tiers"
+      title: "GrantWatch Official Website",
+      url: "https://www.grantwatch.com/",
+      description: "Official GrantWatch pricing and features information"
     },
     {
-      title: "G2 Reviews: Instrumentl",
-      url: "https://www.g2.com/products/instrumentl/reviews",
-      description: "User reviews of Instrumentl from verified nonprofit professionals"
+      title: "Learn Grant Writing: Grant Database Reviews",
+      url: "https://learngrantwriting.org/grant-databases/",
+      description: "Review of GrantWatch highlighting search and filter limitations"
     },
     {
-      title: "Capterra Reviews: Instrumentl",
-      url: "https://www.capterra.com/p/191202/Instrumentl/",
-      description: "Instrumentl reviews and pricing information from Capterra"
-    },
-    {
-      title: "Software Advice: Instrumentl Reviews",
-      url: "https://www.softwareadvice.com/grant-management/instrumentl-profile/",
-      description: "User reviews and feedback about Instrumentl's complexity and learning curve"
-    },
-    {
-      title: "GetApp Reviews: Instrumentl",
-      url: "https://www.getapp.com/fundraising-software/a/instrumentl/",
-      description: "Instrumentl reviews mentioning price concerns and recent increases"
-    },
-    {
-      title: "FinancesOnline: Instrumentl Review",
-      url: "https://financesonline.com/instrumentl/",
-      description: "Instrumentl review documenting support team response about smaller nonprofits"
+      title: "Instrumentl: Grant Research Databases Comparison",
+      url: "https://www.instrumentl.com/blog/grant-research-databases",
+      description: "Comparison analysis of grant databases including GrantWatch"
     },
     {
       title: "Funding for Good: Comparing Grant Research Databases",
       url: "https://www.fundingforgood.org/blog/comparing-grant-research-databases",
-      description: "Comparison article on grant research tools and databases (May 2024)"
+      description: "Comparison article on grant research tools and databases"
     },
     {
-      title: "Empower Change Consulting: Grant Tools Comparison",
-      url: "https://www.empowerchangeconsulting.com/blog",
-      description: "Comparison article on grant management tools (July 2025)"
+      title: "G2 Reviews: GrantWatch",
+      url: "https://www.g2.com/products/grantwatch/reviews",
+      description: "User reviews of GrantWatch from verified nonprofit professionals"
+    },
+    {
+      title: "Capterra Reviews: GrantWatch",
+      url: "https://www.capterra.com/p/100123/GrantWatch/",
+      description: "GrantWatch reviews and pricing information from Capterra"
     }
   ];
 
@@ -1074,11 +1092,11 @@ const FinalCTA = () => {
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
         <h2 className="text-4xl lg:text-6xl font-bold mb-8 text-white leading-tight">
-          Ready for grant discovery that respects your time and budget?
+          Ready to stop scrolling and start applying?
         </h2>
         
         <p className="text-xl lg:text-2xl mb-12 text-teal-100 max-w-2xl mx-auto leading-relaxed">
-          Engrant gives you AI-powered grant matching at $47/month—not $179-899. Find 10-20 highly relevant grants with fit scores, competition levels, and red flags. No weeks of setup. No feature tiers. No annual commitment required.
+          Try Engrant free for 2 weeks. No credit card required. See how AI-powered grant matching compares to manual database searching.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
@@ -1088,20 +1106,20 @@ const FinalCTA = () => {
               if (typeof window !== 'undefined' && window.gtag) {
                 window.gtag('event', 'cta_click', {
                   location: 'final_cta',
-                  page: 'instrumentl_comparison'
+                  page: 'grantwatch_comparison'
                 });
               }
             }}
             className="inline-flex items-center bg-white text-teal-700 hover:bg-amber-50 px-12 py-5 rounded-full text-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-amber-500/20 hover:-translate-y-1 group">
-            Start Your Free 2-Week Trial
+            Start Free Trial
             <svg className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
           <a 
-            href="#how-it-works"
+            href="/pricing"
             className="text-white hover:text-amber-200 font-medium text-lg">
-            See Engrant in Action
+            See pricing details
           </a>
         </div>
         
@@ -1117,10 +1135,6 @@ const FinalCTA = () => {
           <span className="flex items-center">
             <Check className="w-5 h-5 mr-2 text-amber-400" />
             Cancel anytime
-          </span>
-          <span className="flex items-center">
-            <Check className="w-5 h-5 mr-2 text-amber-400" />
-            All features included
           </span>
         </div>
       </div>
@@ -1152,7 +1166,7 @@ const Footer = () => {
   );
 };
 
-export default InstrumentlComparisonPage;
+export default GrantWatchComparisonPage;
 
 export const Head = () => {
   const faqSchema = {
@@ -1161,34 +1175,66 @@ export const Head = () => {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What is the best alternative to Instrumentl?",
+        "name": "What is the best alternative to GrantWatch?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "For small-to-medium nonprofits focused on grant discovery, Engrant is the leading Instrumentl alternative at $47/month vs $179-899/month. It provides AI-powered grant matching with fit scores, competition levels, and red flag warnings, designed for solo development directors who need relevant grants fast."
+          "text": "Engrant is the best GrantWatch alternative for nonprofits who want pre-evaluated grant matches instead of manual database searching. Unlike GrantWatch's 10,000+ listing approach, Engrant uses AI to deliver 10-20 high-fit grants with match scores, eligibility checks, and red flags already assessed. At $47/month (or $37/month billed annually), Engrant costs more than GrantWatch ($249/year) but saves 10+ hours per week on manual research—making it ideal for overworked development professionals."
         }
       },
       {
         "@type": "Question",
-        "name": "How much does Instrumentl cost?",
+        "name": "How much does GrantWatch cost?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Instrumentl pricing starts at $179/month (Basic), with Standard at $299/month, Pro at $499/month, and Advanced at $899/month. All plans require annual payment. Features like Peer Prospecting require Pro ($499/month)."
-        }
-      },
-      {
-        "@type": "Question", 
-        "name": "What's the difference between Instrumentl and Engrant?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Instrumentl is a full-lifecycle grant management platform ($179-899/month) built for larger organizations with dedicated grant staff. Engrant is a focused grant discovery tool ($47/month) that uses AI to find and pre-evaluate grants for small nonprofits, requiring no setup or learning curve."
+          "text": "GrantWatch pricing in 2025: Weekly: $22/week, Monthly: $49/month, Quarterly: $100/quarter, Annual: $249/year (best value). GrantWatch is the most affordable paid grant database, but requires significant manual filtering time."
         }
       },
       {
         "@type": "Question",
-        "name": "Is Instrumentl worth it for small nonprofits?",
+        "name": "What's the difference between GrantWatch and Engrant?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Instrumentl's own support team has stated it's 'overkill for smaller nonprofits.' For organizations with $5M+ budgets and dedicated grant staff, it provides excellent value. For small nonprofits with solo development directors, alternatives like Engrant offer similar discovery capabilities at $47/month instead of $179-899/month."
+          "text": "GrantWatch is a budget-friendly grant database with 10,000+ listings that you filter and evaluate manually. Engrant is an AI-powered grant discovery platform that automatically researches your organization and delivers 10-20 pre-evaluated matches with fit scores, eligibility flags, and competition indicators. GrantWatch saves you money; Engrant saves you time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is GrantWatch worth it for small nonprofits?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GrantWatch is worth it for small nonprofits IF you have dedicated time for grant research (10-15 hours/week) and strong filtering skills. At $249/year, it's the most affordable paid option. However, if you're a solo development professional with limited time, Engrant's pre-evaluated approach ($444/year) typically saves enough hours to justify the difference."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I find grants faster than using GrantWatch?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To find grants faster than GrantWatch's manual search approach, use Engrant's AI-powered matching. Instead of filtering through thousands of listings, Engrant automatically researches your organization and delivers 10-20 high-fit opportunities with match reasons, red flags, and competition levels already evaluated. Most users reduce their grant research time from 10-15 hours/week to under 2 hours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What grant database has the best AI matching for small nonprofits?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Engrant offers the best AI matching for small nonprofits seeking pre-evaluated grant opportunities. Unlike traditional databases like GrantWatch (manual filtering), Candid FDO (historical research focus), or Instrumentl ($299-899/month enterprise pricing), Engrant provides AI-generated fit scores, eligibility screening, and competition indicators at $47/month—purpose-built for organizations without dedicated grant research staff."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does GrantWatch have AI features?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GrantWatch recently added AI Grant Search, AI Foundation Search, and AI Grant Writing tools to their platform. However, these features assist with searching their existing database rather than providing the pre-evaluated match scores, eligibility screening, and competition analysis that Engrant generates automatically for each grant."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which is better for busy grant writers: GrantWatch or Engrant?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For busy grant writers managing multiple responsibilities, Engrant is typically better because it eliminates manual research time. GrantWatch requires you to search, filter, and evaluate grants yourself—often 10-15 hours/week. Engrant does this evaluation automatically, showing you only high-fit grants with match reasons and red flags already assessed. The price difference ($249/year vs $444/year) is usually recovered in time savings within the first month."
         }
       }
     ]
@@ -1198,7 +1244,7 @@ export const Head = () => {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Engrant",
-    "description": "AI-powered grant discovery platform for nonprofits. Find 10-20 highly relevant grants with fit scores, competition levels, and red flags.",
+    "description": "AI-powered grant discovery platform for nonprofits",
     "category": "Grant Research Software",
     "brand": {
       "@type": "Brand",
@@ -1208,27 +1254,25 @@ export const Head = () => {
       "@type": "Offer",
       "price": "47",
       "priceCurrency": "USD",
-      "priceValidUntil": "2025-12-31",
-      "availability": "https://schema.org/InStock"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "reviewCount": "50"
+      "priceValidUntil": "2025-12-31"
     }
   };
 
   return (
     <>
-      <title>Instrumentl Alternative for Nonprofits | Engrant vs Instrumentl</title>
+      <title>GrantWatch Alternative for Nonprofits | Engrant vs GrantWatch Comparison</title>
       <meta 
         name="description" 
-        content="Looking for an Instrumentl alternative? Compare Engrant's AI-powered grant matching vs Instrumentl. Same smart discovery at $47/month vs $179-899/month." 
+        content="Looking for a GrantWatch alternative? Compare Engrant's AI-powered grant matching vs GrantWatch's manual database. Pre-evaluated grants with fit scores at $47/month." 
       />
       <meta 
         name="keywords" 
-        content="Instrumentl alternative, Instrumentl vs Engrant, grant database for nonprofits, grant search tool, AI grant matching, nonprofit grant database, Instrumentl cheaper alternative" 
+        content="GrantWatch alternative, GrantWatch vs Engrant, grant database comparison, AI grant matching, nonprofit grant search" 
       />
+      <meta property="og:title" content="GrantWatch Alternative: Engrant vs GrantWatch Comparison" />
+      <meta property="og:description" content="Stop manually filtering 10,000 grants. Get 10-20 pre-evaluated matches with AI fit scores." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://engrant.eu/compare/grantwatch" />
       <script type="application/ld+json">
         {JSON.stringify(faqSchema)}
       </script>
