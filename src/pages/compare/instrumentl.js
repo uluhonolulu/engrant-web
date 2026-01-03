@@ -194,7 +194,7 @@ const ProblemSection = () => {
       description: "Instrumentl's pricing starts at $179/month and goes up to $899/month for the Advanced plan. For small nonprofits, this is often prohibitive.",
       quote: "We actually find that Instrumentl is indeed overkill for smaller nonprofits.",
       quoteSource: "Instrumentl Support Team",
-      sourceUrl: "https://financesonline.com/instrumentl/",
+      sourceUrl: "https://reviews.financesonline.com/p/instrumentl/",
       engrantAlternative: "$47/month gets you AI-powered discovery"
     },
     {
@@ -1005,7 +1005,7 @@ const SourcesSection = () => {
     },
     {
       title: "FinancesOnline: Instrumentl Review",
-      url: "https://financesonline.com/instrumentl/",
+      url: "https://reviews.financesonline.com/p/instrumentl/",
       description: "Instrumentl review documenting support team response about smaller nonprofits"
     },
     {

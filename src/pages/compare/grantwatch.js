@@ -194,17 +194,17 @@ const ProblemSection = () => {
       description: "While the information subscribers have access to within each grant record is extremely helpful, the trickiest part for us was finding relevant grants. The platform's search and filter functionalities are fairly limited, which can complicate and slow down your research process.",
       quote: "While the information subscribers have access to within each grant record is extremely helpful, the trickiest part for us was finding relevant grants. The platform's search and filter functionalities are fairly limited, which can complicate and slow down your research process.",
       quoteSource: "Learn Grant Writing database review",
-      sourceUrl: "https://learngrantwriting.org/grant-databases/",
+      sourceUrl: "https://www.learngrantwriting.org/blog/best-grant-databases/",
       engrantAlternative: "10-20 pre-evaluated grants, not 10,000 to scroll through"
     },
     {
-      icon: Search,
-      title: "Manual Evaluation Required",
-      description: "GrantWatch requires manual searching and filtering. You must evaluate each opportunity yourself, which often includes outdated or irrelevant listings mixed in with current ones.",
-      quote: "GrantWatch requires manual searching and filtering... Limited RFPs, may include outdated or irrelevant opportunities.",
-      quoteSource: "Instrumentl comparison analysis",
-      sourceUrl: "https://www.instrumentl.com/blog/grant-research-databases",
-      engrantAlternative: "AI does the evaluation—fit scores, red flags, and match reasons included"
+      icon: DollarSign,
+      title: "Budget Price, Premium Time Investment",
+      description: "GrantWatch might be more affordable at $249/year, but subscribers are missing out on quality features and helpful functionality in finding applicable grants. The time you spend manually filtering through thousands of listings often costs more than the price difference.",
+      quote: "All in all, GrantWatch might be more affordable, but subscribers are missing out on quality features and helpful functionality in finding applicable grants.",
+      quoteSource: "Learn Grant Writing database review",
+      sourceUrl: "https://www.learngrantwriting.org/blog/best-grant-databases/",
+      engrantAlternative: "Quality features and helpful functionality—worth the investment when you factor in time saved"
     },
     {
       icon: Target,
@@ -1013,29 +1013,14 @@ const SourcesSection = () => {
     },
     {
       title: "Learn Grant Writing: Grant Database Reviews",
-      url: "https://learngrantwriting.org/grant-databases/",
+      url: "https://www.learngrantwriting.org/blog/best-grant-databases/",
       description: "Review of GrantWatch highlighting search and filter limitations"
-    },
-    {
-      title: "Instrumentl: Grant Research Databases Comparison",
-      url: "https://www.instrumentl.com/blog/grant-research-databases",
-      description: "Comparison analysis of grant databases including GrantWatch"
     },
     {
       title: "Funding for Good: Comparing Grant Research Databases",
       url: "https://www.fundingforgood.org/blog/comparing-grant-research-databases",
       description: "Comparison article on grant research tools and databases"
     },
-    {
-      title: "G2 Reviews: GrantWatch",
-      url: "https://www.g2.com/products/grantwatch/reviews",
-      description: "User reviews of GrantWatch from verified nonprofit professionals"
-    },
-    {
-      title: "Capterra Reviews: GrantWatch",
-      url: "https://www.capterra.com/p/100123/GrantWatch/",
-      description: "GrantWatch reviews and pricing information from Capterra"
-    }
   ];
 
   return (
