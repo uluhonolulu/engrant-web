@@ -36,7 +36,7 @@ const Header = () => {
                 }
               }}
               className="btn-primary text-white px-6 py-2.5 rounded-full font-semibold inline-block shadow-md">
-              Get my matches
+              Find my grants
             </a>
           </div>
         </div>

@@ -82,7 +82,7 @@ const Hero = () => {
                   }
                 }}
                 className="btn-primary text-white px-10 py-4 rounded-full text-lg font-semibold shadow-lg inline-block">
-                Get my matches
+                Find my grants
               </a>
               <p className="text-neutral-500 mt-4 mb-0 flex items-center">
                 <span className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2"></span>

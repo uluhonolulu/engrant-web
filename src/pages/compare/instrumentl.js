@@ -126,7 +126,7 @@ const Header = () => {
                 }
               }}
               className="btn-primary text-white px-6 py-2.5 rounded-full font-semibold inline-block shadow-md">
-              Try Engrant Free
+              Find my grants
             </a>
           </div>
         </div>
@@ -168,7 +168,7 @@ const Hero = () => {
               }
             }}
             className="btn-primary text-white px-10 py-4 rounded-full text-lg font-semibold shadow-lg inline-block">
-            Try Engrant Free for 2 Weeks
+            Find my grants
           </a>
           <a href="#comparison" className="text-teal-700 hover:text-teal-800 font-medium flex items-center group">
             See how it works
@@ -869,7 +869,7 @@ const PricingComparison = () => {
                   }
                 }}
                 className="w-full btn-primary text-white py-4 px-6 rounded-full font-semibold text-lg inline-block text-center shadow-lg">
-                Start Free Trial
+                Find my grants
               </a>
               
               <p className="text-center text-teal-600 font-medium mt-4 flex items-center justify-center">

@@ -126,7 +126,7 @@ const Header = () => {
                 }
               }}
               className="btn-primary text-white px-6 py-2.5 rounded-full font-semibold inline-block shadow-md">
-              Try Engrant Free
+              Find my grants
             </a>
           </div>
         </div>
@@ -168,7 +168,7 @@ const Hero = () => {
               }
             }}
             className="btn-primary text-white px-10 py-4 rounded-full text-lg font-semibold shadow-lg inline-block">
-            Try Engrant Free
+            Find my grants
           </a>
           <a href="#key-differences" className="text-teal-700 hover:text-teal-800 font-medium flex items-center group">
             See how it works
@@ -897,7 +897,7 @@ const PricingComparison = () => {
                   }
                 }}
                 className="w-full btn-primary text-white py-4 px-6 rounded-full font-semibold text-lg inline-block text-center shadow-lg">
-                Start Free Trial
+                Find my grants
               </a>
               
               <p className="text-center text-teal-600 font-medium mt-4 flex items-center justify-center">
@@ -1096,7 +1096,7 @@ const FinalCTA = () => {
               }
             }}
             className="inline-flex items-center bg-white text-teal-700 hover:bg-amber-50 px-12 py-5 rounded-full text-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-amber-500/20 hover:-translate-y-1 group">
-            Start Free Trial
+            Find my grants
             <svg className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
