@@ -2,6 +2,13 @@ import * as React from "react"
 import { Link } from "gatsby"
 
 const PrivacyPolicyPage = () => {
+  const [lastUpdated, setLastUpdated] = React.useState('');
+
+  React.useEffect(() => {
+    // Only set date on client to prevent hydration errors
+    setLastUpdated(new Date().toLocaleDateString());
+  }, []);
+
   return (
     <main className="min-h-screen bg-neutral-50">
       <div className="max-w-4xl mx-auto px-4 py-16">
@@ -12,7 +19,7 @@ const PrivacyPolicyPage = () => {
         <h1 className="text-4xl font-bold text-neutral-800 mb-8">Privacy Policy</h1>
         
         <div className="prose prose-lg max-w-none text-neutral-700">
-          <p className="text-neutral-600">Last updated: {new Date().toLocaleDateString()}</p>
+          {lastUpdated && <p className="text-neutral-600">Last updated: {lastUpdated}</p>}
 
           <h2 className="text-2xl font-semibold text-neutral-800 mt-8">1. Introduction</h2>
           <p>
@@ -65,7 +72,15 @@ const PrivacyPolicyPage = () => {
             <li>Integrity and confidentiality</li>
           </ul>
 
-          <h2 className="text-2xl font-semibold text-neutral-800 mt-8">6. Contact Us</h2>
+          <h2 className="text-2xl font-semibold text-neutral-800 mt-8">6. Cookies and Tracking Technologies</h2>
+          <p>
+            When you visit or log in to our website, cookies and similar technologies may be used by our online data partners or vendors to associate these activities with other personal information they or others have about you, including by association with your email. We (or service providers on our behalf) may then send communications and marketing to these email addresses. You may opt out of receiving this advertising by visiting <a href="https://app.retention.com/optout" className="text-primary-600 hover:text-primary-700 underline" target="_blank" rel="noopener noreferrer">https://app.retention.com/optout</a>.
+          </p>
+          <p className="mt-4">
+            You also have the option to opt out of the collection of your personal data in compliance with GDPR. To exercise this option, please visit <a href="https://www.rb2b.com/rb2b-gdpr-opt-out" className="text-primary-600 hover:text-primary-700 underline" target="_blank" rel="noopener noreferrer">https://www.rb2b.com/rb2b-gdpr-opt-out</a>.
+          </p>
+
+          <h2 className="text-2xl font-semibold text-neutral-800 mt-8">7. Contact Us</h2>
           <p>
             If you have any questions about this Privacy Policy or wish to exercise your rights under GDPR, please contact us at:
           </p>

@@ -3,6 +3,11 @@
  * @param {string} uniqueId - Your RB2B unique ID
  */
 export function initRB2B(uniqueId) {
+  // Only run in browser environment to prevent hydration errors
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   !function () {
     var reb2b = window.reb2b = window.reb2b || [];
     if (reb2b.invoked) return;
