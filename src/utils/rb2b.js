@@ -8,7 +8,7 @@ export function initRB2B(uniqueId) {
     return;
   }
 
-  !function () {
+  (function () {
     var reb2b = window.reb2b = window.reb2b || [];
     if (reb2b.invoked) return;
     reb2b.invoked = true;
@@ -35,6 +35,6 @@ export function initRB2B(uniqueId) {
     };
     reb2b.SNIPPET_VERSION = "1.0.1";
     reb2b.load(uniqueId);
-  }();
+  })();
 }
 
