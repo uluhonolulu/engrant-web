@@ -11,6 +11,7 @@ import WhoThisIsFor from '../components/ngo-search/WhoThisIsFor';
 import Trust from '../components/ngo-search/Trust';
 import FAQ from '../components/ngo-search/FAQ';
 import FinalCTA from '../components/ngo-search/FinalCTA';
+import Footer from '../components/Footer';
 
 const HomePage = () => {
   return (
@@ -26,6 +27,7 @@ const HomePage = () => {
         <Trust />
         <FAQ />
         <FinalCTA />
+        <Footer />
     </div>
   );
 };
