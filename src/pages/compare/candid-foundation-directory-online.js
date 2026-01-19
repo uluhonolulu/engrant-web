@@ -1122,22 +1122,18 @@ export const Head = () => {
     ]
   };
 
-  const productSchema = {
+  const softwareApplicationSchema = {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": "SoftwareApplication",
     "name": "Engrant",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
     "description": "AI-powered grant discovery platform for nonprofits that pre-evaluates grants for fit, shows eligibility issues upfront, and matches organizations with fundable opportunities.",
-    "category": "Grant Research Software",
-    "brand": {
-      "@type": "Brand",
-      "name": "Engrant"
-    },
     "offers": {
       "@type": "Offer",
       "price": "47",
       "priceCurrency": "USD",
-      "priceValidUntil": "2025-12-31",
-      "availability": "https://schema.org/InStock",
+      "priceValidUntil": "2026-04-30",
       "url": "https://app.engrant.eu/"
     }
   };
@@ -1182,7 +1178,7 @@ export const Head = () => {
         {JSON.stringify(faqSchema)}
       </script>
       <script type="application/ld+json">
-        {JSON.stringify(productSchema)}
+        {JSON.stringify(softwareApplicationSchema)}
       </script>
       <script type="application/ld+json">
         {JSON.stringify(comparisonSchema)}

@@ -904,17 +904,18 @@ export const Head = () => {
     ]
   };
 
-  const productSchema = {
+  const softwareApplicationSchema = {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": "SoftwareApplication",
     "name": "Engrant",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
     "description": "AI-powered grant discovery platform for solo development professionals",
-    "category": "Grant Research Software",
     "offers": {
       "@type": "Offer",
       "price": "47",
       "priceCurrency": "USD",
-      "priceValidUntil": "2025-12-31"
+      "priceValidUntil": "2026-04-30"
     }
   };
 
@@ -929,7 +930,7 @@ export const Head = () => {
         {JSON.stringify(faqSchema)}
       </script>
       <script type="application/ld+json">
-        {JSON.stringify(productSchema)}
+        {JSON.stringify(softwareApplicationSchema)}
       </script>
       <link
         href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap"
