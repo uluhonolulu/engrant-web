@@ -9,6 +9,7 @@ import ValueComparison from '../components/ngo-search/ValueComparison';
 import Pricing from '../components/ngo-search/Pricing';
 import WhoThisIsFor from '../components/ngo-search/WhoThisIsFor';
 import Trust from '../components/ngo-search/Trust';
+import RecentGrantsCarousel from '../components/ngo-search/RecentGrantsCarousel';
 import FAQ from '../components/ngo-search/FAQ';
 import FinalCTA from '../components/ngo-search/FinalCTA';
 import Footer from '../components/Footer';
@@ -25,6 +26,7 @@ const HomePage = () => {
         <Pricing />
         <WhoThisIsFor />
         <Trust />
+        <RecentGrantsCarousel />
         <FAQ />
         <FinalCTA />
         <Footer />

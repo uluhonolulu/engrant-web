@@ -20,6 +20,7 @@
     "@tailwindcss/postcss": "^4.1.8",
     "@tmttn/gatsby-plugin-linkedin-insight": "github:tmttn/gatsby-plugin-linkedin-insight",
     "autoprefixer": "^10.4.21",
+    "embla-carousel-react": "^8.6.0",
     "framer-motion": "^12.16.0",
     "gatsby": "^5.14.1",
     "gatsby-plugin-clerk": "^4.4.51",
