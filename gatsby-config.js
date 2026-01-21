@@ -119,6 +119,13 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-facebook-pixel-custom`,
+      options: {
+        pixelId: "1577154443426139",
+        includeInDevelopment: false, // Set to false to only load in production
+      },
+    },
     // {
 	// 	resolve: `gatsby-plugin-clerk`,
 	// 	options: {

@@ -1,0 +1,14 @@
+{
+  "name": "gatsby-plugin-facebook-pixel-custom",
+  "version": "1.0.0",
+  "description": "Gatsby plugin for Facebook Pixel with development support",
+  "main": "gatsby-ssr.js",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "facebook",
+    "pixel"
+  ],
+  "author": "",
+  "license": "MIT"
+}
