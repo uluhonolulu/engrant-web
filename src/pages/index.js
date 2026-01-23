@@ -9,6 +9,7 @@ import ValueComparison from '../components/ngo-search/ValueComparison';
 import Pricing from '../components/ngo-search/Pricing';
 import WhoThisIsFor from '../components/ngo-search/WhoThisIsFor';
 import Trust from '../components/ngo-search/Trust';
+import Testimonials from '../components/ngo-search/Testimonials';
 import RecentGrantsCarousel from '../components/ngo-search/RecentGrantsCarousel';
 import FAQ from '../components/ngo-search/FAQ';
 import FinalCTA from '../components/ngo-search/FinalCTA';
@@ -26,6 +27,7 @@ const HomePage = () => {
         <Pricing />
         <WhoThisIsFor />
         <Trust />
+        <Testimonials />
         <RecentGrantsCarousel />
         <FAQ />
         <FinalCTA />
@@ -46,6 +48,11 @@ export const Head = () => (
     <link
       href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
+    />
+    <script
+      src="https://widget.senja.io/widget/eb3ea723-1cc7-49fa-bcd3-f8b3bee50ded/platform.js"
+      type="text/javascript"
+      async
     />
   </>
 );
