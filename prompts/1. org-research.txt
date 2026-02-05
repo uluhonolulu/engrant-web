@@ -1,0 +1,562 @@
+# Research Request
+
+Please conduct comprehensive grant-optimized research on the organization "<INSERT ORGANIZATION NAME>" with website: <INSERT WEBSITE>.
+
+
+# Research Aspects
+
+Research ALL of the following aspects systematically and provide detailed analysis:
+
+## Aspect 1: Core Organization Profile
+
+CORE ORGANIZATION PROFILE:
+- Full legal name and any acronyms/abbreviations used
+- Mission, vision, values, and strategic objectives
+- Core programs, services, and activities
+- Leadership structure (board, executives, key personnel)
+- Legal registration type (NGO, foundation, private company, cooperative, etc.)
+- Year established/founded
+- All registration numbers, tax IDs, VAT numbers (including 501(c)(3) if US-based)
+- Accreditations and quality certifications
+
+## Aspect 2: Niche Characteristics (CRITICAL)
+
+NICHE CHARACTERISTICS & SPECIALIZED IDENTITY (CRITICAL FOR GRANT DISCOVERY):
+- **Specialized sector/cause identity** (e.g., "Jewish heritage", "LGBTQ+ rights", "ocean conservation", "Indigenous education")
+- **Community-specific focus** (ethnic, religious, cultural, linguistic minorities)
+- **Population-specific specialization** (survivors of specific crises, specific diaspora groups, particular disability communities)
+- **Unique methodological approach** (e.g., "art therapy for refugees", "peer-to-peer mentoring", "restorative justice")
+- **First-of-kind status** in region or for population served
+- Any characteristics that make this organization part of a specialized funding ecosystem
+- Keywords and terminology this specialized sector uses (e.g., "Shoah documentation" vs "Holocaust education")
+
+## Aspect 3: Peer Organization Ecosystem
+
+PEER ORGANIZATION ECOSYSTEM:
+- Identify 5-10 similar organizations (same sector, geography, population served)
+- Organizations this org references as peers, partners, or models
+- Organizations that serve similar populations in neighboring countries/regions
+- Organizations in the same specialized funding ecosystem
+- For each peer: name, location, website, and known funders if visible
+
+## Aspect 4: Operational Languages
+
+OPERATIONAL LANGUAGES & LOCALIZATION:
+- Languages used for instruction/service delivery (with percentages)
+- Administrative/operational languages
+- Staff language capabilities
+- **CRITICAL: Local language grant search terms** for BOTH:
+  * Generic grant terms (e.g., Montenegro: "fondovi", "dotacije", "bespovratna sredstva")
+  * Specialized sector terms in local language (e.g., if Jewish heritage org in Poland: "fundacje żydowskie", "dziedzictwo żydowskie")
+- Translation capacity for international applications
+
+## Aspect 5: Geographic Political Context
+
+GEOGRAPHIC & POLITICAL CONTEXT WITH HIERARCHY:
+- **Specific location**: City/municipality, region/state, country
+- **Geographic hierarchy** for grant searches:
+  * Most specific: City name, specific region
+  * Medium specificity: Country name, sub-region (e.g., "Western Balkans", "New England")
+  * Broader region: Multi-country region (e.g., "Central & Eastern Europe", "Southeast Asia", "Latin America")
+  * Widest: Continental (e.g., "Europe", "Africa", "Americas")
+- **EU/International status**:
+  * If in Europe: EU member / EU candidate / Potential candidate / Eastern Partnership / European neighborhood / Third country
+  * If in US: State, tribal land status, US territory
+  * If elsewhere: Regional bloc membership (ASEAN, MERCOSUR, African Union, etc.)
+- **Bilateral cooperation**: Which countries have development agreements, sister city relationships, or cultural exchange programs with this location
+- **Diaspora connections**: Which countries have significant diaspora communities from this location
+- **Regional initiatives**: Participation in regional programs (e.g., V4, WB6, Three Seas Initiative, Nordic Council)
+
+## Aspect 6: Size Capacity Indicators
+
+SIZE & CAPACITY INDICATORS:
+- EXACT employee count (full-time, part-time, volunteers separately)
+- Annual revenue/budget (specific amount with currency and year)
+- Revenue breakdown by source (% grants, donations, fees, government, etc.)
+- Physical infrastructure (owned/rented facilities, equipment value)
+- Digital infrastructure and capabilities
+- Financial management capacity (audited accounts, financial software)
+- Project management track record
+- **Largest grant received** (amount and source - indicates realistic grant size)
+- **Typical grant range** (based on past grants received)
+
+## Aspect 7: Special Circumstances
+
+SPECIAL CIRCUMSTANCES & UNIQUE POSITIONING:
+- Crisis response involvement (refugees, natural disasters, pandemic)
+- Support for displaced/exile populations (specify which populations)
+- **Minority group focus** (which specific minority groups)
+- **Minority-led status** (led by members of which minority)
+- First-of-kind or innovative approaches in the region
+- Gender composition of leadership and staff (% women in leadership)
+- Disability inclusion practices (disability-focused or disability-led)
+- Youth-led initiatives (average age of leadership, under-35 leadership)
+- Environmental/climate action focus
+- **Faith-based or faith-affiliated** (which tradition, level of affiliation)
+- **Indigenous-led or Indigenous-serving**
+- **Survivor-led** (led by people with lived experience of the issue addressed)
+- Any unique circumstances that open special funding streams
+
+## Aspect 8: Sectoral Classification
+
+SECTORAL CLASSIFICATION & CROSS-SECTOR POTENTIAL:
+- **Primary specialized sector** (be as specific as possible - not just "culture" but "Jewish cultural heritage preservation")
+- **Broader sector categories** this org fits into (for general funders)
+- ISCED, NACE, NTEE, or other standard classification codes (depending on country)
+- **Secondary sectors** where the organization could qualify for funding
+- **Cross-cutting themes** (gender equality, social inclusion, digitalization, green transition, youth participation, intercultural dialogue)
+- Innovation and pilot project potential
+- Scalability and replication potential
+- **Specialized terminology** this sector uses (e.g., Holocaust education sector says "Shoah", "remembrance", "testimony")
+
+## Aspect 9: Funding Landscape (CRITICAL)
+
+FUNDING LANDSCAPE MAPPING (DETAILED):
+- **Previous grants received** - for EACH grant found:
+  * Funder name (full name of foundation/program)
+  * Program name (specific program or fund within the funder)
+  * Amount (in original currency and approximate USD/EUR)
+  * Year received
+  * Project title/purpose
+- **Current donor relationships** (active funders)
+- **Funder types that have supported this org**:
+  * Specialized sector foundations (e.g., Jewish heritage foundations, environmental foundations)
+  * Regional/geographic funders (EU programs, regional development funds)
+  * Bilateral development agencies (USAID, GIZ, SDC, etc.)
+  * Community foundations
+  * Corporate foundations
+  * Government ministries
+  * Embassy programs
+  * International organizations (UN agencies, Council of Europe, OSCE)
+- **Known applicable funding programs**:
+  * EU programs (Erasmus+, Horizon, CERV, Creative Europe, LIFE, etc.) - specify which strands
+  * US government programs (NEH, NEA, State Dept, USAID) if applicable
+  * Regional development funds
+  * National grant schemes
+  * Local/municipal funding
+- **Specialized sector funders** in this field (e.g., if Jewish heritage org: Claims Conference, Rothschild Foundation, JDC, local Jewish foundations)
+- Development banks and IFIs (World Bank, EBRD, EIB, IDB, ADB, etc.)
+
+## Aspect 10: Grant Readiness
+
+GRANT READINESS ASSESSMENT:
+- Match funding capacity (maximum % they can provide)
+- Consortium/partnership experience and existing network of partners
+- **Previous EU funding experience** (which programs, when, success rate)
+- **Previous US government funding experience** if applicable
+- Audit readiness and compliance systems
+- M&E systems and impact measurement capacity
+- Reporting capabilities and track record
+- Pre-financing capacity (can they wait for reimbursements)
+- Experience with different grant sizes (micro-grants, medium, large)
+
+## Aspect 11: Current Needs
+
+CURRENT NEEDS & STRATEGIC PRIORITIES:
+- Explicitly stated funding needs (quotes from website/reports)
+- Infrastructure and equipment requirements
+- Capacity building and training needs
+- Geographic or programmatic expansion plans
+- Digital transformation needs
+- Sustainability and long-term financing goals
+- **Specific projects seeking funding** (if mentioned)
+- **Funding priorities from additional context** (if provided by the organization - extract all funding priorities, focus areas, and grant-seeking objectives mentioned in the additional context)
+- **Funding exclusions from additional context** (if provided - extract any explicit exclusions, restrictions, or "we don't accept" statements, such as "we don't take federal grants", "no government funding", "exclude corporate sponsorships", etc.)
+
+## Aspect 12: Eligibility Flags
+
+ELIGIBILITY FLAGS & SPECIAL CATEGORIES:
+- Women-led organization (>50% women in leadership)
+- Minority-led (which minority group)
+- Minority-serving (which minority groups)
+- Youth-led (leadership under 30 or under 35)
+- Disability-focused or disability-led
+- Faith-based or faith-affiliated (which tradition)
+- For-profit or non-profit status
+- Social enterprise or cooperative
+- Academic institution (if yes, public or private)
+- Think tank or research institution
+- Grassroots organization (community-led, volunteer-driven)
+- **Indigenous-led or Indigenous-serving**
+- **Survivor-led or peer-led**
+- **Registered charity status** (in which jurisdictions)
+- **501(c)(3) status** if US-based
+- Any sanctions, restrictions, or blacklists
+
+# Research Instructions
+
+CRITICAL RESEARCH INSTRUCTIONS:
+- Search in MULTIPLE LANGUAGES (organization's local language + English)
+- Check business registries (e.g., companywall.me, local registries, charity commission websites)
+- Search for annual reports and financial statements
+- Look for news articles mentioning grants received
+- Find organization profiles on funder websites (search "[org name] funder" or "[org name] supported by")
+- **SEARCH FOR PEER ORGANIZATIONS** and check their funder lists
+- Search in specialized sector databases (e.g., Jewish heritage orgs can be in Jewish federation databases)
+- Check social media for recent activities, partnerships, and grant acknowledgments
+- Look for evaluation reports or impact assessments
+- Search government databases and gazette notices
+- Check if org is member of networks/umbrellas (which ones, what do they provide access to)
+
+# Output Format
+
+Return findings in this enhanced Markdown format, replace sample values with actual values or omit sections if not found:
+
+## Basic Information
+
+- **Name**: Full legal name
+- **Acronym**: Short name or abbreviation
+- **Website**: Primary website URL
+- **Mission**: Mission statement
+- **Vision**: Vision statement
+- **Values**: 
+  - Value 1
+  - Value 2
+- **Objectives**:
+  - Objective 1
+  - Objective 2
+
+## Niche Identity
+
+- **Specialized Sector**: Primary specialized sector/cause (e.g., "Jewish heritage preservation", "LGBTQ+ youth advocacy")
+- **Community Focus**:
+  - Specific community 1
+  - Specific community 2
+- **Unique Approach**: Unique methodological or programmatic approach
+- **Specialized Terminology**:
+  - Term 1 this sector uses
+  - Term 2
+  - Term 3
+- **Is First of Kind**: Yes/No/Unknown
+- **Funding Ecosystem**: Name of specialized funding ecosystem (e.g., "Jewish philanthropy", "ocean conservation funders")
+
+## Peer Organizations
+
+For each peer organization:
+
+- **Name**: Peer org name
+- **Location**: City, Country
+- **Website**: URL
+- **Known Funders**:
+  - Funder 1
+  - Funder 2
+- **Similarity**: Why this is a good peer comparison
+
+---
+
+## Programs and Services
+
+- **Programs**:
+  - Program 1
+  - Program 2
+- **Services**:
+  - Service 1
+  - Service 2
+
+## Leadership
+
+- **Board Size**: Number
+- **Board Chair**: Name
+- **Executive Director**: Name
+- **Key Personnel**:
+  - Person 1
+  - Person 2
+
+## Size and Financials
+
+- **Size**: Micro/Small/Medium/Large
+- **Employee Count**: Exact number with breakdown
+- **Annual Revenue**: Specific amount with currency
+- **Revenue Sources**:
+  - Grants: percentage or amount
+  - Donations: percentage or amount
+  - Fees: percentage or amount
+  - Government: percentage or amount
+  - Other: percentage or amount
+- **Grant Size Range**:
+  - Typical Minimum: Smallest grant typically received
+  - Typical Maximum: Largest grant received
+  - Average Grant: Average grant size
+
+## Legal and Registration
+
+- **Year Founded**: Number
+- **Legal Status**: Specific registration type
+- **Registration Numbers**:
+  - National ID: number
+  - Tax ID: number
+  - VAT: number if applicable
+  - EIN 501(c)(3): number if US nonprofit
+  - Charity Number: if registered charity
+  - Other: any other relevant numbers
+
+## Languages
+
+- **Primary Service Languages**:
+  - Language 1
+  - Language 2
+- **Operational Languages**:
+  - Language 1
+  - Language 2
+  - Language 3
+- **Grant Search Terms**:
+  - Generic Local: generic grant term 1 in local language, term 2
+  - Specialized Local: specialized sector term 1 in local language, term 2
+  - Generic English: grant, funding, foundation, support
+  - Specialized English: specialized term 1, specialized term 2
+
+## Geographic Context
+
+- **City**: City/Municipality
+- **Region/State**: Region/State/Province
+- **Country**: Primary country
+- **Geographic Hierarchy**:
+  - Specific: City or specific region
+  - Medium: Country, Sub-region name (e.g., Western Balkans)
+  - Broad: Multi-country region (e.g., Central & Eastern Europe), Broader region
+  - Continental: Europe/Asia/Africa/Americas/Oceania
+- **EU Status**: EU member/candidate/associated/partnership/third (or N/A if not in Europe)
+- **US Status**: State name, territory status (or N/A if not in US)
+- **Regional Blocs**:
+  - Regional organization 1
+  - Regional organization 2
+- **Service Areas**:
+  - Geographic area 1
+  - Geographic area 2
+- **International Reach**:
+  - Country 1
+  - Country 2
+- **Bilateral Donors**:
+  - Donor country 1
+  - Donor country 2
+- **Diaspora Connections**:
+  - Country with diaspora 1
+  - Country 2
+
+## Classifications
+
+- **Primary Sector**: Most specific sector description
+- **Broader Sectors**:
+  - Broader sector 1
+  - Broader sector 2
+- **Secondary Sectors**:
+  - Secondary sector 1
+  - Secondary sector 2
+- **ISCED Code**: Education level code if applicable
+- **NACE Code**: Economic activity code (EU)
+- **NTEE Code**: NTEE code if US-based
+- **Cross-Cutting Themes**:
+  - Theme 1
+  - Theme 2
+- **Innovation Potential**: Description of innovation/pilot potential
+
+## Special Circumstances
+
+- **Refugee Support**: Yes/No or which populations
+- **Crisis Response**: Yes/No or which crises
+- **Minority Serving**:
+  - Minority group 1
+  - Minority group 2
+- **Minority Led**: Which minority group leads this org
+- **Indigenous Led**: Yes/No
+- **Indigenous Serving**: Yes/No
+- **Survivor Led**: Yes/No or survivors of what
+- **First in Region**: Yes/No or first to do what
+- **Innovative Approach**: Description
+- **Faith Based**: Which tradition and level of affiliation
+- **Other Special**:
+  - Special aspect 1
+  - Special aspect 2
+
+## Capacity Indicators
+
+- **Match Funding Capacity**: percentage or description
+- **Project Management Experience**: level description
+- **Largest Project Managed**: amount or description
+- **Consortium Experience**: Yes/No
+- **EU Funding Experience**: Description of EU programs used
+- **US Gov Funding Experience**: Description if applicable
+- **Audit Ready**: Yes/No
+- **Pre-Financing Capacity**: Yes/No
+
+## Funding Landscape
+
+### Past Grants
+
+For each grant:
+
+- **Funder**: Full funder name
+- **Program**: Specific program name
+- **Amount**: Grant amount with currency
+- **Year**: Year received
+- **Project**: Project title
+
+---
+
+### Current Donors
+
+- Active donor 1
+- Active donor 2
+
+### Funder Types Used
+
+- **Specialized Foundations**:
+  - Foundation 1
+  - Foundation 2
+- **Regional/Geographic**:
+  - Program 1
+  - Program 2
+- **Bilateral Agencies**:
+  - Agency 1
+  - Agency 2
+- **Community Foundations**:
+  - Foundation 1
+  - Foundation 2
+- **Government Programs**:
+  - Program 1
+  - Program 2
+- **Corporate Foundations**:
+  - Foundation 1
+  - Foundation 2
+- **International Organizations**:
+  - Organization 1
+  - Organization 2
+
+### Applicable Programs
+
+- **EU Programs**:
+  - Specific EU program and strand 1
+  - Program 2
+- **US Gov Programs**:
+  - Program 1
+  - Program 2
+- **Regional Funds**:
+  - Fund 1
+  - Fund 2
+- **Bilateral Programs**:
+  - Program 1
+  - Program 2
+- **Specialized Sector Funders**:
+  - Specialized funder 1
+  - Specialized funder 2
+- **Development Banks**:
+  - Bank 1
+  - Bank 2
+
+### National Agencies
+
+- Agency 1
+- Agency 2
+
+### Local Foundations
+
+- Foundation 1
+- Foundation 2
+
+## Partnerships
+
+- **Current Partners**:
+  - Partner 1
+  - Partner 2
+- **International Networks**:
+  - Network 1
+  - Network 2
+- **Consortium Partners**:
+  - Partner 1
+  - Partner 2
+- **Academic Partnerships**:
+  - University 1
+  - University 2
+- **Private Sector**:
+  - Company 1
+  - Company 2
+- **Umbrella Memberships**:
+  - Umbrella org 1
+  - Umbrella org 2
+
+## Needs and Priorities
+
+- **Stated Funding Needs**:
+  - Need 1
+  - Need 2
+- **Infrastructure Needs**:
+  - Equipment
+  - Facilities
+- **Capacity Building Needs**:
+  - Training 1
+  - Training 2
+- **Expansion Plans**:
+  - Plan 1
+  - Plan 2
+- **Strategic Priorities**:
+  - Priority 1
+  - Priority 2
+- **Funding Priorities** (from additional context):
+  - Funding priority 1 from additional context
+  - Funding priority 2 from additional context
+- **Funding Exclusions** (from additional context):
+  - Exclusion 1 from additional context (e.g., "we don't take federal grants")
+  - Exclusion 2
+- **Specific Projects Seeking Funding**:
+  - Project 1
+  - Project 2
+
+## Eligibility Flags
+
+- **Women Led**: Yes/No/Unknown
+- **Minority Led**: which minority or N/A
+- **Minority Serving**: minority 1, minority 2 (or N/A)
+- **Youth Led**: Yes/No/Unknown
+- **Disability Focused**: Yes/No/Unknown
+- **Disability Led**: Yes/No/Unknown
+- **Indigenous Led**: Yes/No/Unknown
+- **Indigenous Serving**: Yes/No/Unknown
+- **Survivor Led**: Yes/No/Unknown
+- **Faith Based**: which tradition or N/A
+- **For Profit**: Yes/No/Unknown
+- **Social Enterprise**: Yes/No/Unknown
+- **Academic Institution**: Yes/No/Unknown
+- **Grassroots**: Yes/No/Unknown
+- **Has 501(c)(3)**: Yes/No/Unknown
+- **Registered Charity**: Yes/No/Unknown
+- **EU Eligible**: Yes/No/Unknown
+- **Sanctions Check**: clear/flagged/unknown
+
+## Unique Value Propositions
+
+- **Primary Innovation**: Main unique aspect
+- **Competitive Advantages**:
+  - Advantage 1
+  - Advantage 2
+- **Impact Achievements**:
+  - Achievement 1
+  - Achievement 2
+- **Recognition Awards**:
+  - Award 1
+  - Award 2
+
+## Previous Funders
+
+Deduplicated list of all funder names from past grants and current donors:
+
+- Funder 1 name
+- Funder 2 name
+- Funder 3 name
+
+## Peer Organization Funders
+
+Deduplicated list of all funders from peer organizations:
+
+- Funder A that supports peer orgs
+- Funder B that supports peer orgs
+
+# Important Notes
+
+IMPORTANT: 
+- Be comprehensive but accurate. Omit sections if not found rather than guessing.
+- Use multiple searches in different languages.
+- **PRIORITIZE NICHE CHARACTERISTICS** - these unlock specialized funding ecosystems.
+- **IDENTIFY PEER ORGANIZATIONS** - their funders are likely good matches.
+- **MAP GEOGRAPHIC HIERARCHY** - organizations qualify at multiple geographic levels.
+- Be as SPECIFIC as possible in sector descriptions - "Jewish heritage preservation" not just "culture".
+- **EXTRACT FUNDER LISTS**: Populate "Previous Funders" with a deduplicated list of all funder names from past grants and current donors. Populate "Peer Organization Funders" with a deduplicated list of all funders from peer organizations. These lists are critical for grant discovery.

@@ -1,0 +1,183 @@
+You are helping an NGO define their general funding needs for comprehensive grant discovery.
+
+==================================================
+ORGANIZATION PROFILE
+==================================================
+
+The user has attached an organization research file. Extract all relevant information from it, including:
+
+- **Basic Information**: Organization name, acronym, website, mission, vision
+- **Niche Identity**: Specialized sector, community focus, funding ecosystem, specialized terminology
+- **Size and Financials**: Organization size, employee count, annual revenue, grant size range
+- **Geographic Context**: Location, country, EU status, regional blocs
+- **Classifications**: Primary sector, broader sectors, secondary sectors, cross-cutting themes
+- **Special Circumstances**: Refugee support, crisis response, minority-serving, faith-based, etc.
+- **Capacity Indicators**: Match funding capacity, EU funding experience, consortium experience
+- **Eligibility Flags**: Women-led, minority-led, faith-based, registered charity, 501(c)(3), etc.
+- **Previous Funders**: List of past and current funders
+- **Peer Organization Funders**: Funders that support similar organizations
+
+Use this extracted information throughout the task to create an accurate funding profile.
+
+
+
+
+==================================================
+TASK
+==================================================
+
+Create an organization-wide funding overview that will help discover ALL relevant grant opportunities.
+
+This should capture:
+1. What kinds of funding this org typically needs (based on their work)
+2. The SPECIALIZED funding ecosystem they belong to (if any)
+3. What grant types and funding mechanisms fit their profile
+4. What to AVOID (be very specific - saves time)
+
+==================================================
+OUTPUT FORMAT (in English)
+==================================================
+
+# Organization Funding Profile
+[Organization Name] - Comprehensive Funding Needs
+
+# Specialized Sector & Niche Identity
+[If organization has a specialized sector/community focus, emphasize this]
+This organization operates in the [specialized sector] sector/ecosystem.
+They are part of the [funding ecosystem] funding ecosystem.
+They specifically focus on [target communities] communities.
+
+[Explain why this niche identity opens specific funding opportunities]
+
+# Core Funding Needs
+[2-3 sentences about what kinds of costs this org typically needs funded]
+
+Base this on:
+- Organization type and size ([organization size and annual budget])
+- Specialized sector ([specialized sector])
+- Whether they do direct services vs advocacy vs research vs cultural work
+
+Examples based on org type:
+- Direct service orgs: Personnel costs for service delivery, program operations, beneficiary support
+- Advocacy orgs: Campaign costs, staff capacity, coalition building, research
+- Cultural/heritage orgs: Preservation costs, exhibition/programming, documentation, education
+- Research orgs: Research costs, publications, convening, knowledge dissemination
+- Capacity-building orgs: Training delivery, curriculum development, technical assistance
+
+# Organization Priorities & Mission Alignment
+[2-3 paragraphs explaining the org's work and funding priorities]
+
+Include:
+- Their core mission and how funding supports it
+- Their work with [target communities] communities
+- Any current strategic priorities or expansion plans
+- Geographic scope and reach
+
+# What We're Looking For
+
+## Specialized/Niche Funders (Priority)
+
+[List grant types specific to [specialized sector]]
+Examples:
+- Specialized [specialized sector] foundations and funders, and similar funders with related missions
+- Programs within the [funding ecosystem] funding ecosystem and related funding networks
+- [Specialized sector] community grants and similar community-focused funding
+- Funders specifically supporting [target communities] and related populations
+
+Note: The funders listed above are examples. Include other foundations and programs with similar focus areas, missions, or target populations.
+
+
+## Geographic & Regional Funders
+[Based on geography: [geographic location]]
+- Local/regional funders in [geographic location]
+- National grant programs
+- EU programs ([EU status])
+- Bilateral programs from: [bilateral donor countries]
+
+## Grant Types That Fit
+[Based on org size, capacity, and history]
+Appropriate grant sizes based on [annual budget] annual budget
+
+Types to include:
+- EU program grants ([EU funding experience status])
+- Project/program grants aligned with [specialized sector]
+- General operating support / unrestricted funding
+- Grants with reasonable match requirements
+- Multi-year funding opportunities
+- Capacity-building and organizational development grants
+- Consortium/partnership grants
+- Both time-limited calls AND rolling/ongoing programs
+
+## Special Eligibility Opportunities
+
+
+
+
+
+[Based on eligibility flags from organization research]
+- [Special eligibility category 1, e.g., Faith-based organization funding ([faith tradition])]
+- [Special eligibility category 2, e.g., Women-led organization funding]
+- [Special eligibility category 3, e.g., Minority-serving organization funding]
+
+
+
+# What We're NOT Looking For
+
+[CRITICAL - Be very specific to save time during search]
+
+
+
+## Geographic Mismatches
+
+- Grants requiring US 501(c)(3) status ([US-based status])
+- Grants explicitly excluding [country/region]
+
+## Sector Mismatches
+[Based on what this org does NOT do]
+- Grants exclusively for sectors OTHER than [specialized sector]
+- [Sector mismatch 1, e.g., Research grants requiring academic institutional affiliation or peer-reviewed publications]
+- [Sector mismatch 2, e.g., Medical/clinical research or healthcare delivery grants]
+- [Sector mismatch 3, e.g., Pure environmental conservation grants (unless cross-sector relevance)]
+
+## Capacity Mismatches
+
+[Based on org size and capacity]
+- Grants significantly larger than [largest grant received or typical grant range] (beyond org's management capacity)
+- [Capacity mismatch 1, e.g., Large capital/infrastructure grants for building construction]
+- [Capacity mismatch 2, e.g., Grants requiring extensive pre-financing capacity]
+
+## Wrong Funding Mechanisms
+- Individual fellowships or scholarships (organizational funding only)
+- Loans or repayable financing (grants only)
+- Awards or prizes without funding attached
+
+
+# Funding Priorities (in order)
+
+[List 3-4 priority funding types based on org characteristics and strategic needs]
+
+1. [Priority 1, e.g., Specialized [specialized sector] funders (highest fit, often less competitive)]
+2. [Priority 2, e.g., Strengthening [specific area] at [geographic level]]
+3. [Priority 3, e.g., Capacity building and organizational development]
+4. [Priority 4, e.g., General operating support]
+
+# Typical Budget Range
+
+Range depends on specific project - from small grants (<$10k) to larger program grants (>$100k)
+
+For project-specific grants: Typically match project scope and org capacity
+For operating support: Ideally 1-2 year general support grants
+
+---
+
+INSTRUCTIONS:
+1. Make realistic inferences from the org profile
+2. EMPHASIZE specialized sector/niche identity - this is key for grant discovery
+3. Be VERY specific about what ISN'T wanted - this prevents wasted time
+4. Consider implicit constraints (no academic affiliation → probably can't do research grants)
+5. Think about org stage and capacity
+6. Reference specific characteristics that open special funding streams
+7. Keep tone professional but realistic
+8. If organization is part of a specialized funding ecosystem, make this prominent
+
+OUTPUT ONLY THE STRUCTURED DESCRIPTION. Do not add explanatory commentary.

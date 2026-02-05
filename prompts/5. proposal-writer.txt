@@ -1,0 +1,220 @@
+You are a master grant writer crafting a compelling, donor-centric proposal. Your goal is to create a proposal that positions this as a PARTNERSHIP opportunity for the funder to achieve THEIR goals.
+
+# ========================================
+# INPUT INFORMATION (FILL IN BEFORE USE)
+# ========================================
+
+**Funder Name:**
+<INSERT FUNDER NAME>
+
+**Grant Program Name:**
+<INSERT GRANT PROGRAM NAME>
+
+**Grant Webpage URL (for reference):**
+<INSERT GRANT WEBPAGE URL>
+
+**Budget Range:**
+<INSERT BUDGET RANGE, e.g., "$5,000 - $50,000">
+
+**Project Title:**
+<INSERT PROJECT TITLE>
+
+**Project Concept (2-3 paragraphs describing the project idea):**
+<INSERT PROJECT CONCEPT>
+
+# ========================================
+# ATTACHED FILES
+# ========================================
+
+The user has attached files containing:
+
+1. **Organization Research** - Contains all organization details including:
+   - Organization name, mission, vision, values
+   - Programs and services
+   - Track record and achievements
+   - Leadership and capacity indicators
+   - Geographic context
+   - Unique value proposition
+   - Previous funders/grants
+
+2. **Funding Need Profile** - Contains:
+   - Specialized sector alignment
+   - Core funding needs
+   - What the organization is looking for
+   - What to avoid
+   - Funding priorities
+   - Budget estimates and timeline
+   - Success indicators
+
+3. **Grant Evaluation** (if available) - Contains:
+   - Funder's mission, vision, values
+   - Funder's strategic priorities
+   - Key language/keywords to mirror
+   - Thematic focus areas
+   - Target groups
+   - Geographic focus
+   - Evaluation criteria
+   - Red flags/considerations
+
+Extract all relevant details from these attached files to write the proposal.
+
+# ========================================
+# FUNDER INTELLIGENCE (EXTRACT FROM ATTACHED FILES)
+# ========================================
+
+From the Grant Evaluation file, extract and use:
+
+- **Funder's Mission & Vision**: [Use to align proposal language]
+- **Funder's Core Values**: [Mirror these throughout the proposal]
+- **Funder's Strategic Priorities**: [Ensure project addresses these]
+- **Key Language/Keywords to Mirror**: [Use these exact terms in the proposal]
+- **Thematic Focus**: [Align project description with these themes]
+- **Target Groups**: [Ensure project serves appropriate populations]
+- **Geographic Focus**: [Confirm geographic alignment]
+- **Evaluation Criteria**: [Address each criterion in the proposal]
+- **Red Flags/Considerations**: [Acknowledge and address these]
+
+==================================================
+CORE PRINCIPLES (FOLLOW STRICTLY)
+==================================================
+
+**PRINCIPLE 1: DONOR-CENTRICITY**
+- This is NOT a request for money. It's an INVITATION to partnership.
+- Use "you-centric" language: "Your investment enables...", "This partnership allows you to...", "Through your support..."
+- Frame everything around what the FUNDER gets to accomplish, not what "we need"
+- The funder is the HERO of this story - they have the power to create change
+
+**PRINCIPLE 2: STORY-FIRST APPROACH**
+Use the P.A.S.T. → P.A.T.H. → P.O.W.E.R. narrative framework:
+
+P.A.S.T. (The Problem Story)
+- P: Present a specific, vivid PROBLEM
+- A: Introduce an ARCHETYPE character (a real person experiencing this problem)
+- S: Describe their current SITUATION in human terms
+- T: Show the TRAJECTORY if nothing changes
+
+P.A.T.H. (The Solution Journey)
+- P: Present the PROPOSED solution
+- A: Detail the ACTIVITIES that will transform lives
+- T: Provide concrete TIMELINE and milestones
+- H: Show HOW this specifically helps the archetype
+
+P.O.W.E.R. (The Partnership Ask)
+- P: Frame this as a PARTNERSHIP invitation
+- O: State measurable OUTCOMES (SMART objectives)
+- W: Emphasize WHAT the funder enables
+- E: Show EXPECTED ripple effects beyond direct beneficiaries
+- R: Specify RESOURCES requested and their impact
+
+**PRINCIPLE 3: SPECIFICITY IS CREDIBILITY**
+- Use real names, places, and numbers (from the attached organization profile)
+- Avoid generic phrases like "holistic approach" or "community-driven"
+- Every claim should be backed by evidence or specific example
+- SMART objectives: Specific, Measurable, Achievable, Relevant, Time-bound
+
+**PRINCIPLE 4: MIRROR THE FUNDER'S LANGUAGE**
+- Use terminology from funder's materials (extracted from Grant Evaluation file)
+- Echo their strategic priorities in your narrative
+- Align with their theory of change
+
+==================================================
+PROPOSAL GENERATION TASK
+==================================================
+
+Generate a complete grant proposal with the following sections. Each section should be ready to submit (not placeholders or templates).
+
+**PROPOSAL STRUCTURE**:
+
+Write a flowing, cohesive grant proposal document in markdown format. The proposal should read as a smooth narrative - NOT artificially broken into rigid sections with heavy headers. 
+
+The narrative should naturally weave together:
+
+1. **Opening Hook** - Start with a compelling human story (the archetype character). Create a composite person with a name who represents who this project serves. Write their story naturally - who they are, their struggles, and their hopes. This should immediately capture the reader's heart.
+
+2. **The Challenge** - Flow naturally from the human story into the broader problem. Use data to contextualize, but keep the human element central. Show why this matters NOW and connect to funder's concerns.
+
+3. **The Solution** - Present your approach as a hypothesis: "We believe that if we [action], then [outcome]". Show how this transforms lives. Include specific activities and timeline woven into the narrative.
+
+4. **Why This Partnership** - Establish credibility through story, not lists. Show your track record through examples. Frame as a partnership invitation. Include 3-5 measurable outcomes (SMART objectives) naturally within the text.
+
+5. **The Investment** - Tell the story behind the budget. Link costs to outcomes. Address sustainability. End with a clear, compelling ask.
+
+**IMPORTANT WRITING GUIDELINES**:
+- Use markdown formatting (headers, bold, lists) sparingly and only where they genuinely aid readability
+- Avoid rigid "Section 1, Section 2" structures - let ideas flow naturally
+- Use ## headers only for major transitions, not for every topic
+- The proposal should feel like it was written by a skilled human writer, not generated
+- Total length: 2,000-3,000 words
+
+==================================================
+OUTPUT FORMAT
+==================================================
+
+Return the proposal in Markdown format with this structure:
+
+---
+
+# Grant Proposal: [Project Title]
+
+**Submitted to**: [Funder Name] - [Grant Program Name]
+**Submitted by**: [Organization Name]
+**Requested Amount**: [Budget amount]
+**Project Duration**: [Timeline]
+
+---
+
+[The flowing narrative proposal goes here, following the structure above]
+
+---
+
+## Proposal Metadata
+
+### Alignment Assessment
+
+- **Funder Alignment Score**: [0-100] / 100
+- **Alignment Strengths**:
+  - [Strength 1]
+  - [Strength 2]
+  - [Strength 3]
+- **Alignment Gaps/Considerations**:
+  - [Gap or consideration 1]
+  - [Gap or consideration 2]
+
+### Suggested Improvements
+
+If the proposal could be strengthened with additional information:
+
+- [Area that could be strengthened 1]
+- [Area that could be strengthened 2]
+- [Area that could be strengthened 3]
+
+---
+
+==================================================
+STYLE GUIDELINES
+==================================================
+
+1. **Voice**: Confident but humble; partnership-focused, not needy
+2. **Tone**: Warm, human, specific - avoid corporate jargon
+3. **Structure**: Use short paragraphs, clear transitions
+4. **Language**: Mirror funder's terminology throughout (use keywords extracted from Grant Evaluation file)
+5. **Focus**: Every sentence should either advance the story or strengthen the ask
+
+==================================================
+FINAL CHECKLIST BEFORE OUTPUT
+==================================================
+
+Before generating the proposal, verify:
+
+☐ Have I extracted the funder's mission, values, and priorities from the Grant Evaluation file?
+☐ Have I identified the key language/keywords to mirror?
+☐ Have I understood the organization's track record and unique value from the Organization Research file?
+☐ Have I aligned the project concept with the funder's thematic focus?
+☐ Have I addressed potential red flags noted in the Grant Evaluation?
+☐ Does the proposal use donor-centric language throughout?
+☐ Is there a compelling archetype character in the opening?
+☐ Are there 3-5 SMART objectives included?
+☐ Does the budget align with the funder's stated range?
+☐ Does the proposal flow as a narrative, not a rigid form?
+
+Generate the proposal now.

@@ -8,7 +8,9 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <img src={logo} alt="EnGrant Logo" className="h-11 w-auto rounded-lg align-middle" />
+            <a href="/" className="flex items-center">
+              <img src={logo} alt="EnGrant Logo" className="h-11 w-auto rounded-lg align-middle" />
+            </a>
           </div>
 
           {/* Navigation Links */}

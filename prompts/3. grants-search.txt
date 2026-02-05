@@ -1,0 +1,334 @@
+You are conducting a COMPREHENSIVE grant discovery search for an organization.
+
+The user has attached two files containing organization information:
+1. Organization research output (from org-research prompt) - contains all organization details, legal status, geography, specialized sector, peer organizations, previous funders, etc.
+2. Funding needs profile (from funding-need prompt) - contains funding priorities, what the organization is looking for, and what to avoid.
+
+CRITICAL MISSION: Return ALL grants where this organization is POTENTIALLY eligible.
+
+INCLUSION PRINCIPLE: If eligibility is ambiguous, INCLUDE the grant.
+
+BARRIER PRINCIPLE: Do not exclude grants because they have difficult requirements (e.g., requiring intermediaries, complex partnerships, or strict reporting). Include them and note the barrier.
+
+SECTOR PRINCIPLE: Treat the organization as capable of expanding into adjacent or related sectors. If a grant touches on ANY area the organization could reasonably engage with, INCLUDE it.
+
+==================================================
+ORGANIZATION INFORMATION SOURCE
+==================================================
+
+Extract ALL organization details from the attached files:
+
+**From Organization Research file:**
+- Organization name and legal status (from "Legal and Registration" section)
+- Geographic location and EU/international status (from "Geographic Context" section)
+- Specialized sector and niche identity (from "Niche Identity" section)
+- Community focus and target populations (from "Niche Identity" section)
+- Funding ecosystem (from "Niche Identity" section)
+- Peer organizations and their funders (from "Peer Organizations" and "Peer Organization Funders" sections)
+- Previous funders (from "Previous Funders" section)
+- Eligibility flags (from "Eligibility Flags" section)
+- Languages and local search terms (from "Languages" section)
+- Grant size range and capacity (from "Size and Financials" and "Capacity Indicators" sections)
+
+**From Funding Needs file:**
+- What the organization is looking for (from "What We're Looking For" section)
+- What to avoid (from "What We're NOT Looking For" section)
+- Funding priorities (from "Funding Priorities" section)
+- Typical budget range (from "Typical Budget Range" section)
+
+Use this information throughout the search process to determine eligibility and construct search queries.
+
+==================================================
+ORGANIZATION LEGAL STATUS (CHECK FIRST - HARD STOP)
+==================================================
+
+Extract from Organization Research file:
+- Legal status (from "Legal and Registration" → "Legal Status")
+- Registered charity status (from "Eligibility Flags" → "Registered Charity")
+- 501(c)(3) status if applicable (from "Eligibility Flags" → "Has 501(c)(3)")
+- Academic institution status (from "Eligibility Flags" → "Academic Institution")
+
+LEGAL ELIGIBILITY PROFILE:
+Based on the organization's legal status, determine:
+✓ What types of grants this organization CAN apply to
+✗ What types of grants this organization CANNOT apply to
+
+WHAT THIS ORGANIZATION CAN APPLY TO:
+[Extract from legal status - typically includes grants for nonprofits/NGOs/civil society organizations, charitable organizations, etc.]
+
+WHAT THIS ORGANIZATION CANNOT APPLY TO:
+[Extract from legal status - typically excludes grants requiring academic institutional affiliation, university status, US 501(c)(3) if not applicable, etc.]
+
+==================================================
+ORGANIZATION GEOGRAPHIC ELIGIBILITY (CHECK SECOND)
+==================================================
+
+Extract from Organization Research file:
+- Location (from "Geographic Context" section)
+- EU status (from "Geographic Context" → "EU Status")
+- US status if applicable (from "Geographic Context" → "US Status")
+- Geographic hierarchy (from "Geographic Context" → "Geographic Hierarchy")
+
+GEOGRAPHIC ELIGIBILITY PROFILE:
+
+✓ CAN apply to: [Determine based on geographic context - typically includes global/worldwide programs, continental programs, regional programs, national/local programs]
+
+GEOGRAPHIC RESTRICTIONS TO EXCLUDE:
+✗ CANNOT apply to: [Determine based on geographic context - typically excludes programs explicitly excluding the organization's location, programs requiring different geographic status, etc.]
+
+==================================================
+OTHER ORGANIZATION DETAILS
+==================================================
+
+Extract from Organization Research file:
+
+Organization: [From "Basic Information" → "Name"]
+Founded: [From "Legal and Registration" → "Year Founded"]
+
+SPECIALIZED IDENTITY (Search priority):
+Specialized Sector: [From "Niche Identity" → "Specialized Sector"]
+Community Focus: [From "Niche Identity" → "Community Focus"]
+Funding Ecosystem: [From "Niche Identity" → "Funding Ecosystem"]
+
+SPECIAL ELIGIBILITY FLAGS:
+[Extract from "Eligibility Flags" section - e.g., Women-led, Minority-serving, Faith-based, etc.]
+
+PEER ORGANIZATIONS (check their funders):
+[Extract from "Peer Organizations" section - list peer organizations with their known funders]
+
+PREVIOUS FUNDERS (organization's own funders - high priority for repeat applications):
+[Extract from "Previous Funders" section]
+
+PEER ORGANIZATION FUNDERS (funders of similar organizations - likely good matches):
+[Extract from "Peer Organization Funders" section]
+
+FUNDING NEED:
+[Extract the entire "What We're Looking For" section from the Funding Needs file]
+
+==================================================
+MULTI-DIMENSIONAL SEARCH STRATEGY
+==================================================
+
+Search comprehensively and INCLUDE generously. Cast the widest possible net. Include anything with potential.
+Remember: The organization can pursue partnerships, expand into new areas, or find workarounds for barriers.
+
+### PHASE 1: SPECIALIZED SECTOR FUNDERS (HIGHEST PRIORITY)
+
+Search for funders specific to the organization's specialized sector:
+- Use the "Specialized Sector" from the organization research
+- Use the "Funding Ecosystem" from the organization research
+- Use specialized terminology from "Niche Identity" → "Specialized Terminology"
+- Use local language search terms from "Languages" → "Grant Search Terms" → "Specialized Local"
+
+Queries to construct:
+- "[Specialized Sector]" grants [Country/Region]
+- "[Specialized Sector]" funding [Geographic Hierarchy]
+- "[Specialized Sector]" foundation
+- "[Local language specialized terms]" grants OR funding
+- "[Funding Ecosystem]" grants
+
+### PHASE 2: PREVIOUS FUNDERS (HIGHEST CONVERSION RATE)
+
+Check current open calls from funders who have supported this organization before:
+- Extract funder names from "Previous Funders" section
+- For each funder, search: "[Funder name]" open call OR grant program OR funding opportunity
+
+### PHASE 3: PEER ORGANIZATION FUNDER INTELLIGENCE
+
+Check current open calls from funders who support similar organizations:
+- Extract funder names from "Peer Organization Funders" section
+- For each funder, search: "[Funder name]" open call OR grant program OR funding opportunity
+
+### PHASE 4: GEOGRAPHIC FUNDERS (Multiple levels)
+
+Use geographic hierarchy from "Geographic Context" → "Geographic Hierarchy":
+
+Specific/Local Level:
+- "[City/Specific region]" [Specialized Sector] NGO funding
+- "[Country]" nonprofit grants
+
+Regional Level:
+- "[Medium geographic level]" [Specialized Sector] grants OR funding
+- "[Regional bloc]" [Specialized Sector] grants OR funding
+
+Continental/Global:
+- "[Continental level]" [Specialized Sector] grants
+- global [Specialized Sector] funding
+
+### PHASE 5: LEGAL STATUS-SPECIFIC FUNDERS
+
+Based on legal status:
+- NGO grants [Country]
+- civil society grants [Region]
+- nonprofit funding [Specialized Sector]
+- [Other legal status-specific searches based on organization type]
+
+### PHASE 6: BILATERAL & DEVELOPMENT PROGRAMS
+
+Search bilateral cooperation programs:
+- Extract from "Geographic Context" → "Bilateral Donors"
+- For each donor country: "[Donor country]" development cooperation [Country]
+- For each donor country: "[Donor country]" embassy [Country] grants
+
+### PHASE 7: ELIGIBILITY-SPECIFIC FUNDERS
+
+Based on eligibility flags from "Eligibility Flags" section:
+- If Women-led: "women-led organization" grants
+- If Minority-serving: "[Minority groups]" community grants
+- If Faith-based: "[Faith tradition]" organization grants
+- [Other eligibility-specific searches based on flags]
+
+### PHASE 8: ROLLING & ONGOING PROGRAMS
+
+Include programs accepting applications year-round:
+- "rolling applications" [Specialized Sector] [Region]
+- "year-round" OR "no deadline" [Specialized Sector] grants
+- "continuous" OR "ongoing" [Specialized Sector] funding
+
+### PHASE 9: LOCAL LANGUAGE SEARCHES
+
+Search in local language using terms from "Languages" → "Grant Search Terms":
+- "[Generic Local terms]" [Country]
+- "[Specialized Local terms]" [Country]
+- [Other local language variations]
+
+==================================================
+TERMINOLOGY VARIATIONS (Use all of these)
+==================================================
+
+Different funders use different language - search using ALL:
+- "call for proposals", "call for applications", "open call"
+- "grant program", "grant opportunity", "funding opportunity"  
+- "apply for support", "grant guidelines", "funding guidelines"
+- "how to apply", "application process", "submit application"
+- "rolling applications", "year-round", "ongoing program"
+
+==================================================
+VALIDATION CHECKLIST - "INNOCENT UNTIL PROVEN GUILTY"
+==================================================
+
+For each grant, ask: "Is there EXPLICIT evidence this organization CANNOT apply?"
+If NO explicit disqualifier exists → INCLUDE the grant (note any uncertainties)
+
+### LEGAL STATUS CHECK (Only exclude if EXPLICITLY incompatible)
+☐ Does the grant EXPLICITLY state it's ONLY for a different legal type?
+   - If grant says "nonprofits only" and org is for-profit → EXCLUDE
+   - If grant says "for-profits only" and org is nonprofit → EXCLUDE
+   - If grant doesn't specify legal requirements → INCLUDE
+   - If grant says "organizations" or is vague → INCLUDE (note ambiguity)
+
+[Check against legal status from organization research]
+
+### GEOGRAPHIC CHECK (Only exclude if EXPLICITLY excluded)
+☐ Does the grant EXPLICITLY exclude this organization's location?
+   - If grant says "[EU status requirement]" and org doesn't meet it → EXCLUDE
+   - If grant LISTS eligible countries and organization's country is NOT listed → EXCLUDE
+   - If grant says "global", "international", or doesn't specify → INCLUDE
+   - If eligibility is regional and org is in/near the region → INCLUDE (note uncertainty)
+
+[Check against geographic context from organization research]
+
+### SPECIAL REQUIREMENTS (Note as barriers, don't exclude)
+☐ Does the grant require partnerships, consortiums, or intermediaries?
+   → INCLUDE but note as barrier: "Requires [X] partner"
+☐ Does the grant require specific certifications or accreditations?
+   → INCLUDE but note as barrier: "Requires [certification]"
+☐ Does the grant have high match funding requirements?
+   → INCLUDE but note as barrier: "Requires X% co-financing"
+
+### IS THIS AN ACTUAL GRANT OPPORTUNITY?
+Include if the page describes a funding opportunity. Exclude ONLY:
+✗ General funder homepages without specific programs
+✗ Loans, investments, or venture capital (not grants)
+✗ News articles without application links
+✗ Programs explicitly marked as closed with no future cycles
+
+### DEADLINE CHECK (Be generous)
+☐ Include if deadline is in the future, OR
+☐ Include if "rolling", "ongoing", "year-round", "continuous", OR
+☐ Include if deadline unclear → note "Verify deadline status"
+☐ ONLY exclude if explicitly "closed" with no indication of future cycles
+
+### SECTOR/THEMATIC FIT (Be expansive)
+☐ Core match: Grant directly aligns with specialized sector → High match
+☐ Adjacent match: Grant touches related areas org could expand into → Medium match, note "Sector stretch"
+☐ Stretch match: Grant in different sector but org could make a case → Low match, note "Creative positioning needed"
+☐ ONLY exclude if grant is for a completely unrelated field
+☐ Consider how grant could support the funding need described
+
+[Check against specialized sector and funding needs from attached files]
+
+### CAPACITY REQUIREMENTS (Note as barriers, don't exclude)
+☐ If grant requires larger budget than org has → INCLUDE, note "May need capacity building or partner"
+☐ If requires consortium → INCLUDE, note "Requires consortium partners"
+☐ If requires high co-financing → INCLUDE, note "Requires X% match funding"
+
+[Check against grant size range and capacity indicators from organization research]
+
+==================================================
+CLEAR DISQUALIFIERS - ONLY EXCLUDE IF EXPLICIT
+==================================================
+
+### Definite Exclusions (hard stops):
+
+✗ Grant EXPLICITLY says "academic institutions ONLY" or "universities ONLY" → EXCLUDE (unless org is academic institution)
+✗ Grant EXPLICITLY requires specific legal status org doesn't have → EXCLUDE
+✗ Grant EXPLICITLY says "US 501(c)(3) REQUIRED" → EXCLUDE (unless org has 501(c)(3))
+✗ Grant EXPLICITLY excludes organization's country by name → EXCLUDE
+✗ Grant requires for-profit status and org is nonprofit (or vice versa) → EXCLUDE
+
+### NOT Grant Opportunities (exclude these):
+✗ General funder homepages without specific programs
+✗ Loans, investment funds, or venture capital (not grants)
+✗ News articles without application information
+✗ Expired programs with no future cycles
+
+### Borderline Cases (INCLUDE with notes):
+- Grant requires partnership → INCLUDE, note "Requires partner"
+- Grant deadline unclear → INCLUDE, note "Verify deadline"
+- Grant eligibility vague → INCLUDE, note "Eligibility ambiguous - verify"
+- Grant in adjacent sector → INCLUDE, note "Sector stretch - could fit [reason]"
+
+==================================================
+OUTPUT FORMAT
+==================================================
+
+Provide your analysis of the grants search results in a concise and informative way.
+
+Then add the section named "VALIDATED GRANTS" and return validated grants in Markdown format.
+
+For each validated grant, provide:
+
+## Grant: [Specific program name]
+
+- **Funder**: [Organization providing the funding]
+- **URL**: [Direct URL to the SPECIFIC grant/program page with application info]
+- **Deadline**: [YYYY-MM-DD OR 'Rolling' OR 'Ongoing year-round']
+- **Why Eligible**: [Why THIS organization qualifies or could potentially qualify]
+- **Validation Notes**: [Any ambiguities, uncertainties, or requirements to verify]
+
+---
+
+==================================================
+FINAL INSTRUCTIONS - "INNOCENT UNTIL PROVEN GUILTY"
+==================================================
+
+VALIDATION LOGIC: A grant should be INCLUDED unless you can PROVE it is ineligible.
+- If the grant guidelines are vague about eligibility → INCLUDE (note the ambiguity)
+- If the grant requires complex steps (intermediaries, partnerships) → INCLUDE (note the barrier)
+- If the grant is in an adjacent sector the org could expand into → INCLUDE (note the stretch)
+- If you're uncertain → INCLUDE and explain the uncertainty
+
+ONLY EXCLUDE if there is EXPLICIT, CLEAR evidence of ineligibility:
+- Grant EXPLICITLY requires legal status org doesn't have → EXCLUDE
+- Grant EXPLICITLY requires geographic status org doesn't have → EXCLUDE
+- Grant EXPLICITLY excludes the organization's country by name → EXCLUDE
+- Grant requires for-profit status and org is nonprofit (or vice versa) → EXCLUDE
+
+1. **Extract organization information** from the attached files before searching
+2. **Search comprehensively** across all phases - cast the widest possible net
+3. **Include generously** - if there's any reasonable path to eligibility, INCLUDE the grant
+4. **Note barriers, don't exclude** - difficult requirements are barriers to note, not reasons to exclude
+5. **Quantity AND quality** - more options give the organization more choices
+
+TARGET: 30-60 potentially relevant grants, including some stretches worth exploring.
