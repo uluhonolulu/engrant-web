@@ -15,7 +15,6 @@ export const onClientEntry = () => {
     persistence: 'cookie',
     cross_subdomain_cookie: true,
     secure_cookie: true,
-    cookie_name: 'mp_distinct_id',
     domain: '.engrant.eu'
   });
 };
