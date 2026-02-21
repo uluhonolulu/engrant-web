@@ -96,4 +96,9 @@ const PrivacyPolicyPage = () => {
 
 export default PrivacyPolicyPage
 
-export const Head = () => <title>Privacy Policy | Engrant</title> 
+export const Head = () => (
+  <>
+    <title>Privacy Policy | Engrant</title>
+    <link rel="canonical" href="https://engrant.eu/privacy-policy/" />
+  </>
+) 

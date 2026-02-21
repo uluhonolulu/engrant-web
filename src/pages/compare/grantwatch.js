@@ -1166,10 +1166,11 @@ export const Head = () => {
         name="keywords" 
         content="GrantWatch alternative, GrantWatch vs Engrant, grant database comparison, AI grant matching, nonprofit grant search" 
       />
+      <link rel="canonical" href="https://engrant.eu/compare/grantwatch/" />
       <meta property="og:title" content="GrantWatch Alternative: Engrant vs GrantWatch Comparison" />
       <meta property="og:description" content="Stop manually filtering 10,000 grants. Get 10-20 pre-evaluated matches with AI fit scores." />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://engrant.eu/compare/grantwatch" />
+      <meta property="og:url" content="https://engrant.eu/compare/grantwatch/" />
       <script type="application/ld+json">
         {JSON.stringify(faqSchema)}
       </script>

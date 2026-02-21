@@ -491,6 +491,7 @@ export const Head = () => {
         name="keywords" 
         content="grant writing, grant proposal, proposal writing, grant writing guide, nonprofit grants, how to write a grant proposal" 
       />
+      <link rel="canonical" href="https://engrant.eu/writing-winning-proposal/" />
     </>
   );
 };

@@ -926,6 +926,7 @@ export const Head = () => {
         name="description" 
         content="Compare Engrant and GrantX for grant discovery. Different pricing models, different audiences. Engrant: $47/month flat rate for solo professionals. GrantX: Credit-based tiers from $79-$2,499/month." 
       />
+      <link rel="canonical" href="https://engrant.eu/compare/grantx/" />
       <script type="application/ld+json">
         {JSON.stringify(faqSchema)}
       </script>

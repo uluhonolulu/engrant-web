@@ -1994,5 +1994,6 @@ export const Head = () => (
       name="description" 
       content="Access our collection of AI prompts for organization research, grant discovery, evaluation, and proposal writing." 
     />
+    <link rel="canonical" href="https://engrant.eu/prompt-library/" />
   </>
 );

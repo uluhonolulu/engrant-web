@@ -1174,6 +1174,7 @@ export const Head = () => {
         name="keywords" 
         content="Candid alternative, Foundation Directory Online alternative, FDO alternative, grant database for nonprofits, grant search tool, AI grant matching, nonprofit grant database" 
       />
+      <link rel="canonical" href="https://engrant.eu/compare/candid-foundation-directory-online/" />
       <script type="application/ld+json">
         {JSON.stringify(faqSchema)}
       </script>

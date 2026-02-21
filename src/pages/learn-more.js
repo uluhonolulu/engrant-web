@@ -201,6 +201,7 @@ export const Head = () => {
         name="keywords" 
         content="grant writing resources, grant tool comparisons, grant writing guides, nonprofit resources" 
       />
+      <link rel="canonical" href="https://engrant.eu/learn-more/" />
     </>
   );
 };

@@ -1135,6 +1135,7 @@ export const Head = () => {
         name="keywords" 
         content="Instrumentl alternative, Instrumentl vs Engrant, grant database for nonprofits, grant search tool, AI grant matching, nonprofit grant database, Instrumentl cheaper alternative" 
       />
+      <link rel="canonical" href="https://engrant.eu/compare/instrumentl/" />
       <script type="application/ld+json">
         {JSON.stringify(faqSchema)}
       </script>
