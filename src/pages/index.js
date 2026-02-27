@@ -11,6 +11,7 @@ import WhoThisIsFor from '../components/ngo-search/WhoThisIsFor';
 import Trust from '../components/ngo-search/Trust';
 import Testimonials from '../components/ngo-search/Testimonials';
 import RecentGrantsCarousel from '../components/ngo-search/RecentGrantsCarousel';
+import LoomVideo from '../components/ngo-search/LoomVideo';
 import FAQ from '../components/ngo-search/FAQ';
 import FinalCTA from '../components/ngo-search/FinalCTA';
 import Footer from '../components/Footer';
@@ -23,6 +24,7 @@ const HomePage = () => {
         <PainPoints />
         <Solution />
         <HowItWorks />
+        <LoomVideo />
         <ValueComparison />
         <Pricing />
         <WhoThisIsFor />

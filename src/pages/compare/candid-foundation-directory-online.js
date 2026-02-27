@@ -8,6 +8,7 @@ import {
 import logo from '../../images/logo-horizontal-remove-background.com.png';
 import engrantExpanded from '../../images/Engrant-expanded.png';
 import Footer from '../../components/Footer';
+import LoomVideo from '../../components/ngo-search/LoomVideo';
 
 const CandidComparisonPage = () => {
   return (
@@ -19,6 +20,7 @@ const CandidComparisonPage = () => {
           <ProblemSection />
           <ComparisonTable />
           <FeatureBreakdown />
+          <LoomVideo />
           <HonestAssessment />
           <Testimonials />
           <PricingComparison />
