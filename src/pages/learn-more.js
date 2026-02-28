@@ -108,6 +108,11 @@ const ComparisonPagesSection = () => {
       title: "Instrumentl Comparison",
       url: "/compare/instrumentl",
       description: "Compare Engrant vs Instrumentl. See how our focused AI matching compares to comprehensive workflow management platforms."
+    },
+    {
+      title: "GrantStation Comparison",
+      url: "/compare/grantstation",
+      description: "Compare Engrant vs GrantStation. See how AI-powered discovery with fit scores compares to manual database searching with ~9,000 funders."
     }
   ];
 
