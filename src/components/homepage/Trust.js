@@ -35,7 +35,7 @@ const Trust = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <div className="text-4xl font-bold text-amber-600 mb-2">~2 hours saved</div>
+              <div className="text-4xl font-bold text-amber-600 mb-2">~5 hours saved</div>
               <div className="text-neutral-500">Per search vs. manual research</div>
             </div>
           </div>
