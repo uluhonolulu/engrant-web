@@ -153,6 +153,11 @@ const ComparisonPagesSection = () => {
 const GuidesSection = () => {
   const guides = [
     {
+      title: "Export Your Grant Pipeline",
+      url: "/features/export-your-pipeline",
+      description: "Generate a polished funding strategy report or export your full pipeline data for analysis, leadership updates, and consultant deliverables."
+    },
+    {
       title: "A Comprehensive Guide to Writing a Winning Proposal",
       url: "/writing-winning-proposal",
       description: "Learn the proven steps to craft compelling grant proposals that secure funding. See how Engrant streamlines each step of the process, from alignment with funders to final polish."

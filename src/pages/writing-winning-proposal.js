@@ -390,6 +390,17 @@ const Conclusion = () => {
           <p className="text-lg text-neutral-700 leading-relaxed mb-6">
             By following these steps and leveraging the power of modern technology, you can streamline your proposal writing process and increase your chances of securing the funding you need to achieve your mission. Remember, a winning proposal is one that is not only well-written but also strategically aligned with the funder's priorities.
           </p>
+
+          <div className="bg-white border border-neutral-200 rounded-xl p-6 my-8">
+            <h3 className="text-xl font-semibold text-neutral-700 mb-3">Related resource: share results faster</h3>
+            <p className="text-neutral-700 leading-relaxed mb-3">
+              After building your shortlist, you can export your full pipeline data or generate a polished funding strategy report for leadership and clients.
+            </p>
+            <a href="/features/export-your-pipeline" className="inline-flex items-center text-teal-700 hover:text-teal-800 font-semibold">
+              Explore export and report features
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </a>
+          </div>
           
           <div className="bg-gradient-to-br from-teal-50 to-amber-50/30 rounded-xl p-6 border border-teal-100 my-8">
             <p className="text-neutral-700 leading-relaxed mb-4">
