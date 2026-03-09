@@ -21,7 +21,7 @@ const PricingPage = () => {
               </a>
             </nav>
             <a
-              href="https://app.engrant.eu/"
+              href="https://app.engrant.eu/?utm_source=pricing&utm_medium=cta&utm_campaign=header_cta"
               className="btn-primary text-white px-6 py-2.5 rounded-full font-semibold inline-block shadow-md"
             >
               Start Free Trial

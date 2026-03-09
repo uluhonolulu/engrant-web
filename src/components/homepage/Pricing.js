@@ -85,7 +85,7 @@ const Pricing = () => {
               </div>
               
               <a 
-                href="https://app.engrant.eu/?utm_source=landing&utm_medium=pricing&utm_campaign=free_trial"
+                href="https://app.engrant.eu/?utm_source=landing&utm_medium=pricing&utm_campaign=pricing_cta"
                 onClick={() => {
                   if (typeof window !== 'undefined' && window.gtag) {
                     window.gtag('event', 'cta_click', {

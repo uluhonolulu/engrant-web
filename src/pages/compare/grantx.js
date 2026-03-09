@@ -54,7 +54,7 @@ const Header = () => {
 
           <div className="flex items-center space-x-4">
             <a 
-              href="https://app.engrant.eu/"
+              href="https://app.engrant.eu/?utm_source=grantx_comparison&utm_medium=cta&utm_campaign=header_cta"
               onClick={() => {
                 if (typeof window !== 'undefined' && window.gtag) {
                   window.gtag('event', 'cta_click', {
@@ -96,7 +96,7 @@ const Hero = () => {
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
           <a 
-            href="https://app.engrant.eu/"
+            href="https://app.engrant.eu/?utm_source=grantx_comparison&utm_medium=cta&utm_campaign=hero_cta"
             onClick={() => {
               if (typeof window !== 'undefined' && window.gtag) {
                 window.gtag('event', 'cta_click', {
@@ -639,7 +639,7 @@ const PricingComparison = () => {
               </div>
               
               <a 
-                href="https://app.engrant.eu/"
+                href="https://app.engrant.eu/?utm_source=grantx_comparison&utm_medium=pricing&utm_campaign=pricing_cta"
                 onClick={() => {
                   if (typeof window !== 'undefined' && window.gtag) {
                     window.gtag('event', 'cta_click', {
@@ -819,7 +819,7 @@ const FinalCTA = () => {
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
           <a 
-            href="https://app.engrant.eu/"
+            href="https://app.engrant.eu/?utm_source=grantx_comparison&utm_medium=cta&utm_campaign=final_cta"
             onClick={() => {
               if (typeof window !== 'undefined' && window.gtag) {
                 window.gtag('event', 'cta_click', {

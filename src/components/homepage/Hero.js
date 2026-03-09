@@ -70,7 +70,7 @@ const Hero = () => {
             
             <div id="hero-cta" className="mb-8">
               <a 
-                href="https://app.engrant.eu/"
+                href="https://app.engrant.eu/?utm_source=landing&utm_medium=cta&utm_campaign=hero_cta"
                 onClick={() => {
                   if (typeof window !== 'undefined' && window.gtag) {
                     window.gtag('event', 'cta_click', {

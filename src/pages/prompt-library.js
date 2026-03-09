@@ -1937,7 +1937,7 @@ Generate the proposal now.`;
               </div>
               <div className="flex-shrink-0">
                 <a
-                  href="https://app.engrant.eu/webinar-offer"
+                  href="https://app.engrant.eu/webinar-offer?utm_source=prompt_library&utm_medium=cta&utm_campaign=claim_discount"
                   className="btn-primary text-white px-8 py-3 rounded-full font-semibold inline-block shadow-md hover:shadow-lg transition-all duration-200 text-center whitespace-nowrap"
                 >
                   Claim Your Discount

@@ -29,7 +29,7 @@ const Header = () => {
           {/* CTA Button */}
           <div className="flex items-center space-x-4">
             <a 
-              href="https://app.engrant.eu/"
+              href="https://app.engrant.eu/?utm_source=landing&utm_medium=cta&utm_campaign=header_cta"
               onClick={() => {
                 if (typeof window !== 'undefined' && window.gtag) {
                   window.gtag('event', 'cta_click', {

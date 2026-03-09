@@ -25,7 +25,7 @@ const ExportYourPipelinePage = () => {
               </a>
             </nav>
             <a
-              href="https://app.engrant.eu/"
+              href="https://app.engrant.eu/?utm_source=export_your_pipeline&utm_medium=cta&utm_campaign=header_cta"
               className="btn-primary text-white px-6 py-2.5 rounded-full font-semibold inline-block shadow-md"
             >
               Start Free Trial
@@ -133,7 +133,7 @@ const ExportYourPipelinePage = () => {
               Try Engrant free for 2 weeks — no credit card required.
             </p>
             <a
-              href="https://app.engrant.eu/"
+              href="https://app.engrant.eu/?utm_source=export_your_pipeline&utm_medium=cta&utm_campaign=final_cta"
               className="inline-flex items-center bg-white text-neutral-700 hover:bg-neutral-100 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-200"
             >
               Start Free Trial →

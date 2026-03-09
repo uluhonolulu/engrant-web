@@ -47,7 +47,7 @@ const Header = () => {
 
           <div className="flex items-center space-x-4">
             <a 
-              href="https://app.engrant.eu/"
+              href="https://app.engrant.eu/?utm_source=writing_winning_proposal&utm_medium=cta&utm_campaign=header_cta"
               onClick={() => {
                 if (typeof window !== 'undefined' && window.gtag) {
                   window.gtag('event', 'cta_click', {
@@ -89,7 +89,7 @@ const Hero = () => {
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
           <a 
-            href="https://app.engrant.eu/"
+            href="https://app.engrant.eu/?utm_source=writing_winning_proposal&utm_medium=cta&utm_campaign=hero_cta"
             onClick={() => {
               if (typeof window !== 'undefined' && window.gtag) {
                 window.gtag('event', 'cta_click', {
@@ -133,7 +133,7 @@ const Introduction = () => {
               <strong className="text-teal-700">How Engrant helps:</strong> Engrant streamlines the entire proposal writing process by automatically generating comprehensive drafts that align with funder requirements. Our AI assumes your identity as the writer, ensuring every proposal maintains your organization's authentic voice and perspective.
             </p>
             <a 
-              href="https://app.engrant.eu/"
+              href="https://app.engrant.eu/?utm_source=writing_winning_proposal&utm_medium=cta&utm_campaign=introduction_cta"
               onClick={() => {
                 if (typeof window !== 'undefined' && window.gtag) {
                   window.gtag('event', 'cta_click', {
@@ -175,7 +175,7 @@ const StepOne = () => {
               <strong className="text-teal-700">How Engrant helps:</strong> Engrant automatically researches each funder's mission, priorities, and funding history before writing your proposal. Before generating any content, Engrant will ask you for any missing information needed to create a perfectly aligned proposal that speaks directly to what the funder values most.
             </p>
             <a 
-              href="https://app.engrant.eu/"
+              href="https://app.engrant.eu/?utm_source=writing_winning_proposal&utm_medium=cta&utm_campaign=step_one_cta"
               onClick={() => {
                 if (typeof window !== 'undefined' && window.gtag) {
                   window.gtag('event', 'cta_click', {
@@ -244,7 +244,7 @@ const StepTwo = () => {
               <strong className="text-teal-700">How Engrant helps:</strong> Engrant automatically structures all these components into a cohesive, compelling narrative. Before writing, Engrant will prompt you for any missing details about your problem statement, target audience, solution, and objectives to ensure every section is complete and compelling.
             </p>
             <a 
-              href="https://app.engrant.eu/"
+              href="https://app.engrant.eu/?utm_source=writing_winning_proposal&utm_medium=cta&utm_campaign=step_two_cta"
               onClick={() => {
                 if (typeof window !== 'undefined' && window.gtag) {
                   window.gtag('event', 'cta_click', {
@@ -317,7 +317,7 @@ const StepThree = () => {
               <strong className="text-teal-700">How Engrant helps:</strong> Engrant writes complete proposals from start to finish, assuming your identity as the writer to add a genuine human element to every proposal. Before generating content, Engrant will always ask you for any missing pieces of information to ensure nothing is left out. Once complete, you simply review and refine to make it perfect.
             </p>
             <a 
-              href="https://app.engrant.eu/"
+              href="https://app.engrant.eu/?utm_source=writing_winning_proposal&utm_medium=cta&utm_campaign=step_three_cta"
               onClick={() => {
                 if (typeof window !== 'undefined' && window.gtag) {
                   window.gtag('event', 'cta_click', {
@@ -359,7 +359,7 @@ const StepFour = () => {
               <strong className="text-teal-700">How Engrant helps:</strong> Engrant performs an automatic review of everything it creates, checking for consistency and removing AI artifacts to ensure your proposal reads naturally. However, human review is always required—Engrant provides you with a polished draft, but your final review ensures the proposal perfectly reflects your organization's voice and meets all requirements.
             </p>
             <a 
-              href="https://app.engrant.eu/"
+              href="https://app.engrant.eu/?utm_source=writing_winning_proposal&utm_medium=cta&utm_campaign=step_four_cta"
               onClick={() => {
                 if (typeof window !== 'undefined' && window.gtag) {
                   window.gtag('event', 'cta_click', {
@@ -407,7 +407,7 @@ const Conclusion = () => {
               <strong className="text-teal-700">Ready to get started?</strong> Engrant makes it easy to write winning proposals that align with funder priorities. Try Engrant today and see how it transforms your grant writing process.
             </p>
             <a 
-              href="https://app.engrant.eu/"
+              href="https://app.engrant.eu/?utm_source=writing_winning_proposal&utm_medium=cta&utm_campaign=conclusion_cta"
               onClick={() => {
                 if (typeof window !== 'undefined' && window.gtag) {
                   window.gtag('event', 'cta_click', {
@@ -456,7 +456,7 @@ const FinalCTA = () => {
         </p>
         
         <a 
-          href="https://app.engrant.eu/"
+          href="https://app.engrant.eu/?utm_source=writing_winning_proposal&utm_medium=cta&utm_campaign=final_cta"
           onClick={() => {
             if (typeof window !== 'undefined' && window.gtag) {
               window.gtag('event', 'cta_click', {

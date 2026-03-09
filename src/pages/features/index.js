@@ -13,7 +13,7 @@ const FeaturesIndexPage = () => {
               <img src={logo} alt="EnGrant Logo" className="h-11 w-auto rounded-lg align-middle" />
             </a>
             <a
-              href="https://app.engrant.eu/"
+              href="https://app.engrant.eu/?utm_source=features&utm_medium=cta&utm_campaign=header_cta"
               className="btn-primary text-white px-6 py-2.5 rounded-full font-semibold inline-block shadow-md"
             >
               Start Free Trial
