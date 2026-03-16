@@ -13,7 +13,7 @@ const Testimonials = () => {
           </h2>
         </div>
 
-        <div className="grid gap-10 md:grid-cols-2 items-stretch">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 items-stretch">
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-br from-teal-200/40 to-amber-200/40 rounded-3xl transform rotate-2"></div>
             <div className="relative bg-white rounded-2xl p-8 shadow-2xl border border-neutral-200 h-full flex flex-col">
@@ -57,6 +57,28 @@ const Testimonials = () => {
               </div>
               <div className="text-xs text-neutral-500">
                 Founder of Social Impact Compass
+              </div>
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="absolute -inset-4 bg-gradient-to-br from-teal-200/40 to-amber-200/40 rounded-3xl transform rotate-1"></div>
+            <div className="relative bg-white rounded-2xl p-8 shadow-2xl border border-neutral-200 h-full flex flex-col">
+              <div className="text-6xl leading-none text-amber-200 mb-4">
+                "
+              </div>
+              <p className="text-lg text-neutral-700 leading-relaxed mb-6">
+                The fact that it searches online is crazy to me, because the amount of output it gave me is really comprehensive.
+              </p>
+              <div className="mt-auto" />
+            </div>
+
+            <div className="absolute -bottom-6 -right-6 bg-white px-5 py-4 rounded-2xl warm-shadow-lg border border-amber-100">
+              <div className="text-sm font-semibold text-neutral-700">
+                Loukas Kimeritze
+              </div>
+              <div className="text-xs text-neutral-500">
+                Funding Consultant
               </div>
             </div>
           </div>
