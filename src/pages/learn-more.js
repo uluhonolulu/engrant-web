@@ -161,6 +161,11 @@ const GuidesSection = () => {
       title: "A Comprehensive Guide to Writing a Winning Proposal",
       url: "/writing-winning-proposal",
       description: "Learn the proven steps to craft compelling grant proposals that secure funding. See how Engrant streamlines each step of the process, from alignment with funders to final polish."
+    },
+    {
+      title: "How Engrant Finds Grants: Multi-Agent AI Search Explained",
+      url: "/how-engrant-search-works",
+      description: "Understand how Engrant's parallel AI agents — direct-match and lateral-reasoning — surface 3–5× more funding opportunities than a single search, and how every result is validated before you see it."
     }
   ];
 

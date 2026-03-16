@@ -401,6 +401,17 @@ const Conclusion = () => {
               <ArrowRight className="w-5 h-5 ml-2" />
             </a>
           </div>
+
+          <div className="bg-white border border-neutral-200 rounded-xl p-6 my-8">
+            <h3 className="text-xl font-semibold text-neutral-700 mb-3">Related resource: how Engrant finds the right grants to write for</h3>
+            <p className="text-neutral-700 leading-relaxed mb-3">
+              Before you write a proposal, you need the right shortlist. Learn how Engrant's parallel AI agents surface 3–5× more funding opportunities than a single search — including lateral funders most nonprofits never find.
+            </p>
+            <a href="/how-engrant-search-works" className="inline-flex items-center text-teal-700 hover:text-teal-800 font-semibold">
+              How Engrant grant search works
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </a>
+          </div>
           
           <div className="bg-gradient-to-br from-teal-50 to-amber-50/30 rounded-xl p-6 border border-teal-100 my-8">
             <p className="text-neutral-700 leading-relaxed mb-4">
