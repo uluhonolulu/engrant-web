@@ -738,6 +738,10 @@ const Testimonials = () => {
     {
       quote: "I spend more time searching for grants than I do actually writing them, and half the ones I find don't even fit our mission.",
       attribution: "Development Director, Human Services Nonprofit"
+    },
+    {
+      quote: "Other AI platforms give you outdated and inaccurate information; here EnGrant is always on point.",
+      attribution: "Magalie Laliberté, Grant Strategist"
     }
   ];
 

@@ -82,6 +82,28 @@ const Testimonials = () => {
               </div>
             </div>
           </div>
+
+          <div className="relative">
+            <div className="absolute -inset-4 bg-gradient-to-br from-amber-200/40 to-teal-200/40 rounded-3xl transform -rotate-1"></div>
+            <div className="relative bg-white rounded-2xl p-8 shadow-2xl border border-neutral-200 h-full flex flex-col">
+              <div className="text-6xl leading-none text-amber-200 mb-4">
+                “
+              </div>
+              <p className="text-lg text-neutral-700 leading-relaxed mb-6">
+                Other AI platforms give you outdated and inaccurate information; here EnGrant is always on point.
+              </p>
+              <div className="mt-auto" />
+            </div>
+
+            <div className="absolute -bottom-6 -right-6 bg-white px-5 py-4 rounded-2xl warm-shadow-lg border border-amber-100">
+              <div className="text-sm font-semibold text-neutral-700">
+                Magalie Laliberté
+              </div>
+              <div className="text-xs text-neutral-500">
+                Grant Strategist
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
