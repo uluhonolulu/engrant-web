@@ -8,6 +8,18 @@ const DOCS_ITEMS = [
       'Learn how to go from a simple funding need to a ranked list of matching grants in minutes, with fit ratings, deadlines, and funder details.',
     href: '/docs/how-to-find-grants-for-nonprofits',
   },
+  {
+    title: 'How to Know If Your Nonprofit Is Eligible for a Grant Before You Apply',
+    description:
+      'See how Engrant checks your profile against each grant’s requirements and surfaces fit ratings, match points, and red flags before you write an application.',
+    href: '/docs/how-to-check-grant-eligibility-before-applying',
+  },
+  {
+    title: 'How to Turn a Vague Funding Idea Into a Grant-Ready Project Description',
+    description:
+      'Learn how typing a few words — like "office rent" or "youth mentorship" — generates a complete project description with budget range, timeline, and funder targeting guidance.',
+    href: '/docs/how-to-write-a-project-description-for-a-grant',
+  },
 ];
 
 const DocsIndexPage = () => {
