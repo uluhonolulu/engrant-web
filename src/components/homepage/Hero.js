@@ -95,7 +95,8 @@ const Hero = () => {
               <img 
                 className="relative w-full h-[420px] rounded-2xl shadow-2xl object-cover object-left" 
                 src={engrantCondensed} 
-                alt="Engrant grant matching interface" 
+                alt="Engrant grant matching interface"
+                fetchPriority="high"
               />
               <div className="absolute -bottom-6 -right-6 bg-white p-5 rounded-2xl warm-shadow-lg border border-amber-100">
                 <div className="text-sm font-bold text-teal-600">Not limited to a database</div>
