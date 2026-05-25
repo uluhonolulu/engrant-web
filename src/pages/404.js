@@ -1,49 +1,35 @@
 import * as React from "react"
 import { Link } from "gatsby"
-
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+import Footer from "../components/Footer"
 
 const NotFoundPage = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
+    <div className="min-h-screen bg-neutral-50 flex flex-col">
+      <main className="flex-1 flex items-center justify-center px-4 py-16">
+        <div className="max-w-lg text-center">
+          <h1 className="text-4xl font-bold text-neutral-700 mb-4">Page not found</h1>
+          <p className="text-neutral-700 mb-8">
+            Sorry, we could not find what you were looking for.
+          </p>
+          <Link to="/" className="text-primary-600 hover:text-primary-700 font-medium">
+            Go home
+          </Link>
+        </div>
+      </main>
+      <Footer tagline="AI-powered grant matching for nonprofits" />
+    </div>
   )
 }
 
 export default NotFoundPage
 
-export const Head = () => <title>Not found</title>
+export const Head = () => (
+  <>
+    <title>Page Not Found | Engrant</title>
+    <meta
+      name="description"
+      content="The page you requested could not be found on Engrant."
+    />
+    <meta name="robots" content="noindex" />
+  </>
+)

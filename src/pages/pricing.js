@@ -74,6 +74,6 @@ export const Head = () => (
       name="description"
       content="Simple Engrant pricing for nonprofit grant professionals, including pipeline export and funding strategy reporting features."
     />
-    <link rel="canonical" href="https://engrant.io/pricing" />
+    <link rel="canonical" href="https://engrant.eu/pricing" />
   </>
 );

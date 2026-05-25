@@ -119,7 +119,7 @@ const ExportYourPipelinePage = () => {
               <div className="bg-white border border-neutral-200 rounded-xl p-6">
                 <h3 className="text-xl font-semibold text-neutral-700 mb-3">Does Engrant support exporting to Excel or CSV?</h3>
                 <p className="text-neutral-700 leading-relaxed">
-                  Currently Engrant exports a structured text file and a Word report. If you need a specific format, <a className="text-primary-700 hover:text-primary-800 underline" href="mailto:support@engrant.eu">contact us / send feedback</a>.
+                  Currently Engrant exports a structured text file and a Word report. If you need a specific format, <a className="text-primary-700 hover:text-primary-800 underline" href="mailto:founder@engrant.eu">contact us / send feedback</a>.
                 </p>
               </div>
             </div>
@@ -156,6 +156,6 @@ export const Head = () => (
       name="description"
       content="Generate a polished Word funding strategy report or export your full grant pipeline as structured data. Built for nonprofit grant professionals and consultants."
     />
-    <link rel="canonical" href="https://engrant.io/features/export-your-pipeline" />
+    <link rel="canonical" href="https://engrant.eu/features/export-your-pipeline" />
   </>
 );
