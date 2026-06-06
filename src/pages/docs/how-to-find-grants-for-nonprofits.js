@@ -258,7 +258,13 @@ const HowToFindGrantsForNonprofitsPage = () => {
 
 export default HowToFindGrantsForNonprofitsPage;
 
+const CANONICAL_URL = 'https://engrant.eu/docs/how-to-find-grants-for-nonprofits/';
+
 export const Head = () => {
+  const pageTitle = 'How to Find Grants for Your Nonprofit — Without Weeks of Googling | Engrant';
+  const pageDescription =
+    'Describe your organization and what you need funding for. Engrant finds matching grants in minutes — ranked by fit, with deadlines, competition levels, and funder details.';
+
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -272,20 +278,72 @@ export const Head = () => {
     })),
   };
 
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'How to Find Grants for Your Nonprofit — Without Weeks of Googling',
+    description: pageDescription,
+    datePublished: '2026-06-01',
+    dateModified: '2026-06-06',
+    author: {
+      '@type': 'Organization',
+      name: 'Engrant',
+      url: 'https://engrant.eu',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Engrant',
+      url: 'https://engrant.eu',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': CANONICAL_URL,
+    },
+    isAccessibleForFree: true,
+    inLanguage: 'en',
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://engrant.eu/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Docs',
+        item: 'https://engrant.eu/docs/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'How to find grants for nonprofits',
+        item: CANONICAL_URL,
+      },
+    ],
+  };
+
   return (
     <>
-      <title>How to Find Grants for Your Nonprofit — Without Weeks of Googling | Engrant</title>
-      <meta
-        name="description"
-        content="Describe your organization and what you need funding for. Engrant finds matching grants in minutes — ranked by fit, with deadlines, competition levels, and funder details."
-      />
-      <meta property="og:title" content="How to Find Grants for Your Nonprofit — Without Weeks of Googling | Engrant" />
-      <meta
-        property="og:description"
-        content="Describe your organization and what you need funding for. Engrant finds matching grants in minutes — ranked by fit, with deadlines, competition levels, and funder details."
-      />
-      <link rel="canonical" href="https://engrant.eu/docs/how-to-find-grants-for-nonprofits" />
+      <title>{pageTitle}</title>
+      <meta name="description" content={pageDescription} />
+      <meta property="og:title" content={pageTitle} />
+      <meta property="og:description" content={pageDescription} />
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content={CANONICAL_URL} />
+      <meta property="article:published_time" content="2026-06-01T00:00:00.000Z" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={pageTitle} />
+      <meta name="twitter:description" content={pageDescription} />
+      <link rel="canonical" href={CANONICAL_URL} />
       <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+      <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
+      <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
     </>
   );
 };

@@ -206,7 +206,7 @@ const TLDRSummary = () => {
             <h3 className="font-semibold text-slate-700 mb-4">TL;DR — Engrant vs Candid at a Glance:</h3>
             <ul className="grid md:grid-cols-2 gap-3">
               {[
-                "Engrant: 10-20 pre-evaluated grants with fit scores",
+                "Engrant: 30-50 pre-evaluated grants with fit scores",
                 "Candid: Free tier is limited; Premium unlocks full access",
                 "Engrant: $47/month ($37/month annual) for full access to all features",
                 "Candid Premium: $3,499/year (~$292/month) — the only paid tier with grants data",
@@ -326,7 +326,7 @@ const ProblemSection = () => {
 const ComparisonTable = () => {
   const features = [
     { feature: "Setup time", engrant: "Enter org name/URL → AI researches automatically", candid: "Fill out search forms manually each time", engrantCheck: true, candidCheck: false },
-    { feature: "Search results", engrant: "10-20 pre-evaluated, high-fit grants", candid: "100-300+ results to sort through yourself", engrantCheck: true, candidCheck: false },
+    { feature: "Search results", engrant: "30-50 pre-evaluated, high-fit grants", candid: "100-300+ results to sort through yourself", engrantCheck: true, candidCheck: false },
     { feature: "Fit assessment", engrant: "AI-generated fit score with specific match reasons", candid: "You evaluate fit manually", engrantCheck: true, candidCheck: false },
     { feature: "Eligibility check", engrant: "Flags disqualifying criteria before you waste time", candid: "Buried in grant guidelines", engrantCheck: true, candidCheck: false },
     { feature: "Competition level", engrant: "Shows High/Medium/Low Competition", candid: "Not provided", engrantCheck: true, candidCheck: false },
@@ -1028,7 +1028,7 @@ const FAQSection = () => {
     },
     {
       question: "How is Engrant different from other grant databases?",
-      answer: "Engrant is the only grant platform that automatically researches an organization's eligibility characteristics — including women-led status, populations served, and geographic focus — and matches these against funder criteria before showing results. Unlike traditional databases that return hundreds of results to sort through, Engrant shows 10–20 pre-evaluated grants with fit scores, competition levels, effort estimates, and red flags. At $47/month, it's designed for solo development directors, freelance grant writers, and small nonprofits that need results, not research projects."
+      answer: "Engrant is the only grant platform that automatically researches an organization's eligibility characteristics — including women-led status, populations served, and geographic focus — and matches these against funder criteria before showing results. Unlike traditional databases that return hundreds of results to sort through, Engrant shows 30–50 pre-evaluated grants with fit scores, competition levels, effort estimates, and red flags. At $47/month, it's designed for solo development directors, freelance grant writers, and small nonprofits that need results, not research projects."
     },
     {
       question: "What's the difference between Candid and Instrumentl?",
@@ -1261,7 +1261,7 @@ export const Head = () => {
         "name": "How is Engrant different from other grant databases?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Engrant is the only grant platform that automatically researches an organization's eligibility characteristics — including women-led status, populations served, and geographic focus — and matches these against funder criteria before showing results. Unlike traditional databases that return hundreds of results to sort through, Engrant shows 10–20 pre-evaluated grants with fit scores, competition levels, effort estimates, and red flags. At $47/month, it's designed for solo development directors, freelance grant writers, and small nonprofits that need results, not research projects."
+          "text": "Engrant is the only grant platform that automatically researches an organization's eligibility characteristics — including women-led status, populations served, and geographic focus — and matches these against funder criteria before showing results. Unlike traditional databases that return hundreds of results to sort through, Engrant shows 30–50 pre-evaluated grants with fit scores, competition levels, effort estimates, and red flags. At $47/month, it's designed for solo development directors, freelance grant writers, and small nonprofits that need results, not research projects."
         }
       },
       {

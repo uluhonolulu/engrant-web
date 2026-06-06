@@ -1,4 +1,5 @@
 import React from 'react';
+import { OgTwitterMeta } from '../../utils/seoMeta';
 import '../../styles/shared.css';
 import logo from '../../images/logo-horizontal-remove-background.com.png';
 import Footer from '../../components/Footer';
@@ -51,13 +52,18 @@ const FeaturesIndexPage = () => {
 
 export default FeaturesIndexPage;
 
-export const Head = () => (
-  <>
-    <title>Features | Engrant</title>
-    <meta
-      name="description"
-      content="Explore Engrant product features for nonprofit grant professionals, including pipeline export and funding strategy reporting."
-    />
-    <link rel="canonical" href="https://engrant.eu/features" />
-  </>
-);
+export const Head = () => {
+  const pageTitle = 'Features | Engrant';
+  const pageDescription =
+    'Explore Engrant product features for nonprofit grant professionals, including pipeline export and funding strategy reporting.';
+  const canonicalUrl = 'https://engrant.eu/features/';
+
+  return (
+    <>
+      <title>{pageTitle}</title>
+      <meta name="description" content={pageDescription} />
+      <link rel="canonical" href={canonicalUrl} />
+      <OgTwitterMeta title={pageTitle} description={pageDescription} url={canonicalUrl} />
+    </>
+  );
+};

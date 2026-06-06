@@ -20,6 +20,7 @@ const Footer = ({ tagline = 'AI-powered grant matching for nonprofits' }) => {
             <a href="/pricing" className="hover:text-white transition-colors">Pricing</a>
             <a href="/features" className="hover:text-white transition-colors">Features</a>
             <a href="/learn-more" className="hover:text-white transition-colors">Learn More</a>
+            <a href="/docs" className="hover:text-white transition-colors">Docs</a>
             <a href="/learn-more#comparisons" className="hover:text-white transition-colors">Comparisons</a>
             <a href="/compare/grantstation" className="hover:text-white transition-colors">GrantStation Alternative</a>
             <a href="/about" className="hover:text-white transition-colors">About</a>

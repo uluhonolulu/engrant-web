@@ -222,7 +222,7 @@ const ComparisonTable = () => {
   const features = [
     { category: "Setup & Onboarding", feature: "Setup time", engrant: "Enter org name/URL → AI researches automatically", competitor: "Select keywords, geographic scope, areas of interest, funder types manually", engrantCheck: true, competitorCheck: "partial" },
     { category: "Setup & Onboarding", feature: "Learning curve", engrant: "Minimal – results in minutes", competitor: "Moderate – multiple database sections to navigate", engrantCheck: true, competitorCheck: "partial" },
-    { category: "Search & Results", feature: "Results approach", engrant: "10-30 pre-evaluated, high-fit grants", competitor: "Raw database results to manually review (11 matches in real-world test)", engrantCheck: true, competitorCheck: false },
+    { category: "Search & Results", feature: "Results approach", engrant: "30-50 pre-evaluated, high-fit grants", competitor: "Raw database results to manually review (11 matches in real-world test)", engrantCheck: true, competitorCheck: false },
     { category: "Search & Results", feature: "Fit assessment", engrant: "AI-generated fit score with detailed reasons", competitor: "No fit scoring — you evaluate manually", engrantCheck: true, competitorCheck: false },
     { category: "Search & Results", feature: "Eligibility screening", engrant: "Flags disqualifiers before you apply", competitor: "Basic eligibility info in funder profiles", engrantCheck: true, competitorCheck: "partial" },
     { category: "Intelligence & Insights", feature: "Competition level", engrant: "Shows High/Medium/Low competition", competitor: "Not available", engrantCheck: true, competitorCheck: false },
@@ -495,7 +495,7 @@ const KeyDifferences = () => {
                   </h3>
                   <div className="text-3xl font-bold text-teal-600 mb-2">Entire web</div>
                   <p className="text-neutral-600 text-sm">AI searches the live internet for each query</p>
-                  <p className="text-neutral-600 text-sm mt-2">10-30 pre-evaluated, high-fit grants per search</p>
+                  <p className="text-neutral-600 text-sm mt-2">30-50 pre-evaluated, high-fit grants per search</p>
                 </div>
               </div>
               
@@ -664,7 +664,7 @@ const Testimonials = () => {
               <div className="text-neutral-600">hours/week saved on grant research</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-teal-600 mb-2">10-30</div>
+              <div className="text-3xl font-bold text-teal-600 mb-2">30-50</div>
               <div className="text-neutral-600">pre-evaluated grants per search</div>
             </div>
             <div>
@@ -841,7 +841,7 @@ const FAQSection = () => {
     },
     {
       question: "What is the best alternative to GrantStation?",
-      answer: "For nonprofits who want AI-powered grant discovery instead of manual database searching, Engrant is the leading GrantStation alternative. At $47/month, Engrant automatically researches your organization and delivers 10-30 pre-evaluated grants with fit scores, competition levels, and red flag warnings. Unlike GrantStation's manual keyword search, Engrant requires no search parameter setup — just enter your organization name and the AI does the rest."
+      answer: "For nonprofits who want AI-powered grant discovery instead of manual database searching, Engrant is the leading GrantStation alternative. At $47/month, Engrant automatically researches your organization and delivers 30-50 pre-evaluated grants with fit scores, competition levels, and red flag warnings. Unlike GrantStation's manual keyword search, Engrant requires no search parameter setup — just enter your organization name and the AI does the rest."
     },
     {
       question: "What's the difference between GrantStation and Engrant?",
@@ -900,11 +900,15 @@ const FAQSection = () => {
                   }`}
                 />
               </button>
-              {openIndex === index && (
+              <div
+                className={`overflow-hidden transition-all duration-300 ${
+                  openIndex === index ? 'max-h-[800px]' : 'max-h-0'
+                }`}
+              >
                 <p className="text-neutral-600 leading-relaxed mt-4">
                   {faq.answer}
                 </p>
-              )}
+              </div>
             </div>
           ))}
         </div>
@@ -1011,7 +1015,7 @@ const FinalCTA = () => {
         </h2>
         
         <p className="text-xl lg:text-2xl mb-12 text-teal-100 max-w-2xl mx-auto leading-relaxed">
-          Stop manually searching through databases. Engrant uses AI to find, evaluate, and rank grants for your organization. Get 10-30 high-fit grants with fit scores, competition levels, and red flags — in minutes, not hours.
+          Stop manually searching through databases. Engrant uses AI to find, evaluate, and rank grants for your organization. Get 30-50 high-fit grants with fit scores, competition levels, and red flags — in minutes, not hours.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
@@ -1082,7 +1086,7 @@ export const Head = () => {
         "name": "What is the best alternative to GrantStation?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "For nonprofits who want AI-powered grant discovery instead of manual database searching, Engrant is the leading GrantStation alternative at $47/month. It automatically researches your organization and delivers 10-30 pre-evaluated grants with fit scores, competition levels, and red flag warnings."
+          "text": "For nonprofits who want AI-powered grant discovery instead of manual database searching, Engrant is the leading GrantStation alternative at $47/month. It automatically researches your organization and delivers 30-50 pre-evaluated grants with fit scores, competition levels, and red flag warnings."
         }
       },
       {
@@ -1118,7 +1122,7 @@ export const Head = () => {
     "name": "Engrant",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
-    "description": "AI-powered grant discovery platform for nonprofits. Find 10-30 highly relevant grants with fit scores, competition levels, and red flags.",
+    "description": "AI-powered grant discovery platform for nonprofits. Find 30-50 highly relevant grants with fit scores, competition levels, and red flags.",
     "offers": {
       "@type": "Offer",
       "price": "47",

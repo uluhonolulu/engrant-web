@@ -1,4 +1,5 @@
 import React from 'react';
+import { OgTwitterMeta } from '../../utils/seoMeta';
 import '../../styles/shared.css';
 import logo from '../../images/logo-horizontal-remove-background.com.png';
 import exportImage from '../../images/export.png';
@@ -149,13 +150,18 @@ const ExportYourPipelinePage = () => {
 
 export default ExportYourPipelinePage;
 
-export const Head = () => (
-  <>
-    <title>Export Your Grant Pipeline | Funding Reports &amp; Data Export – Engrant</title>
-    <meta
-      name="description"
-      content="Generate a polished Word funding strategy report or export your full grant pipeline as structured data. Built for nonprofit grant professionals and consultants."
-    />
-    <link rel="canonical" href="https://engrant.eu/features/export-your-pipeline" />
-  </>
-);
+export const Head = () => {
+  const pageTitle = 'Export Your Grant Pipeline | Funding Reports & Data Export – Engrant';
+  const pageDescription =
+    'Generate a polished Word funding strategy report or export your full grant pipeline as structured data. Built for nonprofit grant professionals and consultants.';
+  const canonicalUrl = 'https://engrant.eu/features/export-your-pipeline/';
+
+  return (
+    <>
+      <title>{pageTitle}</title>
+      <meta name="description" content={pageDescription} />
+      <link rel="canonical" href={canonicalUrl} />
+      <OgTwitterMeta title={pageTitle} description={pageDescription} url={canonicalUrl} />
+    </>
+  );
+};

@@ -1,7 +1,7 @@
 import React from 'react';
 import DocsPageLayout from '../../components/docs/DocsPageLayout';
 
-const PAGE_PATH = '/docs/how-to-write-a-project-description-for-a-grant';
+const PAGE_PATH = '/docs/how-to-write-a-project-description-for-a-grant/';
 const CANONICAL_URL = `https://engrant.eu${PAGE_PATH}`;
 
 const FAQ_ITEMS = [
@@ -303,7 +303,7 @@ export const Head = () => {
         '@type': 'ListItem',
         position: 2,
         name: 'Docs',
-        item: 'https://engrant.eu/docs',
+        item: 'https://engrant.eu/docs/',
       },
       {
         '@type': 'ListItem',

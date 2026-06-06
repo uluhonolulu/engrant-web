@@ -3,6 +3,7 @@ import '../styles/shared.css';
 import { FileText, ArrowRight, ChevronDown } from 'lucide-react';
 import logo from '../images/logo-horizontal-remove-background.com.png';
 import Footer from '../components/Footer';
+import { OgTwitterMeta } from '../utils/seoMeta';
 
 const LearnMorePage = () => {
   return (
@@ -153,6 +154,21 @@ const ComparisonPagesSection = () => {
 const GuidesSection = () => {
   const guides = [
     {
+      title: "How to Find Grants for Your Nonprofit",
+      url: "/docs/how-to-find-grants-for-nonprofits",
+      description: "Describe your organization and funding need — Engrant finds matching grants in minutes, ranked by fit with deadlines, competition levels, and funder details."
+    },
+    {
+      title: "How to Check Grant Eligibility Before Applying",
+      url: "/docs/how-to-check-grant-eligibility-before-applying",
+      description: "Stop wasting time on grants you can't win. Learn how Engrant checks your organization's profile against each grant's requirements before you apply."
+    },
+    {
+      title: "How to Write a Project Description for a Grant",
+      url: "/docs/how-to-write-a-project-description-for-a-grant",
+      description: "Turn a rough idea into a structured project description that funders understand — with AI assistance based on your organization profile and funder priorities."
+    },
+    {
       title: "Export Your Grant Pipeline",
       url: "/features/export-your-pipeline",
       description: "Generate a polished funding strategy report or export your full pipeline data for analysis, leadership updates, and consultant deliverables."
@@ -205,18 +221,21 @@ const GuidesSection = () => {
 export default LearnMorePage;
 
 export const Head = () => {
+  const pageTitle = 'Learn More | Engrant Resources & Comparisons';
+  const pageDescription =
+    'Compare Engrant with other grant discovery tools, or learn how to write winning proposals. All the resources you need in one place.';
+  const canonicalUrl = 'https://engrant.eu/learn-more/';
+
   return (
     <>
-      <title>Learn More | Engrant Resources & Comparisons</title>
-      <meta 
-        name="description" 
-        content="Compare Engrant with other grant discovery tools, or learn how to write winning proposals. All the resources you need in one place." 
+      <title>{pageTitle}</title>
+      <meta name="description" content={pageDescription} />
+      <meta
+        name="keywords"
+        content="grant writing resources, grant tool comparisons, grant writing guides, nonprofit resources"
       />
-      <meta 
-        name="keywords" 
-        content="grant writing resources, grant tool comparisons, grant writing guides, nonprofit resources" 
-      />
-      <link rel="canonical" href="https://engrant.eu/learn-more/" />
+      <link rel="canonical" href={canonicalUrl} />
+      <OgTwitterMeta title={pageTitle} description={pageDescription} url={canonicalUrl} />
     </>
   );
 };

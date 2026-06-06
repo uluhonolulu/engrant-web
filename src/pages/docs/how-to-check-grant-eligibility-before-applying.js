@@ -1,7 +1,7 @@
 import React from 'react';
 import DocsPageLayout from '../../components/docs/DocsPageLayout';
 
-const PAGE_PATH = '/docs/how-to-check-grant-eligibility-before-applying';
+const PAGE_PATH = '/docs/how-to-check-grant-eligibility-before-applying/';
 const CANONICAL_URL = `https://engrant.eu${PAGE_PATH}`;
 
 const FAQ_ITEMS = [
@@ -306,7 +306,7 @@ export const Head = () => {
         '@type': 'ListItem',
         position: 2,
         name: 'Docs',
-        item: 'https://engrant.eu/docs',
+        item: 'https://engrant.eu/docs/',
       },
       {
         '@type': 'ListItem',

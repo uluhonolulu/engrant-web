@@ -1,5 +1,7 @@
 import React from 'react';
 import heroLcpImage from '../images/Engrant-condensed.png';
+import homepageFaqData from '../data/homepageFaqData';
+import { buildFaqSchema, OgTwitterMeta } from '../utils/seoMeta';
 import '../styles/shared.css';
 import Header from '../components/homepage/Header';
 import Hero from '../components/homepage/Hero';
@@ -43,20 +45,26 @@ const HomePage = () => {
 
 export default HomePage;
 
-export const Head = () => (
-  <>
-    <title>Pre-Evaluated Grant Opportunities for Nonprofit Professionals | Engrant</title>
-    <meta 
-      name="description" 
-      content="30–50 vetted grants per search — not 400 to sift through. Engrant's AI evaluates each opportunity with fit analysis, red flags, and strategic considerations. Built for freelance grant writers and nonprofit development staff. $47/month. Try free for 14 days." 
-    />
-    <link rel="canonical" href="https://engrant.eu/" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-    <link rel="preload" as="image" href={heroLcpImage} media="(min-width: 1024px)" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </>
-);
+export const Head = () => {
+  const pageTitle = 'Pre-Evaluated Grant Opportunities for Nonprofit Professionals | Engrant';
+  const pageDescription =
+    "30–50 vetted grants per search — not 400 to sift through. Engrant's AI evaluates each opportunity with fit analysis, red flags, and strategic considerations. Built for freelance grant writers and nonprofit development staff. $47/month. Try free for 14 days.";
+  const canonicalUrl = 'https://engrant.eu/';
+
+  return (
+    <>
+      <title>{pageTitle}</title>
+      <meta name="description" content={pageDescription} />
+      <link rel="canonical" href={canonicalUrl} />
+      <OgTwitterMeta title={pageTitle} description={pageDescription} url={canonicalUrl} />
+      <script type="application/ld+json">{JSON.stringify(buildFaqSchema(homepageFaqData))}</script>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link rel="preload" as="image" href={heroLcpImage} media="(min-width: 1024px)" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
+    </>
+  );
+};

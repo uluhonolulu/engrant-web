@@ -93,7 +93,7 @@ const Hero = () => {
         </h1>
         
         <p className="text-xl lg:text-2xl text-neutral-600 mb-10 leading-relaxed font-normal max-w-3xl mx-auto">
-          Engrant uses AI to find 10-20 high-fit grants with match scores, eligibility checks, and red flags already evaluated—so you can skip the research and start applying.
+          Engrant uses AI to find 30-50 high-fit grants with match scores, eligibility checks, and red flags already evaluated—so you can skip the research and start applying.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
@@ -135,7 +135,7 @@ const ProblemSection = () => {
       quote: "While the information subscribers have access to within each grant record is extremely helpful, the trickiest part for us was finding relevant grants. The platform's search and filter functionalities are fairly limited, which can complicate and slow down your research process.",
       quoteSource: "Learn Grant Writing database review",
       sourceUrl: "https://www.learngrantwriting.org/blog/best-grant-databases/",
-      engrantAlternative: "10-20 pre-evaluated grants, not 10,000 to scroll through"
+      engrantAlternative: "30-50 pre-evaluated grants, not 10,000 to scroll through"
     },
     {
       icon: DollarSign,
@@ -223,7 +223,7 @@ const ComparisonTable = () => {
   const features = [
     { category: "Setup & Onboarding", feature: "Setup time", engrant: "Enter org name/URL → AI researches automatically", grantwatch: "Manual profile creation + category selection", engrantCheck: true, grantwatchCheck: false },
     { category: "Setup & Onboarding", feature: "Learning curve", engrant: "Minimal — results in minutes", grantwatch: "Moderate — requires learning SMART search", engrantCheck: true, grantwatchCheck: false },
-    { category: "Search & Results", feature: "Search approach", engrant: "AI-curated 10-20 high-fit grants", grantwatch: "10,000+ grants requiring manual filtering", engrantCheck: true, grantwatchCheck: false },
+    { category: "Search & Results", feature: "Search approach", engrant: "AI-curated 30-50 high-fit grants", grantwatch: "10,000+ grants requiring manual filtering", engrantCheck: true, grantwatchCheck: false },
     { category: "Search & Results", feature: "Fit assessment", engrant: "AI-generated fit score with match reasons", grantwatch: "No fit scoring", engrantCheck: true, grantwatchCheck: false },
     { category: "Search & Results", feature: "Eligibility screening", engrant: "Flags disqualifiers before you apply", grantwatch: "Manual eligibility checking required", engrantCheck: true, grantwatchCheck: false },
     { category: "Intelligence & Insights", feature: "Competition level", engrant: "Shows High/Medium/Low", grantwatch: "Not available", engrantCheck: true, grantwatchCheck: false },
@@ -695,7 +695,7 @@ const Testimonials = () => {
               <div className="text-neutral-600">hours/week saved on grant research</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-teal-600 mb-2">10-20</div>
+              <div className="text-3xl font-bold text-teal-600 mb-2">30-50</div>
               <div className="text-neutral-600">pre-evaluated grants per search</div>
             </div>
             <div>
@@ -812,7 +812,7 @@ const PricingComparison = () => {
                 {[
                   "2-week free trial, no credit card",
                   "AI fit scores and match explanations",
-                  "Pre-evaluated grants (10-20 curated matches)",
+                  "Pre-evaluated grants (30-50 curated matches)",
                   "Red flags and competition indicators",
                   "Past recipients like you",
                   "Learning recommendations"
@@ -867,7 +867,7 @@ const FAQSection = () => {
   const faqs = [
     {
       question: "What is the best alternative to GrantWatch?",
-      answer: "Engrant is the best GrantWatch alternative for nonprofits who want pre-evaluated grant matches instead of manual database searching. Unlike GrantWatch's 10,000+ listing approach, Engrant uses AI to deliver 10-20 high-fit grants with match scores, eligibility checks, and red flags already assessed. At $47/month (or $37/month billed annually), Engrant costs more than GrantWatch ($249/year) but saves 10+ hours per week on manual research—making it ideal for overworked development professionals."
+      answer: "Engrant is the best GrantWatch alternative for nonprofits who want pre-evaluated grant matches instead of manual database searching. Unlike GrantWatch's 10,000+ listing approach, Engrant uses AI to deliver 30-50 high-fit grants with match scores, eligibility checks, and red flags already assessed. At $47/month (or $37/month billed annually), Engrant costs more than GrantWatch ($249/year) but saves 10+ hours per week on manual research—making it ideal for overworked development professionals."
     },
     {
       question: "How much does GrantWatch cost?",
@@ -875,7 +875,7 @@ const FAQSection = () => {
     },
     {
       question: "What's the difference between GrantWatch and Engrant?",
-      answer: "GrantWatch is a budget-friendly grant database with 10,000+ listings that you filter and evaluate manually. Engrant is an AI-powered grant discovery platform that automatically researches your organization and delivers 10-20 pre-evaluated matches with fit scores, eligibility flags, and competition indicators. GrantWatch saves you money; Engrant saves you time."
+      answer: "GrantWatch is a budget-friendly grant database with 10,000+ listings that you filter and evaluate manually. Engrant is an AI-powered grant discovery platform that automatically researches your organization and delivers 30-50 pre-evaluated matches with fit scores, eligibility flags, and competition indicators. GrantWatch saves you money; Engrant saves you time."
     },
     {
       question: "Is GrantWatch worth it for small nonprofits?",
@@ -883,7 +883,7 @@ const FAQSection = () => {
     },
     {
       question: "How can I find grants faster than using GrantWatch?",
-      answer: "To find grants faster than GrantWatch's manual search approach, use Engrant's AI-powered matching. Instead of filtering through thousands of listings, Engrant automatically researches your organization and delivers 10-20 high-fit opportunities with match reasons, red flags, and competition levels already evaluated. Most users reduce their grant research time from 10-15 hours/week to under 2 hours."
+      answer: "To find grants faster than GrantWatch's manual search approach, use Engrant's AI-powered matching. Instead of filtering through thousands of listings, Engrant automatically researches your organization and delivers 30-50 high-fit opportunities with match reasons, red flags, and competition levels already evaluated. Most users reduce their grant research time from 10-15 hours/week to under 2 hours."
     },
     {
       question: "What grant database has the best AI matching for small nonprofits?",
@@ -930,11 +930,15 @@ const FAQSection = () => {
                   }`}
                 />
               </button>
-              {openIndex === index && (
+              <div
+                className={`overflow-hidden transition-all duration-300 ${
+                  openIndex === index ? 'max-h-[800px]' : 'max-h-0'
+                }`}
+              >
                 <p className="text-neutral-600 leading-relaxed mt-4">
                   {faq.answer}
                 </p>
-              )}
+              </div>
             </div>
           ))}
         </div>
@@ -1080,7 +1084,7 @@ export const Head = () => {
         "name": "What is the best alternative to GrantWatch?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Engrant is the best GrantWatch alternative for nonprofits who want pre-evaluated grant matches instead of manual database searching. Unlike GrantWatch's 10,000+ listing approach, Engrant uses AI to deliver 10-20 high-fit grants with match scores, eligibility checks, and red flags already assessed. At $47/month (or $37/month billed annually), Engrant costs more than GrantWatch ($249/year) but saves 10+ hours per week on manual research—making it ideal for overworked development professionals."
+          "text": "Engrant is the best GrantWatch alternative for nonprofits who want pre-evaluated grant matches instead of manual database searching. Unlike GrantWatch's 10,000+ listing approach, Engrant uses AI to deliver 30-50 high-fit grants with match scores, eligibility checks, and red flags already assessed. At $47/month (or $37/month billed annually), Engrant costs more than GrantWatch ($249/year) but saves 10+ hours per week on manual research—making it ideal for overworked development professionals."
         }
       },
       {
@@ -1096,7 +1100,7 @@ export const Head = () => {
         "name": "What's the difference between GrantWatch and Engrant?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "GrantWatch is a budget-friendly grant database with 10,000+ listings that you filter and evaluate manually. Engrant is an AI-powered grant discovery platform that automatically researches your organization and delivers 10-20 pre-evaluated matches with fit scores, eligibility flags, and competition indicators. GrantWatch saves you money; Engrant saves you time."
+          "text": "GrantWatch is a budget-friendly grant database with 10,000+ listings that you filter and evaluate manually. Engrant is an AI-powered grant discovery platform that automatically researches your organization and delivers 30-50 pre-evaluated matches with fit scores, eligibility flags, and competition indicators. GrantWatch saves you money; Engrant saves you time."
         }
       },
       {
@@ -1112,7 +1116,7 @@ export const Head = () => {
         "name": "How can I find grants faster than using GrantWatch?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "To find grants faster than GrantWatch's manual search approach, use Engrant's AI-powered matching. Instead of filtering through thousands of listings, Engrant automatically researches your organization and delivers 10-20 high-fit opportunities with match reasons, red flags, and competition levels already evaluated. Most users reduce their grant research time from 10-15 hours/week to under 2 hours."
+          "text": "To find grants faster than GrantWatch's manual search approach, use Engrant's AI-powered matching. Instead of filtering through thousands of listings, Engrant automatically researches your organization and delivers 30-50 high-fit opportunities with match reasons, red flags, and competition levels already evaluated. Most users reduce their grant research time from 10-15 hours/week to under 2 hours."
         }
       },
       {
@@ -1170,7 +1174,7 @@ export const Head = () => {
       />
       <link rel="canonical" href="https://engrant.eu/compare/grantwatch/" />
       <meta property="og:title" content="GrantWatch Alternative: Engrant vs GrantWatch Comparison" />
-      <meta property="og:description" content="Stop manually filtering 10,000 grants. Get 10-20 pre-evaluated matches with AI fit scores." />
+      <meta property="og:description" content="Stop manually filtering 10,000 grants. Get 30-50 pre-evaluated matches with AI fit scores." />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://engrant.eu/compare/grantwatch/" />
       <script type="application/ld+json">

@@ -93,7 +93,7 @@ const Hero = () => {
         </h1>
         
         <p className="text-xl lg:text-2xl text-neutral-600 mb-10 leading-relaxed font-normal max-w-3xl mx-auto">
-          Get AI-powered grant discovery at $47/month—not $179-899. Engrant shows you 10-20 highly relevant grants with fit scores and red flags, without the enterprise complexity.
+          Get AI-powered grant discovery at $47/month—not $179-899. Engrant shows you 30-50 highly relevant grants with fit scores and red flags, without the enterprise complexity.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
@@ -144,7 +144,7 @@ const ProblemSection = () => {
       quote: "There is such a wealth of information in Instrumentl, it can be difficult to filter out opportunities that aren't a perfect match for mission, goals, or proximity.",
       quoteSource: "Software Advice Review",
       sourceUrl: "https://www.softwareadvice.com/grant-management/instrumentl-profile/",
-      engrantAlternative: "10-20 pre-evaluated grants, not 300 possibilities"
+      engrantAlternative: "30-50 pre-evaluated grants, not 300 possibilities"
     },
     {
       icon: Mountain,
@@ -223,7 +223,7 @@ const ComparisonTable = () => {
   const features = [
     { category: "Setup & Onboarding", feature: "Setup time", engrant: "Enter org name/URL → AI researches automatically", instrumentl: "Create project → set keywords → refine matches", engrantCheck: true, instrumentlCheck: "partial" },
     { category: "Setup & Onboarding", feature: "Learning curve", engrant: "Minimal – results in minutes", instrumentl: "Several weeks to master all features", engrantCheck: true, instrumentlCheck: false },
-    { category: "Search & Results", feature: "Results approach", engrant: "10-20 pre-evaluated, high-fit grants", instrumentl: "100s of matches to manually evaluate", engrantCheck: true, instrumentlCheck: false },
+    { category: "Search & Results", feature: "Results approach", engrant: "30-50 pre-evaluated, high-fit grants", instrumentl: "100s of matches to manually evaluate", engrantCheck: true, instrumentlCheck: false },
     { category: "Search & Results", feature: "Fit assessment", engrant: "AI-generated fit score with detailed reasons", instrumentl: "Match indicators, requires manual review", engrantCheck: true, instrumentlCheck: "partial" },
     { category: "Search & Results", feature: "Eligibility screening", engrant: "Flags disqualifiers before you apply", instrumentl: "Sometimes shows ineligible opportunities", engrantCheck: true, instrumentlCheck: "partial" },
     { category: "Intelligence & Insights", feature: "Competition level", engrant: "Shows High/Medium/Low competition", instrumentl: "Not available", engrantCheck: true, instrumentlCheck: false },
@@ -430,7 +430,7 @@ const KeyDifferences = () => {
                 Instrumentl gives you access to 20,000+ active opportunities. That's powerful—if you have time to evaluate them.
               </p>
               <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
-                Engrant takes a different approach. We show you 10-20 grants at a time, each with:
+                Engrant takes a different approach. We show you 30-50 grants at a time, each with:
               </p>
               
               <div className="space-y-4">
@@ -673,7 +673,7 @@ const Testimonials = () => {
               <div className="text-neutral-600">hours/week saved on grant research</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-teal-600 mb-2">10-20</div>
+              <div className="text-3xl font-bold text-teal-600 mb-2">30-50</div>
               <div className="text-neutral-600">pre-evaluated grants per search</div>
             </div>
             <div>
@@ -847,7 +847,7 @@ const FAQSection = () => {
     },
     {
       question: "What's the difference between Instrumentl and Engrant?",
-      answer: "Instrumentl is a comprehensive full-lifecycle grant management platform with 20,000+ opportunities, workflow tracking, team collaboration, and AI proposal writing. It's built for larger organizations with dedicated grant staff and costs $179-899/month. Engrant is a focused grant discovery tool that uses AI to find and pre-evaluate grants for small nonprofits. It shows 10-20 high-fit grants with fit scores and red flags, costs $47/month, and requires no setup or learning curve. It's built for solo development directors who need results in minutes, not a platform to master."
+      answer: "Instrumentl is a comprehensive full-lifecycle grant management platform with 20,000+ opportunities, workflow tracking, team collaboration, and AI proposal writing. It's built for larger organizations with dedicated grant staff and costs $179-899/month. Engrant is a focused grant discovery tool that uses AI to find and pre-evaluate grants for small nonprofits. It shows 30-50 high-fit grants with fit scores and red flags, costs $47/month, and requires no setup or learning curve. It's built for solo development directors who need results in minutes, not a platform to master."
     },
     {
       question: "Is Instrumentl worth it for small nonprofits?",
@@ -855,7 +855,7 @@ const FAQSection = () => {
     },
     {
       question: "How can I find grants faster than using Instrumentl?",
-      answer: "If you're spending hours scrolling through Instrumentl's 100+ matches looking for the right fit, Engrant offers a faster approach. Instead of giving you a database to search, Engrant: (1) Researches your organization automatically (no keyword setup), (2) Shows 10-20 pre-evaluated grants at a time, (3) Provides fit scores explaining why each grant matches, (4) Flags red flags and disqualifiers upfront, (5) Learns from your saves/rejects to improve future results. Most users find relevant grants in minutes, not hours—without learning a complex platform."
+      answer: "If you're spending hours scrolling through Instrumentl's 100+ matches looking for the right fit, Engrant offers a faster approach. Instead of giving you a database to search, Engrant: (1) Researches your organization automatically (no keyword setup), (2) Shows 30-50 pre-evaluated grants at a time, (3) Provides fit scores explaining why each grant matches, (4) Flags red flags and disqualifiers upfront, (5) Learns from your saves/rejects to improve future results. Most users find relevant grants in minutes, not hours—without learning a complex platform."
     },
     {
       question: "What grant database has the best filtering for small nonprofits?",
@@ -908,11 +908,15 @@ const FAQSection = () => {
                   }`}
                 />
               </button>
-              {openIndex === index && (
+              <div
+                className={`overflow-hidden transition-all duration-300 ${
+                  openIndex === index ? 'max-h-[800px]' : 'max-h-0'
+                }`}
+              >
                 <div className="text-neutral-600 leading-relaxed mt-4">
                   {faq.answer}
                 </div>
-              )}
+              </div>
             </div>
           ))}
         </div>
@@ -1024,7 +1028,7 @@ const FinalCTA = () => {
         </h2>
         
         <p className="text-xl lg:text-2xl mb-12 text-teal-100 max-w-2xl mx-auto leading-relaxed">
-          Engrant gives you AI-powered grant matching at $47/month—not $179-899. Find 10-20 highly relevant grants with fit scores, competition levels, and red flags. No weeks of setup. No feature tiers. No annual commitment required.
+          Engrant gives you AI-powered grant matching at $47/month—not $179-899. Find 30-50 highly relevant grants with fit scores, competition levels, and red flags. No weeks of setup. No feature tiers. No annual commitment required.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
@@ -1123,7 +1127,7 @@ export const Head = () => {
     "name": "Engrant",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
-    "description": "AI-powered grant discovery platform for nonprofits. Find 10-20 highly relevant grants with fit scores, competition levels, and red flags.",
+    "description": "AI-powered grant discovery platform for nonprofits. Find 30-50 highly relevant grants with fit scores, competition levels, and red flags.",
     "offers": {
       "@type": "Offer",
       "price": "47",

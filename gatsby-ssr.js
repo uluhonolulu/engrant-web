@@ -1,6 +1,7 @@
 "use strict";
 
 var React = require("react");
+var siteSchema = require("./src/utils/siteSchema");
 
 exports.onRenderBody = function ({ setHeadComponents }) {
   return setHeadComponents([
@@ -18,6 +19,20 @@ exports.onRenderBody = function ({ setHeadComponents }) {
           gtag('js', new Date());
           gtag('config', 'AW-17885656465');
         `,
+      },
+    }),
+    React.createElement("script", {
+      key: "schema-organization",
+      type: "application/ld+json",
+      dangerouslySetInnerHTML: {
+        __html: JSON.stringify(siteSchema.organizationSchema),
+      },
+    }),
+    React.createElement("script", {
+      key: "schema-website",
+      type: "application/ld+json",
+      dangerouslySetInnerHTML: {
+        __html: JSON.stringify(siteSchema.webSiteSchema),
       },
     }),
   ]);

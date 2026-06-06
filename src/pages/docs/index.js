@@ -66,6 +66,14 @@ export const Head = () => (
       property="og:description"
       content="Explore Engrant guides for finding matching grants faster and moving from search to proposal with confidence."
     />
-    <link rel="canonical" href="https://engrant.eu/docs" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://engrant.eu/docs/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Docs | Engrant" />
+    <meta
+      name="twitter:description"
+      content="Explore Engrant guides for finding matching grants faster and moving from search to proposal with confidence."
+    />
+    <link rel="canonical" href="https://engrant.eu/docs/" />
   </>
 );

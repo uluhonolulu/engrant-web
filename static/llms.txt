@@ -1,0 +1,27 @@
+# Engrant
+> AI-powered grant discovery for nonprofits. Returns 30–50 pre-evaluated grants per search with fit analysis, eligibility signals, and strategic considerations.
+
+## Product
+- https://engrant.eu/
+- https://engrant.eu/pricing/
+- https://engrant.eu/about/
+- https://engrant.eu/how-engrant-search-works/
+
+## Comparisons
+- https://engrant.eu/compare/grantstation/
+- https://engrant.eu/compare/instrumentl/
+- https://engrant.eu/compare/grantwatch/
+- https://engrant.eu/compare/grantx/
+- https://engrant.eu/compare/candid-foundation-directory-online/
+
+## Guides
+- https://engrant.eu/docs/
+- https://engrant.eu/docs/how-to-find-grants-for-nonprofits/
+- https://engrant.eu/docs/how-to-check-grant-eligibility-before-applying/
+- https://engrant.eu/docs/how-to-write-a-project-description-for-a-grant/
+- https://engrant.eu/writing-winning-proposal/
+- https://engrant.eu/learn-more/
+
+## Features
+- https://engrant.eu/features/
+- https://engrant.eu/features/export-your-pipeline/
