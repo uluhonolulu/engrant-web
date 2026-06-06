@@ -22,9 +22,9 @@ const LoomVideo = () => {
         </div>
 
         <div className="relative rounded-2xl overflow-hidden warm-shadow-lg border border-neutral-100">
-          <div style={{ position: 'relative', paddingBottom: '41.875%', height: 0 }}>
+          <div style={{ position: 'relative', paddingBottom: '62.5%', height: 0 }}>
             <iframe
-              src="https://www.loom.com/embed/8ab0a559df90486f9c6b1278203f7c5b"
+              src="https://www.loom.com/embed/28def568e3494445b0f4f8213abb7c3f"
               frameBorder="0"
               webkitallowfullscreen="true"
               mozallowfullscreen="true"
