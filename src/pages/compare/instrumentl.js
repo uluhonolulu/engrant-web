@@ -863,7 +863,13 @@ const FAQSection = () => {
     },
     {
       question: "Does Instrumentl have a cheaper alternative?",
-      answer: "Yes. For grant discovery specifically, several alternatives cost less than Instrumentl's $179/month starting price: Engrant ($47/month — AI-powered discovery with fit scores and pre-evaluation), GrantStation ($199/year — Basic database with educational resources), GrantWatch ($199/year — Broad database with basic search), Foundation Directory Online ($55/month Essential — Large funder database, free at libraries). Engrant is positioned between budget options and Instrumentl—offering AI intelligence without enterprise pricing."
+      answer: (
+        <>
+          Yes. For grant discovery specifically, several alternatives cost less than Instrumentl&apos;s $179/month starting price: Engrant ($47/month — AI-powered discovery with fit scores and pre-evaluation),{' '}
+          <a href="/compare/grantstation" className="text-teal-700 hover:text-teal-800 underline">GrantStation</a>
+          {' '}($199/year — Basic database with educational resources), GrantWatch ($199/year — Broad database with basic search), Foundation Directory Online ($55/month Essential — Large funder database, free at libraries). Engrant is positioned between budget options and Instrumentl—offering AI intelligence without enterprise pricing.
+        </>
+      )
     },
     {
       question: "Can I use Engrant and Instrumentl together?",
@@ -903,9 +909,9 @@ const FAQSection = () => {
                 />
               </button>
               {openIndex === index && (
-                <p className="text-neutral-600 leading-relaxed mt-4">
+                <div className="text-neutral-600 leading-relaxed mt-4">
                   {faq.answer}
-                </p>
+                </div>
               )}
             </div>
           ))}

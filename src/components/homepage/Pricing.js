@@ -13,7 +13,7 @@ const Pricing = () => {
           <div className="inline-flex items-center bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
             Pricing
           </div>
-          <h2 className="text-3xl lg:text-5xl font-bold text-slate-800 mb-4">One simple plan. Built for nonprofit grant professionals.</h2>
+          <h2 className="text-3xl lg:text-5xl font-bold text-slate-800 mb-4">One simple plan. Built for grant consultants and boutique shops.</h2>
           <p className="text-xl text-neutral-600">Less than one hour of consultant time. Cancel anytime.</p>
         </div>
         

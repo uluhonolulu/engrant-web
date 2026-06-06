@@ -12,12 +12,16 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div id="hero-content">
+            <div className="inline-flex items-center bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+              Your AI grant research analyst
+            </div>
+
             <h1 className="text-4xl lg:text-[3.5rem] font-bold text-slate-800 mb-6 leading-[1.15] tracking-tight">
-              Only the grants that fit. Fully vetted.
+              Find the grants worth applying to — without the hours of research.
             </h1>
             
             <h2 className="text-xl lg:text-2xl text-neutral-600 mb-10 leading-relaxed font-normal">
-              Other tools dump 400 results on your desk and call it help. Engrant returns 30–50 pre-evaluated grants — each with fit analysis, red flags, and strategic considerations. The research you'd do yourself, done in minutes.
+              Other tools dump 400 results on your desk and call it help. Engrant returns 30–50 pre-evaluated grants — each with a fit analysis, red flags, and the strategic read you'd normally do by hand. In minutes, not days.
             </h2>
             
             <div id="value-bullets" className="space-y-4 mb-10">

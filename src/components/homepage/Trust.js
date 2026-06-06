@@ -37,6 +37,7 @@ const Trust = () => {
               </div>
               <div className="text-4xl font-bold text-amber-600 mb-2">~5 hours saved</div>
               <div className="text-neutral-500">Per search vs. manual research</div>
+              <div className="text-sm text-neutral-400 mt-2">Based on Engrant user activity</div>
             </div>
           </div>
           

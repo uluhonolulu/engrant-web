@@ -15,7 +15,7 @@ export default function PainPoints() {
                 </h2>
                 
                 <p className="text-xl text-slate-300 mb-8 leading-relaxed max-w-3xl mx-auto">
-                    Whether you're a freelance grant writer juggling multiple clients or the sole development professional at your nonprofit, you know the pain: tools that return hundreds of results and leave you to evaluate every single one.
+                    If you're a grant consultant or run a boutique fundraising shop, you win or lose on one thing: how fast you can put fundable, eligible grants in front of each client. Every hour spent sifting raw search results is an hour you can't bill — or a client you can't take on.
                 </p>
                 
                 <p className="text-xl text-amber-200 mb-16 leading-relaxed font-medium">
@@ -27,22 +27,22 @@ export default function PainPoints() {
                         <div className="w-14 h-14 rounded-full bg-rose-500/20 flex items-center justify-center mx-auto mb-5">
                             <Clock className="text-rose-400 w-7 h-7" />
                         </div>
-                        <div className="text-3xl font-bold text-rose-400 mb-2">50% of work time</div>
-                        <div className="text-slate-400">grant professionals spend on research, not writing</div>
+                        <div className="text-3xl font-bold text-rose-400 mb-2">12+ days</div>
+                        <div className="text-slate-400">1 in 5 grant writers need this long just to find five good-fit funders (Instrumentl)</div>
                     </div>
                     <div className="bg-slate-800/50 backdrop-blur rounded-2xl p-8 border border-slate-700/50">
                         <div className="w-14 h-14 rounded-full bg-rose-500/20 flex items-center justify-center mx-auto mb-5">
                             <Target className="text-rose-400 w-7 h-7" />
                         </div>
-                        <div className="text-3xl font-bold text-rose-400 mb-2">1 in 3 applications</div>
-                        <div className="text-slate-400">go to ineligible grants</div>
+                        <div className="text-3xl font-bold text-rose-400 mb-2">6–8 hours/week</div>
+                        <div className="text-slate-400">lost to manual prospecting across databases and funder sites</div>
                     </div>
                     <div className="bg-slate-800/50 backdrop-blur rounded-2xl p-8 border border-slate-700/50">
                         <div className="w-14 h-14 rounded-full bg-rose-500/20 flex items-center justify-center mx-auto mb-5">
                             <TrendingDown className="text-rose-400 w-7 h-7" />
                         </div>
-                        <div className="text-3xl font-bold text-rose-400 mb-2">Under 20%</div>
-                        <div className="text-slate-400">typical win rate</div>
+                        <div className="text-3xl font-bold text-rose-400 mb-2">34% of nonprofits</div>
+                        <div className="text-slate-400">have lost federal funding or expect to (CEP, 2025)</div>
                     </div>
                 </div>
             </div>

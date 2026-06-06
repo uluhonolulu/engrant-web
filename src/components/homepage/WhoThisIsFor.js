@@ -10,12 +10,12 @@ const WhoThisIsFor = () => {
             For You
           </div>
           <h2 className="text-3xl lg:text-5xl font-bold text-slate-800 mb-8">
-            Built for nonprofit grant professionals
+            Built for grant consultants and boutique shops
           </h2>
         </div>
         
         <p className="text-lg text-neutral-600 mb-8 leading-relaxed text-center max-w-3xl mx-auto">
-          Whether you're a freelance grant writer serving multiple nonprofits or the sole development person at your organization — you spend as much time researching grants as writing them. Other tools give you hundreds of raw results. Engrant gives you dozens of evaluated opportunities, ready to act on.
+          As a grant consultant or boutique shop, you spend as much time finding grants as writing them — and that research time caps how many clients you can serve. Other tools give you hundreds of raw results. Engrant gives you dozens of evaluated opportunities, ready to act on.
         </p>
         
         <p className="text-2xl text-teal-700 font-semibold text-center">

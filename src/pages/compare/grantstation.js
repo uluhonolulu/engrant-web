@@ -89,11 +89,11 @@ const Hero = () => {
         </div>
         
         <h1 className="text-4xl lg:text-[3.5rem] font-bold text-slate-800 mb-6 leading-[1.15] tracking-tight">
-          Is GrantStation showing you enough grants?
+          GrantStation Alternative: Engrant vs GrantStation
         </h1>
         
         <p className="text-xl lg:text-2xl text-neutral-600 mb-10 leading-relaxed font-normal max-w-3xl mx-auto">
-          GrantStation is affordable, but manual keyword searches across a limited database leave opportunities on the table. Engrant uses AI to find, evaluate, and rank grants for you automatically.
+          Is GrantStation showing you enough grants? Manual keyword searches across a limited database leave opportunities on the table. Engrant uses AI to find, evaluate, and rank grants for you automatically.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
@@ -259,7 +259,7 @@ const ComparisonTable = () => {
           <h2 className="text-3xl lg:text-5xl font-bold text-slate-800 mb-4">
             Engrant vs GrantStation: Which Is Better?
           </h2>
-          <p className="text-xl text-neutral-600 mb-4">A side-by-side comparison for nonprofit grant seekers in 2025</p>
+          <p className="text-xl text-neutral-600 mb-4">A side-by-side comparison for nonprofit grant seekers in 2026</p>
           <p className="text-neutral-500 max-w-3xl mx-auto italic">
             GrantStation is a solid budget option with useful educational resources. Here's how it compares to Engrant's AI-powered grant discovery:
           </p>
@@ -1129,7 +1129,7 @@ export const Head = () => {
 
   return (
     <>
-      <title>GrantStation Alternative for Nonprofits | Engrant vs GrantStation (2025)</title>
+      <title>GrantStation Alternative for Nonprofits | Engrant vs GrantStation (2026)</title>
       <meta 
         name="description" 
         content="Compare Engrant vs GrantStation for nonprofit grant discovery. GrantStation: ~$199/year manual database with 9,000 funders. Engrant: $47/month AI-powered matching with fit scores and real-time web search." 

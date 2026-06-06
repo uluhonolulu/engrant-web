@@ -16,102 +16,60 @@ const ValueComparison = () => {
         
         <div id="comparison-table" className="rounded-3xl overflow-hidden warm-shadow-lg">
           <div className="grid md:grid-cols-2">
-            <div className="bg-slate-50 p-10 border-r border-slate-100">
-              <div className="flex items-center justify-center mb-8">
-                <div className="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center mr-3">
+            <div className="bg-slate-50 p-10 border-b md:border-b-0 md:border-r border-slate-100">
+              <div className="flex items-center mb-6">
+                <div className="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center mr-3 flex-shrink-0">
                   <X className="text-rose-500 w-5 h-5" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-700">
-                  Other Grant Tools
+                <h3 className="text-xl font-bold text-slate-700">
+                  Grant databases (Instrumentl, Candid, GrantStation)
                 </h3>
               </div>
-              <div className="space-y-5">
-                <div className="flex items-center bg-white rounded-xl p-4 border border-slate-100">
-                  <div className="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center mr-4 flex-shrink-0">
-                    <X className="text-rose-400 w-4 h-4" />
-                  </div>
-                  <span className="text-neutral-600">400+ results to filter through</span>
-                </div>
-                <div className="flex items-center bg-white rounded-xl p-4 border border-slate-100">
-                  <div className="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center mr-4 flex-shrink-0">
-                    <X className="text-rose-400 w-4 h-4" />
-                  </div>
-                  <span className="text-neutral-600">You do all the evaluation yourself</span>
-                </div>
-                <div className="flex items-center bg-white rounded-xl p-4 border border-slate-100">
-                  <div className="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center mr-4 flex-shrink-0">
-                    <X className="text-rose-400 w-4 h-4" />
-                  </div>
-                  <span className="text-neutral-600">Limited to what's in their database</span>
-                </div>
-                <div className="flex items-center bg-white rounded-xl p-4 border border-slate-100">
-                  <div className="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center mr-4 flex-shrink-0">
-                    <X className="text-rose-400 w-4 h-4" />
-                  </div>
-                  <span className="text-neutral-600">Enterprise pricing for features you don't need</span>
-                </div>
-                <div className="flex items-center bg-white rounded-xl p-4 border border-slate-100">
-                  <div className="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center mr-4 flex-shrink-0">
-                    <X className="text-rose-400 w-4 h-4" />
-                  </div>
-                  <span className="text-neutral-600">Raw results with no strategic context</span>
-                </div>
-                <div className="flex items-center bg-white rounded-xl p-4 border border-slate-100">
-                  <div className="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center mr-4 flex-shrink-0">
-                    <X className="text-rose-400 w-4 h-4" />
-                  </div>
-                  <span className="text-neutral-600">Built for large teams, not solopreneurs</span>
-                </div>
-              </div>
+              <p className="text-neutral-600 leading-relaxed">
+                Comprehensive lists — but you do all the vetting yourself, you're limited to what they've indexed, and they're priced and built for bigger teams.
+              </p>
             </div>
-            
+
+            <div className="bg-slate-50 p-10 border-b border-slate-100">
+              <div className="flex items-center mb-6">
+                <div className="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center mr-3 flex-shrink-0">
+                  <X className="text-rose-500 w-5 h-5" />
+                </div>
+                <h3 className="text-xl font-bold text-slate-700">
+                  Manual research (Google, funder sites, 990s)
+                </h3>
+              </div>
+              <p className="text-neutral-600 leading-relaxed">
+                Free, but it eats 6–8 hours a week and often surfaces only a handful of viable opportunities.
+              </p>
+            </div>
+
+            <div className="bg-slate-50 p-10 md:border-r border-b md:border-b-0 border-slate-100">
+              <div className="flex items-center mb-6">
+                <div className="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center mr-3 flex-shrink-0">
+                  <X className="text-rose-500 w-5 h-5" />
+                </div>
+                <h3 className="text-xl font-bold text-slate-700">
+                  General AI (ChatGPT, Gemini)
+                </h3>
+              </div>
+              <p className="text-neutral-600 leading-relaxed">
+                Fast and conversational — but it invents grants that don't exist, cites programs that closed years ago, can't verify eligibility, and forgets everything about your client between sessions.
+              </p>
+            </div>
+
             <div className="bg-gradient-to-br from-teal-50 to-teal-100/50 p-10">
-              <div className="flex items-center justify-center mb-8">
-                <div className="w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center mr-3">
+              <div className="flex items-center mb-6">
+                <div className="w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center mr-3 flex-shrink-0">
                   <Check className="text-white w-5 h-5" />
                 </div>
-                <h3 className="text-2xl font-bold text-teal-800">
-                  With Engrant
+                <h3 className="text-xl font-bold text-teal-800">
+                  Engrant
                 </h3>
               </div>
-              <div className="space-y-5">
-                <div className="flex items-center bg-white/80 backdrop-blur rounded-xl p-4 border border-teal-100">
-                  <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center mr-4 flex-shrink-0">
-                    <Check className="text-teal-600 w-4 h-4" />
-                  </div>
-                  <span className="text-neutral-700 font-medium">30–50 pre-evaluated grants</span>
-                </div>
-                <div className="flex items-center bg-white/80 backdrop-blur rounded-xl p-4 border border-teal-100">
-                  <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center mr-4 flex-shrink-0">
-                    <Check className="text-teal-600 w-4 h-4" />
-                  </div>
-                  <span className="text-neutral-700 font-medium">AI does the vetting for you</span>
-                </div>
-                <div className="flex items-center bg-white/80 backdrop-blur rounded-xl p-4 border border-teal-100">
-                  <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center mr-4 flex-shrink-0">
-                    <Check className="text-teal-600 w-4 h-4" />
-                  </div>
-                  <span className="text-neutral-700 font-medium">Searches the entire web, not just a database</span>
-                </div>
-                <div className="flex items-center bg-white/80 backdrop-blur rounded-xl p-4 border border-teal-100">
-                  <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center mr-4 flex-shrink-0">
-                    <Check className="text-teal-600 w-4 h-4" />
-                  </div>
-                  <span className="text-neutral-700 font-medium">$47/month — built for how you actually work</span>
-                </div>
-                <div className="flex items-center bg-white/80 backdrop-blur rounded-xl p-4 border border-teal-100">
-                  <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center mr-4 flex-shrink-0">
-                    <Check className="text-teal-600 w-4 h-4" />
-                  </div>
-                  <span className="text-neutral-700 font-medium">Every grant evaluated with fit, flags, and context</span>
-                </div>
-                <div className="flex items-center bg-white/80 backdrop-blur rounded-xl p-4 border border-teal-100">
-                  <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center mr-4 flex-shrink-0">
-                    <Check className="text-teal-600 w-4 h-4" />
-                  </div>
-                  <span className="text-neutral-700 font-medium">Built for solo grant professionals and small teams</span>
-                </div>
-              </div>
+              <p className="text-neutral-700 font-medium leading-relaxed">
+                Searches the live web (not a static index), pre-evaluates every grant for fit, eligibility, competition, and red flags, and remembers each client's constraints. Built and priced for solo pros and boutique shops.
+              </p>
             </div>
           </div>
         </div>

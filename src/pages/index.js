@@ -4,6 +4,7 @@ import '../styles/shared.css';
 import Header from '../components/homepage/Header';
 import Hero from '../components/homepage/Hero';
 import PainPoints from '../components/homepage/PainPoints';
+import WhyNow from '../components/homepage/WhyNow';
 import Solution from '../components/homepage/Solution';
 import HowItWorks from '../components/homepage/HowItWorks';
 import ValueComparison from '../components/homepage/ValueComparison';
@@ -23,6 +24,7 @@ const HomePage = () => {
         <Header />
         <Hero />
         <PainPoints />
+        <WhyNow />
         <Solution />
         <HowItWorks />
         <LoomVideo />

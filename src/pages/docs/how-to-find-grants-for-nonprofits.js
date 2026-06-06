@@ -224,6 +224,23 @@ const HowToFindGrantsForNonprofitsPage = () => {
         </div>
       </section>
 
+      <section className="bg-white border border-neutral-200 rounded-2xl p-7 sm:p-10 mb-10">
+        <h2 className="text-3xl font-bold text-neutral-700 mb-5">Comparing grant discovery tools</h2>
+        <p className="text-neutral-700 leading-relaxed mb-4">
+          If you&apos;re evaluating traditional grant databases alongside AI-powered search, see how Engrant compares to popular options — including pricing, features, and honest trade-offs.
+        </p>
+        <ul className="space-y-2 text-neutral-700 leading-relaxed list-disc list-inside">
+          <li>
+            <a href="/compare/grantstation" className="text-primary-700 hover:text-primary-800 underline">GrantStation alternative</a>
+            {' '}— manual database vs AI-powered matching
+          </li>
+          <li>
+            <a href="/learn-more#comparisons" className="text-primary-700 hover:text-primary-800 underline">All tool comparisons</a>
+            {' '}— Instrumentl, GrantWatch, Candid FDO, and more
+          </li>
+        </ul>
+      </section>
+
       <section className="bg-white border border-neutral-200 rounded-2xl p-7 sm:p-10 mb-10" id="faq">
         <h2 className="text-3xl font-bold text-neutral-700 mb-6">Frequently asked questions</h2>
         <div className="space-y-5">
