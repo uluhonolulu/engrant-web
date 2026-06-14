@@ -61,7 +61,7 @@ const Solution = () => {
             </div>
           </div>
           
-          <div className="mt-12 lg:mt-0">
+          <div className="mt-12 lg:mt-0 hidden lg:block">
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-tr from-amber-200/50 to-teal-200/50 rounded-3xl transform -rotate-2"></div>
               <img 

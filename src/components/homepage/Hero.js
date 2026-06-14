@@ -92,12 +92,12 @@ const Hero = () => {
             </div>
           </div>
           
-          <div id="hero-visual" className="hidden lg:block">
+          <div id="hero-visual" className="mt-12 lg:mt-0">
             <div className="relative">
               {/* Decorative frame */}
               <div className="absolute -inset-4 bg-gradient-to-br from-teal-200/40 to-amber-200/40 rounded-3xl transform rotate-2"></div>
               <img 
-                className="relative w-full h-[420px] rounded-2xl shadow-2xl object-cover object-left" 
+                className="relative w-full h-auto rounded-2xl shadow-2xl" 
                 src={engrantCondensed} 
                 alt="Engrant grant matching interface"
                 fetchPriority="high"

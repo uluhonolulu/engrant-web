@@ -60,7 +60,7 @@ export const Head = () => {
       <script type="application/ld+json">{JSON.stringify(buildFaqSchema(homepageFaqData))}</script>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      <link rel="preload" as="image" href={heroLcpImage} media="(min-width: 1024px)" />
+      <link rel="preload" as="image" href={heroLcpImage} />
       <link
         href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet"
