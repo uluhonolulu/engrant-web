@@ -1,5 +1,5 @@
 import React from 'react';
-import { Edit, Target, Brain, Rocket } from 'lucide-react';
+import { Edit, Globe, Brain, PenTool } from 'lucide-react';
 import engrantExpanded from '../../images/Engrant-expanded.png';
 
 const HowItWorks = () => {
@@ -7,26 +7,26 @@ const HowItWorks = () => {
     {
       icon: Edit,
       step: '01',
-      title: 'Tell us about your mission',
-      description: 'Describe your nonprofit, who you serve, and what you need funding for. If you can write an email, you can use Engrant.'
+      title: 'Describe your mission',
+      description: 'Tell Engrant who you serve and what you need funding for. If you can write an email, you can use it.'
     },
     {
-      icon: Target,
+      icon: Globe,
       step: '02',
-      title: 'Get your matches in minutes',
-      description: 'Our AI researches your organization online, then searches 400,000+ funders to find grants that match your mission, geography, and capacity—not just keywords.'
+      title: 'Get matches from across the web',
+      description: 'Engrant researches your org, then searches the whole web — not one database — and surfaces eligible grants, including funders you\'d never think to check.'
     },
     {
       icon: Brain,
       step: '03',
       title: 'Save or reject with feedback',
-      description: 'Keep grants worth pursuing. Reject ones that don\'t fit and tell us why—wrong geography, amount too large, need consortium partner. Your AI learns your real constraints.'
+      description: 'Keep what fits, reject what doesn\'t and say why. Engrant learns your real constraints.'
     },
     {
-      icon: Rocket,
+      icon: PenTool,
       step: '04',
-      title: 'See the full picture before you commit',
-      description: 'Each match includes eligibility in plain English, estimated effort level, deadline, why it fits—and critical considerations like payment schedules, competition levels, and potential red flags.'
+      title: 'See how to apply, and get help',
+      description: 'Each grant comes with eligibility in plain English, the deadline, and what it takes to apply. When you\'re ready, Engrant drafts the proposal with you.'
     }
   ];
 

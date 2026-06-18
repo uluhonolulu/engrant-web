@@ -30,7 +30,7 @@ const Pricing = () => {
               </div>
               <p className="text-teal-600 font-medium mb-8 flex items-center">
                 <span className="w-2 h-2 bg-teal-500 rounded-full mr-2"></span>
-                14-day free trial included
+                A fraction of what the big grant databases cost. Cancel anytime.
               </p>
               
               <div className="space-y-4 mb-10">

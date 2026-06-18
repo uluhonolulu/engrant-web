@@ -42,20 +42,15 @@ export default NgoSearchPage;
 
 export const Head = () => (
   <>
-    <title>Only the Grants That Fit in 15 Minutes | Engrant</title>
+    <title>Find the Grants You Didn't Know Existed | Engrant</title>
     <meta 
       name="description" 
-      content="Stop scrolling through 300 irrelevant results. Engrant's AI finds your best-fit grants in minutes and explains why each one fits your mission." 
+      content="You already know your usual funders. Engrant searches the whole web to find the eligible grants beyond your radar — then explains why you qualify, how to apply, and when it's due. $47/mo. 14-day free trial." 
     />
     <link rel="canonical" href="https://engrant.eu/ngo-search/" />
     <link
       href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
-    />
-    <script
-      src="https://widget.senja.io/widget/eb3ea723-1cc7-49fa-bcd3-f8b3bee50ded/platform.js"
-      type="text/javascript"
-      async
     />
   </>
 );

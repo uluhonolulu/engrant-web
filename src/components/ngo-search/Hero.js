@@ -1,5 +1,5 @@
 import React from 'react';
-import { Clock, Target, TrendingUp, Brain, Eye } from 'lucide-react';
+import { Compass, Globe, CheckCircle, Calendar, PenTool } from 'lucide-react';
 import engrantCondensed from '../../images/Engrant-condensed.png';
 
 // RULE: Always import images using ES6 imports (import imageName from 'path/to/image.png')
@@ -15,58 +15,63 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div id="hero-content">
+            <div className="inline-flex items-center bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-teal-500 rounded-full mr-2"></span>
+              For in-house nonprofit fundraisers
+            </div>
+
             <h1 className="text-4xl lg:text-[3.5rem] font-bold text-slate-800 mb-6 leading-[1.15] tracking-tight">
-              Only the grants that fit. In 15 minutes.
+              Find the grants that aren't on your radar.
             </h1>
             
             <h2 className="text-xl lg:text-2xl text-neutral-600 mb-10 leading-relaxed font-normal">
-              Stop scrolling through 300 irrelevant results. Engrant's AI matches your mission to grants you're actually eligible for—then explains each one in plain English.
+              You've got a mental shortlist — the local foundations, the names you apply to every year. But the grant that fits you best might come from a funder you'd never think to check. Engrant searches the entire web, surfaces the eligible grants beyond your radar, and tells you why you qualify, how to apply, and when it's due.
             </h2>
             
             <div id="value-bullets" className="space-y-4 mb-10">
               <div className="flex items-center text-base group">
                 <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center mr-3 group-hover:bg-teal-200 transition-colors flex-shrink-0">
-                  <Clock className="text-teal-600 w-4 h-4" />
+                  <Compass className="text-teal-600 w-4 h-4" />
                 </div>
                 <div className="flex-1">
-                  <span className="font-semibold text-slate-800">15 min to matches</span>
-                  <span className="text-neutral-500"> — Not weeks of searching</span>
+                  <span className="font-semibold text-slate-800">Grants beyond your radar</span>
+                  <span className="text-neutral-500"> — not just the funders you already know</span>
                 </div>
               </div>
               <div className="flex items-center text-base group">
                 <div className="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center mr-3 group-hover:bg-amber-200 transition-colors flex-shrink-0">
-                  <Target className="text-amber-600 w-4 h-4" />
+                  <Globe className="text-amber-600 w-4 h-4" />
                 </div>
                 <div className="flex-1">
-                  <span className="font-semibold text-slate-800">A shortlist, not 300</span>
-                  <span className="text-neutral-500"> — Quality over quantity</span>
+                  <span className="font-semibold text-slate-800">Searches the whole web</span>
+                  <span className="text-neutral-500"> — not one fixed database</span>
                 </div>
               </div>
               <div className="flex items-center text-base group">
                 <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center mr-3 group-hover:bg-teal-200 transition-colors flex-shrink-0">
-                  <TrendingUp className="text-teal-600 w-4 h-4" />
+                  <CheckCircle className="text-teal-600 w-4 h-4" />
                 </div>
                 <div className="flex-1">
-                  <span className="font-semibold text-slate-800">Plain English requirements</span>
-                  <span className="text-neutral-500"> — No more decoding bureaucracy</span>
+                  <span className="font-semibold text-slate-800">Eligibility, explained</span>
+                  <span className="text-neutral-500"> — why you actually qualify, in plain English</span>
                 </div>
               </div>
               <div className="flex items-center text-base group">
                 <div className="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center mr-3 group-hover:bg-amber-200 transition-colors flex-shrink-0">
-                  <Eye className="text-amber-600 w-4 h-4" />
+                  <Calendar className="text-amber-600 w-4 h-4" />
                 </div>
                 <div className="flex-1">
-                  <span className="font-semibold text-slate-800">Context before commitment</span>
-                  <span className="text-neutral-500"> — See considerations upfront</span>
+                  <span className="font-semibold text-slate-800">How and when to apply</span>
+                  <span className="text-neutral-500"> — requirements and deadlines upfront</span>
                 </div>
               </div>
               <div className="flex items-center text-base group">
                 <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center mr-3 group-hover:bg-teal-200 transition-colors flex-shrink-0">
-                  <Brain className="text-teal-600 w-4 h-4" />
+                  <PenTool className="text-teal-600 w-4 h-4" />
                 </div>
                 <div className="flex-1">
-                  <span className="font-semibold text-slate-800">Learns what doesn't fit</span>
-                  <span className="text-neutral-500"> — Gets smarter with your feedback</span>
+                  <span className="font-semibold text-slate-800">Application help when you need it</span>
+                  <span className="text-neutral-500"> — drafts the proposal with you once you've found the one</span>
                 </div>
               </div>
             </div>
@@ -82,7 +87,7 @@ const Hero = () => {
                   }
                 }}
                 className="btn-primary text-white px-10 py-4 rounded-full text-lg font-semibold shadow-lg inline-block">
-                Find my grants
+                Find grants I'm missing
               </a>
               <p className="text-neutral-500 mt-4 mb-0 flex items-center">
                 <span className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2"></span>
@@ -100,10 +105,6 @@ const Hero = () => {
                 src={engrantCondensed} 
                 alt="Engrant grant matching interface" 
               />
-              <div className="absolute -bottom-6 -right-6 bg-white p-5 rounded-2xl warm-shadow-lg border border-amber-100">
-                <div className="text-3xl font-bold text-teal-600">400,000+</div>
-                <div className="text-sm text-neutral-500 font-medium">funders in our database</div>
-              </div>
             </div>
           </div>
         </div>

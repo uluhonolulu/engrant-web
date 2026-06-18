@@ -16,8 +16,12 @@ const FAQ = () => {
 
   const faqData = [
     {
+      question: "I already know my local funders — what will Engrant find that I can't?",
+      answer: "Plenty. Engrant searches the entire web, so it surfaces funders beyond your region and outside your usual list — out-of-state foundations, corporate programs, and national funders that support your cause but never show up on a local search. It then tells you why you qualify, how to apply, and when it's due."
+    },
+    {
       question: "How is this different from other grant databases?",
-      answer: "Traditional databases show you 300+ results and leave you to filter. Engrant shows you 10 curated matches that actually fit your mission, geography, and capacity. Each match includes eligibility requirements in plain English and an explanation of why it fits—so you can decide in seconds, not hours."
+      answer: "A database only contains what someone chose to index, and you still do all the filtering yourself. Engrant researches the live web and returns eligible grants with the analysis already done — including opportunities no single database lists."
     },
     {
       question: "How does the AI understand my nonprofit?",
@@ -45,7 +49,7 @@ const FAQ = () => {
     },
     {
       question: "Do you have grants for [my sector/region]?",
-      answer: "We cover foundation, corporate, and government grants from 400,000+ funders across North America, Europe, and beyond. When you describe your mission and location, our AI filters to opportunities you're actually eligible for."
+      answer: "Engrant isn't limited to a fixed list. It researches foundation, corporate, and government funders across the web. Describe your mission and location, and it filters to the opportunities you're actually eligible for."
     }
   ];
 

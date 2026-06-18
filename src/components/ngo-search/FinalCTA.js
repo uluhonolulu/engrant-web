@@ -20,11 +20,11 @@ const FinalCTA = () => {
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
         <h2 className="text-4xl lg:text-6xl font-bold mb-8 text-white leading-tight">
-          Stop searching. Start winning.
+          Stop applying to the same funders. Find the ones you're missing.
         </h2>
         
         <p className="text-xl lg:text-2xl mb-12 text-teal-100 max-w-2xl mx-auto leading-relaxed">
-          Get your best-fit grants in 15 minutes. Spend your time writing proposals, not scrolling databases.
+          Describe your mission and see the eligible grants beyond your radar — with eligibility, deadlines, and application help built in.
         </p>
         
         <a 
@@ -37,7 +37,7 @@ const FinalCTA = () => {
             }
           }}
           className="inline-flex items-center bg-white text-teal-700 hover:bg-amber-50 px-12 py-5 rounded-full text-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-amber-500/20 hover:-translate-y-1 group">
-          Find my grants
+          Find grants I'm missing
           <svg className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>

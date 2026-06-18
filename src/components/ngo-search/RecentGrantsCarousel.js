@@ -64,10 +64,10 @@ const RecentGrantsCarousel = () => {
             Recently Found
           </div>
           <h2 className="text-3xl lg:text-5xl font-bold text-slate-800 mb-4">
-            Grants we've matched recently
+            Grants our users didn't know existed
           </h2>
           <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            See examples of grants our AI has matched for organizations like yours
+            Real matches Engrant surfaced for nonprofits like yours — funders that weren't on their radar.
           </p>
         </div>
 

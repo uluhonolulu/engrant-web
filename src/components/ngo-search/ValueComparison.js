@@ -10,7 +10,7 @@ const ValueComparison = () => {
             Compare
           </div>
           <h2 className="text-3xl lg:text-5xl font-bold text-slate-800">
-            The Engrant Advantage
+            Why local knowledge isn't enough
           </h2>
         </div>
         
@@ -22,7 +22,7 @@ const ValueComparison = () => {
                   <X className="text-rose-500 w-5 h-5" />
                 </div>
                 <h3 className="text-2xl font-bold text-slate-700">
-                  Traditional Search
+                  On your own / one database
                 </h3>
               </div>
               <div className="space-y-5">
@@ -30,37 +30,31 @@ const ValueComparison = () => {
                   <div className="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center mr-4 flex-shrink-0">
                     <X className="text-rose-400 w-4 h-4" />
                   </div>
-                  <span className="text-neutral-600">300+ results to filter through</span>
+                  <span className="text-neutral-600">You check the funders you already know</span>
                 </div>
                 <div className="flex items-center bg-white rounded-xl p-4 border border-slate-100">
                   <div className="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center mr-4 flex-shrink-0">
                     <X className="text-rose-400 w-4 h-4" />
                   </div>
-                  <span className="text-neutral-600">15+ hours/week searching</span>
+                  <span className="text-neutral-600">Limited to the open RFPs you happen to see</span>
                 </div>
                 <div className="flex items-center bg-white rounded-xl p-4 border border-slate-100">
                   <div className="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center mr-4 flex-shrink-0">
                     <X className="text-rose-400 w-4 h-4" />
                   </div>
-                  <span className="text-neutral-600">1 in 3 applications to ineligible grants</span>
+                  <span className="text-neutral-600">One database = only what someone chose to index</span>
                 </div>
                 <div className="flex items-center bg-white rounded-xl p-4 border border-slate-100">
                   <div className="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center mr-4 flex-shrink-0">
                     <X className="text-rose-400 w-4 h-4" />
                   </div>
-                  <span className="text-neutral-600">Clunky interfaces, constant clicking</span>
+                  <span className="text-neutral-600">Hours of manual searching</span>
                 </div>
                 <div className="flex items-center bg-white rounded-xl p-4 border border-slate-100">
                   <div className="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center mr-4 flex-shrink-0">
                     <X className="text-rose-400 w-4 h-4" />
                   </div>
-                  <span className="text-neutral-600">Confusing eligibility requirements</span>
-                </div>
-                <div className="flex items-center bg-white rounded-xl p-4 border border-slate-100">
-                  <div className="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center mr-4 flex-shrink-0">
-                    <X className="text-rose-400 w-4 h-4" />
-                  </div>
-                  <span className="text-neutral-600">$60-250/hour for consultants</span>
+                  <span className="text-neutral-600">You judge eligibility yourself</span>
                 </div>
               </div>
             </div>
@@ -79,37 +73,31 @@ const ValueComparison = () => {
                   <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center mr-4 flex-shrink-0">
                     <Check className="text-teal-600 w-4 h-4" />
                   </div>
-                  <span className="text-neutral-700 font-medium">10 curated matches</span>
+                  <span className="text-neutral-700 font-medium">Surfaces funders beyond your region and your list</span>
                 </div>
                 <div className="flex items-center bg-white/80 backdrop-blur rounded-xl p-4 border border-teal-100">
                   <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center mr-4 flex-shrink-0">
                     <Check className="text-teal-600 w-4 h-4" />
                   </div>
-                  <span className="text-neutral-700 font-medium">15 minutes to results</span>
+                  <span className="text-neutral-700 font-medium">Searches the live web, not a fixed index</span>
                 </div>
                 <div className="flex items-center bg-white/80 backdrop-blur rounded-xl p-4 border border-teal-100">
                   <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center mr-4 flex-shrink-0">
                     <Check className="text-teal-600 w-4 h-4" />
                   </div>
-                  <span className="text-neutral-700 font-medium">Only grants you qualify for</span>
+                  <span className="text-neutral-700 font-medium">Eligibility explained in plain English</span>
                 </div>
                 <div className="flex items-center bg-white/80 backdrop-blur rounded-xl p-4 border border-teal-100">
                   <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center mr-4 flex-shrink-0">
                     <Check className="text-teal-600 w-4 h-4" />
                   </div>
-                  <span className="text-neutral-700 font-medium">Describe your mission, get matches</span>
+                  <span className="text-neutral-700 font-medium">Deadlines and how to apply, upfront</span>
                 </div>
                 <div className="flex items-center bg-white/80 backdrop-blur rounded-xl p-4 border border-teal-100">
                   <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center mr-4 flex-shrink-0">
                     <Check className="text-teal-600 w-4 h-4" />
                   </div>
-                  <span className="text-neutral-700 font-medium">Requirements in plain English</span>
-                </div>
-                <div className="flex items-center bg-white/80 backdrop-blur rounded-xl p-4 border border-teal-100">
-                  <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center mr-4 flex-shrink-0">
-                    <Check className="text-teal-600 w-4 h-4" />
-                  </div>
-                  <span className="text-neutral-700 font-medium">$47/month, cancel anytime</span>
+                  <span className="text-neutral-700 font-medium">Drafts the application with you</span>
                 </div>
               </div>
             </div>
