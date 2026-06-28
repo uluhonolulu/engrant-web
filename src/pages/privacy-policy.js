@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import Footer from "../components/Footer"
+import { OgTwitterMeta } from "../utils/seoMeta"
 
 const PrivacyPolicyPage = () => {
   const [lastUpdated, setLastUpdated] = React.useState('');
@@ -114,5 +115,10 @@ export const Head = () => (
       content="Engrant Privacy Policy: how we collect, use, and protect personal data for nonprofit grant search, in compliance with GDPR."
     />
     <link rel="canonical" href="https://engrant.eu/privacy-policy/" />
+    <OgTwitterMeta
+      title="Privacy Policy | Engrant"
+      description="Engrant Privacy Policy: how we collect, use, and protect personal data for nonprofit grant search, in compliance with GDPR."
+      url="https://engrant.eu/privacy-policy/"
+    />
   </>
 )

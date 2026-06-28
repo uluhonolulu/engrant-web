@@ -6,6 +6,7 @@ import {
   Brain, Users, BarChart3, Filter
 } from 'lucide-react';
 import logo from '../images/logo-horizontal-remove-background.com.png';
+import { OgTwitterMeta } from '../utils/seoMeta';
 import Footer from '../components/Footer';
 
 const HowEngrantSearchWorksPage = () => {
@@ -643,6 +644,11 @@ export const Head = () => {
         content="how Engrant works, AI grant search, grant finder, nonprofit grant search tool, multi-agent grant research, lateral reasoning grants, automated grant discovery"
       />
       <link rel="canonical" href="https://engrant.eu/how-engrant-search-works/" />
+      <OgTwitterMeta
+        title="How Engrant Finds Grants: Multi-Agent AI Search Explained | Engrant"
+        description="Engrant uses parallel AI research agents — direct-match and lateral-reasoning — to find 3–5× more grant opportunities than a single search. Every result is validated live before you see it."
+        url="https://engrant.eu/how-engrant-search-works/"
+      />
       <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
     </>
   );

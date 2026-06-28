@@ -1,5 +1,6 @@
 import React from 'react';
 import DocsPageLayout from '../../components/docs/DocsPageLayout';
+import { OgTwitterMeta } from '../../utils/seoMeta';
 
 const DOCS_ITEMS = [
   {
@@ -61,18 +62,10 @@ export const Head = () => (
       name="description"
       content="Engrant documentation and guides for nonprofit grant search, shortlist prioritization, and proposal drafting workflows."
     />
-    <meta property="og:title" content="Docs | Engrant" />
-    <meta
-      property="og:description"
-      content="Explore Engrant guides for finding matching grants faster and moving from search to proposal with confidence."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://engrant.eu/docs/" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Docs | Engrant" />
-    <meta
-      name="twitter:description"
-      content="Explore Engrant guides for finding matching grants faster and moving from search to proposal with confidence."
+    <OgTwitterMeta
+      title="Docs | Engrant"
+      description="Engrant documentation and guides for nonprofit grant search, shortlist prioritization, and proposal drafting workflows."
+      url="https://engrant.eu/docs/"
     />
     <link rel="canonical" href="https://engrant.eu/docs/" />
   </>

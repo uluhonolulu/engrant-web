@@ -9,6 +9,7 @@ import logo from '../../images/logo-horizontal-remove-background.com.png';
 import engrantExpanded from '../../images/Engrant-expanded.png';
 import Footer from '../../components/Footer';
 import LoomVideo from '../../components/ngo-search/LoomVideo';
+import { OgTwitterMeta } from '../../utils/seoMeta';
 
 const InstrumentlComparisonPage = () => {
   return (
@@ -1148,6 +1149,11 @@ export const Head = () => {
         content="Instrumentl alternative, Instrumentl vs Engrant, grant database for nonprofits, grant search tool, AI grant matching, nonprofit grant database, Instrumentl cheaper alternative" 
       />
       <link rel="canonical" href="https://engrant.eu/compare/instrumentl/" />
+      <OgTwitterMeta
+        title="Instrumentl Alternative for Nonprofits | Engrant vs Instrumentl"
+        description="Looking for an Instrumentl alternative? Compare Engrant's AI-powered grant matching vs Instrumentl. Same smart discovery at $47/month vs $179-899/month."
+        url="https://engrant.eu/compare/instrumentl/"
+      />
       <script type="application/ld+json">
         {JSON.stringify(faqSchema)}
       </script>

@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/shared.css';
 import Header from '../components/ngo-search/Header';
+import { OgTwitterMeta } from '../utils/seoMeta';
 import Hero from '../components/ngo-search/Hero';
 import PainPoints from '../components/ngo-search/PainPoints';
 import Solution from '../components/ngo-search/Solution';
@@ -48,6 +49,11 @@ export const Head = () => (
       content="You already know your usual funders. Engrant searches the whole web to find the eligible grants beyond your radar — then explains why you qualify, how to apply, and when it's due. $47/mo. 14-day free trial." 
     />
     <link rel="canonical" href="https://engrant.eu/ngo-search/" />
+    <OgTwitterMeta
+      title="Find the Grants You Didn't Know Existed | Engrant"
+      description="You already know your usual funders. Engrant searches the whole web to find the eligible grants beyond your radar — then explains why you qualify, how to apply, and when it's due. $47/mo. 14-day free trial."
+      url="https://engrant.eu/ngo-search/"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"

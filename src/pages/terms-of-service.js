@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 import Footer from '../components/Footer';
+import { OgTwitterMeta } from '../utils/seoMeta';
 
 const TermsOfServicePage = () => {
   const [lastUpdated, setLastUpdated] = React.useState('');
@@ -110,5 +111,10 @@ export const Head = () => (
       content="Terms of Service for Engrant grant search software, including subscriptions, acceptable use, and liability."
     />
     <link rel="canonical" href="https://engrant.eu/terms-of-service/" />
+    <OgTwitterMeta
+      title="Terms of Service | Engrant"
+      description="Terms of Service for Engrant grant search software, including subscriptions, acceptable use, and liability."
+      url="https://engrant.eu/terms-of-service/"
+    />
   </>
 );

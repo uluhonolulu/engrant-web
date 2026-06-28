@@ -8,6 +8,7 @@ import {
 import logo from '../../images/logo-horizontal-remove-background.com.png';
 import engrantExpanded from '../../images/Engrant-expanded.png';
 import Footer from '../../components/Footer';
+import { OgTwitterMeta } from '../../utils/seoMeta';
 import LoomVideo from '../../components/ngo-search/LoomVideo';
 
 const GrantStationComparisonPage = () => {
@@ -1143,10 +1144,11 @@ export const Head = () => {
         content="GrantStation alternative, GrantStation cost, GrantStation pricing, GrantStation vs Engrant, grant database for nonprofits, AI grant matching, GrantStation review, is GrantStation worth it" 
       />
       <link rel="canonical" href="https://engrant.eu/compare/grantstation/" />
-      <meta property="og:title" content="GrantStation Alternative: Engrant vs GrantStation Comparison" />
-      <meta property="og:description" content="Stop manually searching 9,000 funders. Get AI-powered grant discovery with fit scores and competition levels." />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://engrant.eu/compare/grantstation/" />
+      <OgTwitterMeta
+        title="GrantStation Alternative: Engrant vs GrantStation Comparison"
+        description="Stop manually searching 9,000 funders. Get AI-powered grant discovery with fit scores and competition levels."
+        url="https://engrant.eu/compare/grantstation/"
+      />
       <script type="application/ld+json">
         {JSON.stringify(faqSchema)}
       </script>

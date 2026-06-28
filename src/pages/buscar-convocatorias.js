@@ -15,6 +15,7 @@ import LoomVideo from '../components/buscar-convocatorias/LoomVideo';
 import FAQ from '../components/buscar-convocatorias/FAQ';
 import FinalCTA from '../components/buscar-convocatorias/FinalCTA';
 import FooterEs from '../components/buscar-convocatorias/FooterEs';
+import { OgTwitterMeta } from '../utils/seoMeta';
 
 const BuscarConvocatoriasPage = () => {
   return (
@@ -45,7 +46,6 @@ export const Head = () => {
   const pageDescription =
     'Deja de buscar a mano o de confiar en ChatGPT. Engrant investiga toda la web y te muestra convocatorias reales y vigentes para tu organización: con elegibilidad, cómo postular y fechas. $47 USD/mes. Prueba gratis de 14 días.';
   const canonicalUrl = 'https://engrant.eu/buscar-convocatorias/';
-  const ogImage = 'https://engrant.eu/Engrant-condensed.png';
 
   return (
     <>
@@ -53,11 +53,7 @@ export const Head = () => {
       <title>{pageTitle}</title>
       <meta name="description" content={pageDescription} />
       <link rel="canonical" href={canonicalUrl} />
-      <meta property="og:title" content={pageTitle} />
-      <meta property="og:description" content={pageDescription} />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:image" content={ogImage} />
+      <OgTwitterMeta title={pageTitle} description={pageDescription} url={canonicalUrl} />
       <meta property="og:locale" content="es_LA" />
       <link
         href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap"

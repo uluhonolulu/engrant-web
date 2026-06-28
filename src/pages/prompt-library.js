@@ -3,6 +3,7 @@ import '../styles/shared.css';
 import Header from '../components/ngo-search/Header';
 import Footer from '../components/Footer';
 import PromptCard from '../components/prompt-library/PromptCard';
+import { OgTwitterMeta } from '../utils/seoMeta';
 
 const PromptLibraryPage = () => {
   // Prompt content embedded directly
@@ -1995,5 +1996,10 @@ export const Head = () => (
       content="Access our collection of AI prompts for organization research, grant discovery, evaluation, and proposal writing." 
     />
     <link rel="canonical" href="https://engrant.eu/prompt-library/" />
+    <OgTwitterMeta
+      title="Prompt Library | Engrant"
+      description="Access our collection of AI prompts for organization research, grant discovery, evaluation, and proposal writing."
+      url="https://engrant.eu/prompt-library/"
+    />
   </>
 );

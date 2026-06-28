@@ -1,5 +1,6 @@
 import React from 'react';
 import DocsPageLayout from '../../components/docs/DocsPageLayout';
+import { OgTwitterMeta } from '../../utils/seoMeta';
 
 const PAGE_PATH = '/docs/how-to-write-a-project-description-for-a-grant/';
 const CANONICAL_URL = `https://engrant.eu${PAGE_PATH}`;
@@ -322,10 +323,7 @@ export const Head = () => {
         name="keywords"
         content="grant project description, how to write a grant description, nonprofit funding need, grant application writing, grant-ready project description, Engrant"
       />
-      <meta property="og:title" content={pageTitle} />
-      <meta property="og:description" content={pageDescription} />
-      <meta property="og:type" content="article" />
-      <meta property="og:url" content={CANONICAL_URL} />
+      <OgTwitterMeta title={pageTitle} description={pageDescription} url={CANONICAL_URL} type="article" />
       <meta property="article:published_time" content="2026-04-11T00:00:00.000Z" />
       <link rel="canonical" href={CANONICAL_URL} />
       <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

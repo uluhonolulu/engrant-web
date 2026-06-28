@@ -1,5 +1,6 @@
 import React from 'react';
 import DocsPageLayout from '../../components/docs/DocsPageLayout';
+import { OgTwitterMeta } from '../../utils/seoMeta';
 
 const FAQ_ITEMS = [
   {
@@ -332,14 +333,8 @@ export const Head = () => {
     <>
       <title>{pageTitle}</title>
       <meta name="description" content={pageDescription} />
-      <meta property="og:title" content={pageTitle} />
-      <meta property="og:description" content={pageDescription} />
-      <meta property="og:type" content="article" />
-      <meta property="og:url" content={CANONICAL_URL} />
+      <OgTwitterMeta title={pageTitle} description={pageDescription} url={CANONICAL_URL} type="article" />
       <meta property="article:published_time" content="2026-06-01T00:00:00.000Z" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={pageTitle} />
-      <meta name="twitter:description" content={pageDescription} />
       <link rel="canonical" href={CANONICAL_URL} />
       <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>

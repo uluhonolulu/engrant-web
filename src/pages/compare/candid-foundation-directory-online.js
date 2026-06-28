@@ -9,6 +9,7 @@ import logo from '../../images/logo-horizontal-remove-background.com.png';
 import engrantExpanded from '../../images/Engrant-expanded.png';
 import Footer from '../../components/Footer';
 import LoomVideo from '../../components/ngo-search/LoomVideo';
+import { OgTwitterMeta } from '../../utils/seoMeta';
 
 const CandidComparisonPage = () => {
   return (
@@ -1327,6 +1328,11 @@ export const Head = () => {
         content="Candid alternative, Foundation Directory Online alternative, FDO alternative, grant database for nonprofits, grant search tool, AI grant matching, nonprofit grant database" 
       />
       <link rel="canonical" href="https://engrant.eu/compare/candid-foundation-directory-online/" />
+      <OgTwitterMeta
+        title="Candid Alternative for Nonprofits (2026) | Engrant vs Candid FDO"
+        description="Candid discontinued FDO Essential and prices jumped to $3,499/year. Compare Engrant's AI-powered grant matching at $47/month — 87% less than Candid Premium."
+        url="https://engrant.eu/compare/candid-foundation-directory-online/"
+      />
       <script type="application/ld+json">
         {JSON.stringify(faqSchema)}
       </script>

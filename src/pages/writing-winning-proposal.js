@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import logo from '../images/logo-horizontal-remove-background.com.png';
 import Footer from '../components/Footer';
+import { OgTwitterMeta } from '../utils/seoMeta';
 
 const WritingWinningProposalPage = () => {
   return (
@@ -514,6 +515,11 @@ export const Head = () => {
         content="grant writing, grant proposal, proposal writing, grant writing guide, nonprofit grants, how to write a grant proposal" 
       />
       <link rel="canonical" href="https://engrant.eu/writing-winning-proposal/" />
+      <OgTwitterMeta
+        title="A Comprehensive Guide to Writing a Winning Proposal | Engrant"
+        description="Learn the proven steps to write winning grant proposals. See how Engrant streamlines each step of the proposal writing process, from research to final polish."
+        url="https://engrant.eu/writing-winning-proposal/"
+      />
     </>
   );
 };

@@ -8,6 +8,7 @@ import {
 import logo from '../../images/logo-horizontal-remove-background.com.png';
 import engrantExpanded from '../../images/Engrant-expanded.png';
 import Footer from '../../components/Footer';
+import { OgTwitterMeta } from '../../utils/seoMeta';
 import LoomVideo from '../../components/ngo-search/LoomVideo';
 
 const GrantWatchComparisonPage = () => {
@@ -1173,10 +1174,11 @@ export const Head = () => {
         content="GrantWatch alternative, GrantWatch vs Engrant, grant database comparison, AI grant matching, nonprofit grant search" 
       />
       <link rel="canonical" href="https://engrant.eu/compare/grantwatch/" />
-      <meta property="og:title" content="GrantWatch Alternative: Engrant vs GrantWatch Comparison" />
-      <meta property="og:description" content="Stop manually filtering 10,000 grants. Get 30-50 pre-evaluated matches with AI fit scores." />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://engrant.eu/compare/grantwatch/" />
+      <OgTwitterMeta
+        title="GrantWatch Alternative: Engrant vs GrantWatch Comparison"
+        description="Stop manually filtering 10,000 grants. Get 30-50 pre-evaluated matches with AI fit scores."
+        url="https://engrant.eu/compare/grantwatch/"
+      />
       <script type="application/ld+json">
         {JSON.stringify(faqSchema)}
       </script>

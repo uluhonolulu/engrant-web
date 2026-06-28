@@ -8,6 +8,7 @@ import logo from '../../images/logo-horizontal-remove-background.com.png';
 import engrantExpanded from '../../images/Engrant-expanded.png';
 import Footer from '../../components/Footer';
 import LoomVideo from '../../components/ngo-search/LoomVideo';
+import { OgTwitterMeta } from '../../utils/seoMeta';
 
 const GrantXComparisonPage = () => {
   return (
@@ -929,6 +930,11 @@ export const Head = () => {
         content="Compare Engrant and GrantX for grant discovery. Different pricing models, different audiences. Engrant: $47/month flat rate for solo professionals. GrantX: Credit-based tiers from $79-$2,499/month." 
       />
       <link rel="canonical" href="https://engrant.eu/compare/grantx/" />
+      <OgTwitterMeta
+        title="Engrant vs GrantX: Which Grant Discovery Tool Fits You? (2025)"
+        description="Compare Engrant and GrantX for grant discovery. Different pricing models, different audiences. Engrant: $47/month flat rate for solo professionals. GrantX: Credit-based tiers from $79-$2,499/month."
+        url="https://engrant.eu/compare/grantx/"
+      />
       <script type="application/ld+json">
         {JSON.stringify(faqSchema)}
       </script>

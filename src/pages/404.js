@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import Footer from "../components/Footer"
+import { OgTwitterMeta } from "../utils/seoMeta"
 
 const NotFoundPage = () => {
   return (
@@ -31,5 +32,10 @@ export const Head = () => (
       content="The page you requested could not be found on Engrant."
     />
     <meta name="robots" content="noindex" />
+    <OgTwitterMeta
+      title="Page Not Found | Engrant"
+      description="The page you requested could not be found on Engrant."
+      url="https://engrant.eu/404/"
+    />
   </>
 )
