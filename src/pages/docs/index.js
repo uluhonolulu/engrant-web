@@ -21,6 +21,60 @@ const DOCS_ITEMS = [
       'Learn how typing a few words — like "office rent" or "youth mentorship" — generates a complete project description with budget range, timeline, and funder targeting guidance.',
     href: '/docs/how-to-write-a-project-description-for-a-grant',
   },
+  {
+    title: 'How to Research a Funder Before You Apply for a Grant',
+    description:
+      "See each funder's giving history, past grantees, board members, and contact details right alongside the grant — so you can assess fit without hours of separate research.",
+    href: '/docs/how-to-research-a-grant-funder',
+  },
+  {
+    title: "How to Decide Which Grants to Apply For When You Can't Apply to All of Them",
+    description:
+      'Compare opportunities side by side using fit, competition, effort, and deadline ratings, and focus your limited time on the grants most likely to pay off.',
+    href: '/docs/how-to-prioritize-grant-applications',
+  },
+  {
+    title: 'How to Keep Track of Multiple Grant Deadlines Without Losing Your Mind',
+    description:
+      'Organize saved grants on a visual timeline with color-coded milestones for submission deadlines, decision dates, and project start dates — plus a table sorted by urgency.',
+    href: '/docs/how-to-track-grant-deadlines',
+  },
+  {
+    title: 'How to Know What to Work on Next Across Multiple Grant Applications',
+    description:
+      "Each saved grant shows a preparation checklist, a progress bar, and a 'next step' prompt — so you always know exactly what needs doing across all your applications.",
+    href: '/docs/how-to-manage-multiple-grant-applications',
+  },
+  {
+    title: "How to Write a Grant Proposal When You Don't Know Where to Start",
+    description:
+      'Engrant analyzes the funder, generates project concepts tailored to their priorities, and produces a full proposal draft you can edit — so you never start from a blank page.',
+    href: '/docs/how-to-write-a-grant-proposal',
+  },
+  {
+    title: 'How to Evaluate a Grant You Found on Your Own',
+    description:
+      'Paste any grant URL into Engrant and get a full analysis — fit rating, competition level, effort estimate, funder profile, and red flags — in minutes instead of hours.',
+    href: '/docs/how-to-evaluate-a-grant-opportunity',
+  },
+  {
+    title: 'How to Find Grants That Match a Very Specific Need',
+    description:
+      'Even niche or operational needs like office rent or staff training can be matched to real grants. Engrant expands your brief description into the right grant language and searches accordingly.',
+    href: '/docs/grants-for-specific-nonprofit-needs',
+  },
+  {
+    title: 'How to Prepare a Grant Pipeline Report for Your Board',
+    description:
+      "Export your pipeline as a Word report, spreadsheet, or text file in one click — with grant names, amounts, deadlines, status, and progress for every opportunity you're tracking.",
+    href: '/docs/grant-pipeline-report-for-board',
+  },
+  {
+    title: 'How to Manage Grants Across Multiple Programs or Organizations',
+    description:
+      'Switch between organizations with a dropdown — each with its own profile, funding needs, searches, and pipeline. Built for consultants and multi-program nonprofits.',
+    href: '/docs/grant-management-multiple-organizations',
+  },
 ];
 
 const DocsIndexPage = () => {
