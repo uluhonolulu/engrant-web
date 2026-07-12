@@ -13,19 +13,24 @@ const Testimonials = () => {
           </h2>
         </div>
 
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <div className="relative pb-8">
             <div className="absolute -inset-4 bg-gradient-to-br from-teal-200/40 to-amber-200/40 rounded-3xl transform rotate-2" />
             <div className="relative bg-white rounded-2xl p-8 shadow-2xl border border-neutral-200">
               <div className="text-6xl leading-none text-amber-200 mb-4">&ldquo;</div>
-              <p className="text-lg text-neutral-700 leading-relaxed mb-6">
-                {'{{TODO: testimonio LatAm}}'}
-              </p>
+              <div className="space-y-4 mb-6">
+                <p className="text-lg text-neutral-700 leading-relaxed">
+                  Desde nuestra experiencia en la Asociación Amigos del Aprendizaje (ADA), Engrant ha sido una herramienta muy valiosa para fortalecer nuestra estrategia de búsqueda de financiamiento internacional. La plataforma es intuitiva, fácil de usar y nos permitió desarrollar un perfil institucional sólido y preciso, alineado con nuestra misión y con las necesidades de financiamiento de nuestros programas.
+                </p>
+                <p className="text-lg text-neutral-700 leading-relaxed">
+                  Valoramos especialmente la calidad de las oportunidades identificadas — muy alineadas con fundaciones en Estados Unidos y Europa — y el pipeline de oportunidades en formato de matriz para organizar el trabajo y planificar postulaciones. Para una organización sin fines de lucro como ADA, Engrant representa una solución accesible, eficiente y muy amigable para profesionalizar la gestión de grants.
+                </p>
+              </div>
             </div>
 
             <div className="absolute -bottom-2 -right-2 sm:-bottom-6 sm:-right-6 bg-white px-5 py-4 rounded-2xl warm-shadow-lg border border-amber-100">
-              <div className="text-sm font-semibold text-neutral-700">{'{{TODO: nombre}}'}</div>
-              <div className="text-xs text-neutral-500 leading-snug">{'{{TODO: organización}}'}</div>
+              <div className="text-sm font-semibold text-neutral-700">Marcela Vargas</div>
+              <div className="text-xs text-neutral-500 leading-snug">Asociación Amigos del Aprendizaje (ADA)</div>
             </div>
           </div>
         </div>
