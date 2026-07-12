@@ -44,7 +44,7 @@ export default BuscarConvocatoriasPage;
 export const Head = () => {
   const pageTitle = 'Encuentra las convocatorias que te corresponden | Engrant';
   const pageDescription =
-    'Deja de buscar a mano o de confiar en ChatGPT. Engrant investiga toda la web y te muestra convocatorias reales y vigentes para tu organización: con elegibilidad, cómo postular y fechas. $47 USD/mes. Prueba gratis de 14 días.';
+    'Engrant investiga toda la web y te muestra convocatorias vigentes para tu organización: elegibilidad, cómo postular y fechas. $47/mes. Prueba gratis 14 días.';
   const canonicalUrl = 'https://engrant.eu/buscar-convocatorias/';
 
   return (
