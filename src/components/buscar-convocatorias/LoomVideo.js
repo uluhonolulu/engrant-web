@@ -19,13 +19,12 @@ const LoomVideo = () => {
           <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
             Un recorrido rápido de cómo Engrant encuentra convocatorias para tu organización, del inicio a los resultados.
           </p>
-          {/* {{TODO: grabar walkthrough en español}} */}
         </div>
 
         <div className="relative rounded-2xl overflow-hidden warm-shadow-lg border border-neutral-100">
-          <div style={{ position: 'relative', paddingBottom: '62.5%', height: 0 }}>
+          <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}>
             <iframe
-              src="https://www.loom.com/embed/28def568e3494445b0f4f8213abb7c3f"
+              src="https://www.loom.com/embed/ec7a1ac541254dd2842317b3a9324203"
               frameBorder="0"
               webkitallowfullscreen="true"
               mozallowfullscreen="true"
