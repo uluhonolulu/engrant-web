@@ -12,7 +12,8 @@
     "start": "gatsby develop --open",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "indexnow": "node scripts/submit-indexnow.mjs"
   },
   "dependencies": {
     "@betterlytics/tracker": "^0.1.6",
