@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Compass, Globe, CheckCircle, Calendar, PenTool } from 'lucide-react';
 import engrantCondensed from '../../images/Engrant-condensed.png';
 
@@ -6,6 +6,9 @@ import engrantCondensed from '../../images/Engrant-condensed.png';
 // Never use direct src paths like "/src/images/image.png" as they won't work in bundled builds
 
 const Hero = () => {
+  const [orgUrl, setOrgUrl] = useState('');
+  const [error, setError] = useState('');
+
   return (
     <section id="hero" className="hero-gradient min-h-[720px] flex items-center pb-24 pt-12 relative overflow-hidden">
       {/* Decorative organic shapes */}
@@ -20,12 +23,12 @@ const Hero = () => {
               For in-house nonprofit fundraisers
             </div>
 
-            <h1 className="text-4xl lg:text-[3.5rem] font-bold text-slate-800 mb-6 leading-[1.15] tracking-tight">
+            <h1 className="text-4xl font-bold text-slate-800 mb-6 leading-[1.15] tracking-tight">
               Find the grants that aren't on your radar.
             </h1>
             
             <h2 className="text-xl lg:text-2xl text-neutral-600 mb-10 leading-relaxed font-normal">
-              You've got a mental shortlist — the local foundations, the names you apply to every year. But the grant that fits you best might come from a funder you'd never think to check. Engrant searches the entire web, surfaces the eligible grants beyond your radar, and tells you why you qualify, how to apply, and when it's due.
+              Engrant searches the entire web, surfaces the eligible grants beyond your radar, and tells you why you qualify, how to apply, and when it's due.
             </h2>
             
             <div id="value-bullets" className="space-y-4 mb-10">
@@ -77,18 +80,30 @@ const Hero = () => {
             </div>
             
             <div id="hero-cta" className="mb-8">
-              <a 
-                href="https://app.engrant.eu/?utm_source=ngo_search&utm_medium=cta&utm_campaign=hero_cta"
-                onClick={() => {
-                  if (typeof window !== 'undefined' && window.gtag) {
-                    window.gtag('event', 'cta_click', {
-                      location: 'hero'
-                    });
-                  }
-                }}
-                className="btn-primary text-white px-10 py-4 rounded-full text-lg font-semibold shadow-lg inline-block">
-                Find grants I'm missing
-              </a>
+              <form
+                onSubmit={handleSubmit}
+                className="flex flex-col sm:flex-row gap-3"
+              >
+                <input
+                  type="text"
+                  value={orgUrl}
+                  onChange={(e) => setOrgUrl(e.target.value)}
+                  placeholder="yourorganization.org"
+                  aria-label="Organization website"
+                  className="flex-1 w-full min-w-0 px-5 py-4 rounded-full text-lg border border-slate-200 bg-white text-slate-800 placeholder:text-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500/40 focus:border-teal-500"
+                />
+                <button
+                  type="submit"
+                  className="btn-primary text-white px-10 py-4 rounded-full text-lg font-semibold shadow-lg shrink-0 whitespace-nowrap"
+                >
+                  Find my grants
+                </button>
+              </form>
+              {error ? (
+                <p className="text-amber-700 mt-2 mb-0 text-sm">
+                  {error}
+                </p>
+              ) : null}
               <p className="text-neutral-500 mt-4 mb-0 flex items-center">
                 <span className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2"></span>
                 14-day free trial • No credit card required
@@ -111,6 +126,19 @@ const Hero = () => {
       </div>
     </section>
   );
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    if (!orgUrl.trim()) {
+      setError("Enter your organization's website");
+      return;
+    }
+
+    setError('');
+    window.location.href =
+      `https://app.engrant.eu/?utm_source=ngo_search&utm_medium=hero_search&utm_campaign=hero_search_cta&org_url=${encodeURIComponent(orgUrl)}`;
+  }
 };
 
 export default Hero;

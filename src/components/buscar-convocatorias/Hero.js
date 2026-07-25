@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Compass, Globe, CheckCircle, Calendar, PenTool } from 'lucide-react';
 import engrantCondensed from '../../images/Engrant-condensed.png';
 
 const Hero = () => {
+  const [orgUrl, setOrgUrl] = useState('');
+  const [error, setError] = useState('');
+
   return (
     <section id="hero" className="hero-gradient min-h-[720px] flex items-center pb-24 pt-12 relative overflow-hidden">
       <div className="absolute top-20 right-0 w-96 h-96 bg-teal-200/20 rounded-full blur-3xl"></div>
@@ -16,12 +19,12 @@ const Hero = () => {
               Para equipos de recaudación de fondos en organizaciones sin fines de lucro
             </div>
 
-            <h1 className="text-4xl lg:text-[3.5rem] font-bold text-slate-800 mb-6 leading-[1.15] tracking-tight">
+            <h1 className="text-4xl font-bold text-slate-800 mb-6 leading-[1.15] tracking-tight">
               Encuentra las convocatorias que de verdad te corresponden.
             </h1>
 
             <h2 className="text-xl lg:text-2xl text-neutral-600 mb-10 leading-relaxed font-normal">
-              Buscar financiamiento hoy significa pasar horas en Google, preguntarle a ChatGPT y recibir convocatorias que no existen o que cerraron hace años, o volver siempre a las mismas fundaciones de siempre. Engrant investiga toda la web en tiempo real y te muestra las convocatorias vigentes para las que calificas: por qué calificas, cómo postular y cuándo vencen.
+              Engrant investiga toda la web en tiempo real y te muestra las convocatorias vigentes para las que calificas: por qué calificas, cómo postular y cuándo vencen.
             </h2>
 
             <div id="value-bullets" className="space-y-4 mb-10">
@@ -73,18 +76,30 @@ const Hero = () => {
             </div>
 
             <div id="hero-cta" className="mb-8">
-              <a
-                href="https://app.engrant.eu/?utm_source=convocatorias&utm_medium=cta&utm_campaign=hero_cta"
-                onClick={() => {
-                  if (typeof window !== 'undefined' && window.gtag) {
-                    window.gtag('event', 'cta_click', {
-                      location: 'hero'
-                    });
-                  }
-                }}
-                className="btn-primary text-white px-10 py-4 rounded-full text-lg font-semibold shadow-lg inline-block">
-                Encontrar las convocatorias que me faltan
-              </a>
+              <form
+                onSubmit={handleSubmit}
+                className="flex flex-col gap-3"
+              >
+                <input
+                  type="text"
+                  value={orgUrl}
+                  onChange={(e) => setOrgUrl(e.target.value)}
+                  placeholder="tuorganizacion.org"
+                  aria-label="Sitio web de la organización"
+                  className="w-full min-w-0 px-5 py-4 rounded-full text-lg border border-slate-200 bg-white text-slate-800 placeholder:text-neutral-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500/40 focus:border-teal-500"
+                />
+                <button
+                  type="submit"
+                  className="btn-primary text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg w-full whitespace-nowrap"
+                >
+                  Encontrar mis convocatorias
+                </button>
+              </form>
+              {error ? (
+                <p className="text-amber-700 mt-2 mb-0 text-sm">
+                  {error}
+                </p>
+              ) : null}
               <p className="text-neutral-500 mt-4 mb-0 flex items-center">
                 <span className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2"></span>
                 Prueba gratis de 14 días • Sin tarjeta de crédito
@@ -106,6 +121,19 @@ const Hero = () => {
       </div>
     </section>
   );
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    if (!orgUrl.trim()) {
+      setError('Ingresa el sitio web de tu organización');
+      return;
+    }
+
+    setError('');
+    window.location.href =
+      `https://app.engrant.eu/?utm_source=convocatorias&utm_medium=hero_search&utm_campaign=hero_search_cta&org_url=${encodeURIComponent(orgUrl)}`;
+  }
 };
 
 export default Hero;
