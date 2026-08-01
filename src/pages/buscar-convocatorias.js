@@ -1,4 +1,5 @@
 import React from 'react';
+import heroLcpImage from '../images/Engrant-condensed-es.png';
 import '../styles/shared.css';
 import Header from '../components/buscar-convocatorias/Header';
 import Hero from '../components/buscar-convocatorias/Hero';
@@ -55,6 +56,7 @@ export const Head = () => {
       <link rel="canonical" href={canonicalUrl} />
       <OgTwitterMeta title={pageTitle} description={pageDescription} url={canonicalUrl} />
       <meta property="og:locale" content="es_LA" />
+      <link rel="preload" as="image" href={heroLcpImage} />
       <link
         href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet"

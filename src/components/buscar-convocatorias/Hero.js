@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Compass, Globe, CheckCircle, Calendar, PenTool } from 'lucide-react';
-import engrantCondensed from '../../images/Engrant-condensed.png';
+import engrantCondensedEs from '../../images/Engrant-condensed-es.png';
 
 const Hero = () => {
   const [orgUrl, setOrgUrl] = useState('');
@@ -108,12 +108,13 @@ const Hero = () => {
           </div>
 
           <div id="hero-visual" className="mt-12 lg:mt-0">
-            <div className="relative">
+            <div className="relative w-full max-w-[599px] mx-auto lg:mx-0">
               <div className="absolute -inset-4 bg-gradient-to-br from-teal-200/40 to-amber-200/40 rounded-3xl transform rotate-2"></div>
               <img
                 className="relative w-full h-auto rounded-2xl shadow-2xl"
-                src={engrantCondensed}
+                src={engrantCondensedEs}
                 alt="Interfaz de coincidencia de convocatorias de Engrant"
+                fetchPriority="high"
               />
             </div>
           </div>
