@@ -1,17 +1,21 @@
 {
-	"routes": [
-	  {
-		"route": "/api/*"
-	  },
-	  {
-		"route": "/*",
-		"statusCode": 200
-	  }
-	],
-	"navigationFallback": {
-	  "rewrite": "/index.html"
-	},
-	"mimeTypes": {
-	  ".json": "text/json"
-	}
+  "routes": [
+    {
+      "route": "/api/*"
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/404.html",
+    "statusCode": 404
+  },
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/404.html",
+      "statusCode": 404
+    }
+  },
+  "mimeTypes": {
+    ".json": "text/json",
+    ".txt": "text/plain; charset=utf-8"
   }
+}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Target, Search, AlertTriangle } from 'lucide-react';
+import { Compass, Globe, ShieldCheck } from 'lucide-react';
 import engrantCondensed from '../../images/Engrant-condensed.png';
+import { CTA_LABEL, TRIAL_MICRO } from '../../constants/positioning';
 
 const Hero = () => {
   const [orgUrl, setOrgUrl] = useState('');
@@ -8,10 +9,9 @@ const Hero = () => {
 
   return (
     <section id="hero" className="hero-gradient min-h-[720px] flex items-center pb-24 pt-12 relative overflow-hidden">
-      {/* Decorative organic shapes */}
       <div className="absolute top-20 right-0 w-96 h-96 bg-teal-200/20 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-amber-200/20 rounded-full blur-3xl"></div>
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div id="hero-content">
@@ -20,43 +20,40 @@ const Hero = () => {
             </div>
 
             <h1 className="text-4xl font-bold text-slate-800 mb-6 leading-[1.15] tracking-tight">
-              Find the grants worth applying to
+              Find the funders you haven&apos;t heard of. Already vetted.
             </h1>
-            
-            <h2 className="text-xl lg:text-2xl text-neutral-600 mb-10 leading-relaxed font-normal">
-              Enter your organization's website. Get 30–50 pre-evaluated grants — each with a fit score, red flags, and what to watch for.
-            </h2>
-            
+
+            <p className="text-xl lg:text-2xl text-neutral-600 mb-10 leading-relaxed font-normal">
+              Engrant looks beyond whichever database you&apos;re using, then checks each funder against your mission — fit, eligibility, and red flags, done before you open a single funder site.
+            </p>
+
             <div id="value-bullets" className="space-y-4 mb-10">
               <div className="flex items-center text-base group">
                 <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center mr-3 group-hover:bg-teal-200 transition-colors flex-shrink-0">
-                  <Search className="text-teal-600 w-4 h-4" />
+                  <Compass className="text-teal-600 w-4 h-4" />
                 </div>
-                <div className="flex-1">
-                  <span className="font-semibold text-slate-800">Fit analysis</span>
-                  <span className="text-neutral-500"> — not raw search results</span>
+                <div className="flex-1 text-neutral-700">
+                  Surfaces funders that weren&apos;t on your radar
                 </div>
               </div>
               <div className="flex items-center text-base group">
                 <div className="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center mr-3 group-hover:bg-amber-200 transition-colors flex-shrink-0">
-                  <Target className="text-amber-600 w-4 h-4" />
+                  <Globe className="text-amber-600 w-4 h-4" />
                 </div>
-                <div className="flex-1">
-                  <span className="font-semibold text-slate-800">30–50 matches</span>
-                  <span className="text-neutral-500"> — not 400 to sift through</span>
+                <div className="flex-1 text-neutral-700">
+                  Works wherever you work — not just where US databases have coverage
                 </div>
               </div>
               <div className="flex items-center text-base group">
                 <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center mr-3 group-hover:bg-teal-200 transition-colors flex-shrink-0">
-                  <AlertTriangle className="text-teal-600 w-4 h-4" />
+                  <ShieldCheck className="text-teal-600 w-4 h-4" />
                 </div>
-                <div className="flex-1">
-                  <span className="font-semibold text-slate-800">Red flags</span>
-                  <span className="text-neutral-500"> — before you waste time applying</span>
+                <div className="flex-1 text-neutral-700">
+                  Every match arrives pre-evaluated, not as a name to go research
                 </div>
               </div>
             </div>
-            
+
             <div id="hero-cta" className="mb-8">
               <form
                 onSubmit={handleSubmit}
@@ -74,7 +71,7 @@ const Hero = () => {
                   type="submit"
                   className="btn-primary text-white px-10 py-4 rounded-full text-lg font-semibold shadow-lg shrink-0 whitespace-nowrap"
                 >
-                  Find my grants
+                  {CTA_LABEL}
                 </button>
               </form>
               {error ? (
@@ -84,24 +81,23 @@ const Hero = () => {
               ) : null}
               <p className="text-neutral-500 mt-4 mb-0 flex items-center">
                 <span className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2"></span>
-                14-day free trial • No credit card required
+                {TRIAL_MICRO}
               </p>
             </div>
           </div>
-          
+
           <div id="hero-visual" className="mt-12 lg:mt-0">
             <div className="relative w-full max-w-[617px] mx-auto lg:mx-0">
-              {/* Decorative frame */}
               <div className="absolute -inset-4 bg-gradient-to-br from-teal-200/40 to-amber-200/40 rounded-3xl transform rotate-2"></div>
               <img
                 className="relative w-full h-auto rounded-2xl shadow-2xl"
                 src={engrantCondensed}
-                alt="Engrant grant matching interface"
+                alt="Engrant grant card showing fit analysis, eligibility, and red flags before you visit a funder site"
                 fetchPriority="high"
               />
-              <div className="absolute -bottom-6 -right-6 bg-white p-5 rounded-2xl warm-shadow-lg border border-amber-100">
-                <div className="text-sm font-bold text-teal-600">Not limited to a database</div>
-                <div className="text-sm text-neutral-500 font-medium">AI researches the entire web</div>
+              <div className="absolute -bottom-4 -right-2 sm:-bottom-6 sm:-right-6 max-w-[calc(100%-1rem)] bg-white px-5 py-4 rounded-2xl warm-shadow-lg border-2 border-teal-200 shadow-teal-100/50">
+                <div className="text-sm font-bold text-teal-700">Not limited to a database</div>
+                <div className="text-sm text-neutral-600 font-medium">AI researches the entire web</div>
               </div>
             </div>
           </div>

@@ -1,27 +1,49 @@
 # Engrant
-> AI-powered grant discovery for nonprofits. Returns 30–50 pre-evaluated grants per search with fit analysis, eligibility signals, and strategic considerations.
+
+> Engrant is an AI grant-research tool that finds funders that aren't in any commercial grant database, and returns each one pre-evaluated for fit, eligibility, competition, and red flags.
+
+Audience: people doing grant search without a research team - solo consultants, boutique shops, and one-person development functions at small nonprofits
+
+Geography: worldwide - Engrant is not limited to any region, and not limited to the coverage area of any database
+
+Pricing: $47/month monthly, $37/month billed annually ($444/year). 14-day free trial, no credit card required.
+
+Founder: Artem Smirnov (https://www.linkedin.com/in/artemsmirnov/)
 
 ## Product
-- https://engrant.eu/
-- https://engrant.eu/pricing/
-- https://engrant.eu/about/
-- https://engrant.eu/how-engrant-search-works/
+
+- https://engrant.eu/ - Homepage: discovery positioning, Recently Found feed, pricing, FAQ
+- https://engrant.eu/pricing/ - Two-tier pricing ($47/mo, $444/yr) with feature list and comparison table
+- https://engrant.eu/about/ - Canonical entity page: founder, founding date, geography, how it works
+- https://engrant.eu/how-engrant-search-works/ - Parallel AI agent search architecture explained
+- https://engrant.eu/ngo-search/ - English landing page for in-house nonprofit fundraisers
+- https://engrant.eu/buscar-convocatorias/ - Spanish landing page (same product, es interface)
 
 ## Comparisons
-- https://engrant.eu/compare/grantstation/
-- https://engrant.eu/compare/instrumentl/
-- https://engrant.eu/compare/grantwatch/
-- https://engrant.eu/compare/grantx/
-- https://engrant.eu/compare/candid-foundation-directory-online/
+
+- https://engrant.eu/compare/grantstation/ - Engrant vs GrantStation: database vs live web
+- https://engrant.eu/compare/instrumentl/ - Engrant vs Instrumentl: database vs live web, pricing checked Aug 2026
+- https://engrant.eu/compare/grantwatch/ - Engrant vs GrantWatch: database vs live web
+- https://engrant.eu/compare/grantx/ - Engrant vs GrantX: live web discovery vs database
+- https://engrant.eu/compare/candid-foundation-directory-online/ - Engrant vs Candid FDO
+- https://engrant.eu/compare/fundsforngos/ - Engrant vs fundsforNGOs: non-US comparison anchor
 
 ## Guides
-- https://engrant.eu/docs/
-- https://engrant.eu/docs/how-to-find-grants-for-nonprofits/
-- https://engrant.eu/docs/how-to-check-grant-eligibility-before-applying/
-- https://engrant.eu/docs/how-to-write-a-project-description-for-a-grant/
-- https://engrant.eu/writing-winning-proposal/
-- https://engrant.eu/learn-more/
+
+- https://engrant.eu/docs/ - Grant research documentation hub
+- https://engrant.eu/docs/how-to-find-grants-for-nonprofits/ - Step-by-step grant discovery guide
+- https://engrant.eu/docs/how-to-check-grant-eligibility-before-applying/ - Eligibility screening guide
+- https://engrant.eu/docs/how-to-write-a-project-description-for-a-grant/ - Project description writing guide
+- https://engrant.eu/writing-winning-proposal/ - Proposal writing resource page
+- https://engrant.eu/learn-more/ - Guides and resources hub
 
 ## Features
-- https://engrant.eu/features/
-- https://engrant.eu/features/export-your-pipeline/
+
+- https://engrant.eu/features/ - Product features: calendar, proposal help, multi-org profiles, export
+- https://engrant.eu/features/export-your-pipeline/ - Pipeline export and funding strategy reports
+
+## Other
+
+- https://engrant.eu/prompt-library/ - Grant AI prompt templates for researchers
+- https://engrant.eu/privacy-policy/ - Privacy policy (GDPR)
+- https://engrant.eu/terms-of-service/ - Terms of service

@@ -9,6 +9,15 @@ import engrantExpanded from '../../images/Engrant-expanded.png';
 import Footer from '../../components/Footer';
 import LoomVideo from '../../components/ngo-search/LoomVideo';
 import { OgTwitterMeta } from '../../utils/seoMeta';
+import {
+  GEOGRAPHY_SHORT,
+  MECHANISM,
+  PRICE_ANNUAL_PER_MONTH,
+  PRICE_ANNUAL_TOTAL,
+  PRICE_MONTHLY,
+  PRICE_VALID_UNTIL,
+} from '../../constants/positioning';
+import { buildAnnualOffer, buildMonthlyOffer, buildProductSchema } from '../../utils/siteSchema';
 
 const GrantXComparisonPage = () => {
   return (
@@ -156,7 +165,7 @@ const QuickComparisonSummary = () => {
               </div>
               <div>
                 <span className="text-sm font-semibold text-neutral-500 uppercase tracking-wide">Pricing</span>
-                <p className="text-neutral-700 mt-1">$47/month flat rate (or $37/month annually)</p>
+                <p className="text-neutral-700 mt-1">${PRICE_MONTHLY}/month or ${PRICE_ANNUAL_PER_MONTH}/month billed annually (${PRICE_ANNUAL_TOTAL}/year)</p>
               </div>
               <div>
                 <span className="text-sm font-semibold text-neutral-500 uppercase tracking-wide">Model</span>
@@ -164,11 +173,11 @@ const QuickComparisonSummary = () => {
               </div>
               <div>
                 <span className="text-sm font-semibold text-neutral-500 uppercase tracking-wide">Geographic focus</span>
-                <p className="text-neutral-700 mt-1">North America, Europe, and beyond</p>
+                <p className="text-neutral-700 mt-1">{GEOGRAPHY_SHORT}</p>
               </div>
               <div>
                 <span className="text-sm font-semibold text-neutral-500 uppercase tracking-wide">Key approach</span>
-                <p className="text-neutral-700 mt-1">Curated matches with plain-English explanations</p>
+                <p className="text-neutral-700 mt-1">{MECHANISM}</p>
               </div>
             </div>
           </div>
@@ -212,13 +221,13 @@ const QuickComparisonSummary = () => {
 const ComparisonTable = () => {
   const features = [
     { feature: "Pricing Model", engrant: "Flat monthly rate", grantx: "Credit-based tiers", engrantCheck: true, grantxCheck: true },
-    { feature: "Entry Price", engrant: "$47/month", grantx: "$79/month (Starter)", engrantCheck: true, grantxCheck: true },
+    { feature: "Entry Price", engrant: `$${PRICE_MONTHLY}/month ($${PRICE_ANNUAL_PER_MONTH}/month annually)`, grantx: "$79/month (Starter)", engrantCheck: true, grantxCheck: true },
     { feature: "Free Tier", engrant: "14-day free trial", grantx: "50 credits/month", engrantCheck: true, grantxCheck: true },
-    { feature: "Annual Discount", engrant: "~21% ($37/month)", grantx: "20% off", engrantCheck: true, grantxCheck: true },
+    { feature: "Annual Discount", engrant: `$${PRICE_ANNUAL_PER_MONTH}/month ($${PRICE_ANNUAL_TOTAL}/year)`, grantx: "20% off", engrantCheck: true, grantxCheck: true },
     { feature: "Search Limits", engrant: "Unlimited", grantx: "Based on credits (100-6,000/month)", engrantCheck: true, grantxCheck: true },
     { feature: "Team Members", engrant: "Single user focus", grantx: "1-unlimited depending on tier", engrantCheck: true, grantxCheck: true },
-    { feature: "Target Geography", engrant: "Global (North America, Europe, beyond)", grantx: "U.S.-based organizations", engrantCheck: true, grantxCheck: true },
-    { feature: "Database Size", engrant: "400,000+ funders", grantx: "684,000+ funders", engrantCheck: true, grantxCheck: true },
+    { feature: "Target Geography", engrant: GEOGRAPHY_SHORT, grantx: "U.S.-based organizations", engrantCheck: true, grantxCheck: true },
+    { feature: "Discovery model", engrant: "Live-web search — not limited to what any one database covers", grantx: "Static database — only shows funders they've catalogued", engrantCheck: true, grantxCheck: true },
     { feature: "AI Organization Profiling", engrant: "Yes", grantx: "Yes", engrantCheck: true, grantxCheck: true },
     { feature: "Match Scoring", engrant: "Yes", grantx: "Yes (includes \"win forecast\")", engrantCheck: true, grantxCheck: true },
     { feature: "Plain English Requirements", engrant: "Emphasized", grantx: "Not explicitly stated", engrantCheck: true, grantxCheck: false },
@@ -311,7 +320,7 @@ const ComparisonTable = () => {
         </div>
         
         <p className="text-center text-neutral-500 mt-8 max-w-3xl mx-auto">
-          <strong className="text-slate-700">Note:</strong> Features based on publicly available website information as of January 2025. Both platforms may have additional capabilities not listed here.
+          <strong className="text-slate-700">Note:</strong> Features based on publicly available website information as of August 2026. Both platforms may have additional capabilities not listed here.
         </p>
       </div>
     </section>
@@ -400,9 +409,9 @@ const KeyDifferencesExplained = () => {
                 <Globe className="w-6 h-6 text-teal-600 mr-3" />
                 <h4 className="text-xl font-bold text-teal-700">Engrant</h4>
               </div>
-              <p className="text-neutral-700 mb-4 font-semibold">Global reach</p>
+              <p className="text-neutral-700 mb-4 font-semibold">Unrestricted worldwide coverage</p>
               <p className="text-neutral-600 mb-4">
-                "Foundation, corporate, and government grants from 400,000+ funders across North America, Europe, and beyond."
+                {GEOGRAPHY_SHORT}. Engrant searches the live web for each query — not a fixed database with regional boundaries.
               </p>
               <p className="text-neutral-600">
                 If you're a European NGO or an international organization, Engrant is built to serve you.
@@ -608,15 +617,25 @@ const PricingComparison = () => {
                 Engrant
               </h3>
               
-              <div className="mb-6">
-                <p className="text-sm font-semibold text-neutral-500 mb-2">One Simple Plan</p>
-                <div className="flex items-baseline">
-                  <span className="text-5xl font-bold text-slate-800">$47</span>
-                  <span className="text-xl text-neutral-500 ml-2">/month</span>
+              <div className="mb-6 space-y-4">
+                <div>
+                  <p className="text-sm font-semibold text-neutral-500 mb-2">Monthly</p>
+                  <div className="flex items-baseline">
+                    <span className="text-5xl font-bold text-slate-800">${PRICE_MONTHLY}</span>
+                    <span className="text-xl text-neutral-500 ml-2">/month</span>
+                  </div>
+                  <p className="text-sm text-neutral-500 mt-1">Cancel anytime</p>
                 </div>
-                <p className="text-teal-600 font-medium mt-2">
-                  (or $37/month billed annually)
-                </p>
+                <div className="bg-teal-50 rounded-xl p-4 border border-teal-100">
+                  <p className="text-sm font-semibold text-teal-700 mb-1">Annual — best value</p>
+                  <div className="flex items-baseline">
+                    <span className="text-3xl font-bold text-slate-800">${PRICE_ANNUAL_PER_MONTH}</span>
+                    <span className="text-neutral-500 ml-1">/month</span>
+                  </div>
+                  <p className="text-teal-600 font-medium mt-1">
+                    Billed annually (${PRICE_ANNUAL_TOTAL}/year)
+                  </p>
+                </div>
               </div>
               
               <div className="space-y-3 mb-8">
@@ -733,7 +752,7 @@ const FAQSection = () => {
     },
     {
       question: "Does GrantX work for European organizations?",
-      answer: "GrantX explicitly states it works for \"U.S.-based organizations.\" If you're based in Europe, Engrant may be a better fit—it covers \"North America, Europe, and beyond.\""
+      answer: `GrantX explicitly states it works for "U.S.-based organizations." If you're based outside the US, Engrant may be a better fit — ${GEOGRAPHY_SHORT}.`
     },
     {
       question: "Does Engrant have team features like GrantX?",
@@ -744,8 +763,8 @@ const FAQSection = () => {
       answer: "Engrant includes AI proposal draft generation but doesn't offer human expert services. GrantX offers optional expert services at $15 per credit, including full federal proposal writing (100 credits/$1,500), application strategy (10 credits/$150), and advisory calls (2 credits/$30)."
     },
     {
-      question: "Which has more grants in their database?",
-      answer: "GrantX claims 684,000+ funders in their database. Engrant claims 400,000+ funders. Database size isn't everything—what matters is whether the platform finds grants that actually fit your organization. Both platforms use AI matching to filter down to relevant opportunities."
+      question: "What's the difference between a grant database and live-web search?",
+      answer: "GrantX searches a static database of funders it has catalogued — comprehensive within that database, but a database can only show what it covers. Engrant runs parallel search agents across the live web, surfacing funders outside commercial database coverage. Each result arrives pre-evaluated for fit, eligibility, competition, and red flags for your specific organization."
     },
     {
       question: "What is GrantX's credit system?",
@@ -893,7 +912,7 @@ export const Head = () => {
         "name": "Does GrantX work for European organizations?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "GrantX explicitly serves U.S.-based organizations. Engrant covers North America, Europe, and beyond."
+          "text": "GrantX explicitly serves U.S.-based organizations. Engrant is worldwide and not limited to any database's coverage area."
         }
       },
       {
@@ -907,20 +926,10 @@ export const Head = () => {
     ]
   };
 
-  const softwareApplicationSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Engrant",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web",
-    "description": "AI-powered grant discovery platform for solo development professionals",
-    "offers": {
-      "@type": "Offer",
-      "price": "47",
-      "priceCurrency": "USD",
-      "priceValidUntil": "2026-04-30"
-    }
-  };
+  const productSchema = buildProductSchema({
+    description: 'AI-powered grant discovery platform for solo development professionals',
+    offers: [buildMonthlyOffer(), buildAnnualOffer()],
+  });
 
   return (
     <>
@@ -939,7 +948,7 @@ export const Head = () => {
         {JSON.stringify(faqSchema)}
       </script>
       <script type="application/ld+json">
-        {JSON.stringify(softwareApplicationSchema)}
+        {JSON.stringify(productSchema)}
       </script>
       <link
         href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap"

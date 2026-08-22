@@ -60,10 +60,10 @@ const RecentGrantsCarousel = () => {
             Encontradas recientemente
           </div>
           <h2 className="text-3xl lg:text-5xl font-bold text-slate-800 mb-4">
-            Convocatorias que nuestros usuarios no sabían que existían
+            Convocatorias que nuestros usuarios encontraron con Engrant
           </h2>
           <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            Coincidencias reales que Engrant encontró para organizaciones como la tuya: financiadores que no estaban en su radar.
+            Una muestra de coincidencias recientes — programas de embajadas, fundaciones regionales y fondos de responsabilidad social corporativa, en cuatro continentes.
           </p>
         </div>
 

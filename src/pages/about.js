@@ -1,7 +1,18 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 import Footer from '../components/Footer';
+import {
+  AUDIENCE,
+  GEOGRAPHY,
+  MECHANISM,
+  ONE_LINE_DEFINITION,
+  PRICE_ANNUAL_PER_MONTH,
+  PRICE_ANNUAL_TOTAL,
+  PRICE_MONTHLY,
+} from '../constants/positioning';
 import { OgTwitterMeta } from '../utils/seoMeta';
+
+const LAST_REVIEWED = '22 August 2026';
 
 const AboutPage = () => {
   return (
@@ -12,63 +23,100 @@ const AboutPage = () => {
             ← Back to Home
           </Link>
 
-          <h1 className="text-4xl font-bold text-neutral-800 mb-8">About Engrant</h1>
+          <h1 className="text-4xl font-bold text-neutral-800 mb-4">About Engrant</h1>
+          <p className="text-sm text-neutral-500 mb-8">Last reviewed: {LAST_REVIEWED}</p>
 
           <div className="prose prose-lg max-w-none text-neutral-700">
-            <p>
-              <strong>Engrant is</strong> an AI-powered grant discovery platform for nonprofit teams and grant professionals. It returns 30–50 pre-evaluated grants per search — each with fit analysis, eligibility signals, and strategic considerations — so you can focus on strong applications instead of weeks of manual research.
+            <p className="text-xl leading-relaxed">
+              {ONE_LINE_DEFINITION}
             </p>
 
-            <h2 className="text-2xl font-semibold text-neutral-800 mt-8">What does Engrant do?</h2>
+            <h2 className="text-2xl font-semibold text-neutral-800 mt-10">Who is Engrant for?</h2>
             <p>
-              Engrant helps nonprofit teams and grant professionals find matching funding opportunities faster. Instead of spending weeks searching databases and spreadsheets, you describe your organization and funding need — Engrant surfaces ranked grants with fit ratings, deadlines, and eligibility signals.
+              {AUDIENCE}
             </p>
             <p>
-              Our product combines grant discovery, eligibility checks, pipeline export, and AI-assisted project descriptions. The application runs at{' '}
-              <a href="https://app.engrant.eu" className="text-primary-600 hover:text-primary-700 underline">
-                app.engrant.eu
+              If you are the only person doing grant research for your clients or your organization — without a dedicated research team behind you — Engrant is built for your workflow. You need funders you would never find in a database, already evaluated enough to decide whether to pursue them, not another list of names to investigate.
+            </p>
+
+            <h2 className="text-2xl font-semibold text-neutral-800 mt-10">Who runs Engrant?</h2>
+            <p>
+              Engrant is built by{' '}
+              <a
+                href="https://www.linkedin.com/in/artemsmirnov/"
+                className="text-primary-600 hover:text-primary-700 underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Artem Smirnov
               </a>
-              . Sensitive processing uses our own infrastructure; see our{' '}
-              <Link to="/privacy-policy" className="text-primary-600 hover:text-primary-700 underline">
-                Privacy Policy
+              , a software developer of 25+ years who serves on the board of{' '}
+              <a
+                href="https://teplo.fr/"
+                className="text-primary-600 hover:text-primary-700 underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Teplo
+              </a>
+              , a French nonprofit supporting Ukraine. He lives in Lithuania with his family.
+            </p>
+            <p>
+              The board role matters: Artem sits on the grant-seeking side of the table, not only the software side. Engrant exists because the gap between what databases cover and what organizations actually need to find is widest for people doing this work alone — without staff to filter raw search results or maintain subscriptions to multiple regional databases.
+            </p>
+            <p>
+              Artem founded Engrant on 23 December 2025. The product operates from Vilnius, Lithuania (Belmonto 17C-1).
+            </p>
+
+            <h2 className="text-2xl font-semibold text-neutral-800 mt-10">Where do customers use Engrant?</h2>
+            <p>
+              {GEOGRAPHY}
+            </p>
+            <p>
+              Paying customers span Africa, Latin America, Europe, and North America. A funder outside your region is often the purest instance of discovery — the kind of opportunity US-shaped databases structurally cannot surface because they were never included in those databases in the first place.
+            </p>
+
+            <h2 className="text-2xl font-semibold text-neutral-800 mt-10">How does Engrant work?</h2>
+            <p>
+              {MECHANISM}{' '}
+              <Link to="/how-engrant-search-works/" className="text-primary-600 hover:text-primary-700 underline">
+                Read how the parallel search agents work
+              </Link>
+              .
+            </p>
+            <p>
+              Each search returns 30–50 funders pre-evaluated for fit, eligibility, competition, and red flags — not a raw dump to research yourself. Engrant also writes pipeline events to your calendar, offers proposal drafting help grounded in stated funder requirements, and learns constraints separately for each organization profile you create.
+            </p>
+
+            <h2 className="text-2xl font-semibold text-neutral-800 mt-10">Pricing</h2>
+            <p>
+              Engrant costs ${PRICE_MONTHLY}/month, or ${PRICE_ANNUAL_PER_MONTH}/month billed annually (${PRICE_ANNUAL_TOTAL}/year). Both tiers include unlimited searches, unlimited organization profiles, and all features. A 14-day free trial requires no credit card. See{' '}
+              <Link to="/pricing/" className="text-primary-600 hover:text-primary-700 underline">
+                pricing
               </Link>{' '}
-              for how we handle data under GDPR.
+              for details.
             </p>
 
-            <h2 className="text-2xl font-semibold text-neutral-800 mt-8">Who is Engrant for?</h2>
-            <p>
-              Small and mid-size nonprofits, consultants, and development staff who need practical grant research — not another generic search box that returns hundreds of unfiltered results.
-            </p>
-
-            <h2 className="text-2xl font-semibold text-neutral-800 mt-8">Where can I learn more?</h2>
-            <p>
-              We publish step-by-step guides, tool comparisons, and grant-writing resources:
-            </p>
+            <h2 className="text-2xl font-semibold text-neutral-800 mt-10">Learn more</h2>
             <ul className="list-disc pl-5 space-y-2 text-neutral-700">
               <li>
-                <Link to="/docs" className="text-primary-600 hover:text-primary-700 underline">Docs</Link> — how to find grants, check eligibility, and write project descriptions
+                <Link to="/docs/" className="text-primary-600 hover:text-primary-700 underline">Docs</Link> — how to find grants, check eligibility, and write project descriptions
               </li>
               <li>
-                <Link to="/learn-more" className="text-primary-600 hover:text-primary-700 underline">Learn More</Link> — guides and resources hub
+                <Link to="/features/" className="text-primary-600 hover:text-primary-700 underline">Features</Link> — calendar, proposal help, multi-org profiles, export
               </li>
               <li>
-                <Link to="/compare/grantstation" className="text-primary-600 hover:text-primary-700 underline">GrantStation comparison</Link>
+                <Link to="/compare/grantstation/" className="text-primary-600 hover:text-primary-700 underline">GrantStation comparison</Link>
               </li>
               <li>
-                <Link to="/compare/instrumentl" className="text-primary-600 hover:text-primary-700 underline">Instrumentl comparison</Link>
+                <Link to="/compare/fundsforngos/" className="text-primary-600 hover:text-primary-700 underline">fundsforNGOs comparison</Link>
               </li>
               <li>
-                <Link to="/compare/grantwatch" className="text-primary-600 hover:text-primary-700 underline">GrantWatch comparison</Link>
-              </li>
-              <li>
-                <Link to="/compare/candid-foundation-directory-online" className="text-primary-600 hover:text-primary-700 underline">Candid / Foundation Directory comparison</Link>
-              </li>
-              <li>
-                <Link to="/pricing" className="text-primary-600 hover:text-primary-700 underline">Pricing</Link> — $47/month with a 14-day free trial
+                <Link to="/compare/instrumentl/" className="text-primary-600 hover:text-primary-700 underline">Instrumentl comparison</Link>
               </li>
             </ul>
 
-            <h2 className="text-2xl font-semibold text-neutral-800 mt-8">How do I contact Engrant?</h2>
+            <h2 className="text-2xl font-semibold text-neutral-800 mt-10">Contact</h2>
             <p>
               Engrant
               <br />
@@ -82,7 +130,7 @@ const AboutPage = () => {
           </div>
         </div>
       </main>
-      <Footer tagline="AI-powered grant matching for nonprofits" />
+      <Footer tagline={ONE_LINE_DEFINITION} />
     </div>
   );
 };
@@ -91,9 +139,27 @@ export default AboutPage;
 
 export const Head = () => {
   const pageTitle = 'About | Engrant';
-  const pageDescription =
-    'Learn about Engrant — AI-powered grant matching for nonprofits, built in Vilnius, Lithuania.';
+  const pageDescription = ONE_LINE_DEFINITION;
   const canonicalUrl = 'https://engrant.eu/about/';
+
+  const aboutPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'About Engrant',
+    description: ONE_LINE_DEFINITION,
+    url: canonicalUrl,
+    dateModified: '2026-08-22',
+    mainEntity: {
+      '@type': 'Organization',
+      name: 'Engrant',
+      description: ONE_LINE_DEFINITION,
+      foundingDate: '2025-12-23',
+      founder: {
+        '@type': 'Person',
+        name: 'Artem Smirnov',
+      },
+    },
+  };
 
   return (
     <>
@@ -101,6 +167,7 @@ export const Head = () => {
       <meta name="description" content={pageDescription} />
       <link rel="canonical" href={canonicalUrl} />
       <OgTwitterMeta title={pageTitle} description={pageDescription} url={canonicalUrl} />
+      <script type="application/ld+json">{JSON.stringify(aboutPageSchema)}</script>
     </>
   );
 };

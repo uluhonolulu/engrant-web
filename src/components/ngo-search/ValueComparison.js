@@ -42,7 +42,7 @@ const ValueComparison = () => {
                   <div className="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center mr-4 flex-shrink-0">
                     <X className="text-rose-400 w-4 h-4" />
                   </div>
-                  <span className="text-neutral-600">One database = only what someone chose to index</span>
+                  <span className="text-neutral-600">One database = only what someone chose to include</span>
                 </div>
                 <div className="flex items-center bg-white rounded-xl p-4 border border-slate-100">
                   <div className="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center mr-4 flex-shrink-0">
@@ -79,7 +79,7 @@ const ValueComparison = () => {
                   <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center mr-4 flex-shrink-0">
                     <Check className="text-teal-600 w-4 h-4" />
                   </div>
-                  <span className="text-neutral-700 font-medium">Searches the live web, not a fixed index</span>
+                  <span className="text-neutral-700 font-medium">Searches the live web, not a fixed database</span>
                 </div>
                 <div className="flex items-center bg-white/80 backdrop-blur rounded-xl p-4 border border-teal-100">
                   <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center mr-4 flex-shrink-0">

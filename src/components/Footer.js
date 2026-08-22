@@ -1,6 +1,7 @@
 import React from 'react';
+import { ONE_LINE_DEFINITION } from '../constants/positioning';
 
-const Footer = ({ tagline = 'AI-powered grant matching for nonprofits' }) => {
+const Footer = ({ tagline = ONE_LINE_DEFINITION }) => {
   return (
     <footer className="bg-slate-900 text-slate-400 py-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,15 +18,15 @@ const Footer = ({ tagline = 'AI-powered grant matching for nonprofits' }) => {
             </p>
           </div>
           <nav className="flex flex-wrap gap-x-6 gap-y-3 text-sm">
-            <a href="/pricing" className="hover:text-white transition-colors">Pricing</a>
-            <a href="/features" className="hover:text-white transition-colors">Features</a>
-            <a href="/learn-more" className="hover:text-white transition-colors">Learn More</a>
-            <a href="/docs" className="hover:text-white transition-colors">Docs</a>
-            <a href="/learn-more#comparisons" className="hover:text-white transition-colors">Comparisons</a>
-            <a href="/compare/grantstation" className="hover:text-white transition-colors">GrantStation Alternative</a>
-            <a href="/about" className="hover:text-white transition-colors">About</a>
-            <a href="/privacy-policy" className="hover:text-white transition-colors">Privacy</a>
-            <a href="/terms-of-service" className="hover:text-white transition-colors">Terms</a>
+            <a href="/pricing/" className="hover:text-white transition-colors">Pricing</a>
+            <a href="/features/" className="hover:text-white transition-colors">Features</a>
+            <a href="/learn-more/" className="hover:text-white transition-colors">Learn More</a>
+            <a href="/docs/" className="hover:text-white transition-colors">Docs</a>
+            <a href="/learn-more/#comparisons" className="hover:text-white transition-colors">Comparisons</a>
+            <a href="/compare/grantstation/" className="hover:text-white transition-colors">GrantStation Alternative</a>
+            <a href="/about/" className="hover:text-white transition-colors">About</a>
+            <a href="/privacy-policy/" className="hover:text-white transition-colors">Privacy</a>
+            <a href="/terms-of-service/" className="hover:text-white transition-colors">Terms</a>
             <a href="mailto:founder@engrant.eu" className="hover:text-white transition-colors">Contact</a>
           </nav>
         </div>

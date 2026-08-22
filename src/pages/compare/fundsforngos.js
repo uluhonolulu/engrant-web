@@ -8,18 +8,19 @@ import {
 import logo from '../../images/logo-horizontal-remove-background.com.png';
 import engrantExpanded from '../../images/Engrant-expanded.png';
 import Footer from '../../components/Footer';
-import { OgTwitterMeta } from '../../utils/seoMeta';
 import {
   GEOGRAPHY_SHORT,
+  MECHANISM,
   PRICE_ANNUAL_PER_MONTH,
   PRICE_ANNUAL_TOTAL,
   PRICE_MONTHLY,
   PRICE_VALID_UNTIL,
 } from '../../constants/positioning';
 import { buildAnnualOffer, buildMonthlyOffer, buildProductSchema } from '../../utils/siteSchema';
+import { OgTwitterMeta } from '../../utils/seoMeta';
 import LoomVideo from '../../components/ngo-search/LoomVideo';
 
-const GrantStationComparisonPage = () => {
+const FundsforNGOsComparisonPage = () => {
   return (
     <div className="bg-[#fffbf5] text-neutral-700 min-h-screen w-full">
         <Header />
@@ -65,12 +66,12 @@ const Header = () => {
 
           <div className="flex items-center space-x-4">
             <a 
-              href="https://app.engrant.eu/?utm_source=grantstation_comparison&utm_medium=cta&utm_campaign=header_cta"
+              href="https://app.engrant.eu/?utm_source=fundsforngos_comparison&utm_medium=cta&utm_campaign=header_cta"
               onClick={() => {
                 if (typeof window !== 'undefined' && window.gtag) {
                   window.gtag('event', 'cta_click', {
                     location: 'header',
-                    page: 'grantstation_comparison'
+                    page: 'fundsforngos_comparison'
                   });
                 }
               }}
@@ -94,25 +95,25 @@ const Hero = () => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
         <div className="inline-flex items-center bg-amber-100 text-amber-700 px-4 py-2 rounded-full text-sm font-medium mb-8">
           <Sparkles className="w-4 h-4 mr-2" />
-          GrantStation Alternative
+          FundsforNGOs Alternative
         </div>
         
         <h1 className="text-4xl lg:text-[3.5rem] font-bold text-slate-800 mb-6 leading-[1.15] tracking-tight">
-          GrantStation Alternative: Engrant vs GrantStation
+          Engrant vs fundsforNGOs: Database alerts vs live-web discovery
         </h1>
         
         <p className="text-xl lg:text-2xl text-neutral-600 mb-10 leading-relaxed font-normal max-w-3xl mx-auto">
-          Is GrantStation showing you enough grants? Manual keyword searches across a limited database leave opportunities on the table. Engrant uses AI to find, evaluate, and rank grants for you automatically.
+          fundsforNGOs delivers curated funding alerts from a human-maintained database — excellent value for budget-conscious NGOs. Engrant searches the live web and returns each funder pre-evaluated for your specific organization.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
           <a 
-            href="https://app.engrant.eu/?utm_source=grantstation_comparison&utm_medium=cta&utm_campaign=hero_cta"
+            href="https://app.engrant.eu/?utm_source=fundsforngos_comparison&utm_medium=cta&utm_campaign=hero_cta"
             onClick={() => {
               if (typeof window !== 'undefined' && window.gtag) {
                 window.gtag('event', 'cta_click', {
                   location: 'hero',
-                  page: 'grantstation_comparison'
+                  page: 'fundsforngos_comparison'
                 });
               }
             }}
@@ -139,37 +140,36 @@ const ProblemSection = () => {
   const problems = [
     {
       icon: Database,
-      title: "Only 9,000 funders in the database",
-      description: "GrantStation's curated database contains approximately 9,000 funders. In a real-world comparison test searching for youth homelessness funding, GrantStation returned just 11 matches.",
-      quote: "I was initially disappointed by the number of matches that were returned. In total, GrantStation brought up 11 matches.",
-      quoteSource: "Instrumentl vs GrantStation Teardown",
-      sourceUrl: "https://www.instrumentl.com/blog/grantstation-vs-instrumentl-teardown",
-      engrantAlternative: "AI searches the entire live web — never limited to a fixed database"
+      title: "A curated database — not live-web discovery",
+      description: "fundsforNGOs Premium is a human-maintained list of funding opportunities with email alerts when new grants are added. Comprehensive within that database — but a database can only show what it covers.",
+      quote: null,
+      quoteSource: null,
+      sourceUrl: "https://support.fundsforngos.org/hc/en-us/articles/360038724933-What-is-included-in-the-Premium-Membership-",
+      engrantAlternative: MECHANISM
     },
     {
       icon: Search,
-      title: "Manual search with no AI matching",
-      description: "GrantStation requires you to manually select keywords, geographic filters, areas of interest, and funder types — then evaluate raw results yourself. There's no intelligent matching or fit scoring.",
+      title: "Listings to research, not org-specific evaluation",
+      description: "fundsforNGOs sends curated opportunities and donor directory entries. Each listing still requires you to assess fit, eligibility, and competition for your specific organization.",
       quote: null,
       quoteSource: null,
-      engrantAlternative: "Enter your org name → AI researches and evaluates grants for you"
+      engrantAlternative: "30-50 grants per search, each pre-evaluated with fit scores and red flags"
     },
     {
       icon: MapPin,
-      title: "Geographic filtering stuck at state level",
-      description: "GrantStation only lets you filter by state — not county or city. In a test for a Chicago-based nonprofit, several results were for counties well outside the Chicagoland area.",
-      quote: "Because GrantStation does not allow for specificity of geographic scope beyond the state, a number of the results that came up were for counties outside of Cook County.",
-      quoteSource: "Instrumentl vs GrantStation Teardown",
-      sourceUrl: "https://www.instrumentl.com/blog/grantstation-vs-instrumentl-teardown",
-      engrantAlternative: "Engrant checks geographic eligibility at the county and city level"
+      title: "Strong for developing-country NGOs — bounded by the database",
+      description: "fundsforNGOs is widely used by NGOs in Africa, Asia, and Latin America at $199/year (developing countries). The value is broad awareness plus training — but coverage is limited to what their team includes.",
+      quote: null,
+      quoteSource: null,
+      engrantAlternative: GEOGRAPHY_SHORT
     },
     {
       icon: Eye,
-      title: "No fit scores, red flags, or competition insights",
-      description: "GrantStation shows you basic funder profiles with names, locations, and descriptions. You need to manually assess whether each grant is actually a good fit for your organization.",
+      title: "Training and templates — not fit intelligence",
+      description: "Premium membership includes proposal templates, webinars, and a donor directory with contact details. It does not provide AI fit scoring, competition analysis, or automated eligibility screening per organization.",
       quote: null,
       quoteSource: null,
-      engrantAlternative: "Every grant comes with a fit score, competition level, effort estimate, and red flags"
+      engrantAlternative: "Fit score, competition level, effort estimate, and red flags on every result"
     }
   ];
 
@@ -182,7 +182,7 @@ const ProblemSection = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-            Why Nonprofits Outgrow GrantStation
+            Why NGOs Compare fundsforNGOs and Engrant
           </h2>
         </div>
         
@@ -229,29 +229,25 @@ const ProblemSection = () => {
 // Comparison Table Section
 const ComparisonTable = () => {
   const features = [
-    { category: "Setup & Onboarding", feature: "Setup time", engrant: "Enter org name/URL → AI researches automatically", competitor: "Select keywords, geographic scope, areas of interest, funder types manually", engrantCheck: true, competitorCheck: "partial" },
-    { category: "Setup & Onboarding", feature: "Learning curve", engrant: "Minimal – results in minutes", competitor: "Moderate – multiple database sections to navigate", engrantCheck: true, competitorCheck: "partial" },
-    { category: "Search & Results", feature: "Results approach", engrant: "30-50 pre-evaluated grants from live-web search", competitor: "Raw database results (~9,000 funders in static database)", engrantCheck: true, competitorCheck: "partial" },
-    { category: "Search & Results", feature: "Fit assessment", engrant: "AI-generated fit score with detailed reasons", competitor: "Database listings without org-specific fit evaluation", engrantCheck: true, competitorCheck: false },
-    { category: "Search & Results", feature: "Eligibility screening", engrant: "Flags disqualifiers before you apply", competitor: "Basic eligibility info in funder profiles", engrantCheck: true, competitorCheck: "partial" },
+    { category: "Setup & Onboarding", feature: "Setup time", engrant: "Enter org name/URL → AI researches automatically", competitor: "Sign up for annual membership; browse curated lists", engrantCheck: true, competitorCheck: true },
+    { category: "Setup & Onboarding", feature: "Learning curve", engrant: "Minimal – results in minutes", competitor: "Low – list-and-alert model", engrantCheck: true, competitorCheck: true },
+    { category: "Search & Results", feature: "Discovery model", engrant: "Live-web search — not limited to what any one database covers", competitor: "Curated static database with email alerts", engrantCheck: true, competitorCheck: "partial" },
+    { category: "Search & Results", feature: "Results approach", engrant: "30-50 pre-evaluated grants per search", competitor: "Curated opportunity list + donor directory", engrantCheck: true, competitorCheck: "partial" },
+    { category: "Search & Results", feature: "Fit assessment", engrant: "AI-generated fit score with detailed reasons", competitor: "Database listings without org-specific pre-evaluation", engrantCheck: true, competitorCheck: false },
+    { category: "Search & Results", feature: "Eligibility screening", engrant: "Flags disqualifiers before you apply", competitor: "Eligibility info in listings; not evaluated for your org", engrantCheck: true, competitorCheck: "partial" },
     { category: "Intelligence & Insights", feature: "Competition level", engrant: "Shows High/Medium/Low competition", competitor: "Not available", engrantCheck: true, competitorCheck: false },
     { category: "Intelligence & Insights", feature: "Application effort estimate", engrant: "Shows effort level required", competitor: "Not available", engrantCheck: true, competitorCheck: false },
     { category: "Intelligence & Insights", feature: "Red flags & warnings", engrant: "Proactive warnings (consortium required, etc.)", competitor: "Not available", engrantCheck: true, competitorCheck: false },
-    { category: "Intelligence & Insights", feature: "Funder openness to new grantees", engrant: "Clearly indicated", competitor: "Basic info in funder profiles", engrantCheck: true, competitorCheck: "partial" },
-    { category: "Intelligence & Insights", feature: "Past recipients like you", engrant: "Shows similar orgs that got funded", competitor: "Not available", engrantCheck: true, competitorCheck: false },
-    { category: "Data & Coverage", feature: "Data source", engrant: "Live-web search (parallel agents, always current)", competitor: "Curated static database (~9,000 funders)", engrantCheck: true, competitorCheck: "partial" },
-    { category: "Data & Coverage", feature: "Coverage limit", engrant: "Not limited to what any one database covers", competitor: "Comprehensive within their database only", engrantCheck: true, competitorCheck: false },
-    { category: "Data & Coverage", feature: "Geographic precision", engrant: "County and city-level filtering", competitor: "State-level only (no county/city specificity)", engrantCheck: true, competitorCheck: false },
-    { category: "Data & Coverage", feature: "990 Data", engrant: "Key insights surfaced in match reasons", competitor: "Access to 990-PF tax return data", engrantCheck: true, competitorCheck: true },
-    { category: "Data & Coverage", feature: "International grants", engrant: GEOGRAPHY_SHORT, competitor: "Separate Canadian and International database sections", engrantCheck: true, competitorCheck: true },
-    { category: "Grant Management", feature: "Saved grantmakers / tracking", engrant: "Save/reject with learning system", competitor: "Save grantmakers to Projects dashboard", engrantCheck: true, competitorCheck: true },
-    { category: "Grant Management", feature: "AI matching", engrant: "Full AI-powered intelligent matching", competitor: "No AI — keyword/filter search only", engrantCheck: true, competitorCheck: false },
-    { category: "Grant Management", feature: "AI writing assistance", engrant: "Not included", competitor: "Not available", engrantCheck: false, competitorCheck: false },
-    { category: "Educational Resources", feature: "Training content", engrant: "Focused on tool — minimal learning needed", competitor: "GrantStation Insider, webinars, tutorials, TechSoup partnerships", engrantCheck: "partial", competitorCheck: true },
-    { category: "Pricing", feature: "Annual cost", engrant: "$444/year ($37/month billed annually)", competitor: "~$199/year", engrantCheck: "partial", competitorCheck: true },
-    { category: "Pricing", feature: "Monthly option", engrant: "$47/month (no commitment)", competitor: "Annual membership only", engrantCheck: true, competitorCheck: false },
-    { category: "Pricing", feature: "Free trial", engrant: "2 weeks, no credit card", competitor: "Limited trial available", engrantCheck: true, competitorCheck: "partial" },
-    { category: "Best For", feature: "Target user", engrant: "Solo dev directors who need AI-powered discovery", competitor: "Budget-conscious orgs comfortable with manual research", engrantCheck: true, competitorCheck: true },
+    { category: "Intelligence & Insights", feature: "Past recipients like you", engrant: "Shows similar orgs that got funded", competitor: "Donor directory with funding priorities", engrantCheck: true, competitorCheck: "partial" },
+    { category: "Data & Coverage", feature: "Data source", engrant: "Live-web search (parallel agents, always current)", competitor: "Human-maintained curated database", engrantCheck: true, competitorCheck: "partial" },
+    { category: "Data & Coverage", feature: "Coverage limit", engrant: "Not limited to what any one database covers", competitor: "Comprehensive within their database only", engrantCheck: true, competitorCheck: "partial" },
+    { category: "Data & Coverage", feature: "Geographic focus", engrant: GEOGRAPHY_SHORT, competitor: "Global NGO focus; tiered pricing by country", engrantCheck: true, competitorCheck: true },
+    { category: "Educational Resources", feature: "Training & templates", engrant: "Focused on discovery — minimal learning needed", competitor: "Proposal templates, webinars, training materials", engrantCheck: "partial", competitorCheck: true },
+    { category: "Pricing", feature: "Annual cost (developing countries)", engrant: `$${PRICE_ANNUAL_TOTAL}/year ($${PRICE_ANNUAL_PER_MONTH}/month)`, competitor: "$199/year", engrantCheck: "partial", competitorCheck: true },
+    { category: "Pricing", feature: "Annual cost (developed countries)", engrant: `$${PRICE_ANNUAL_TOTAL}/year ($${PRICE_ANNUAL_PER_MONTH}/month)`, competitor: "$399/year", engrantCheck: "partial", competitorCheck: true },
+    { category: "Pricing", feature: "Monthly option", engrant: `$${PRICE_MONTHLY}/month (no commitment)`, competitor: "Annual membership only (12 months from signup)", engrantCheck: true, competitorCheck: false },
+    { category: "Pricing", feature: "Free trial", engrant: "2 weeks, no credit card", competitor: "7-day money-back on Premium (verify current policy)", engrantCheck: true, competitorCheck: "partial" },
+    { category: "Best For", feature: "Target user", engrant: "NGOs needing live-web discovery with org-specific evaluation", competitor: "Budget-conscious NGOs wanting curated alerts plus training", engrantCheck: true, competitorCheck: true },
   ];
 
   let currentCategory = '';
@@ -267,11 +263,11 @@ const ComparisonTable = () => {
             Side-by-Side Comparison
           </div>
           <h2 className="text-3xl lg:text-5xl font-bold text-slate-800 mb-4">
-            Engrant vs GrantStation: Which Is Better?
+            Engrant vs FundsforNGOs: Which Is Better?
           </h2>
           <p className="text-xl text-neutral-600 mb-4">A side-by-side comparison for nonprofit grant seekers in 2026</p>
           <p className="text-neutral-500 max-w-3xl mx-auto italic">
-            GrantStation is a solid budget option with useful educational resources. Here's how it compares to Engrant's AI-powered grant discovery:
+            fundsforNGOs is a strong budget option for NGOs wanting curated alerts and training materials. The structural difference: Engrant searches the live web; fundsforNGOs can only show you opportunities in their database.
           </p>
         </div>
         
@@ -289,7 +285,7 @@ const ComparisonTable = () => {
                 </span>
               </div>
               <div className="p-4 md:p-6">
-                <span className="font-semibold text-slate-600">GrantStation</span>
+                <span className="font-semibold text-slate-600">FundsforNGOs</span>
               </div>
             </div>
             
@@ -376,7 +372,7 @@ const KeyDifferences = () => {
                 Let AI do the searching — not your already-busy team
               </h2>
               <p className="text-lg text-neutral-600 mb-6 leading-relaxed">
-                With GrantStation, you navigate separate databases (US Charitable, US Federal, US State Government, Canadian, International), select keywords from dropdown menus, choose geographic filters, and manually review each result. It's straightforward — but it's manual work.
+                With FundsforNGOs, you navigate separate databases (US Charitable, US Federal, US State Government, Canadian, International), select keywords from dropdown menus, choose geographic filters, and manually review each result. It's straightforward — but it's manual work.
               </p>
               <p className="text-lg text-neutral-600 mb-6 leading-relaxed">
                 Engrant works differently. Enter your organization name or website URL. Our AI researches your mission, programs, geography, and characteristics automatically. Within minutes, you're reviewing grants that actually fit — not setting up search parameters across multiple databases.
@@ -436,7 +432,7 @@ const KeyDifferences = () => {
                 Every grant scored and evaluated — not just listed
               </h2>
               <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
-                GrantStation gives you funder names, locations, and brief descriptions. From there, you click into each profile to manually assess whether it's worth pursuing. That's how traditional databases work.
+                FundsforNGOs gives you funder names, locations, and brief descriptions. From there, you click into each profile to manually assess whether it's worth pursuing. That's how traditional databases work.
               </p>
               <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
                 Engrant evaluates every grant before showing it to you. Each result comes with:
@@ -483,7 +479,7 @@ const KeyDifferences = () => {
                 Search the entire web — not just 9,000 funders
               </h2>
               <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-                GrantStation curates a database of approximately 9,000 funders, focusing on active grantmakers. While curated quality matters, it means many opportunities are simply not in their system.
+                FundsforNGOs curates a database of approximately 9,000 funders, focusing on active grantmakers. While curated quality matters, it means many opportunities are simply not in their system.
               </p>
             </div>
             
@@ -492,7 +488,7 @@ const KeyDifferences = () => {
                 <div className="bg-slate-50 rounded-xl p-6 border border-slate-100">
                   <h3 className="font-semibold text-slate-700 mb-3 flex items-center">
                     <span className="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center mr-2 text-sm font-bold text-slate-600">GS</span>
-                    GrantStation
+                    FundsforNGOs
                   </h3>
                   <div className="text-3xl font-bold text-slate-600 mb-2">~9,000</div>
                   <p className="text-neutral-500 text-sm">curated funders in a static database</p>
@@ -510,7 +506,7 @@ const KeyDifferences = () => {
               </div>
               
               <p className="text-lg text-neutral-600 mb-4">
-                When a new RFP posts anywhere on the web, Engrant can find it immediately. With GrantStation, you're limited to what's in their curated database.
+                When a new RFP posts anywhere on the web, Engrant can find it immediately. With FundsforNGOs, you're limited to what's in their curated database.
               </p>
               <p className="text-teal-700 font-medium">
                 For time-sensitive grant deadlines, real-time discovery matters.
@@ -530,7 +526,7 @@ const KeyDifferences = () => {
               County and city-level matching — not just state
             </h2>
             <p className="text-lg text-neutral-600 leading-relaxed max-w-2xl mx-auto mb-4">
-              GrantStation's geographic filtering only goes to the state level. In a test for a Chicago-based nonprofit, this meant results for counties nowhere near Chicago — wasting time on irrelevant opportunities.
+              FundsforNGOs's geographic filtering only goes to the state level. In a test for a Chicago-based nonprofit, this meant results for counties nowhere near Chicago — wasting time on irrelevant opportunities.
             </p>
             <p className="text-lg text-teal-700 font-medium max-w-2xl mx-auto">
               Engrant checks geographic eligibility at the county and city level, ensuring you only see grants you can actually apply for based on where you operate.
@@ -556,7 +552,7 @@ const HonestAssessment = () => {
             Honest Comparison
           </div>
           <h2 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-4">
-            When GrantStation might be better vs. when Engrant is better
+            When fundsforNGOs is the better choice vs. when Engrant is better
           </h2>
           <p className="text-lg text-neutral-600">We believe in honest comparisons. Here's when each tool makes sense.</p>
         </div>
@@ -565,19 +561,18 @@ const HonestAssessment = () => {
           <div className="bg-slate-50 rounded-3xl p-8 border border-slate-100">
             <h3 className="text-xl font-bold text-slate-700 mb-6 flex items-center">
               <span className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center mr-3">
-                <span className="text-slate-600 font-bold text-sm">GS</span>
+                <span className="text-slate-600 font-bold text-sm">FfN</span>
               </span>
-              Use GrantStation if you:
+              When fundsforNGOs is the better choice
             </h3>
             <ul className="space-y-4">
               {[
-                "Have an extremely tight budget (under $200/year for grant tools)",
-                "Prefer hands-on research and enjoy browsing funder profiles",
-                "Want educational resources, webinars, and grant writing tutorials",
-                "Need access to US Federal and State Government grant databases",
-                "Are comfortable with manual keyword-based searching",
-                "Want a supplementary tool to use alongside a primary grant platform",
-                "Value the weekly GrantStation Insider newsletter for staying current"
+                "Your budget is extremely constrained — $199/year (developing countries) is the ceiling",
+                "You want broad funding awareness via curated email alerts, not deep org-specific search",
+                "You value proposal templates, webinars, and training materials included in membership",
+                "You're new to grant seeking and want a low-cost entry point with educational support",
+                "A human-maintained database plus donor directory is sufficient for your workflow",
+                "You're in a developing country and fundsforNGOs's tiered pricing fits your budget",
               ].map((item, index) => (
                 <li key={index} className="flex items-start gap-3 text-neutral-600">
                   <span className="w-1.5 h-1.5 bg-slate-400 rounded-full mt-2 flex-shrink-0"></span>
@@ -586,7 +581,7 @@ const HonestAssessment = () => {
               ))}
             </ul>
             <p className="text-neutral-500 text-sm mt-6 italic">
-              GrantStation's low price and educational resources make it a good starting point for nonprofits new to grant seeking.
+              fundsforNGOs at $199/year (developing countries) is genuinely cheaper than Engrant's $444/year annual tier. For budget-constrained NGOs wanting awareness plus training, it is often the right starting point.
             </p>
           </div>
           
@@ -599,13 +594,12 @@ const HonestAssessment = () => {
             </h3>
             <ul className="space-y-4">
               {[
-                "Are a solo development director who can't spend hours on manual searching",
-                "Want AI to find and evaluate grants — not just list them",
-                "Need fit scores, competition levels, and red flags for each grant",
-                "Want geographic matching at the county/city level, not just state",
-                "Are frustrated by databases that return too few or irrelevant results",
-                "Need real-time discovery from the entire web, not a fixed database",
-                "Value time savings — even if it costs more than a basic database"
+                "Need funders outside commercial database coverage — embassy programmes, regional foundations, corporate giving with no public portal",
+                "Want each result pre-evaluated for your specific organization — fit, eligibility, competition, red flags",
+                "Are frustrated that database-only tools miss funders their team hasn't catalogued",
+                "Need live-web discovery, not alerts from a fixed list",
+                "Want org-specific evaluation rather than listings to research yourself",
+                "Can justify $444/year (or $47/month) for discovery beyond any database's coverage",
               ].map((item, index) => (
                 <li key={index} className="flex items-start gap-3 text-neutral-700">
                   <Check className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
@@ -614,7 +608,7 @@ const HonestAssessment = () => {
               ))}
             </ul>
             <p className="text-teal-700 font-medium mt-6 italic">
-              Engrant costs more than GrantStation — but the hours saved on manual research typically pay for the difference many times over.
+              Engrant is not a price-beating alternative to fundsforNGOs — it is a capability upgrade for NGOs that have outgrown database-only discovery.
             </p>
           </div>
         </div>
@@ -701,38 +695,45 @@ const PricingComparison = () => {
             Pricing
           </div>
           <h2 className="text-3xl lg:text-5xl font-bold text-slate-800 mb-4">
-            How Much Does GrantStation Cost?
+            How Much Does FundsforNGOs Cost?
           </h2>
           <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            GrantStation is budget-friendly. The question is whether the time you spend on manual research costs more than the price difference.
+            Different models, different price points. Pricing checked August 2026 — this is a capability comparison, not a price-beating page.
           </p>
         </div>
         
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
-          {/* GrantStation Card */}
+          {/* FundsforNGOs Card */}
           <div className="bg-slate-50 rounded-3xl p-8 border border-slate-200">
-            <h3 className="text-xl font-bold text-slate-700 mb-6">GrantStation</h3>
+            <h3 className="text-xl font-bold text-slate-700 mb-6">FundsforNGOs</h3>
             
             <div className="space-y-4">
               <div className="bg-white rounded-xl p-5 border border-slate-100">
-                <div className="text-sm font-semibold text-slate-500 mb-1">ANNUAL MEMBERSHIP</div>
+                <div className="text-sm font-semibold text-slate-500 mb-1">DEVELOPING COUNTRIES</div>
                 <div className="flex items-baseline">
-                  <span className="text-3xl font-bold text-slate-700">~$199</span>
+                  <span className="text-3xl font-bold text-slate-700">$199</span>
                   <span className="text-neutral-500 ml-1">/year</span>
                 </div>
-                <p className="text-sm text-neutral-500 mt-1">(~$17/month equivalent)</p>
+                <p className="text-sm text-neutral-500 mt-1">Annual membership · 12 months from signup</p>
+              </div>
+
+              <div className="bg-white rounded-xl p-5 border border-slate-100">
+                <div className="text-sm font-semibold text-slate-500 mb-1">DEVELOPED COUNTRIES</div>
+                <div className="flex items-baseline">
+                  <span className="text-3xl font-bold text-slate-700">$399</span>
+                  <span className="text-neutral-500 ml-1">/year</span>
+                </div>
+                <p className="text-sm text-neutral-500 mt-1">Annual membership · 12 months from signup</p>
               </div>
               
               <div className="pt-4">
                 <p className="text-sm font-semibold text-slate-500 mb-3">WHAT'S INCLUDED:</p>
                 <div className="space-y-2">
                   {[
-                    "Access to ~9,000 funder database",
-                    "Manual keyword search across databases",
-                    "State-level geographic filtering",
-                    "Basic funder profiles & 990 data",
-                    "Educational resources & webinars",
-                    "GrantStation Insider newsletter",
+                    "Curated funding opportunity list with email alerts",
+                    "Donor directory with funding priorities and contacts",
+                    "Proposal templates and sample documents",
+                    "Webinars and training resources",
                   ].map((item, index) => (
                     <div key={index} className="flex items-center gap-2 text-sm text-neutral-600">
                       <Check className="w-4 h-4 text-slate-400 flex-shrink-0" />
@@ -746,11 +747,9 @@ const PricingComparison = () => {
                 <p className="text-sm font-semibold text-slate-500 mb-3">NOT INCLUDED:</p>
                 <div className="space-y-2">
                   {[
-                    "AI-powered matching or fit scoring",
-                    "Competition level indicators",
-                    "Red flags & eligibility warnings",
-                    "County/city geographic precision",
-                    "Real-time web search",
+                    "Live-web search beyond their database",
+                    "Org-specific fit scoring or eligibility evaluation",
+                    "Competition level or red flag analysis",
                   ].map((item, index) => (
                     <div key={index} className="flex items-center gap-2 text-sm text-neutral-500">
                       <X className="w-4 h-4 text-rose-300 flex-shrink-0" />
@@ -759,6 +758,13 @@ const PricingComparison = () => {
                   ))}
                 </div>
               </div>
+
+              <p className="text-sm text-neutral-500 italic">
+                Pricing checked August 2026 —{' '}
+                <a href="https://subscribetopremium.fundsforngos.org/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:underline">
+                  subscribetopremium.fundsforngos.org
+                </a>
+              </p>
             </div>
           </div>
           
@@ -775,14 +781,24 @@ const PricingComparison = () => {
                 Engrant
               </h3>
               
-              <div className="mb-6">
-                <div className="flex items-baseline">
-                  <span className="text-5xl font-bold text-slate-800">$47</span>
-                  <span className="text-xl text-neutral-500 ml-2">/month</span>
+              <div className="mb-6 space-y-4">
+                <div>
+                  <p className="text-sm font-semibold text-neutral-500 mb-2">Monthly</p>
+                  <div className="flex items-baseline">
+                    <span className="text-5xl font-bold text-slate-800">${PRICE_MONTHLY}</span>
+                    <span className="text-xl text-neutral-500 ml-2">/month</span>
+                  </div>
                 </div>
-                <p className="text-teal-600 font-medium mt-2">
-                  Or $37/month when billed annually ($444/year)
-                </p>
+                <div className="bg-teal-50 rounded-xl p-4 border border-teal-100">
+                  <p className="text-sm font-semibold text-teal-700 mb-1">Annual</p>
+                  <div className="flex items-baseline">
+                    <span className="text-3xl font-bold text-slate-800">${PRICE_ANNUAL_PER_MONTH}</span>
+                    <span className="text-neutral-500 ml-1">/month</span>
+                  </div>
+                  <p className="text-teal-600 font-medium mt-1">
+                    Billed annually (${PRICE_ANNUAL_TOTAL}/year)
+                  </p>
+                </div>
               </div>
               
               <div className="space-y-3 mb-8">
@@ -807,12 +823,12 @@ const PricingComparison = () => {
               </div>
               
               <a 
-                href="https://app.engrant.eu/?utm_source=grantstation_comparison&utm_medium=pricing&utm_campaign=pricing_cta"
+                href="https://app.engrant.eu/?utm_source=fundsforngos_comparison&utm_medium=pricing&utm_campaign=pricing_cta"
                 onClick={() => {
                   if (typeof window !== 'undefined' && window.gtag) {
                     window.gtag('event', 'cta_click', {
                       location: 'pricing',
-                      page: 'grantstation_comparison'
+                      page: 'fundsforngos_comparison'
                     });
                   }
                 }}
@@ -831,7 +847,7 @@ const PricingComparison = () => {
         <div className="mt-10 max-w-3xl mx-auto">
           <div className="bg-amber-50 border border-amber-100 rounded-xl p-6">
             <p className="text-amber-800 text-center font-medium leading-relaxed">
-              GrantStation costs less upfront (~$199/year vs $444/year). But if you spend <strong>5+ hours/week on manual research</strong>, Engrant's AI-powered matching can save you <strong>200+ hours per year</strong> — making the $245 difference a fraction of your time's value.
+              fundsforNGOs is <strong>cheaper</strong> for developing-country NGOs ($199/year vs ${'$'}{PRICE_ANNUAL_TOTAL}/year). Engrant is the upgrade when you need funders outside database coverage — each one pre-evaluated for your organization, not delivered as a listing to research.
             </p>
           </div>
         </div>
@@ -846,36 +862,32 @@ const FAQSection = () => {
 
   const faqs = [
     {
-      question: "How much does GrantStation cost?",
-      answer: "GrantStation membership costs approximately $199/year. This provides access to their curated database of ~9,000 funders, manual keyword search tools, basic funder profiles, 990-PF data, and educational resources including webinars and their weekly GrantStation Insider newsletter. The membership is annual — there's no monthly payment option."
+      question: "How much does fundsforNGOs cost?",
+      answer: `fundsforNGOs Premium costs $199/year for developing countries and $399/year for developed countries (checked August 2026 at subscribetopremium.fundsforngos.org). Membership is annual, valid 12 months from signup. It includes a curated funding opportunity list with email alerts, donor directory, proposal templates, and training resources. There is no monthly payment option.`
     },
     {
-      question: "What is the best alternative to GrantStation?",
-      answer: "For nonprofits who want AI-powered grant discovery instead of manual database searching, Engrant is the leading GrantStation alternative. At $47/month, Engrant automatically researches your organization and delivers 30-50 pre-evaluated grants with fit scores, competition levels, and red flag warnings. Unlike GrantStation's manual keyword search, Engrant requires no search parameter setup — just enter your organization name and the AI does the rest."
+      question: "What is the best alternative to fundsforNGOs?",
+      answer: `For NGOs that need live-web discovery with org-specific evaluation, Engrant is the leading fundsforNGOs alternative. At $${PRICE_MONTHLY}/month ($${PRICE_ANNUAL_TOTAL}/year billed annually), Engrant searches the live web for funders outside database coverage and returns each one pre-evaluated with fit scores, competition levels, and red flags.`
     },
     {
-      question: "What's the difference between GrantStation and Engrant?",
-      answer: "GrantStation is a traditional grant database (~$199/year) with approximately 9,000 curated funders that you search manually using keywords and filters. It's supplemented with educational resources and webinars. Engrant ($47/month) is an AI-powered grant discovery tool that automatically researches your organization and delivers pre-evaluated grants with fit scores, competition levels, geographic precision to the county level, and red flag warnings. GrantStation saves you money; Engrant saves you time."
+      question: "What's the difference between fundsforNGOs and Engrant?",
+      answer: "fundsforNGOs is a human-maintained curated database with email alerts and training materials — excellent value at $199/year for developing countries. Engrant searches the live web and returns each funder pre-evaluated for your specific organization. The structural difference: fundsforNGOs can only show opportunities in their database; Engrant is not limited to what any one database covers."
     },
     {
-      question: "Is GrantStation worth it for small nonprofits?",
-      answer: "GrantStation can be worth it as a budget starting point (~$199/year), especially for nonprofits that are new to grant seeking and value the educational resources. However, in a real-world comparison test by a grant consultant, GrantStation returned only 11 matches for a specific search — and several were geographically irrelevant because GrantStation only filters by state, not county or city. For nonprofits with limited staff time, AI-powered tools like Engrant ($47/month) often deliver better results faster, despite the higher price."
+      question: "When is fundsforNGOs the better choice?",
+      answer: "fundsforNGOs is the better choice when your budget is extremely constrained ($199/year in developing countries), you want broad funding awareness via curated alerts rather than deep org-specific search, and you value included proposal templates and webinars. Engrant is the upgrade when you need funders outside commercial database coverage."
     },
     {
-      question: "How many funders does GrantStation have in its database?",
-      answer: "GrantStation's database contains approximately 9,000 funders, curated across multiple databases including US Charitable, US Federal, US State Government, Canadian, and International. By comparison, larger platforms like Instrumentl claim 390,000+ funder profiles, and Engrant searches the entire live web rather than relying on a fixed database."
+      question: "Does fundsforNGOs have AI-powered grant matching?",
+      answer: "No. fundsforNGOs delivers curated listings and alerts from a human-maintained database. There is no AI matching, org-specific fit scoring, or automated eligibility screening. Engrant provides live-web search with pre-evaluation for each result."
     },
     {
-      question: "Does GrantStation have AI-powered grant matching?",
-      answer: "No. GrantStation uses traditional keyword and filter-based search. You manually select geographic scope, areas of interest, types of support, and funder types to generate results. There is no AI matching, fit scoring, competition level analysis, or automated eligibility screening. For AI-powered grant matching, alternatives include Engrant ($47/month) which automatically researches your organization and provides pre-evaluated results."
+      question: "Does Engrant work for NGOs outside the United States?",
+      answer: `Yes. ${GEOGRAPHY_SHORT}. Engrant is used by paying customers in Africa, Latin America, Europe, and beyond — including NGOs that previously relied on fundsforNGOs.`
     },
     {
-      question: "Can I filter GrantStation results by county or city?",
-      answer: "No. GrantStation's geographic filtering is limited to the state level. In a documented comparison test for a Chicago-based nonprofit, this limitation resulted in several irrelevant matches from counties far outside the Chicagoland area. Engrant offers county and city-level geographic matching, ensuring results are geographically relevant to where you operate."
-    },
-    {
-      question: "Can I use GrantStation and Engrant together?",
-      answer: "Yes. Some nonprofits use GrantStation for its educational resources, government grant databases, and weekly GrantStation Insider newsletter, while using Engrant for AI-powered private foundation and grant discovery. GrantStation serves well as a supplementary educational resource, while Engrant handles the heavy lifting of finding and evaluating relevant funding opportunities."
+      question: "Can I use fundsforNGOs and Engrant together?",
+      answer: "Yes. Some NGOs use fundsforNGOs for curated alerts and training materials at the lowest price point, while using Engrant for live-web discovery and org-specific evaluation. They serve different needs at different price points."
     }
   ];
 
@@ -887,7 +899,7 @@ const FAQSection = () => {
             Frequently Asked Questions
           </div>
           <h2 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-4">
-            Common Questions About GrantStation Alternatives
+            Common Questions About FundsforNGOs Alternatives
           </h2>
           <p className="text-lg text-neutral-600">
             Answers to help you choose the right grant discovery tool for your nonprofit.
@@ -931,40 +943,25 @@ const FAQSection = () => {
 const SourcesSection = () => {
   const sources = [
     {
-      title: "Instrumentl vs GrantStation Teardown",
-      url: "https://www.instrumentl.com/blog/grantstation-vs-instrumentl-teardown",
-      description: "Detailed real-world comparison of GrantStation and Instrumentl by a grant writing consultant, including result counts and geographic filtering limitations"
+      title: "fundsforNGOs Premium Pricing",
+      url: "https://subscribetopremium.fundsforngos.org/",
+      description: "Official pricing — $199/year developing countries, $399/year developed countries (checked August 2026)"
     },
     {
-      title: "GrantStation Official Website",
-      url: "https://grantstation.com",
-      description: "GrantStation's official platform with membership details, funder search, and educational resources"
+      title: "fundsforNGOs Support: Premium Membership",
+      url: "https://support.fundsforngos.org/hc/en-us/articles/360038724933-What-is-included-in-the-Premium-Membership-",
+      description: "What's included in Premium: curated list, email alerts, donor directory, templates, training"
     },
     {
-      title: "Instrumentl vs GrantStation Comparison",
-      url: "https://www.instrumentl.com/blog/grantstation-discount-code",
-      description: "Detailed comparison showing GrantStation's ~9,000 funders vs Instrumentl's 390,000+ and feature differences"
+      title: "fundsforNGOs Support: Membership Duration",
+      url: "https://support.fundsforngos.org/hc/en-us/articles/360039252294-How-long-is-my-Premium-Membership-valid-for-",
+      description: "Annual membership valid 12 months from signup"
     },
     {
-      title: "Grant Professionals Association: GrantStation Review",
-      url: "https://grantprofessionals.org/news/712761/More-than-a-Database-Unlocking-the-Many-Benefits-of-GrantStation.htm",
-      description: "Professional association review of GrantStation's features and benefits for grant writers"
+      title: "fundsforNGOs Official Website",
+      url: "https://www.fundsforngos.org/",
+      description: "fundsforNGOs platform for NGOs worldwide"
     },
-    {
-      title: "SOAR: How to Use Grant Databases",
-      url: "https://soar-ky.org/grant-databases/",
-      description: "Guide comparing GrantStation, GrantWatch, and Foundation Directory Online for nonprofits"
-    },
-    {
-      title: "Empower Change Consulting: Grant Platform Comparison",
-      url: "https://empowerchangeconsulting.com/2025/07/31/instrumentl-vs-candid-vs-grantstation-2025-which-grant-platform-fits-small-nonprofits/",
-      description: "2025 comparison of Instrumentl, Candid, and GrantStation for small nonprofits"
-    },
-    {
-      title: "TechSoup: How to Use GrantStation's Tools",
-      url: "https://www.youtube.com/watch?v=vuA452iB9z0",
-      description: "TechSoup tutorial on using GrantStation's grant seeking tools and features"
-    }
   ];
 
   return (
@@ -996,7 +993,7 @@ const SourcesSection = () => {
           ))}
         </ul>
         <p className="text-xs text-neutral-400 mt-6 italic">
-          Last updated: February 2026. Pricing and features may change; verify current information on official websites.
+          Last updated: August 2026. Pricing and features may change; verify current information on official websites.
         </p>
       </div>
     </section>
@@ -1030,12 +1027,12 @@ const FinalCTA = () => {
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
           <a 
-            href="https://app.engrant.eu/?utm_source=grantstation_comparison&utm_medium=cta&utm_campaign=final_cta"
+            href="https://app.engrant.eu/?utm_source=fundsforngos_comparison&utm_medium=cta&utm_campaign=final_cta"
             onClick={() => {
               if (typeof window !== 'undefined' && window.gtag) {
                 window.gtag('event', 'cta_click', {
                   location: 'final_cta',
-                  page: 'grantstation_comparison'
+                  page: 'fundsforngos_comparison'
                 });
               }
             }}
@@ -1076,7 +1073,7 @@ const FinalCTA = () => {
 };
 
 
-export default GrantStationComparisonPage;
+export default FundsforNGOsComparisonPage;
 
 export const Head = () => {
   const faqSchema = {
@@ -1085,68 +1082,68 @@ export const Head = () => {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How much does GrantStation cost?",
+        "name": "How much does fundsforNGOs cost?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "GrantStation membership costs approximately $199/year, providing access to ~9,000 curated funders, manual keyword search, basic funder profiles, 990-PF data, and educational resources including webinars and the weekly GrantStation Insider newsletter."
+          "text": "fundsforNGOs Premium costs $199/year for developing countries and $399/year for developed countries (checked August 2026). Annual membership includes curated funding alerts, donor directory, proposal templates, and training resources."
         }
       },
       {
         "@type": "Question",
-        "name": "What is the best alternative to GrantStation?",
+        "name": "What is the best alternative to fundsforNGOs?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "For nonprofits who want AI-powered grant discovery instead of manual database searching, Engrant is the leading GrantStation alternative at $47/month. It automatically researches your organization and delivers 30-50 pre-evaluated grants with fit scores, competition levels, and red flag warnings."
+          "text": "For NGOs needing live-web discovery with org-specific evaluation, Engrant is the leading fundsforNGOs alternative at $47/month ($444/year billed annually). It searches the live web for funders outside database coverage."
         }
       },
       {
         "@type": "Question",
-        "name": "What's the difference between GrantStation and Engrant?",
+        "name": "What's the difference between fundsforNGOs and Engrant?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "GrantStation is a traditional grant database (~$199/year) with ~9,000 curated funders searched manually. Engrant ($47/month) is an AI-powered discovery tool that searches the live web and delivers pre-evaluated grants with fit scores, competition levels, and red flags. GrantStation saves money; Engrant saves time."
+          "text": "fundsforNGOs is a human-maintained curated database with email alerts ($199/year developing countries). Engrant searches the live web and returns each funder pre-evaluated for your organization. fundsforNGOs is bounded by what its database covers; Engrant is not limited to what any one database covers."
         }
       },
       {
         "@type": "Question",
-        "name": "Is GrantStation worth it for small nonprofits?",
+        "name": "When is fundsforNGOs the better choice?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "GrantStation is a budget starting point at ~$199/year with useful educational resources. However, in real-world testing it returned only 11 matches for a specific search, and geographic filtering is limited to state level. For nonprofits with limited staff time, AI-powered tools like Engrant ($47/month) often deliver better results faster."
+          "text": "fundsforNGOs is the better choice when budget is extremely constrained, you want curated alerts plus training materials, and a human-maintained database is sufficient. Engrant is the upgrade for live-web discovery beyond database coverage."
         }
       },
       {
         "@type": "Question",
-        "name": "Does GrantStation have AI-powered grant matching?",
+        "name": "Does fundsforNGOs have AI-powered grant matching?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. GrantStation uses traditional keyword and filter-based search. There is no AI matching, fit scoring, competition level analysis, or automated eligibility screening. For AI-powered grant matching, Engrant ($47/month) automatically researches your organization and provides pre-evaluated results."
+          "text": "No. fundsforNGOs delivers curated listings and alerts from a human-maintained database without org-specific AI fit scoring or eligibility evaluation."
         }
       }
     ]
   };
 
   const productSchema = buildProductSchema({
-    description: 'AI-powered grant discovery platform for nonprofits. Find 30-50 highly relevant grants with fit scores, competition levels, and red flags.',
+    description: 'AI-powered grant discovery for NGOs worldwide. Live-web search with org-specific pre-evaluation.',
     offers: [buildMonthlyOffer(), buildAnnualOffer()],
   });
 
   return (
     <>
-      <title>GrantStation Alternative for Nonprofits | Engrant vs GrantStation (2026)</title>
+      <title>fundsforNGOs Alternative | Engrant vs fundsforNGOs (2026)</title>
       <meta 
         name="description" 
-        content="Compare Engrant vs GrantStation for nonprofit grant discovery. GrantStation: ~$199/year manual database with 9,000 funders. Engrant: $47/month AI-powered matching with fit scores and real-time web search." 
+        content="Compare Engrant vs fundsforNGOs for NGO grant discovery. fundsforNGOs: $199/year curated database + alerts. Engrant: live-web search with org-specific fit evaluation at $47/month." 
       />
       <meta 
         name="keywords" 
-        content="GrantStation alternative, GrantStation cost, GrantStation pricing, GrantStation vs Engrant, grant database for nonprofits, AI grant matching, GrantStation review, is GrantStation worth it" 
+        content="fundsforNGOs alternative, fundsforNGOs vs Engrant, NGO grant database, international grant search, AI grant matching, fundsforNGOs pricing" 
       />
-      <link rel="canonical" href="https://engrant.eu/compare/grantstation/" />
+      <link rel="canonical" href="https://engrant.eu/compare/fundsforngos/" />
       <OgTwitterMeta
-        title="GrantStation Alternative: Engrant vs GrantStation Comparison"
-        description="Stop manually searching 9,000 funders. Get AI-powered grant discovery with fit scores and competition levels."
-        url="https://engrant.eu/compare/grantstation/"
+        title="fundsforNGOs Alternative: Engrant vs fundsforNGOs Comparison"
+        description="Curated database alerts vs live-web discovery. Honest capability comparison for international NGOs."
+        url="https://engrant.eu/compare/fundsforngos/"
       />
       <script type="application/ld+json">
         {JSON.stringify(faqSchema)}

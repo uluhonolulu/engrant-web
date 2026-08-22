@@ -21,7 +21,7 @@ const FAQ = () => {
     },
     {
       question: "How is this different from other grant databases?",
-      answer: "A database only contains what someone chose to index, and you still do all the filtering yourself. Engrant researches the live web and returns eligible grants with the analysis already done — including opportunities no single database lists."
+      answer: "A database only contains what someone chose to include, and you still do all the filtering yourself. Engrant researches the live web and returns eligible grants with the analysis already done — including opportunities no single database lists."
     },
     {
       question: "How does the AI understand my nonprofit?",

@@ -1,21 +1,20 @@
 import React from 'react';
 import heroLcpImage from '../images/Engrant-condensed.png';
 import homepageFaqData from '../data/homepageFaqData';
+import { ONE_LINE_DEFINITION } from '../constants/positioning';
 import { buildFaqSchema, OgTwitterMeta } from '../utils/seoMeta';
 import '../styles/shared.css';
 import Header from '../components/homepage/Header';
 import Hero from '../components/homepage/Hero';
-import PainPoints from '../components/homepage/PainPoints';
+import RecentGrantsCarousel from '../components/ngo-search/RecentGrantsCarousel';
+import DiscoveryCaseStudy from '../components/homepage/DiscoveryCaseStudy';
 import WhyNow from '../components/homepage/WhyNow';
-import Solution from '../components/homepage/Solution';
 import HowItWorks from '../components/homepage/HowItWorks';
 import ValueComparison from '../components/homepage/ValueComparison';
-import Pricing from '../components/homepage/Pricing';
-import WhoThisIsFor from '../components/homepage/WhoThisIsFor';
-import Trust from '../components/homepage/Trust';
-import Testimonials from '../components/homepage/Testimonials';
-import RecentGrantsCarousel from '../components/ngo-search/RecentGrantsCarousel';
+import AlsoIncluded from '../components/homepage/AlsoIncluded';
 import LoomVideo from '../components/ngo-search/LoomVideo';
+import Pricing from '../components/homepage/Pricing';
+import Testimonials from '../components/homepage/Testimonials';
 import FAQ from '../components/homepage/FAQ';
 import FinalCTA from '../components/homepage/FinalCTA';
 import Footer from '../components/Footer';
@@ -25,20 +24,18 @@ const HomePage = () => {
     <div className="bg-[#fffbf5] text-neutral-700 min-h-screen">
         <Header />
         <Hero />
-        <PainPoints />
-        <WhyNow />
-        <Solution />
-        <HowItWorks />
-        <LoomVideo />
-        <ValueComparison />
-        <Pricing />
-        <WhoThisIsFor />
-        <Trust />
-        <Testimonials />
         <RecentGrantsCarousel />
+        <DiscoveryCaseStudy />
+        <WhyNow />
+        <HowItWorks />
+        <ValueComparison />
+        <AlsoIncluded />
+        <LoomVideo />
+        <Pricing />
+        <Testimonials />
         <FAQ />
         <FinalCTA />
-        <Footer tagline="AI-powered grant research for nonprofit professionals" />
+        <Footer tagline={ONE_LINE_DEFINITION} />
     </div>
   );
 };
@@ -46,9 +43,8 @@ const HomePage = () => {
 export default HomePage;
 
 export const Head = () => {
-  const pageTitle = 'Pre-Evaluated Grant Opportunities for Nonprofit Professionals | Engrant';
-  const pageDescription =
-    "30–50 vetted grants per search — not 400 to sift through. Engrant's AI evaluates each opportunity with fit analysis, red flags, and strategic considerations. Built for freelance grant writers and nonprofit development staff. $47/month. Try free for 14 days.";
+  const pageTitle = 'Find Funders Not in Any Grant Database | Engrant';
+  const pageDescription = ONE_LINE_DEFINITION;
   const canonicalUrl = 'https://engrant.eu/';
 
   return (

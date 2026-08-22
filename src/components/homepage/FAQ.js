@@ -37,7 +37,7 @@ const FAQ = () => {
                 </div>
               </button>
               <div className={`overflow-hidden transition-all duration-300 ${
-                openItems.has(index) ? 'max-h-96' : 'max-h-0'
+                openItems.has(index) ? 'max-h-[800px]' : 'max-h-0'
               }`}>
                 <div className="px-8 pb-6 text-neutral-600 leading-relaxed border-t border-neutral-100 pt-4">
                   {item.answer}

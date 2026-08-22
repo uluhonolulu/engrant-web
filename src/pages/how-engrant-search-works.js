@@ -86,7 +86,7 @@ const Hero = () => {
         </h1>
 
         <p className="text-xl lg:text-2xl text-neutral-600 mb-10 leading-relaxed font-normal max-w-3xl mx-auto">
-          Engrant deploys parallel AI research agents — each approaching your funding landscape from a different angle — and cross-references the results to surface 3–5× more opportunities than a single search.
+          Engrant deploys parallel AI research agents — each approaching your funding landscape from a different angle — and cross-references the results to surface funders that keyword searches and fixed databases miss.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
@@ -135,7 +135,7 @@ const ShortAnswer = () => {
             {[
               'Most grant tools run one search. Engrant runs many — simultaneously, with different strategies.',
               'Direct-match agents find obvious funders in your field. Lateral-reasoning agents find the ones nobody else would think to look for.',
-              'Any single agent finds only 20–30% of viable opportunities. Multiple agents together find 3–5× more.',
+              'A single agent follows one line of enquiry. Parallel agents working mission, geography, funder type, and eligibility still surface funders that match on only one dimension.',
               'Every result is validated against the funder\'s live grant page before you see it.',
               'You get a ranked shortlist of verified, open grants — not a raw database dump.',
             ].map((point, i) => (
@@ -291,36 +291,19 @@ const WhyMultipleAgents = () => {
             <div className="flex-shrink-0 w-12 h-12 bg-teal-600 text-white rounded-full flex items-center justify-center">
               <BarChart3 className="w-6 h-6" />
             </div>
-            <h2 className="text-3xl font-bold text-slate-800 m-0">Why Running Multiple Agents Finds 3–5× More Grants</h2>
+            <h2 className="text-3xl font-bold text-slate-800 m-0">Why parallel agents find more</h2>
           </div>
 
           <p className="text-lg text-neutral-700 leading-relaxed mb-6">
-            No single search — no matter how sophisticated — finds everything. In testing, any individual agent run finds only about <strong className="text-slate-800">20–30% of total viable funding opportunities</strong>. The remaining 70–80% are unique to other runs.
+            A keyword search returns what matches your words. It misses funders who describe the same work differently — a foundation funding &quot;economic mobility&quot; won&apos;t surface for &quot;job training,&quot; and a foundation that doesn&apos;t publish a searchable programme page won&apos;t surface at all.
           </p>
 
           <p className="text-lg text-neutral-700 leading-relaxed mb-6">
-            This isn't random variation. Each agent follows a <em>different chain of reasoning</em>, explores different search terms, and discovers different corners of the funding landscape. By running multiple agents in parallel and deduplicating the results, Engrant consistently uncovers significantly more relevant funders than any single search.
+            A single AI agent does better, but it runs one line of enquiry at a time and stops when it has something plausible.
           </p>
 
-          <div className="bg-white rounded-xl border border-neutral-200 overflow-hidden my-8">
-            <div className="grid grid-cols-2 bg-neutral-100 border-b border-neutral-200">
-              <div className="px-6 py-3 text-sm font-bold text-neutral-600 uppercase tracking-wide">Approach</div>
-              <div className="px-6 py-3 text-sm font-bold text-neutral-600 uppercase tracking-wide">% of Opportunities Found</div>
-            </div>
-            {[
-              { approach: 'Single keyword search', pct: '10–20%', highlight: false },
-              { approach: 'Single AI agent run', pct: '20–30%', highlight: false },
-              { approach: 'Engrant (parallel multi-agent)', pct: '80–95%', highlight: true },
-            ].map(({ approach, pct, highlight }, i) => (
-              <div key={i} className={`grid grid-cols-2 border-b border-neutral-100 last:border-0 ${highlight ? 'bg-teal-50' : ''}`}>
-                <div className={`px-6 py-4 text-base ${highlight ? 'font-semibold text-teal-800' : 'text-neutral-700'}`}>{approach}</div>
-                <div className={`px-6 py-4 text-base font-semibold ${highlight ? 'text-teal-700' : 'text-neutral-600'}`}>{pct}</div>
-              </div>
-            ))}
-          </div>
-
-          <p className="text-lg text-neutral-700 leading-relaxed">
-            The parallel multi-agent approach is the core reason Engrant surfaces funding opportunities that months of traditional manual research often miss entirely.
+          <p className="text-lg text-neutral-700 leading-relaxed mb-6">
+            Engrant runs specialised agents in parallel — one working the mission angle, one the geography, one the funder type, one the eligibility constraints — so a funder that only matches on one dimension still surfaces. That&apos;s how embassy small-grants programmes, regional foundations, and corporate giving with no public application portal end up in results.
           </p>
 
         </div>
@@ -403,7 +386,7 @@ const ValidationStep = () => {
 const ComparisonTable = () => {
   const rows = [
     { feature: 'Search strategy', keyword: 'Single keyword query', database: 'Keyword + filters', engrant: 'Parallel multi-agent AI' },
-    { feature: 'Coverage', keyword: '10–20% of viable grants', database: '20–40% of viable grants', engrant: '80–95% of viable grants' },
+    { feature: 'Coverage boundary', keyword: 'Limited to search terms', database: 'Limited to listed funders', engrant: 'Live web — not limited to what any one database covers' },
     { feature: 'Lateral / indirect funders', keyword: 'No', database: 'Rarely', engrant: 'Yes — core feature' },
     { feature: 'Live grant validation', keyword: 'No', database: 'No', engrant: 'Yes — every result' },
     { feature: 'Results ranked by fit', keyword: 'No', database: 'Partial', engrant: 'Yes' },
@@ -463,7 +446,7 @@ const FAQ = () => {
     },
     {
       q: 'How many more grants does Engrant find compared to a single search?',
-      a: 'In testing, any single agent run surfaces only 20–30% of total viable opportunities. By running multiple agents in parallel with different strategies, Engrant consistently finds 3–5× more relevant funders than a single search. Each agent discovers a unique slice of the funding landscape.',
+      a: 'A single search — keyword, database filter, or one AI agent — follows one line of enquiry. Engrant runs specialised agents in parallel (mission, geography, funder type, eligibility), so funders that only match on one dimension still surface. Embassy programmes, regional foundations, and corporate giving with no public portal are typical examples of what parallel search finds that single-query approaches miss.',
     },
     {
       q: 'Does Engrant verify that grants are still open and accepting applications?',
@@ -602,7 +585,7 @@ export const Head = () => {
         name: 'How many more grants does Engrant find compared to a single search?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Any single agent run surfaces only 20–30% of total viable opportunities. By running multiple agents in parallel, Engrant consistently finds 3–5× more relevant funders than a single search.',
+          text: 'A single search follows one line of enquiry. Engrant runs specialised agents in parallel (mission, geography, funder type, eligibility), surfacing funders that keyword searches and fixed databases miss — including embassy programmes and regional foundations.',
         },
       },
       {
@@ -637,7 +620,7 @@ export const Head = () => {
       <title>How Engrant Finds Grants: Multi-Agent AI Search Explained | Engrant</title>
       <meta
         name="description"
-        content="Engrant uses parallel AI research agents — direct-match and lateral-reasoning — to find 3–5× more grant opportunities than a single search. Every result is validated live before you see it."
+        content="Engrant uses parallel AI research agents — direct-match and lateral-reasoning — to surface funders that keyword searches and fixed databases miss. Every result is validated live before you see it."
       />
       <meta
         name="keywords"
@@ -646,7 +629,7 @@ export const Head = () => {
       <link rel="canonical" href="https://engrant.eu/how-engrant-search-works/" />
       <OgTwitterMeta
         title="How Engrant Finds Grants: Multi-Agent AI Search Explained | Engrant"
-        description="Engrant uses parallel AI research agents — direct-match and lateral-reasoning — to find 3–5× more grant opportunities than a single search. Every result is validated live before you see it."
+        description="Engrant uses parallel AI research agents — direct-match and lateral-reasoning — to surface funders that keyword searches and fixed databases miss. Every result is validated live before you see it."
         url="https://engrant.eu/how-engrant-search-works/"
       />
       <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

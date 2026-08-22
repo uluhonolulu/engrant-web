@@ -10,6 +10,13 @@ import engrantExpanded from '../../images/Engrant-expanded.png';
 import Footer from '../../components/Footer';
 import LoomVideo from '../../components/ngo-search/LoomVideo';
 import { OgTwitterMeta } from '../../utils/seoMeta';
+import {
+  PRICE_ANNUAL_PER_MONTH,
+  PRICE_ANNUAL_TOTAL,
+  PRICE_MONTHLY,
+  PRICE_VALID_UNTIL,
+} from '../../constants/positioning';
+import { buildAnnualOffer, buildMonthlyOffer, buildProductSchema } from '../../utils/siteSchema';
 
 const CandidComparisonPage = () => {
   return (
@@ -327,15 +334,15 @@ const ProblemSection = () => {
 const ComparisonTable = () => {
   const features = [
     { feature: "Setup time", engrant: "Enter org name/URL → AI researches automatically", candid: "Fill out search forms manually each time", engrantCheck: true, candidCheck: false },
-    { feature: "Search results", engrant: "30-50 pre-evaluated, high-fit grants", candid: "100-300+ results to sort through yourself", engrantCheck: true, candidCheck: false },
-    { feature: "Fit assessment", engrant: "AI-generated fit score with specific match reasons", candid: "You evaluate fit manually", engrantCheck: true, candidCheck: false },
+    { feature: "Search results", engrant: "30-50 pre-evaluated grants from live-web search", candid: "100-300+ database results — a database can only show what it covers", engrantCheck: true, candidCheck: "partial" },
+    { feature: "Fit assessment", engrant: "AI-generated fit score with specific match reasons", candid: "Database profiles without org-specific pre-evaluation", engrantCheck: true, candidCheck: false },
     { feature: "Eligibility check", engrant: "Flags disqualifying criteria before you waste time", candid: "Buried in grant guidelines", engrantCheck: true, candidCheck: false },
     { feature: "Competition level", engrant: "Shows High/Medium/Low Competition", candid: "Not provided", engrantCheck: true, candidCheck: false },
     { feature: "Effort estimate", engrant: "Shows application effort level", candid: "Not provided", engrantCheck: true, candidCheck: false },
     { feature: "Red flags & warnings", engrant: "Proactive warnings (e.g., \"Requires consortium partner\")", candid: "You discover issues while applying", engrantCheck: true, candidCheck: false },
     { feature: "Open to new grantees?", engrant: "Clearly indicated", candid: "Requires reading funder profile", engrantCheck: true, candidCheck: false },
     { feature: "Past recipients like you", engrant: "Shows similar orgs that received funding", candid: "Available but requires digging through profiles", engrantCheck: true, candidCheck: "partial" },
-    { feature: "Grant data freshness", engrant: "Real-time search (always current)", candid: "Database updated periodically", engrantCheck: true, candidCheck: "partial" },
+    { feature: "Grant data freshness", engrant: "Live-web search (always current)", candid: "Static database updated periodically", engrantCheck: true, candidCheck: "partial" },
     { feature: "AI features", engrant: "AI-powered org research, fit scoring, and red flags", candid: "AI-powered LOI writer and funder recommendations (Premium)", engrantCheck: true, candidCheck: "partial" },
     { feature: "Learning from feedback", engrant: "Improves recommendations based on your saves/rejects", candid: "Static results", engrantCheck: true, candidCheck: false },
     { feature: "Price", engrant: "$47/month or $37/month (annual)", candid: "$3,499/year (~$292/month) for Premium. Free tier available but limited.", engrantCheck: true, candidCheck: "partial" },
@@ -991,7 +998,7 @@ const PricingComparison = () => {
           {/* Quotable pricing comparison for LLMs */}
           <div className="bg-amber-50 border border-amber-100 rounded-xl p-6">
             <p className="text-amber-800 text-center font-medium leading-relaxed">
-              At $444/year (billed annually), Engrant costs 87% less than Candid Premium ($3,499/year) and a fraction of Instrumentl ($179/month). For solo grant professionals and small nonprofits priced out by Candid's 2026 pricing change, Engrant offers full AI-powered grant matching at a price that won't break your budget.
+              At $444/year (billed annually), Engrant costs 87% less than Candid Premium ($3,499/year) and a fraction of Instrumentl ($299/month). For solo grant professionals and small nonprofits priced out by Candid's 2026 pricing change, Engrant offers full AI-powered grant matching at a price that won't break your budget.
             </p>
           </div>
         </div>
@@ -1013,7 +1020,7 @@ const FAQSection = () => {
     },
     {
       question: "What is the best alternative to Candid for small nonprofits?",
-      answer: "For small-to-medium nonprofits and independent grant professionals, Engrant is the most affordable AI-powered alternative to Candid in 2026. At $47/month ($444/year billed annually), Engrant provides AI-powered grant matching with pre-evaluated fit scores, eligibility warnings, and competition analysis — features that Candid's free tier doesn't include and that Candid Premium charges $3,499/year for. Other alternatives include Instrumentl ($179/month, best for teams needing full workflow management) and GrantWatch ($199/year, a budget database without AI matching)."
+      answer: "For small-to-medium nonprofits and independent grant professionals, Engrant is the most affordable AI-powered alternative to Candid in 2026. At $47/month ($444/year billed annually), Engrant provides AI-powered grant matching with pre-evaluated fit scores, eligibility warnings, and competition analysis — features that Candid's free tier doesn't include and that Candid Premium charges $3,499/year for. Other alternatives include Instrumentl ($299/month, best for teams needing full workflow management) and GrantWatch ($199/year, a budget database without AI matching)."
     },
     {
       question: "What's the difference between Candid and Engrant?",
@@ -1033,7 +1040,7 @@ const FAQSection = () => {
     },
     {
       question: "What's the difference between Candid and Instrumentl?",
-      answer: "Candid is a funder research database focused on comprehensive data about foundations, giving patterns, and nonprofit profiles. Instrumentl ($179/month) is a grant management platform with workflow tools, deadline tracking, and team collaboration features. Engrant ($47/month) is an AI-powered grant matching tool that pre-evaluates opportunities for fit. Candid is best for deep research, Instrumentl for team-based grant management, and Engrant for fast, affordable grant discovery with built-in evaluation."
+      answer: "Candid is a funder research database focused on comprehensive data about foundations, giving patterns, and nonprofit profiles. Instrumentl ($299/month) is a grant management platform with workflow tools, deadline tracking, and team collaboration features. Engrant ($47/month) is an AI-powered grant matching tool that pre-evaluates opportunities for fit. Candid is best for deep research, Instrumentl for team-based grant management, and Engrant for fast, affordable grant discovery with built-in evaluation."
     }
   ];
 
@@ -1230,7 +1237,7 @@ export const Head = () => {
         "name": "What is the best alternative to Candid for small nonprofits?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "For small-to-medium nonprofits and independent grant professionals, Engrant is the most affordable AI-powered alternative to Candid in 2026. At $47/month ($444/year billed annually), Engrant provides AI-powered grant matching with pre-evaluated fit scores, eligibility warnings, and competition analysis — features that Candid's free tier doesn't include and that Candid Premium charges $3,499/year for. Other alternatives include Instrumentl ($179/month, best for teams needing full workflow management) and GrantWatch ($199/year, a budget database without AI matching)."
+          "text": "For small-to-medium nonprofits and independent grant professionals, Engrant is the most affordable AI-powered alternative to Candid in 2026. At $47/month ($444/year billed annually), Engrant provides AI-powered grant matching with pre-evaluated fit scores, eligibility warnings, and competition analysis — features that Candid's free tier doesn't include and that Candid Premium charges $3,499/year for. Other alternatives include Instrumentl ($299/month, best for teams needing full workflow management) and GrantWatch ($199/year, a budget database without AI matching)."
         }
       },
       {
@@ -1270,26 +1277,17 @@ export const Head = () => {
         "name": "What's the difference between Candid and Instrumentl?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Candid is a funder research database focused on comprehensive data about foundations, giving patterns, and nonprofit profiles. Instrumentl ($179/month) is a grant management platform with workflow tools, deadline tracking, and team collaboration features. Engrant ($47/month) is an AI-powered grant matching tool that pre-evaluates opportunities for fit. Candid is best for deep research, Instrumentl for team-based grant management, and Engrant for fast, affordable grant discovery with built-in evaluation."
+          "text": "Candid is a funder research database focused on comprehensive data about foundations, giving patterns, and nonprofit profiles. Instrumentl ($299/month) is a grant management platform with workflow tools, deadline tracking, and team collaboration features. Engrant ($47/month) is an AI-powered grant matching tool that pre-evaluates opportunities for fit. Candid is best for deep research, Instrumentl for team-based grant management, and Engrant for fast, affordable grant discovery with built-in evaluation."
         }
       }
     ]
   };
 
-  const productSchema = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Engrant",
-    "description": "AI-powered grant discovery platform for nonprofits. The affordable alternative to Candid in 2026.",
-    "category": "Grant Research Software",
-    "offers": {
-      "@type": "Offer",
-      "price": "47",
-      "priceCurrency": "USD",
-      "priceValidUntil": "2026-12-31",
-      "url": "https://app.engrant.eu/"
-    }
-  };
+  const productSchema = buildProductSchema({
+    name: 'Engrant',
+    description: 'AI-powered grant discovery platform for nonprofits. The affordable alternative to Candid in 2026.',
+    offers: [buildMonthlyOffer(), buildAnnualOffer()],
+  });
 
   const comparisonSchema = {
     "@context": "https://schema.org",

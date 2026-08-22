@@ -37,7 +37,7 @@ const Solution = () => {
                 </div>
                 <div>
                   <div className="font-semibold text-slate-800 text-lg">The whole web, not a database</div>
-                  <div className="text-neutral-500">Live research, not a static index someone else built</div>
+                  <div className="text-neutral-500">Live research, not a fixed database someone else built</div>
                 </div>
               </div>
               <div className="flex items-start group">

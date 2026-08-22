@@ -43,9 +43,9 @@ const BuscarConvocatoriasPage = () => {
 export default BuscarConvocatoriasPage;
 
 export const Head = () => {
-  const pageTitle = 'Encuentra las convocatorias que te corresponden | Engrant';
+  const pageTitle = 'Encuentra financiadores que no están en ninguna base de datos | Engrant';
   const pageDescription =
-    'Engrant investiga toda la web y te muestra convocatorias vigentes para tu organización: elegibilidad, cómo postular y fechas. $47/mes. Prueba gratis 14 días.';
+    'Engrant es una herramienta de investigación de subvenciones con IA que encuentra financiadores que no están en ninguna base de datos comercial y devuelve cada uno pre-evaluado por idoneidad, elegibilidad, competencia y señales de alerta. Cobertura mundial.';
   const canonicalUrl = 'https://engrant.eu/buscar-convocatorias/';
 
   return (
@@ -54,6 +54,9 @@ export const Head = () => {
       <title>{pageTitle}</title>
       <meta name="description" content={pageDescription} />
       <link rel="canonical" href={canonicalUrl} />
+      <link rel="alternate" hreflang="en" href="https://engrant.eu/ngo-search/" />
+      <link rel="alternate" hreflang="es" href="https://engrant.eu/buscar-convocatorias/" />
+      <link rel="alternate" hreflang="x-default" href="https://engrant.eu/ngo-search/" />
       <OgTwitterMeta title={pageTitle} description={pageDescription} url={canonicalUrl} />
       <meta property="og:locale" content="es_LA" />
       <link rel="preload" as="image" href={heroLcpImage} />

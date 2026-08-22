@@ -10,10 +10,10 @@ const ValueComparison = () => {
             Compare
           </div>
           <h2 className="text-3xl lg:text-5xl font-bold text-slate-800">
-            The Engrant Advantage
+            Where the other options stop
           </h2>
         </div>
-        
+
         <div id="comparison-table" className="rounded-3xl overflow-hidden warm-shadow-lg">
           <div className="grid md:grid-cols-2">
             <div className="bg-slate-50 p-10 border-b md:border-b-0 md:border-r border-slate-100">
@@ -26,7 +26,7 @@ const ValueComparison = () => {
                 </h3>
               </div>
               <p className="text-neutral-600 leading-relaxed">
-                Comprehensive lists — but you do all the vetting yourself, you're limited to what they've indexed, and they're priced and built for bigger teams.
+                Comprehensive within what they cover — but a funder they don&apos;t contain doesn&apos;t exist to you. Priced and built for teams with research staff.
               </p>
             </div>
 
@@ -40,7 +40,7 @@ const ValueComparison = () => {
                 </h3>
               </div>
               <p className="text-neutral-600 leading-relaxed">
-                Free, but it eats 6–8 hours a week and often surfaces only a handful of viable opportunities.
+                Free, and bounded by how many funder sites you can personally open in a week.
               </p>
             </div>
 
@@ -54,7 +54,7 @@ const ValueComparison = () => {
                 </h3>
               </div>
               <p className="text-neutral-600 leading-relaxed">
-                Fast and conversational — but it invents grants that don't exist, cites programs that closed years ago, can't verify eligibility, and forgets everything about your client between sessions.
+                Fast and conversational — but it invents grants that don&apos;t exist, cites programmes that closed years ago, can&apos;t verify eligibility, and forgets everything about your client between sessions.
               </p>
             </div>
 
@@ -68,7 +68,7 @@ const ValueComparison = () => {
                 </h3>
               </div>
               <p className="text-neutral-700 font-medium leading-relaxed">
-                Searches the live web (not a static index), pre-evaluates every grant for fit, eligibility, competition, and red flags, and remembers each client's constraints. Built and priced for solo pros and boutique shops.
+                Runs parallel search agents across the live web, so results aren&apos;t limited to what any one database covers — which is how embassy small-grants programmes, regional foundations, and corporate giving with no public application portal end up in results. Each one arrives pre-evaluated for fit, eligibility, competition, and red flags. Remembers each organization&apos;s constraints.
               </p>
             </div>
           </div>

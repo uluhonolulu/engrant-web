@@ -2,34 +2,61 @@ import React from 'react';
 import '../styles/shared.css';
 import logo from '../images/logo-horizontal-remove-background.com.png';
 import Footer from '../components/Footer';
+import {
+  AUDIENCE,
+  GEOGRAPHY,
+  MECHANISM,
+  ONE_LINE_DEFINITION,
+  PRICE_ANNUAL_PER_MONTH,
+  PRICE_ANNUAL_TOTAL,
+  PRICE_MONTHLY,
+  PRICE_VALID_UNTIL,
+} from '../constants/positioning';
+import {
+  buildAnnualOffer,
+  buildMonthlyOffer,
+  buildProductSchema,
+} from '../utils/siteSchema';
 import { buildFaqSchema, OgTwitterMeta } from '../utils/seoMeta';
 
 const PRICING_FAQ = [
   {
     question: 'How much does Engrant cost?',
-    answer:
-      'Engrant costs $47/month with a 14-day free trial. No credit card is required to start. You get unlimited organizations, unlimited searches, fit analysis, strategic notes, and proposal drafting support. Cancel anytime.',
+    answer: `Engrant costs $${PRICE_MONTHLY}/month, or $${PRICE_ANNUAL_PER_MONTH}/month billed annually ($${PRICE_ANNUAL_TOTAL}/year). Both tiers include unlimited searches, unlimited organization profiles, and all features. 14-day free trial, no credit card required. Pricing guaranteed through ${PRICE_VALID_UNTIL}.`,
   },
   {
     question: 'What is included in the Engrant plan?',
     answer:
-      'The Grant Research Pro plan includes unlimited grant searches, AI fit analysis, eligibility signals, red flag warnings, competition levels, pipeline export, and AI-assisted proposal drafts. Pipeline export and Word funding strategy reports are included at no extra cost.',
+      'Both tiers include unlimited grant searches, 30-50 pre-evaluated grants per search, AI fit analysis, eligibility signals, red flag warnings, pipeline events in your calendar, proposal drafting help, pipeline export, and priority email support.',
   },
   {
     question: 'How does Engrant compare to GrantStation or Instrumentl?',
     answer:
-      'GrantStation (~$199/year) and Instrumentl ($179–899/month) are database or workflow platforms you search manually. Engrant ($47/month) uses AI to research your organization and return 30–50 pre-evaluated grants with fit scores — so you spend less time filtering and more time applying.',
+      'Grant databases search their own listings. Engrant searches the live web and returns each funder pre-evaluated for your organization. Instrumentl starts at $299/month (checked August 2026). GrantStation full access is ~$894/year. Engrant is $47/month or $444/year.',
   },
   {
     question: 'Is there a free trial?',
     answer:
-      'Yes. Engrant offers a 14-day free trial with no credit card required. You can run unlimited searches and evaluate fit analysis before subscribing.',
+      'Yes. 14 days, no credit card required, all features included. The monthly email update on new matching funders arrives after 30 days, so it falls outside a 14-day trial by nature.',
   },
   {
     question: 'Can I use Engrant for multiple nonprofit clients?',
     answer:
-      'Yes. Consultants and grant professionals can create separate organization profiles. Each profile has its own AI learning, so feedback for one client does not affect another.',
+      'Yes. Unlimited organization profiles are included. Each profile maintains its own constraint history.',
   },
+];
+
+const features = [
+  'Unlimited grant searches',
+  'Unlimited organization profiles',
+  '30-50 pre-evaluated grants per search',
+  'Fit analysis, red flags, and strategic considerations per grant',
+  'AI that learns each organization\'s constraints',
+  'Grant calendar with deadline reminders',
+  'Proposal drafting help',
+  'Requirements in plain English',
+  'Pipeline export',
+  'Priority email support',
 ];
 
 const PricingPage = () => {
@@ -42,10 +69,10 @@ const PricingPage = () => {
               <img src={logo} alt="EnGrant Logo" className="h-11 w-auto rounded-lg align-middle" />
             </a>
             <nav className="hidden md:flex items-center space-x-10">
-              <a href="/features" className="text-neutral-600 hover:text-primary-700 transition-colors duration-200 font-medium">
+              <a href="/features/" className="text-neutral-600 hover:text-primary-700 transition-colors duration-200 font-medium">
                 Features
               </a>
-              <a href="/learn-more" className="text-neutral-600 hover:text-primary-700 transition-colors duration-200 font-medium">
+              <a href="/learn-more/" className="text-neutral-600 hover:text-primary-700 transition-colors duration-200 font-medium">
                 Learn More
               </a>
             </nav>
@@ -62,89 +89,59 @@ const PricingPage = () => {
       <main className="py-16 sm:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl lg:text-5xl font-bold text-neutral-700 mb-4">Pricing</h1>
-          <p className="text-lg text-neutral-700 leading-relaxed mb-10">
-            <strong>Short answer:</strong> Engrant costs $47/month with a 14-day free trial and no credit card required. One plan covers unlimited grant searches, fit analysis, pipeline export, and proposal drafting for nonprofit grant professionals.
+          <p className="text-lg text-neutral-700 leading-relaxed mb-4">
+            {ONE_LINE_DEFINITION}
+          </p>
+          <p className="text-neutral-600 mb-10">
+            Built for {AUDIENCE}. Unlimited searches and organizations. No per-seat pricing.
           </p>
 
-          <section className="bg-white border border-neutral-200 rounded-2xl p-8 mb-8">
-            <h2 className="text-2xl font-bold text-neutral-700 mb-4">How much does Engrant cost?</h2>
-            <p className="text-neutral-700 mb-2">
-              <span className="font-semibold text-neutral-700">$47/month</span> after your 14-day free trial
-            </p>
-            <p className="text-neutral-700 leading-relaxed mb-6">
-              Includes unlimited grant searches, fit analysis, strategic notes, and proposal drafting support. Unlimited organizations — ideal for consultants managing multiple nonprofit clients.
-            </p>
-            <a
-              href="https://app.engrant.eu/?utm_source=pricing&utm_medium=cta&utm_campaign=plan_cta"
-              className="btn-primary text-white px-6 py-3 rounded-full font-semibold inline-block shadow-md"
-            >
-              Start Free Trial
-            </a>
-          </section>
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <section className="bg-white border border-neutral-200 rounded-2xl p-8">
+              <h2 className="text-sm font-bold text-neutral-500 tracking-wider mb-3">MONTHLY</h2>
+              <p className="text-4xl font-bold text-neutral-700 mb-1">${PRICE_MONTHLY}<span className="text-xl font-normal text-neutral-500">/month</span></p>
+              <p className="text-neutral-600 mb-6">Cancel anytime</p>
+              <a
+                href="https://app.engrant.eu/?utm_source=pricing&utm_medium=cta&utm_campaign=plan_monthly"
+                className="btn-primary text-white px-6 py-3 rounded-full font-semibold inline-block shadow-md"
+              >
+                Start Free Trial
+              </a>
+            </section>
+
+            <section className="bg-white border-2 border-teal-300 rounded-2xl p-8 relative">
+              <span className="absolute -top-3 right-6 bg-teal-600 text-white text-xs font-bold px-3 py-1 rounded-full">Best value</span>
+              <h2 className="text-sm font-bold text-teal-600 tracking-wider mb-3">ANNUAL</h2>
+              <p className="text-4xl font-bold text-neutral-700 mb-1">${PRICE_ANNUAL_PER_MONTH}<span className="text-xl font-normal text-neutral-500">/month</span></p>
+              <p className="text-neutral-600 mb-1">Billed annually (${PRICE_ANNUAL_TOTAL}/year)</p>
+              <p className="text-teal-600 font-medium mb-6">Save $120/year</p>
+              <a
+                href="https://app.engrant.eu/?utm_source=pricing&utm_medium=cta&utm_campaign=plan_annual"
+                className="btn-primary text-white px-6 py-3 rounded-full font-semibold inline-block shadow-md"
+              >
+                Start Free Trial
+              </a>
+            </section>
+          </div>
 
           <section className="bg-neutral-50 border border-neutral-200 rounded-2xl p-8 mb-8">
-            <h2 className="text-2xl font-bold text-neutral-700 mb-4">What&apos;s included?</h2>
+            <h2 className="text-2xl font-bold text-neutral-700 mb-4">Both include</h2>
             <ul className="space-y-3 text-neutral-700 leading-relaxed list-disc pl-5">
-              <li>30–50 pre-evaluated grants per search with fit scores and red flags</li>
-              <li>AI organization profiling from name or website</li>
-              <li>Eligibility screening and competition level indicators</li>
-              <li>Pipeline export and Word funding strategy reports</li>
-              <li>AI-assisted proposal draft generation</li>
+              {features.map((feature) => (
+                <li key={feature}>{feature}</li>
+              ))}
             </ul>
-            <a
-              href="/features/export-your-pipeline"
-              className="inline-flex items-center text-primary-700 hover:text-primary-800 font-semibold mt-6"
-            >
-              See export and report details →
-            </a>
+            <p className="text-neutral-600 mt-6">14-day free trial · No credit card required</p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-neutral-700 mb-4">How does Engrant compare to other grant tools?</h2>
-            <div className="overflow-x-auto rounded-2xl border border-neutral-200">
-              <table className="w-full min-w-[640px] text-left text-neutral-700">
-                <thead className="bg-neutral-100">
-                  <tr>
-                    <th className="p-4 font-semibold text-neutral-600">Approach</th>
-                    <th className="p-4 font-semibold text-primary-700">Engrant</th>
-                    <th className="p-4 font-semibold text-neutral-600">Manual search / databases</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-t border-neutral-200 bg-white">
-                    <td className="p-4 font-medium">Results per search</td>
-                    <td className="p-4">30–50 pre-evaluated grants</td>
-                    <td className="p-4">100–400+ raw listings to filter yourself</td>
-                  </tr>
-                  <tr className="border-t border-neutral-200 bg-neutral-50">
-                    <td className="p-4 font-medium">Fit analysis</td>
-                    <td className="p-4">AI fit scores, red flags, competition levels</td>
-                    <td className="p-4">Manual eligibility review for each result</td>
-                  </tr>
-                  <tr className="border-t border-neutral-200 bg-white">
-                    <td className="p-4 font-medium">Setup</td>
-                    <td className="p-4">Enter org name or URL — AI researches automatically</td>
-                    <td className="p-4">Configure keywords, filters, and search parameters</td>
-                  </tr>
-                  <tr className="border-t border-neutral-200 bg-neutral-50">
-                    <td className="p-4 font-medium">Monthly cost</td>
-                    <td className="p-4">$47/month</td>
-                    <td className="p-4">$199/year (GrantStation) to $179+/month (Instrumentl)</td>
-                  </tr>
-                  <tr className="border-t border-neutral-200 bg-white">
-                    <td className="p-4 font-medium">Free trial</td>
-                    <td className="p-4">14 days, no credit card</td>
-                    <td className="p-4">Varies by platform</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <p className="text-neutral-600 mt-4 text-sm">
-              See detailed comparisons:{' '}
-              <a href="/compare/grantstation" className="text-primary-700 hover:text-primary-800 underline">GrantStation</a>,{' '}
-              <a href="/compare/instrumentl" className="text-primary-700 hover:text-primary-800 underline">Instrumentl</a>,{' '}
-              <a href="/compare/grantwatch" className="text-primary-700 hover:text-primary-800 underline">GrantWatch</a>.
-            </p>
+            <h2 className="text-2xl font-bold text-neutral-700 mb-4">Coverage</h2>
+            <p className="text-neutral-700 leading-relaxed">{GEOGRAPHY}</p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-neutral-700 mb-4">How it works</h2>
+            <p className="text-neutral-700 leading-relaxed">{MECHANISM}</p>
           </section>
 
           <section id="faq" className="bg-white border border-neutral-200 rounded-2xl p-8">
@@ -161,7 +158,7 @@ const PricingPage = () => {
         </div>
       </main>
 
-      <Footer tagline="Simple pricing with export and reporting workflows included" />
+      <Footer />
     </div>
   );
 };
@@ -170,30 +167,13 @@ export default PricingPage;
 
 export const Head = () => {
   const pageTitle = 'Pricing | Engrant';
-  const pageDescription =
-    'Engrant costs $47/month with a 14-day free trial. Unlimited grant searches, fit analysis, pipeline export, and proposal drafting for nonprofit grant professionals.';
+  const pageDescription = `Engrant costs $${PRICE_MONTHLY}/month or $${PRICE_ANNUAL_PER_MONTH}/month billed annually ($${PRICE_ANNUAL_TOTAL}/year). Unlimited grant searches and organization profiles. 14-day free trial.`;
   const canonicalUrl = 'https://engrant.eu/pricing/';
 
-  const productSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Product',
-    name: 'Engrant Grant Research Pro',
+  const productSchema = buildProductSchema({
     description: pageDescription,
-    brand: {
-      '@type': 'Organization',
-      name: 'Engrant',
-      url: 'https://engrant.eu',
-    },
-    offers: {
-      '@type': 'Offer',
-      price: '47',
-      priceCurrency: 'USD',
-      priceValidUntil: '2027-12-31',
-      availability: 'https://schema.org/InStock',
-      url: 'https://app.engrant.eu',
-      description: '14-day free trial, no credit card required',
-    },
-  };
+    offers: [buildMonthlyOffer(), buildAnnualOffer()],
+  });
 
   return (
     <>

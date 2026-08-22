@@ -36,7 +36,7 @@ export default function PainPoints() {
                             <Layers className="text-rose-400 w-7 h-7" />
                         </div>
                         <div className="text-xl font-bold text-rose-400 mb-2">One database</div>
-                        <div className="text-slate-400">Only ever shows what someone chose to index</div>
+                        <div className="text-slate-400">Only ever shows what someone chose to include</div>
                     </div>
                     <div className="bg-slate-800/50 backdrop-blur rounded-2xl p-8 border border-slate-700/50">
                         <div className="w-14 h-14 rounded-full bg-rose-500/20 flex items-center justify-center mx-auto mb-5">

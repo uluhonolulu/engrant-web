@@ -10,6 +10,13 @@ import engrantExpanded from '../../images/Engrant-expanded.png';
 import Footer from '../../components/Footer';
 import LoomVideo from '../../components/ngo-search/LoomVideo';
 import { OgTwitterMeta } from '../../utils/seoMeta';
+import {
+  PRICE_ANNUAL_PER_MONTH,
+  PRICE_ANNUAL_TOTAL,
+  PRICE_MONTHLY,
+  PRICE_VALID_UNTIL,
+} from '../../constants/positioning';
+import { buildAnnualOffer, buildMonthlyOffer, buildProductSchema } from '../../utils/siteSchema';
 
 const InstrumentlComparisonPage = () => {
   return (
@@ -94,7 +101,7 @@ const Hero = () => {
         </h1>
         
         <p className="text-xl lg:text-2xl text-neutral-600 mb-10 leading-relaxed font-normal max-w-3xl mx-auto">
-          Get AI-powered grant discovery at $47/month—not $179-899. Engrant shows you 30-50 highly relevant grants with fit scores and red flags, without the enterprise complexity.
+          Get AI-powered grant discovery at ${PRICE_MONTHLY}/month—not $299-999. Engrant searches the live web for funders no database covers, with fit scores and red flags for each match.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
@@ -131,12 +138,12 @@ const ProblemSection = () => {
   const problems = [
     {
       icon: DollarSign,
-      title: "$179-899/month is enterprise pricing",
-      description: "Instrumentl's pricing starts at $179/month and goes up to $899/month for the Advanced plan. For small nonprofits, this is often prohibitive.",
+      title: "$299-999/month is enterprise pricing",
+      description: "Instrumentl's pricing starts at $299/month (Standard) and goes up to $999/month for the Advanced plan. For small nonprofits, this is often prohibitive.",
       quote: "We actually find that Instrumentl is indeed overkill for smaller nonprofits.",
       quoteSource: "Instrumentl Support Team",
       sourceUrl: "https://reviews.financesonline.com/p/instrumentl/",
-      engrantAlternative: "$47/month gets you AI-powered discovery"
+      engrantAlternative: `$${PRICE_MONTHLY}/month — live-web discovery, not a fixed database`
     },
     {
       icon: BarChart3,
@@ -145,7 +152,7 @@ const ProblemSection = () => {
       quote: "There is such a wealth of information in Instrumentl, it can be difficult to filter out opportunities that aren't a perfect match for mission, goals, or proximity.",
       quoteSource: "Software Advice Review",
       sourceUrl: "https://www.softwareadvice.com/grant-management/instrumentl-profile/",
-      engrantAlternative: "30-50 pre-evaluated grants, not 300 possibilities"
+      engrantAlternative: "30-50 pre-evaluated grants from the live web, not only what's in their database"
     },
     {
       icon: Mountain,
@@ -162,7 +169,7 @@ const ProblemSection = () => {
       description: "Key features like Peer Prospecting require the Pro plan at $499/month. Advanced 990 insights require Standard at $299/month.",
       quote: null,
       quoteSource: null,
-      engrantAlternative: "All features included at $47/month"
+      engrantAlternative: `All features included at $${PRICE_MONTHLY}/month`
     }
   ];
 
@@ -224,24 +231,24 @@ const ComparisonTable = () => {
   const features = [
     { category: "Setup & Onboarding", feature: "Setup time", engrant: "Enter org name/URL → AI researches automatically", instrumentl: "Create project → set keywords → refine matches", engrantCheck: true, instrumentlCheck: "partial" },
     { category: "Setup & Onboarding", feature: "Learning curve", engrant: "Minimal – results in minutes", instrumentl: "Several weeks to master all features", engrantCheck: true, instrumentlCheck: false },
-    { category: "Search & Results", feature: "Results approach", engrant: "30-50 pre-evaluated, high-fit grants", instrumentl: "100s of matches to manually evaluate", engrantCheck: true, instrumentlCheck: false },
-    { category: "Search & Results", feature: "Fit assessment", engrant: "AI-generated fit score with detailed reasons", instrumentl: "Match indicators, requires manual review", engrantCheck: true, instrumentlCheck: "partial" },
+    { category: "Search & Results", feature: "Results approach", engrant: "30-50 pre-evaluated grants from live-web search", instrumentl: "Matches from their curated database — a database can only show what it covers", engrantCheck: true, instrumentlCheck: "partial" },
+    { category: "Search & Results", feature: "Fit assessment", engrant: "AI-generated fit score with detailed reasons", instrumentl: "Match indicators within the database; not org-specific pre-evaluation", engrantCheck: true, instrumentlCheck: "partial" },
     { category: "Search & Results", feature: "Eligibility screening", engrant: "Flags disqualifiers before you apply", instrumentl: "Sometimes shows ineligible opportunities", engrantCheck: true, instrumentlCheck: "partial" },
     { category: "Intelligence & Insights", feature: "Competition level", engrant: "Shows High/Medium/Low competition", instrumentl: "Not available", engrantCheck: true, instrumentlCheck: false },
     { category: "Intelligence & Insights", feature: "Application effort estimate", engrant: "Shows effort level required", instrumentl: "Not available", engrantCheck: true, instrumentlCheck: false },
     { category: "Intelligence & Insights", feature: "Red flags & warnings", engrant: "Proactive warnings (consortium required, etc.)", instrumentl: "Requirements listed but not flagged", engrantCheck: true, instrumentlCheck: "partial" },
     { category: "Intelligence & Insights", feature: "Funder openness to new grantees", engrant: "Clearly indicated", instrumentl: "Available in funder profiles", engrantCheck: true, instrumentlCheck: true },
     { category: "Intelligence & Insights", feature: "Past recipients like you", engrant: "Shows similar orgs that got funded", instrumentl: "Peer Prospecting (Pro plan, $499/mo)", engrantCheck: true, instrumentlCheck: true },
-    { category: "Data & Freshness", feature: "Data source", engrant: "Real-time web search (always current)", instrumentl: "Curated database (updated weekly)", engrantCheck: true, instrumentlCheck: "partial" },
-    { category: "Data & Freshness", feature: "Database size", engrant: "Searches entire web", instrumentl: "20,000+ RFPs, 400,000+ funder profiles", engrantCheck: true, instrumentlCheck: true },
+    { category: "Data & Freshness", feature: "Data source", engrant: "Live-web search (parallel agents, always current)", instrumentl: "Curated static database (updated weekly)", engrantCheck: true, instrumentlCheck: "partial" },
+    { category: "Data & Freshness", feature: "Coverage limit", engrant: "Not limited to what any one database covers", instrumentl: "Comprehensive within their database only", engrantCheck: true, instrumentlCheck: "partial" },
     { category: "Data & Freshness", feature: "990 Data", engrant: "Key insights surfaced in match reasons", instrumentl: "Full interactive 990 reports", engrantCheck: true, instrumentlCheck: true },
     { category: "Grant Management", feature: "Deadline tracking", engrant: "Basic tracking", instrumentl: "Full calendar with integrations", engrantCheck: true, instrumentlCheck: true },
     { category: "Grant Management", feature: "Team collaboration", engrant: "Basic (coming soon)", instrumentl: "Full team features with roles", engrantCheck: "partial", instrumentlCheck: true },
     { category: "Grant Management", feature: "Application workflow", engrant: "Not included", instrumentl: "Full lifecycle management", engrantCheck: false, instrumentlCheck: true },
     { category: "Grant Management", feature: "AI writing assistance", engrant: "Not included", instrumentl: "Apply Advisor (learns from your apps)", engrantCheck: false, instrumentlCheck: true },
     { category: "Learning & Improvement", feature: "Learns from feedback", engrant: "Improves based on saves/rejects", instrumentl: "Improves match relevance", engrantCheck: true, instrumentlCheck: "partial" },
-    { category: "Pricing", feature: "Starting price", engrant: "$47/month ($37/month annually)", instrumentl: "$179/month (annual commitment)", engrantCheck: true, instrumentlCheck: false },
-    { category: "Pricing", feature: "Full features price", engrant: "$47/month", instrumentl: "$499/month (Pro)", engrantCheck: true, instrumentlCheck: false },
+    { category: "Pricing", feature: "Starting price", engrant: `$${PRICE_MONTHLY}/month ($${PRICE_ANNUAL_PER_MONTH}/month annually)`, instrumentl: "$299/month (Standard, annual commitment)", engrantCheck: true, instrumentlCheck: false },
+    { category: "Pricing", feature: "Full features price", engrant: `$${PRICE_MONTHLY}/month`, instrumentl: "$499/month (Pro)", engrantCheck: true, instrumentlCheck: false },
     { category: "Pricing", feature: "Free trial", engrant: "2 weeks, no credit card", instrumentl: "14 days", engrantCheck: true, instrumentlCheck: true },
     { category: "Best For", feature: "Target user", engrant: "Solo development directors, small teams", instrumentl: "Grant teams, consultants, universities", engrantCheck: true, instrumentlCheck: true },
   ];
@@ -261,9 +268,9 @@ const ComparisonTable = () => {
           <h2 className="text-3xl lg:text-5xl font-bold text-slate-800 mb-4">
             Engrant vs Instrumentl: Which Is Better?
           </h2>
-          <p className="text-xl text-neutral-600 mb-4">A side-by-side comparison for nonprofit grant seekers in 2025</p>
+          <p className="text-xl text-neutral-600 mb-4">A side-by-side comparison for nonprofit grant seekers in 2026</p>
           <p className="text-neutral-500 max-w-3xl mx-auto italic">
-            Instrumentl is an excellent full-lifecycle platform. We recommend it for larger organizations needing comprehensive workflow management. Here's how we compare for grant discovery:
+            Instrumentl is excellent within its database coverage — comprehensive workflow management for larger organizations. The structural difference: Engrant searches the live web; Instrumentl can only show you funders in their database.
           </p>
         </div>
         
@@ -428,7 +435,7 @@ const KeyDifferences = () => {
                 10 grants you can actually pursue, not 300 to sort through
               </h2>
               <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
-                Instrumentl gives you access to 20,000+ active opportunities. That's powerful—if you have time to evaluate them.
+                Instrumentl gives you access to 20,000+ active opportunities in its database. That's powerful within that coverage — but a database can only show what it covers.
               </p>
               <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
                 Engrant takes a different approach. We show you 30-50 grants at a time, each with:
@@ -523,13 +530,13 @@ const KeyDifferences = () => {
               Always Current
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-6 leading-tight">
-              Real-time grants, not a dusty database
+              Live-web search, not a fixed database
             </h2>
             <p className="text-lg text-neutral-600 leading-relaxed max-w-2xl mx-auto mb-4">
-              Instrumentl maintains a curated database of 20,000+ opportunities, updated weekly by their research team. It's comprehensive and well-organized.
+              Instrumentl maintains a curated database of 20,000+ opportunities, updated weekly by their research team. Comprehensive within that coverage — but bounded by it.
             </p>
             <p className="text-lg text-teal-700 font-medium max-w-2xl mx-auto">
-              Engrant searches the live web for each query. When a new RFP posts, you see it immediately—not after next week's database update. When a deadline changes, you know instantly.
+              Engrant searches the live web for each query. Embassy programmes, regional foundations, and funders with no public portal — funders no database covers — surface with fit analysis already done.
             </p>
             <p className="text-neutral-600 mt-4 max-w-2xl mx-auto">
               For time-sensitive grant deadlines, real-time matters.
@@ -610,7 +617,7 @@ const HonestAssessment = () => {
               ))}
             </ul>
             <p className="text-teal-700 font-medium mt-6 italic">
-              Engrant is purpose-built for the 90% of nonprofits that can't justify $179-899/month.
+              Engrant is purpose-built for the 90% of nonprofits that can't justify $299-999/month.
             </p>
           </div>
         </div>
@@ -678,8 +685,8 @@ const Testimonials = () => {
               <div className="text-neutral-600">pre-evaluated grants per search</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-teal-600 mb-2">$47</div>
-              <div className="text-neutral-600">per month—not $179-899</div>
+              <div className="text-3xl font-bold text-teal-600 mb-2">${PRICE_MONTHLY}</div>
+              <div className="text-neutral-600">per month—not $299-999</div>
             </div>
           </div>
         </div>
@@ -715,21 +722,12 @@ const PricingComparison = () => {
             
             <div className="space-y-4">
               <div className="bg-white rounded-xl p-5 border border-slate-100">
-                <div className="text-sm font-semibold text-slate-500 mb-1">BASIC</div>
-                <div className="flex items-baseline">
-                  <span className="text-3xl font-bold text-slate-700">$179</span>
-                  <span className="text-neutral-500 ml-1">/month</span>
-                </div>
-                <p className="text-sm text-neutral-500 mt-1">($2,148/year)</p>
-              </div>
-              
-              <div className="bg-white rounded-xl p-5 border border-slate-100">
                 <div className="text-sm font-semibold text-slate-500 mb-1">STANDARD</div>
                 <div className="flex items-baseline">
                   <span className="text-3xl font-bold text-slate-700">$299</span>
                   <span className="text-neutral-500 ml-1">/month</span>
                 </div>
-                <p className="text-sm text-neutral-500 mt-1">($3,588/year)</p>
+                <p className="text-sm text-neutral-500 mt-1">($3,588/year) — entry tier</p>
               </div>
               
               <div className="bg-white rounded-xl p-5 border border-slate-100">
@@ -745,14 +743,18 @@ const PricingComparison = () => {
               <div className="bg-white rounded-xl p-5 border border-slate-100">
                 <div className="text-sm font-semibold text-slate-500 mb-1">ADVANCED</div>
                 <div className="flex items-baseline">
-                  <span className="text-3xl font-bold text-slate-700">$899</span>
+                  <span className="text-3xl font-bold text-slate-700">$999</span>
                   <span className="text-neutral-500 ml-1">/month</span>
                 </div>
-                <p className="text-sm text-neutral-500 mt-1">($10,788/year)</p>
+                <p className="text-sm text-neutral-500 mt-1">($11,988/year)</p>
               </div>
               
               <p className="text-sm text-neutral-500 italic mt-4">
-                All plans require annual commitment • Additional users: $5/month each
+                Pricing checked August 2026 —{' '}
+                <a href="https://www.instrumentl.com/pricing" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:underline">
+                  instrumentl.com/pricing
+                </a>
+                . All plans require annual commitment • Additional users: $5/month each
               </p>
             </div>
           </div>
@@ -772,11 +774,11 @@ const PricingComparison = () => {
               
               <div className="mb-6">
                 <div className="flex items-baseline">
-                  <span className="text-5xl font-bold text-slate-800">$47</span>
+                  <span className="text-5xl font-bold text-slate-800">${PRICE_MONTHLY}</span>
                   <span className="text-xl text-neutral-500 ml-2">/month</span>
                 </div>
                 <p className="text-teal-600 font-medium mt-2">
-                  Or $37/month when billed annually ($444/year)
+                  Or ${PRICE_ANNUAL_PER_MONTH}/month when billed annually (${PRICE_ANNUAL_TOTAL}/year)
                 </p>
               </div>
               
@@ -824,7 +826,7 @@ const PricingComparison = () => {
         <div className="mt-10 max-w-2xl mx-auto">
           <div className="bg-amber-50 border border-amber-100 rounded-xl p-6">
             <p className="text-amber-800 text-center font-medium leading-relaxed">
-              At $47/month, Engrant costs <strong>74% less</strong> than Instrumentl's Basic plan and <strong>91% less</strong> than their Pro plan.
+              At ${PRICE_MONTHLY}/month, Engrant costs <strong>84% less</strong> than Instrumentl's Standard plan and <strong>91% less</strong> than their Pro plan.
             </p>
           </div>
         </div>
@@ -840,19 +842,19 @@ const FAQSection = () => {
   const faqs = [
     {
       question: "What is the best alternative to Instrumentl?",
-      answer: "For small-to-medium nonprofits focused on grant discovery (not full lifecycle management), Engrant is the leading Instrumentl alternative. At $47/month vs Instrumentl's $179-899/month, Engrant provides AI-powered grant matching with fit scores, competition levels, and red flag warnings. It's designed for solo development directors and small teams who need relevant grants fast, without weeks of learning curve."
+      answer: `For small-to-medium nonprofits focused on grant discovery (not full lifecycle management), Engrant is the leading Instrumentl alternative. At $${PRICE_MONTHLY}/month vs Instrumentl's $299-999/month, Engrant searches the live web for funders outside database coverage — with fit scores, competition levels, and red flag warnings for each match.`
     },
     {
       question: "How much does Instrumentl cost?",
-      answer: "Instrumentl pricing starts at $179/month for the Basic plan, with Standard at $299/month, Pro at $499/month, and Advanced at $899/month. All plans require annual payment upfront. Key features like Peer Prospecting (seeing who funds similar organizations) require the Pro plan at $499/month. Additional users cost $5/month each."
+      answer: "Instrumentl pricing starts at $299/month for the Standard plan (checked August 2026 at instrumentl.com/pricing), with Pro at $499/month and Advanced at $999/month. All plans require annual payment upfront. Key features like Peer Prospecting require the Pro plan at $499/month. Additional users cost $5/month each."
     },
     {
       question: "What's the difference between Instrumentl and Engrant?",
-      answer: "Instrumentl is a comprehensive full-lifecycle grant management platform with 20,000+ opportunities, workflow tracking, team collaboration, and AI proposal writing. It's built for larger organizations with dedicated grant staff and costs $179-899/month. Engrant is a focused grant discovery tool that uses AI to find and pre-evaluate grants for small nonprofits. It shows 30-50 high-fit grants with fit scores and red flags, costs $47/month, and requires no setup or learning curve. It's built for solo development directors who need results in minutes, not a platform to master."
+      answer: `Instrumentl is a comprehensive full-lifecycle grant management platform with a curated database of 20,000+ opportunities, workflow tracking, team collaboration, and AI proposal writing. It's built for larger organizations with dedicated grant staff and costs $299-999/month. Engrant searches the live web and returns 30-50 pre-evaluated grants with fit scores and red flags at $${PRICE_MONTHLY}/month. The structural difference: Instrumentl is bounded by what its database covers; Engrant is not limited to what any one database covers.`
     },
     {
       question: "Is Instrumentl worth it for small nonprofits?",
-      answer: "It depends on your needs and budget. Instrumentl's own support team has stated: 'We actually find that Instrumentl is indeed overkill for smaller nonprofits.' For organizations with $5M+ budgets, dedicated grant staff, and need for full workflow management, Instrumentl provides excellent value. For small nonprofits ($1-5M budget) with solo development directors who primarily need to find grants quickly, tools like Engrant provide similar discovery capabilities at a fraction of the cost ($47/month vs $179-899/month)."
+      answer: `It depends on your needs and budget. Instrumentl's own support team has stated: 'We actually find that Instrumentl is indeed overkill for smaller nonprofits.' For organizations with $5M+ budgets, dedicated grant staff, and need for full workflow management, Instrumentl provides excellent value within its database coverage. For small nonprofits with solo development directors who need funders outside any database, Engrant at $${PRICE_MONTHLY}/month offers live-web discovery at a fraction of the cost ($${PRICE_MONTHLY}/month vs $299-999/month).`
     },
     {
       question: "How can I find grants faster than using Instrumentl?",
@@ -866,7 +868,7 @@ const FAQSection = () => {
       question: "Does Instrumentl have a cheaper alternative?",
       answer: (
         <>
-          Yes. For grant discovery specifically, several alternatives cost less than Instrumentl&apos;s $179/month starting price: Engrant ($47/month — AI-powered discovery with fit scores and pre-evaluation),{' '}
+          Yes. For grant discovery specifically, several alternatives cost less than Instrumentl&apos;s $299/month starting price: Engrant (${PRICE_MONTHLY}/month — live-web search with fit scores and pre-evaluation),{' '}
           <a href="/compare/grantstation" className="text-teal-700 hover:text-teal-800 underline">GrantStation</a>
           {' '}($199/year — Basic database with educational resources), GrantWatch ($199/year — Broad database with basic search), Foundation Directory Online ($55/month Essential — Large funder database, free at libraries). Engrant is positioned between budget options and Instrumentl—offering AI intelligence without enterprise pricing.
         </>
@@ -932,7 +934,7 @@ const SourcesSection = () => {
     {
       title: "Instrumentl Official Pricing",
       url: "https://www.instrumentl.com/pricing",
-      description: "Official pricing page showing Basic ($179/month), Standard ($299/month), Pro ($499/month), and Advanced ($899/month) tiers"
+      description: "Official pricing page — Standard ($299/month), Pro ($499/month), and Advanced ($999/month) tiers (checked August 2026)"
     },
     {
       title: "G2 Reviews: Instrumentl",
@@ -1000,7 +1002,7 @@ const SourcesSection = () => {
           ))}
         </ul>
         <p className="text-xs text-neutral-400 mt-6 italic">
-          Last updated: January 2025. Pricing and features may change; verify current information on official websites.
+          Last updated: August 2026. Pricing and features may change; verify current information on official websites.
         </p>
       </div>
     </section>
@@ -1029,7 +1031,7 @@ const FinalCTA = () => {
         </h2>
         
         <p className="text-xl lg:text-2xl mb-12 text-teal-100 max-w-2xl mx-auto leading-relaxed">
-          Engrant gives you AI-powered grant matching at $47/month—not $179-899. Find 30-50 highly relevant grants with fit scores, competition levels, and red flags. No weeks of setup. No feature tiers. No annual commitment required.
+          Engrant gives you live-web grant discovery at ${PRICE_MONTHLY}/month—not $299-999. Find funders no database covers, each with fit scores, competition levels, and red flags. No weeks of setup. No feature tiers. No annual commitment required.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
@@ -1092,7 +1094,7 @@ export const Head = () => {
         "name": "What is the best alternative to Instrumentl?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "For small-to-medium nonprofits focused on grant discovery, Engrant is the leading Instrumentl alternative at $47/month vs $179-899/month. It provides AI-powered grant matching with fit scores, competition levels, and red flag warnings, designed for solo development directors who need relevant grants fast."
+          "text": "For small-to-medium nonprofits focused on grant discovery, Engrant is the leading Instrumentl alternative at $47/month vs $299-999/month. It searches the live web for funders outside database coverage, with fit scores and red flag warnings."
         }
       },
       {
@@ -1100,7 +1102,7 @@ export const Head = () => {
         "name": "How much does Instrumentl cost?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Instrumentl pricing starts at $179/month (Basic), with Standard at $299/month, Pro at $499/month, and Advanced at $899/month. All plans require annual payment. Features like Peer Prospecting require Pro ($499/month)."
+          "text": "Instrumentl pricing starts at $299/month (Standard, checked August 2026), with Pro at $499/month and Advanced at $999/month. All plans require annual payment. Features like Peer Prospecting require Pro ($499/month)."
         }
       },
       {
@@ -1108,7 +1110,7 @@ export const Head = () => {
         "name": "What's the difference between Instrumentl and Engrant?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Instrumentl is a full-lifecycle grant management platform ($179-899/month) built for larger organizations with dedicated grant staff. Engrant is a focused grant discovery tool ($47/month) that uses AI to find and pre-evaluate grants for small nonprofits, requiring no setup or learning curve."
+          "text": "Instrumentl is a full-lifecycle grant management platform ($299-999/month) built around a curated database. Engrant searches the live web ($47/month) and returns pre-evaluated grants for small nonprofits. The structural difference: Instrumentl is bounded by what its database covers; Engrant is not limited to what any one database covers."
         }
       },
       {
@@ -1116,33 +1118,23 @@ export const Head = () => {
         "name": "Is Instrumentl worth it for small nonprofits?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Instrumentl's own support team has stated it's 'overkill for smaller nonprofits.' For organizations with $5M+ budgets and dedicated grant staff, it provides excellent value. For small nonprofits with solo development directors, alternatives like Engrant offer similar discovery capabilities at $47/month instead of $179-899/month."
+          "text": "Instrumentl's own support team has stated it's 'overkill for smaller nonprofits.' For organizations with dedicated grant staff, it provides excellent value within its database coverage. For small nonprofits, Engrant offers live-web discovery at $47/month instead of $299-999/month."
         }
       }
     ]
   };
 
-  const softwareApplicationSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Engrant",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web",
-    "description": "AI-powered grant discovery platform for nonprofits. Find 30-50 highly relevant grants with fit scores, competition levels, and red flags.",
-    "offers": {
-      "@type": "Offer",
-      "price": "47",
-      "priceCurrency": "USD",
-      "priceValidUntil": "2026-04-30"
-    }
-  };
+  const productSchema = buildProductSchema({
+    description: 'AI-powered grant discovery platform for nonprofits. Searches the live web for funders not in any database.',
+    offers: [buildMonthlyOffer(), buildAnnualOffer()],
+  });
 
   return (
     <>
       <title>Instrumentl Alternative for Nonprofits | Engrant vs Instrumentl</title>
       <meta 
         name="description" 
-        content="Looking for an Instrumentl alternative? Compare Engrant's AI-powered grant matching vs Instrumentl. Same smart discovery at $47/month vs $179-899/month." 
+        content="Looking for an Instrumentl alternative? Engrant searches the live web for funders outside database coverage — at $47/month vs Instrumentl's $299-999/month." 
       />
       <meta 
         name="keywords" 
@@ -1151,14 +1143,14 @@ export const Head = () => {
       <link rel="canonical" href="https://engrant.eu/compare/instrumentl/" />
       <OgTwitterMeta
         title="Instrumentl Alternative for Nonprofits | Engrant vs Instrumentl"
-        description="Looking for an Instrumentl alternative? Compare Engrant's AI-powered grant matching vs Instrumentl. Same smart discovery at $47/month vs $179-899/month."
+        description="Looking for an Instrumentl alternative? Engrant searches the live web for funders outside database coverage — at $47/month vs Instrumentl's $299-999/month."
         url="https://engrant.eu/compare/instrumentl/"
       />
       <script type="application/ld+json">
         {JSON.stringify(faqSchema)}
       </script>
       <script type="application/ld+json">
-        {JSON.stringify(softwareApplicationSchema)}
+        {JSON.stringify(productSchema)}
       </script>
       <link
         href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap"

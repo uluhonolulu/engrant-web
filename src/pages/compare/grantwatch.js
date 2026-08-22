@@ -9,6 +9,13 @@ import logo from '../../images/logo-horizontal-remove-background.com.png';
 import engrantExpanded from '../../images/Engrant-expanded.png';
 import Footer from '../../components/Footer';
 import { OgTwitterMeta } from '../../utils/seoMeta';
+import {
+  PRICE_ANNUAL_PER_MONTH,
+  PRICE_ANNUAL_TOTAL,
+  PRICE_MONTHLY,
+  PRICE_VALID_UNTIL,
+} from '../../constants/positioning';
+import { buildAnnualOffer, buildMonthlyOffer, buildProductSchema } from '../../utils/siteSchema';
 import LoomVideo from '../../components/ngo-search/LoomVideo';
 
 const GrantWatchComparisonPage = () => {
@@ -224,16 +231,16 @@ const ComparisonTable = () => {
   const features = [
     { category: "Setup & Onboarding", feature: "Setup time", engrant: "Enter org name/URL → AI researches automatically", grantwatch: "Manual profile creation + category selection", engrantCheck: true, grantwatchCheck: false },
     { category: "Setup & Onboarding", feature: "Learning curve", engrant: "Minimal — results in minutes", grantwatch: "Moderate — requires learning SMART search", engrantCheck: true, grantwatchCheck: false },
-    { category: "Search & Results", feature: "Search approach", engrant: "AI-curated 30-50 high-fit grants", grantwatch: "10,000+ grants requiring manual filtering", engrantCheck: true, grantwatchCheck: false },
-    { category: "Search & Results", feature: "Fit assessment", engrant: "AI-generated fit score with match reasons", grantwatch: "No fit scoring", engrantCheck: true, grantwatchCheck: false },
-    { category: "Search & Results", feature: "Eligibility screening", engrant: "Flags disqualifiers before you apply", grantwatch: "Manual eligibility checking required", engrantCheck: true, grantwatchCheck: false },
+    { category: "Search & Results", feature: "Search approach", engrant: "Live-web search — 30-50 pre-evaluated grants", grantwatch: "Static database of ~10,000 grants — only what's in their database", engrantCheck: true, grantwatchCheck: "partial" },
+    { category: "Search & Results", feature: "Fit assessment", engrant: "AI-generated fit score with match reasons", grantwatch: "Database listings without org-specific fit evaluation", engrantCheck: true, grantwatchCheck: false },
+    { category: "Search & Results", feature: "Eligibility screening", engrant: "Flags disqualifiers before you apply", grantwatch: "Eligibility info in database listings only", engrantCheck: true, grantwatchCheck: false },
     { category: "Intelligence & Insights", feature: "Competition level", engrant: "Shows High/Medium/Low", grantwatch: "Not available", engrantCheck: true, grantwatchCheck: false },
     { category: "Intelligence & Insights", feature: "Effort estimate", engrant: "Shows application effort level", grantwatch: "Not available", engrantCheck: true, grantwatchCheck: false },
     { category: "Intelligence & Insights", feature: "Red flags & warnings", engrant: "Proactive warnings surfaced", grantwatch: "Not available", engrantCheck: true, grantwatchCheck: false },
     { category: "Intelligence & Insights", feature: "Funder openness", engrant: "\"Open to new grantees\" indicated", grantwatch: "Basic 990 data only", engrantCheck: true, grantwatchCheck: "partial" },
     { category: "Intelligence & Insights", feature: "Past recipients like you", engrant: "Shows similar orgs that got funded", grantwatch: "Not available", engrantCheck: true, grantwatchCheck: false },
-    { category: "Data & Freshness", feature: "Data source", engrant: "Real-time AI search (always current)", grantwatch: "Curated database (updated daily)", engrantCheck: true, grantwatchCheck: "partial" },
-    { category: "Data & Freshness", feature: "Database size", engrant: "Searches live web", grantwatch: "~10,000 active grants", engrantCheck: true, grantwatchCheck: true },
+    { category: "Data & Freshness", feature: "Data source", engrant: "Live-web search (parallel agents, always current)", grantwatch: "Curated static database (updated daily)", engrantCheck: true, grantwatchCheck: "partial" },
+    { category: "Data & Freshness", feature: "Coverage limit", engrant: "Not limited to what any one database covers", grantwatch: "Comprehensive within ~10,000 listed grants only", engrantCheck: true, grantwatchCheck: "partial" },
     { category: "Data & Freshness", feature: "Grant types", engrant: "Foundation, corporate, state, local", grantwatch: "Foundation, corporate, federal, state, city", engrantCheck: true, grantwatchCheck: true },
     { category: "Learning & Improvement", feature: "Learns from feedback", engrant: "Improves based on saves/rejects", grantwatch: "No learning system", engrantCheck: true, grantwatchCheck: false },
     { category: "Pricing", feature: "Price", engrant: "$47/month (or $37/month annually)", grantwatch: "$22/week, $49/month, or $249/year", engrantCheck: true, grantwatchCheck: "partial" },
@@ -256,9 +263,9 @@ const ComparisonTable = () => {
           <h2 className="text-3xl lg:text-5xl font-bold text-slate-800 mb-4">
             Engrant vs GrantWatch: Which Is Better?
           </h2>
-          <p className="text-xl text-neutral-600 mb-4">A side-by-side comparison for nonprofit grant seekers in 2025</p>
+          <p className="text-xl text-neutral-600 mb-4">A side-by-side comparison for nonprofit grant seekers in 2026</p>
           <p className="text-neutral-500 max-w-3xl mx-auto italic">
-            GrantWatch is genuinely the most affordable paid grant database on the market. If your organization has dedicated research staff and time to manually evaluate hundreds of opportunities, it's a solid budget choice.
+            GrantWatch is genuinely the most affordable paid grant database on the market. The structural difference: Engrant searches the live web; GrantWatch can only show you grants in their database.
           </p>
         </div>
         
@@ -997,7 +1004,7 @@ const SourcesSection = () => {
           ))}
         </ul>
         <p className="text-xs text-neutral-400 mt-6 italic">
-          Last updated: January 2025. Pricing and features may change; verify current information on official websites.
+          Last updated: August 2026. Pricing and features may change; verify current information on official websites.
         </p>
       </div>
     </section>
@@ -1147,20 +1154,10 @@ export const Head = () => {
     ]
   };
 
-  const softwareApplicationSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Engrant",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web",
-    "description": "AI-powered grant discovery platform for nonprofits",
-    "offers": {
-      "@type": "Offer",
-      "price": "47",
-      "priceCurrency": "USD",
-      "priceValidUntil": "2026-04-30"
-    }
-  };
+  const productSchema = buildProductSchema({
+    description: 'AI-powered grant discovery platform for nonprofits. Searches the live web for funders not in any database.',
+    offers: [buildMonthlyOffer(), buildAnnualOffer()],
+  });
 
   return (
     <>
@@ -1183,7 +1180,7 @@ export const Head = () => {
         {JSON.stringify(faqSchema)}
       </script>
       <script type="application/ld+json">
-        {JSON.stringify(softwareApplicationSchema)}
+        {JSON.stringify(productSchema)}
       </script>
       <link
         href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap"

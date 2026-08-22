@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/shared.css';
 import Header from '../components/ngo-search/Header';
 import { OgTwitterMeta } from '../utils/seoMeta';
+import { AUDIENCE, GEOGRAPHY, ONE_LINE_DEFINITION } from '../constants/positioning';
 import Hero from '../components/ngo-search/Hero';
 import PainPoints from '../components/ngo-search/PainPoints';
 import Solution from '../components/ngo-search/Solution';
@@ -41,22 +42,24 @@ const NgoSearchPage = () => {
 
 export default NgoSearchPage;
 
-export const Head = () => (
-  <>
-    <title>Find the Grants You Didn't Know Existed | Engrant</title>
-    <meta 
-      name="description" 
-      content="You already know your usual funders. Engrant searches the whole web to find the eligible grants beyond your radar — then explains why you qualify, how to apply, and when it's due. $47/mo. 14-day free trial." 
-    />
-    <link rel="canonical" href="https://engrant.eu/ngo-search/" />
-    <OgTwitterMeta
-      title="Find the Grants You Didn't Know Existed | Engrant"
-      description="You already know your usual funders. Engrant searches the whole web to find the eligible grants beyond your radar — then explains why you qualify, how to apply, and when it's due. $47/mo. 14-day free trial."
-      url="https://engrant.eu/ngo-search/"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </>
-);
+export const Head = () => {
+  const pageTitle = 'Find Funders Not in Any Grant Database | Engrant';
+  const pageDescription = `${ONE_LINE_DEFINITION} Built for ${AUDIENCE}. ${GEOGRAPHY}`;
+  const canonicalUrl = 'https://engrant.eu/ngo-search/';
+
+  return (
+    <>
+      <title>{pageTitle}</title>
+      <meta name="description" content={pageDescription} />
+      <link rel="canonical" href={canonicalUrl} />
+      <link rel="alternate" hreflang="en" href="https://engrant.eu/ngo-search/" />
+      <link rel="alternate" hreflang="es" href="https://engrant.eu/buscar-convocatorias/" />
+      <link rel="alternate" hreflang="x-default" href="https://engrant.eu/ngo-search/" />
+      <OgTwitterMeta title={pageTitle} description={pageDescription} url={canonicalUrl} />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
+    </>
+  );
+};
