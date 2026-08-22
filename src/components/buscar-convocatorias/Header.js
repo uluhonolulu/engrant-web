@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../../images/logo-horizontal-remove-background.com.png';
+import { CTA_LABEL } from '../../constants/positioningEs';
 
 const Header = () => {
   return (
@@ -7,7 +8,7 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <a href="https://engrant.eu/" className="flex items-center">
+            <a href="/buscar-convocatorias/" className="flex items-center">
               <img src={logo} alt="EnGrant Logo" className="h-11 w-auto rounded-lg align-middle" />
             </a>
           </div>
@@ -22,6 +23,9 @@ const Header = () => {
             <a href="#faq" className="text-neutral-600 hover:text-teal-700 transition-colors duration-200 font-medium">
               Preguntas frecuentes
             </a>
+            <a href="/about/" className="text-neutral-600 hover:text-teal-700 transition-colors duration-200 font-medium">
+              Acerca de
+            </a>
           </nav>
 
           <div className="flex items-center space-x-4">
@@ -35,7 +39,7 @@ const Header = () => {
                 }
               }}
               className="btn-primary text-white px-6 py-2.5 rounded-full font-semibold inline-block shadow-md">
-              Encontrar mis convocatorias
+              {CTA_LABEL}
             </a>
           </div>
         </div>

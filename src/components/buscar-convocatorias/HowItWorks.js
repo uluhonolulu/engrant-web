@@ -1,5 +1,5 @@
 import React from 'react';
-import { Edit, Globe, Brain, PenTool } from 'lucide-react';
+import { Edit, Target, Brain, Rocket } from 'lucide-react';
 import engrantExpanded from '../../images/Engrant-expanded.png';
 
 const HowItWorks = () => {
@@ -7,26 +7,26 @@ const HowItWorks = () => {
     {
       icon: Edit,
       step: '01',
-      title: 'Describe tu misión',
-      description: 'Cuéntale a Engrant a quién sirves y para qué necesitas financiamiento. Si sabes escribir un correo, sabes usarlo.'
+      title: 'Describe la organización',
+      description: 'Ingresa el nombre, sitio web o describe la misión de la organización en lenguaje sencillo. La IA de Engrant investiga la organización automáticamente — sin formularios extensos.'
     },
     {
-      icon: Globe,
+      icon: Target,
       step: '02',
-      title: 'Recibe coincidencias de toda la web',
-      description: 'Engrant investiga tu organización y luego busca en toda la web, no en una sola base de datos, y te muestra convocatorias para las que calificas, incluidos financiadores que nunca se te habrían ocurrido.'
+      title: 'Recibe convocatorias pre-evaluadas en minutos',
+      description: 'La IA de Engrant busca en toda la web oportunidades de financiamiento que coincidan con la misión, geografía y capacidad — y luego evalúa cada una por idoneidad, elegibilidad, competencia y esfuerzo. No solo palabras clave. Análisis real.'
     },
     {
       icon: Brain,
       step: '03',
       title: 'Guarda o descarta con comentarios',
-      description: 'Quédate con lo que encaja, descarta lo que no y di por qué. Engrant aprende tus límites reales.'
+      description: 'Quédate con las convocatorias que vale la pena perseguir. Descarta las que no encajan y cuéntanos por qué — geografía incorrecta, monto demasiado grande, requiere socio en consorcio. Tu IA aprende tus restricciones reales.'
     },
     {
-      icon: PenTool,
+      icon: Rocket,
       step: '04',
-      title: 'Mira cómo postular y recibe ayuda',
-      description: 'Cada convocatoria llega con la elegibilidad en lenguaje claro, la fecha límite y lo que requiere postular. Cuando estés listo, Engrant redacta la propuesta contigo.'
+      title: 'Ve el panorama completo antes de postular',
+      description: 'Cada convocatoria incluye elegibilidad en lenguaje claro, nivel de esfuerzo estimado, fecha límite, análisis de idoneidad — y consideraciones críticas como calendarios de pago, niveles de competencia y señales de alerta potenciales. La evaluación que harías manualmente, ya hecha.'
     }
   ];
 
@@ -77,7 +77,7 @@ const HowItWorks = () => {
             <div className="absolute -inset-4 bg-gradient-to-br from-teal-200/40 to-amber-200/40 rounded-3xl transform rotate-2"></div>
             <img
               src={engrantExpanded}
-              alt="Interfaz de Engrant, vista ampliada"
+              alt="Interfaz de coincidencia de convocatorias de Engrant — vista ampliada"
               className="relative rounded-2xl shadow-2xl w-full"
             />
           </div>

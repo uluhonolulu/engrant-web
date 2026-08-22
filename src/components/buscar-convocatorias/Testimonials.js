@@ -1,6 +1,102 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+
+const GRADIENT_VARIANTS = [
+  { gradient: 'from-teal-200/40 to-amber-200/40', rotate: 'rotate-2' },
+  { gradient: 'from-amber-200/40 to-teal-200/40', rotate: '-rotate-2' },
+  { gradient: 'from-teal-200/40 to-amber-200/40', rotate: 'rotate-1' },
+  { gradient: 'from-amber-200/40 to-teal-200/40', rotate: '-rotate-1' },
+];
+
+const testimonials = [
+  {
+    id: 'marcela-vargas',
+    quote:
+      'Desde nuestra experiencia en la Asociación Amigos del Aprendizaje (ADA), Engrant ha sido una herramienta muy valiosa para fortalecer nuestra estrategia de búsqueda de financiamiento internacional. Valoramos especialmente la calidad de las oportunidades identificadas — muy alineadas con fundaciones en Estados Unidos y Europa — y el pipeline en formato de matriz para organizar el trabajo y planificar postulaciones.',
+    name: 'Marcela Vargas',
+    role: 'Asociación Amigos del Aprendizaje (ADA), Costa Rica',
+  },
+  {
+    id: 'shoshana-grossman-crist',
+    quote:
+      'Cuando probé Engrant, quedé sinceramente encantada. Su IA es la mejor que he visto para identificar financiadores realmente alineados — rápido — sin importar dónde en el mundo trabaje tu organización.',
+    name: 'Shoshana Grossman-Crist',
+    role: 'Fundadora de Social Impact Compass',
+  },
+  {
+    id: 'loukas-kimeritze',
+    quote:
+      'El hecho de que busque en línea me parece increíble, porque la cantidad de resultados que me dio es realmente completa.',
+    name: 'Loukas Kimeritze',
+    role: 'Consultor de financiamiento',
+  },
+  {
+    id: 'magalie-laliberte',
+    quote:
+      'Otras plataformas de IA dan información desactualizada e imprecisa; Engrant siempre está en el punto.',
+    name: 'Magalie Laliberté',
+    role: 'Estratega de convocatorias',
+  },
+  {
+    id: 'leah-hargrove',
+    quote:
+      'Encontré dos oportunidades de convocatoria muy sólidas que no habría encontrado de otra forma, y postulé a una — a la otra postularé esta semana.',
+    name: 'Leah Hargrove',
+    role: 'Ladder to the Moon Network',
+  },
+];
 
 const Testimonials = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: false,
+    align: 'start',
+    slidesToScroll: 1,
+  });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(true);
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) {
+      emblaApi.scrollPrev();
+    }
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) {
+      emblaApi.scrollNext();
+    }
+  }, [emblaApi]);
+
+  const scrollTo = useCallback(
+    (index) => {
+      if (emblaApi) {
+        emblaApi.scrollTo(index);
+      }
+    },
+    [emblaApi],
+  );
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const onSelect = () => {
+      setSelectedIndex(emblaApi.selectedScrollSnap());
+      setCanScrollPrev(emblaApi.canScrollPrev());
+      setCanScrollNext(emblaApi.canScrollNext());
+    };
+
+    onSelect();
+    emblaApi.on('select', onSelect);
+    emblaApi.on('reInit', onSelect);
+
+    return () => {
+      emblaApi.off('select', onSelect);
+      emblaApi.off('reInit', onSelect);
+    };
+  }, [emblaApi]);
+
   return (
     <section id="testimonials" className="py-24 section-cream relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -8,31 +104,77 @@ const Testimonials = () => {
           <div className="inline-flex items-center bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
             Testimonios
           </div>
-          <h2 className="text-3xl lg:text-5xl font-bold text-slate-800">
+          <h2 className="text-3xl lg:text-5xl font-bold text-neutral-700">
             Lo que dicen nuestros usuarios
           </h2>
         </div>
 
-        <div className="max-w-3xl mx-auto">
-          <div className="relative pb-8">
-            <div className="absolute -inset-4 bg-gradient-to-br from-teal-200/40 to-amber-200/40 rounded-3xl transform rotate-2" />
-            <div className="relative bg-white rounded-2xl p-8 shadow-2xl border border-neutral-200">
-              <div className="text-6xl leading-none text-amber-200 mb-4">&ldquo;</div>
-              <div className="space-y-4 mb-6">
-                <p className="text-lg text-neutral-700 leading-relaxed">
-                  Desde nuestra experiencia en la Asociación Amigos del Aprendizaje (ADA), Engrant ha sido una herramienta muy valiosa para fortalecer nuestra estrategia de búsqueda de financiamiento internacional. La plataforma es intuitiva, fácil de usar y nos permitió desarrollar un perfil institucional sólido y preciso, alineado con nuestra misión y con las necesidades de financiamiento de nuestros programas.
-                </p>
-                <p className="text-lg text-neutral-700 leading-relaxed">
-                  Valoramos especialmente la calidad de las oportunidades identificadas — muy alineadas con fundaciones en Estados Unidos y Europa — y el pipeline de oportunidades en formato de matriz para organizar el trabajo y planificar postulaciones. Para una organización sin fines de lucro como ADA, Engrant representa una solución accesible, eficiente y muy amigable para profesionalizar la gestión de grants.
-                </p>
-              </div>
-            </div>
+        <div className="relative pb-4">
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex items-stretch">
+              {testimonials.map((item, index) => {
+                const v = GRADIENT_VARIANTS[index % GRADIENT_VARIANTS.length];
+                return (
+                  <div
+                    key={item.id}
+                    className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_40%] flex-shrink-0 flex-grow-0 min-w-0 pr-6 last:pr-0 flex pb-24 sm:pb-28"
+                  >
+                    <div className="relative w-full pb-8">
+                      <div
+                        className={`absolute -inset-4 bg-gradient-to-br ${v.gradient} rounded-3xl transform ${v.rotate}`}
+                      />
+                      <div className="relative bg-white rounded-2xl p-8 shadow-2xl border border-neutral-200 h-full flex flex-col">
+                        <div className="text-6xl leading-none text-amber-200 mb-4">&ldquo;</div>
+                        <p className="text-lg text-neutral-700 leading-relaxed mb-6">{item.quote}</p>
+                        <div className="mt-auto" />
+                      </div>
 
-            <div className="absolute -bottom-2 -right-2 sm:-bottom-6 sm:-right-6 bg-white px-5 py-4 rounded-2xl warm-shadow-lg border border-amber-100">
-              <div className="text-sm font-semibold text-neutral-700">Marcela Vargas</div>
-              <div className="text-xs text-neutral-500 leading-snug">Asociación Amigos del Aprendizaje (ADA)</div>
+                      <div className="absolute -bottom-2 -right-2 sm:-bottom-6 sm:-right-6 bg-white px-5 py-4 rounded-2xl warm-shadow-lg border border-amber-100 max-w-[calc(100%-0.5rem)]">
+                        <div className="text-sm font-semibold text-neutral-700">{item.name}</div>
+                        <div className="text-xs text-neutral-500 leading-snug">{item.role}</div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
+
+          <button
+            type="button"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-4 w-12 h-12 rounded-full bg-white border border-neutral-200 shadow-lg flex items-center justify-center transition-all duration-200 hover:bg-teal-50 hover:border-teal-300 text-neutral-700 cursor-pointer z-10 disabled:opacity-40 disabled:pointer-events-none disabled:cursor-not-allowed"
+            onClick={scrollPrev}
+            disabled={!canScrollPrev}
+            aria-label="Testimonio anterior"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+
+          <button
+            type="button"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-4 w-12 h-12 rounded-full bg-white border border-neutral-200 shadow-lg flex items-center justify-center transition-all duration-200 hover:bg-teal-50 hover:border-teal-300 text-neutral-700 cursor-pointer z-10 disabled:opacity-40 disabled:pointer-events-none disabled:cursor-not-allowed"
+            onClick={scrollNext}
+            disabled={!canScrollNext}
+            aria-label="Siguiente testimonio"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+        </div>
+
+        <div className="flex justify-center gap-2 mt-8 flex-wrap">
+          {testimonials.map((item, index) => (
+            <button
+              key={item.id}
+              type="button"
+              className={`h-2 rounded-full transition-all duration-200 ${
+                index === selectedIndex
+                  ? 'bg-teal-600 w-8'
+                  : 'bg-neutral-300 hover:bg-neutral-400 w-2'
+              }`}
+              onClick={() => scrollTo(index)}
+              aria-label={`Ir al testimonio ${index + 1}: ${item.name}`}
+            />
+          ))}
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Compass, Globe, CheckCircle, Calendar, PenTool } from 'lucide-react';
+import { Compass, Globe, ShieldCheck } from 'lucide-react';
 import engrantCondensedEs from '../../images/Engrant-condensed-es.png';
+import { CTA_LABEL, TRIAL_MICRO } from '../../constants/positioningEs';
 
 const Hero = () => {
   const [orgUrl, setOrgUrl] = useState('');
@@ -15,62 +16,40 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div id="hero-content">
             <div className="inline-flex items-center bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
-              <span className="w-2 h-2 bg-teal-500 rounded-full mr-2"></span>
-              Para equipos de recaudación de fondos en organizaciones sin fines de lucro
+              Tu analista de investigación de convocatorias con IA
             </div>
 
             <h1 className="text-4xl font-bold text-slate-800 mb-6 leading-[1.15] tracking-tight">
-              Encuentra las convocatorias que de verdad te corresponden.
+              Encuentra los financiadores que no conoces. Ya evaluados.
             </h1>
 
-            <h2 className="text-xl lg:text-2xl text-neutral-600 mb-10 leading-relaxed font-normal">
-              Engrant investiga toda la web en tiempo real y te muestra las convocatorias vigentes para las que calificas: por qué calificas, cómo postular y cuándo vencen.
-            </h2>
+            <p className="text-xl lg:text-2xl text-neutral-600 mb-10 leading-relaxed font-normal">
+              Engrant mira más allá de cualquier base de datos que uses, y luego evalúa cada financiador contra tu misión — idoneidad, elegibilidad y señales de alerta, listo antes de que abras un solo sitio de financiador.
+            </p>
 
             <div id="value-bullets" className="space-y-4 mb-10">
               <div className="flex items-center text-base group">
                 <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center mr-3 group-hover:bg-teal-200 transition-colors flex-shrink-0">
                   <Compass className="text-teal-600 w-4 h-4" />
                 </div>
-                <div className="flex-1">
-                  <span className="font-semibold text-slate-800">Convocatorias más allá de tu lista de siempre</span>
-                  <span className="text-neutral-500">, no solo las fundaciones que ya conoces</span>
+                <div className="flex-1 text-neutral-700">
+                  Encuentra financiadores que no estaban en tu radar
                 </div>
               </div>
               <div className="flex items-center text-base group">
                 <div className="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center mr-3 group-hover:bg-amber-200 transition-colors flex-shrink-0">
                   <Globe className="text-amber-600 w-4 h-4" />
                 </div>
-                <div className="flex-1">
-                  <span className="font-semibold text-slate-800">Investigación en vivo de toda la web</span>
-                  <span className="text-neutral-500">, no una sola base de datos ni lo que ChatGPT recuerda</span>
+                <div className="flex-1 text-neutral-700">
+                  Funciona donde tú trabajas — no solo donde las bases de datos de EE.UU. tienen cobertura
                 </div>
               </div>
               <div className="flex items-center text-base group">
                 <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center mr-3 group-hover:bg-teal-200 transition-colors flex-shrink-0">
-                  <CheckCircle className="text-teal-600 w-4 h-4" />
+                  <ShieldCheck className="text-teal-600 w-4 h-4" />
                 </div>
-                <div className="flex-1">
-                  <span className="font-semibold text-slate-800">Elegibilidad explicada</span>
-                  <span className="text-neutral-500">: por qué de verdad calificas, en lenguaje claro</span>
-                </div>
-              </div>
-              <div className="flex items-center text-base group">
-                <div className="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center mr-3 group-hover:bg-amber-200 transition-colors flex-shrink-0">
-                  <Calendar className="text-amber-600 w-4 h-4" />
-                </div>
-                <div className="flex-1">
-                  <span className="font-semibold text-slate-800">Cómo y cuándo postular</span>
-                  <span className="text-neutral-500">: requisitos y fechas límite desde el inicio</span>
-                </div>
-              </div>
-              <div className="flex items-center text-base group">
-                <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center mr-3 group-hover:bg-teal-200 transition-colors flex-shrink-0">
-                  <PenTool className="text-teal-600 w-4 h-4" />
-                </div>
-                <div className="flex-1">
-                  <span className="font-semibold text-slate-800">Ayuda para postular cuando la necesites</span>
-                  <span className="text-neutral-500">: redacta la propuesta contigo una vez que encuentras la indicada</span>
+                <div className="flex-1 text-neutral-700">
+                  Cada coincidencia llega pre-evaluada, no como un nombre que debes investigar
                 </div>
               </div>
             </div>
@@ -90,9 +69,9 @@ const Hero = () => {
                 />
                 <button
                   type="submit"
-                  className="btn-primary text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg w-full whitespace-nowrap"
+                  className="btn-primary w-full text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg text-center"
                 >
-                  Encontrar mis convocatorias
+                  {CTA_LABEL}
                 </button>
               </form>
               {error ? (
@@ -102,20 +81,24 @@ const Hero = () => {
               ) : null}
               <p className="text-neutral-500 mt-4 mb-0 flex items-center">
                 <span className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2"></span>
-                Prueba gratis de 14 días • Sin tarjeta de crédito
+                {TRIAL_MICRO}
               </p>
             </div>
           </div>
 
           <div id="hero-visual" className="mt-12 lg:mt-0">
-            <div className="relative w-full max-w-[599px] mx-auto lg:mx-0">
+            <div className="relative w-full max-w-[617px] mx-auto lg:mx-0">
               <div className="absolute -inset-4 bg-gradient-to-br from-teal-200/40 to-amber-200/40 rounded-3xl transform rotate-2"></div>
               <img
                 className="relative w-full h-auto rounded-2xl shadow-2xl"
                 src={engrantCondensedEs}
-                alt="Interfaz de coincidencia de convocatorias de Engrant"
+                alt="Tarjeta de convocatoria de Engrant mostrando análisis de idoneidad, elegibilidad y señales de alerta antes de visitar el sitio del financiador"
                 fetchPriority="high"
               />
+              <div className="absolute -bottom-4 -right-2 sm:-bottom-6 sm:-right-6 max-w-[calc(100%-1rem)] bg-white px-5 py-4 rounded-2xl warm-shadow-lg border-2 border-teal-200 shadow-teal-100/50">
+                <div className="text-sm font-bold text-teal-700">No limitado a una base de datos</div>
+                <div className="text-sm text-neutral-600 font-medium">La IA investiga toda la web</div>
+              </div>
             </div>
           </div>
         </div>

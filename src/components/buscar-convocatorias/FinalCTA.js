@@ -1,4 +1,5 @@
 import React from 'react';
+import { CTA_LABEL, TRIAL_MICRO } from '../../constants/positioningEs';
 
 const FinalCTA = () => {
   return (
@@ -17,11 +18,11 @@ const FinalCTA = () => {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
         <h2 className="text-4xl lg:text-6xl font-bold mb-8 text-white leading-tight">
-          Deja de volver siempre a los mismos financiadores. Encuentra los que te faltan.
+          Encuentra los financiadores que aún no conoces
         </h2>
 
         <p className="text-xl lg:text-2xl mb-12 text-teal-100 max-w-2xl mx-auto leading-relaxed">
-          Describe tu misión y mira las convocatorias para las que calificas, con elegibilidad, fechas y ayuda para postular incluidas.
+          Ingresa la organización. Obtén financiadores que no están en ninguna base de datos, cada uno ya evaluado por idoneidad, elegibilidad y señales de alerta.
         </p>
 
         <a
@@ -34,21 +35,15 @@ const FinalCTA = () => {
             }
           }}
           className="inline-flex items-center bg-white text-teal-700 hover:bg-amber-50 px-12 py-5 rounded-full text-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-amber-500/20 hover:-translate-y-1 group">
-          Encontrar las convocatorias que me faltan
+          {CTA_LABEL}
           <svg className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </a>
 
-        <p className="text-teal-200 mt-8 flex items-center justify-center flex-wrap gap-x-6 gap-y-2">
-          <span className="flex items-center">
-            <span className="w-2 h-2 bg-amber-400 rounded-full mr-2"></span>
-            Prueba gratis de 14 días
-          </span>
-          <span className="flex items-center">
-            <span className="w-2 h-2 bg-amber-400 rounded-full mr-2"></span>
-            Sin tarjeta de crédito
-          </span>
+        <p className="text-teal-200 mt-8 flex items-center justify-center">
+          <span className="w-2 h-2 bg-amber-400 rounded-full mr-2"></span>
+          {TRIAL_MICRO}
         </p>
       </div>
     </section>
