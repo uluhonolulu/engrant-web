@@ -22,8 +22,7 @@ const Footer = ({ tagline = ONE_LINE_DEFINITION }) => {
             <a href="/features/" className="hover:text-white transition-colors">Features</a>
             <a href="/learn-more/" className="hover:text-white transition-colors">Learn More</a>
             <a href="/docs/" className="hover:text-white transition-colors">Docs</a>
-            <a href="/learn-more/#comparisons" className="hover:text-white transition-colors">Comparisons</a>
-            <a href="/compare/grantstation/" className="hover:text-white transition-colors">GrantStation Alternative</a>
+            <a href="/compare/" className="hover:text-white transition-colors">Comparisons</a>
             <a href="/about/" className="hover:text-white transition-colors">About</a>
             <a href="/privacy-policy/" className="hover:text-white transition-colors">Privacy</a>
             <a href="/terms-of-service/" className="hover:text-white transition-colors">Terms</a>

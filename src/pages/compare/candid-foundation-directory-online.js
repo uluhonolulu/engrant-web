@@ -9,32 +9,134 @@ import logo from '../../images/logo-horizontal-remove-background.com.png';
 import engrantExpanded from '../../images/Engrant-expanded.png';
 import Footer from '../../components/Footer';
 import LoomVideo from '../../components/ngo-search/LoomVideo';
+import LastReviewed from '../../components/compare/LastReviewed';
+import CompareAnswerBox from '../../components/compare/CompareAnswerBox';
+import NotForYouSection from '../../components/compare/NotForYouSection';
+import BuyerPersonasSection from '../../components/compare/BuyerPersonasSection';
+import CompareCrossLinks from '../../components/compare/CompareCrossLinks';
 import { OgTwitterMeta } from '../../utils/seoMeta';
 import {
   PRICE_ANNUAL_PER_MONTH,
   PRICE_ANNUAL_TOTAL,
   PRICE_MONTHLY,
-  PRICE_VALID_UNTIL,
 } from '../../constants/positioning';
 import { buildAnnualOffer, buildMonthlyOffer, buildProductSchema } from '../../utils/siteSchema';
+import {
+  LAST_REVIEWED,
+  buildBreadcrumbSchema,
+  buildFaqSchema,
+} from '../../utils/comparePageSchema';
+
+const CANDID_FAQS = [
+  {
+    question: 'What happened to Foundation Directory Essential?',
+    answer: 'Candid discontinued Foundation Directory Essential and Professional in 2026 and merged GuideStar and Foundation Directory into unified Candid search. Published list pricing for Candid Premium is $219/month or $1,199/year (Ultimate $1,699/year). Separately, some former FDO Essential subscribers reported renewal quotes of $2,624–$3,499 with a two-seat minimum. Small nonprofits under $1M revenue can still apply for free Premium access for one year through Go for Gold.',
+  },
+  {
+    question: 'How much does Candid cost in 2026?',
+    answer: `As of September 2026, Candid's published pricing (candid.org/use-our-data/pricing) is: Free tier; Premium at $219/month or $1,199/year billed annually; Ultimate at $1,699/year; Enterprise custom. The old FDO Essential (~$475–$599/year) and FDO Professional no longer exist. Former FDO subscribers have publicly reported higher renewal quotes ($2,624–$3,499) than list price — treat those as renewal experiences, not the published catalog price.`,
+  },
+  {
+    question: 'What is the best alternative to Candid for small nonprofits?',
+    answer: `For small-to-medium nonprofits focused on finding fundable grants quickly (not deep 990 research), Engrant is a practical Candid alternative at $${PRICE_MONTHLY}/month ($${PRICE_ANNUAL_TOTAL}/year billed annually). Candid remains strongest for historical foundation research across 1.9M org profiles. Other options: Instrumentl Discover from $299/month for full pipeline management, or free Candid access via partner libraries.`,
+  },
+  {
+    question: "What's the difference between Candid and Engrant?",
+    answer: `Candid is a comprehensive funder research database with 1.9 million organization profiles and 325,000+ grantmakers — best for deep historical research and due diligence. Engrant is an AI grant-research tool that searches the live web and returns 30–50 pre-evaluated grants with fit scores, red flags, and competition levels — best for solo development professionals who need matches fast. Published Candid Premium is $1,199/year; Engrant is $${PRICE_ANNUAL_TOTAL}/year billed annually.`,
+  },
+  {
+    question: 'Is Candid worth it for small nonprofits in 2026?',
+    answer: `It depends on your needs and budget. Candid's free tier and library access still help with basic research. Published Premium at $1,199/year is strong value if you need deep foundation histories and staff contacts. If you were quoted $2,624–$3,499 on FDO renewal, or you mainly need currently open opportunities pre-screened for fit, Engrant at $${PRICE_MONTHLY}/month is often the better fit. Orgs under $1M revenue should check Go for Gold for a free Premium year.`,
+  },
+  {
+    question: 'Can I still access Foundation Directory Online for free at a library?',
+    answer: `Candid's Funding Information Network still provides free access at partner libraries. The experience may differ after the transition to Candid search. Check Candid's website for your nearest partner location.`,
+  },
+  {
+    question: 'How is Engrant different from other grant databases?',
+    answer: `Engrant runs parallel search agents across the live web rather than querying a single fixed database, then returns 30–50 pre-evaluated grants with fit scores, competition levels, effort estimates, and red flags. At $${PRICE_MONTHLY}/month it is built for people doing grant search without a research team — not for full lifecycle grant management.`,
+  },
+  {
+    question: "What's the difference between Candid and Instrumentl?",
+    answer: `Candid is a funder research database focused on foundations, giving patterns, and nonprofit profiles. Instrumentl (Discover from $299/month) is a grant management platform with workflow tools, deadline tracking, and team collaboration. Engrant ($${PRICE_MONTHLY}/month) is an AI-powered grant discovery tool that pre-evaluates opportunities for fit.`,
+  },
+];
 
 const CandidComparisonPage = () => {
   return (
     <div className="bg-[#fffbf5] text-neutral-700 min-h-screen w-full">
         <Header />
+        <LastReviewed />
         <main className="w-full">
           <Hero />
           <WhatHappenedSection />
-          <TLDRSummary />
+          <CompareAnswerBox
+            title="Short Answer: Is Candid or Engrant right for me?"
+            answer={
+              <>
+                <strong className="text-slate-800">
+                  Choose Candid for deep foundation research; choose Engrant for fast, pre-evaluated grant discovery.
+                </strong>{' '}
+                Candid publishes Premium at $1,199/year ($219/month) with unmatched 990 depth. Engrant costs ${PRICE_MONTHLY}/month
+                (${PRICE_ANNUAL_TOTAL}/year annually) and returns 30–50 live-web matches with fit scores — not a research library.
+              </>
+            }
+            bullets={[
+              `Engrant: $${PRICE_MONTHLY}/month — 30–50 pre-evaluated grants with fit scores`,
+              'Candid Premium: $219/month or $1,199/year (published list price, Sep 2026)',
+              'Engrant: live-web search with red flags before you apply',
+              'Candid: 1.9M orgs / 325k+ grantmakers for historical research',
+              'Engrant: AI researches your org automatically',
+              'Candid: free tier + library access + Go for Gold for small nonprofits',
+            ]}
+          />
           <ProblemSection />
           <ComparisonTable />
           <FeatureBreakdown />
           <LoomVideo />
-          <HonestAssessment />
+          <BuyerPersonasSection
+            title="Which product for which kind of person"
+            personas={[
+              {
+                name: 'Solo development director at a sub-$2M nonprofit',
+                description: 'Needs currently open grants that fit, not decades of 990 history. Limited tool budget.',
+                winner: 'Engrant',
+                verdict: 'pre-evaluated matches at a price that fits a small development budget.',
+              },
+              {
+                name: 'Freelance grant writer who relies on foundation histories',
+                description: 'Builds ask amounts and strategy from multi-year giving patterns and staff contacts.',
+                winner: 'Candid',
+                verdict: 'published Premium ($1,199/year) or library access is the right research layer.',
+              },
+              {
+                name: 'Former FDO Essential subscriber facing a high renewal quote',
+                description: 'Used to pay ~$475–$599/year and received a $2,624–$3,499 renewal notice.',
+                winner: 'Engrant',
+                verdict: 'if you mainly need discovery, not a full research library — or renegotiate with Candid / use a library.',
+              },
+              {
+                name: 'Academic or due-diligence researcher',
+                description: 'Needs compliance tools, peer benchmarking, and sector-wide philanthropy data.',
+                winner: 'Candid',
+                verdict: 'Ultimate or Enterprise is purpose-built for this work.',
+              },
+            ]}
+          />
+          <NotForYouSection
+            competitorHint="If you need Candid's research depth or Instrumentl's full lifecycle tools, use those instead."
+            items={[
+              'You need deep historical 990 research across decades of foundation giving',
+              'You need compliance verification, peer benchmarking, or Landscapes-style funding maps',
+              'You need full grant lifecycle management (tracking, spend-down, CRM sync)',
+              'You have free Premium via Go for Gold or a Funding Information Network library and that covers your workflow',
+            ]}
+          />
           <Testimonials />
           <PricingComparison />
           <FAQSection />
           <SourcesSection />
+          <CompareCrossLinks currentPath="/compare/candid-foundation-directory-online/" />
           <FinalCTA />
         </main>
         <Footer />
@@ -99,11 +201,11 @@ const Hero = () => {
         </div>
         
         <h1 className="text-4xl lg:text-[3.5rem] font-bold text-slate-800 mb-6 leading-[1.15] tracking-tight">
-          Candid just raised prices to $3,499/year. Here's a smarter alternative at $47/month.
+          Candid FDO alternative for grant seekers who need matches, not a research library
         </h1>
         
         <p className="text-xl lg:text-2xl text-neutral-600 mb-10 leading-relaxed font-normal max-w-3xl mx-auto">
-          Candid discontinued Foundation Directory Essential in 2026 and moved users to Candid Premium at $3,499/year. Engrant gives you AI-powered grant matching with pre-evaluated fit scores — for 87% less.
+          Candid discontinued Foundation Directory Essential in 2026. Published Premium is $1,199/year. Engrant gives you live-web grant discovery with fit scores at ${PRICE_MONTHLY}/month — for people who need fundable matches, not decades of 990 history.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
@@ -160,20 +262,46 @@ const WhatHappenedSection = () => {
             </p>
 
             <p>
-              Existing FDO Essential subscribers (who were paying roughly $475–$599/year) are being moved to Candid Premium at{" "}
+              Candid's{" "}
               <a
-                href="https://candid.org/pricing/"
+                href="https://candid.org/use-our-data/pricing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-teal-600 hover:underline font-medium"
               >
-                $3,499/year
+                published list pricing
               </a>{" "}
-              — a 452%+ price increase. Some users report a one-time first-year discount (e.g., $2,624), but the published starting price is $3,499/year.
+              (checked September 2026) shows Premium at <strong>$219/month</strong> or{" "}
+              <strong>$1,199/year</strong> billed annually, and Ultimate at <strong>$1,699/year</strong>.
+              That is the catalog price buyers should verify on Candid's site.
             </p>
 
             <p>
-              Candid says nonprofits may pay lower rates, and small nonprofits under $1M in revenue can qualify for free Premium access for one year through{" "}
+              Separately, some former FDO Essential subscribers (who had been paying roughly $475–$599/year) publicly reported{" "}
+              <strong>renewal quotes of $2,624–$3,499</strong> with a two-seat minimum — higher than published list price.
+              Those figures come from subscriber reports on{" "}
+              <a
+                href="https://www.reddit.com/r/nonprofit/comments/1r361gp/price_of_fdo_replacement_candid_premium_more_than/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-teal-600 hover:underline font-medium"
+              >
+                Reddit
+              </a>{" "}
+              and{" "}
+              <a
+                href="https://www.linkedin.com/posts/pitchconsulting_holy-stickershock-candid-ive-had-a-foundation-activity-7439337814799921152-fy98"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-teal-600 hover:underline font-medium"
+              >
+                LinkedIn
+              </a>
+              , not from Candid's pricing page. Treat them as renewal experiences, not the published catalog.
+            </p>
+
+            <p>
+              Candid also notes that small nonprofits under $1M in revenue can qualify for free Premium access for one year through{" "}
               <a
                 href="https://learning.candid.org/go-for-gold/378495"
                 target="_blank"
@@ -182,11 +310,11 @@ const WhatHappenedSection = () => {
               >
                 Go for Gold
               </a>{" "}
-              by earning a Gold Seal of Transparency — but that access expires after 12 months.
+              by earning a Gold Seal of Transparency — but that access expires after 12 months. Free access also remains available through partner libraries in the Funding Information Network.
             </p>
 
             <p>
-              For grant professionals and nonprofits who relied on the affordable FDO Essential tier, the options are now: pay 5–7x more for Candid Premium, fall back to the limited free tier, or switch to a different tool entirely.
+              For grant professionals who relied on the old FDO Essential tier, the practical options are: buy published Premium/Ultimate, use free or library access, renegotiate a renewal, or switch to a discovery-focused tool like Engrant if you mainly need currently open, pre-evaluated matches.
             </p>
           </div>
         </div>
@@ -195,46 +323,6 @@ const WhatHappenedSection = () => {
   );
 };
 
-// TL;DR Summary Block - Answer-first for LLM optimization
-const TLDRSummary = () => {
-  return (
-    <section className="py-12 bg-white border-b border-neutral-100">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-br from-teal-50 to-amber-50/30 rounded-2xl p-8 border border-teal-100">
-          <h2 className="text-lg font-bold text-teal-700 mb-4 flex items-center">
-            <Sparkles className="w-5 h-5 mr-2" />
-            Short Answer: What's the Best Alternative to Candid FDO?
-          </h2>
-          <p className="text-neutral-700 text-lg leading-relaxed mb-6">
-            <strong className="text-slate-800">For small-to-medium nonprofits and grant professionals who can't justify $3,499/year for Candid Premium, Engrant is the most practical alternative in 2026.</strong>{" "}
-            While Candid offers the largest funder database (<a href="https://candid.org/press/launch-of-candid-search-unifies-nonprofit-and-funder-data-in-one-place-enabling-faster-and-more-meaningful-connections/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:underline">1.9 million organizations and 325,000+ grantmakers</a>) for historical foundation research, Engrant provides AI-powered matching that pre-evaluates grants for fit, shows eligibility issues upfront, and costs $47/month ($444/year billed annually) — 87% less than Candid Premium.
-          </p>
-          
-          <div className="border-t border-teal-100 pt-6">
-            <h3 className="font-semibold text-slate-700 mb-4">TL;DR — Engrant vs Candid at a Glance:</h3>
-            <ul className="grid md:grid-cols-2 gap-3">
-              {[
-                "Engrant: 30-50 pre-evaluated grants with fit scores",
-                "Candid: Free tier is limited; Premium unlocks full access",
-                "Engrant: $47/month ($37/month annual) for full access to all features",
-                "Candid Premium: $3,499/year (~$292/month) — the only paid tier with grants data",
-                "Engrant: AI researches your org automatically",
-                "Candid: Manual evaluation and research-heavy workflows",
-                "Engrant: Shows red flags before you apply",
-                "Candid: You often discover issues while applying",
-              ].map((item, i) => (
-                <li key={i} className="flex items-start gap-2 text-neutral-600">
-                  <span className={`w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 ${i % 2 === 0 ? 'bg-teal-500' : 'bg-slate-400'}`}></span>
-                  <span className="text-sm">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
 
 // Problem Section
 const ProblemSection = () => {
@@ -243,33 +331,33 @@ const ProblemSection = () => {
       icon: BarChart3,
       title: "Information Overload",
       description: "Candid gives you access to a massive database (325,000+ grantmakers). Sounds great—until you're drowning in results with no way to know which ones are actually worth your time.",
-      quote: "The search function—it's time consuming to scroll through so many names to identify the correct foundation.",
-      quoteSource: "G2 Review",
-      sourceUrl: "https://www.g2.com/products/candid-foundation-directory-online/reviews"
+      quote: "It was already kind of expensive at $1,700, but it was doable and worth it. But now it seems like they're requiring a minimum of two seats, and at $3,500, there's just no way I can afford that.",
+      quoteSource: "Freelance grant writer, r/nonprofit",
+      sourceUrl: "https://www.reddit.com/r/nonprofit/comments/1r361gp/price_of_fdo_replacement_candid_premium_more_than/"
     },
     {
       icon: Search,
       title: "Manual Evaluation Required",
-      description: "FDO shows you funder profiles. You still have to read through guidelines, check eligibility, assess competition, and figure out if your organization is a good fit. That's 10-15 hours of research per week.",
-      quote: null,
-      quoteSource: "AFP Fundraising Effectiveness Project",
-      sourceUrl: "https://afpglobal.org/fundraisingeffectiveness"
+      description: "Candid shows you funder profiles. You still have to read guidelines, check eligibility, assess competition, and decide fit yourself — often hours per prospect.",
+      quote: "Unless Candid Premium offers me the power of flight, I really don't see how a 452% price increase for the first year… is an expense I can justify.",
+      quoteSource: "Lauren Brownstein, LinkedIn",
+      sourceUrl: "https://www.linkedin.com/posts/pitchconsulting_holy-stickershock-candid-ive-had-a-foundation-activity-7439337814799921152-fy98"
     },
     {
       icon: AlertTriangle,
-      title: "Clunky, Dated Interface",
-      description: "Grant professionals describe FDO as 'congested and frustrating' with 'lots of clicking back and forth to get the data you need.'",
-      quote: null,
-      quoteSource: "Funding for Good, 2024 Grant Tools Survey",
-      sourceUrl: "https://www.fundingforgood.org/blog/results-of-our-first-annual-grant-writing-tools-survey"
+      title: "Research Library vs Open Opportunities",
+      description: "Candid is strongest as a historical research layer (990s, giving patterns, staff contacts). It is not primarily a pre-evaluated 'what should I apply to this week' product.",
+      quote: "This is just the kind of presumptive price escalation that has me reaching for the 'cancel subscription' button. However… Candid did a few things right: 1. They integrated the tools… 2. They gave existing subscribers a first-year discount… 3. They included two licenses.",
+      quoteSource: "Jeff Shuck, LinkedIn",
+      sourceUrl: "https://www.linkedin.com/posts/jeffshuck_nonprofit-technology-philanthropy-activity-7417621047090294786-XDXF"
     },
     {
       icon: DollarSign,
-      title: "The Affordable Tier No Longer Exists",
-      description: "In 2026, Candid eliminated Foundation Directory Essential and Professional. The only paid tier is now Candid Premium at $3,499/year. There's a free tier, but it limits you to basic profile views without grants data, detailed financials, or staff contacts. For solo grant professionals and small nonprofits that relied on FDO Essential at $475/year, that's a budget-breaking jump.",
+      title: "FDO Essential Is Gone — Pricing Changed",
+      description: "In 2026, Candid discontinued Foundation Directory Essential and Professional. Published Premium is $219/month or $1,199/year; Ultimate is $1,699/year (checked Sep 2026). Some former Essential subscribers reported higher renewal quotes ($2,624–$3,499). Free tier, libraries, and Go for Gold remain options.",
       quote: null,
-      quoteSource: "Candid Pricing Page (as of March 2026)",
-      sourceUrl: "https://candid.org/pricing/"
+      quoteSource: "Candid pricing page (Sep 2026) + subscriber reports",
+      sourceUrl: "https://candid.org/use-our-data/pricing"
     }
   ];
 
@@ -345,7 +433,7 @@ const ComparisonTable = () => {
     { feature: "Grant data freshness", engrant: "Live-web search (always current)", candid: "Static database updated periodically", engrantCheck: true, candidCheck: "partial" },
     { feature: "AI features", engrant: "AI-powered org research, fit scoring, and red flags", candid: "AI-powered LOI writer and funder recommendations (Premium)", engrantCheck: true, candidCheck: "partial" },
     { feature: "Learning from feedback", engrant: "Improves recommendations based on your saves/rejects", candid: "Static results", engrantCheck: true, candidCheck: false },
-    { feature: "Price", engrant: "$47/month or $37/month (annual)", candid: "$3,499/year (~$292/month) for Premium. Free tier available but limited.", engrantCheck: true, candidCheck: "partial" },
+    { feature: "Price", engrant: `$${PRICE_MONTHLY}/month or $${PRICE_ANNUAL_PER_MONTH}/month (annual)`, candid: "Premium $219/mo or $1,199/yr; Ultimate $1,699/yr (published Sep 2026). Free tier + libraries.", engrantCheck: true, candidCheck: "partial" },
     { feature: "Free access", engrant: "Yes, 14 days free trial", candid: "Free tier with limited features. Free at partner libraries.", engrantCheck: true, candidCheck: "partial" },
   ];
 
@@ -426,7 +514,7 @@ const ComparisonTable = () => {
         {/* Quotable summary statement for LLM pickup */}
         <div className="mt-10 bg-teal-50 border border-teal-100 rounded-xl p-6 max-w-3xl mx-auto">
           <p className="text-teal-800 text-center font-medium leading-relaxed">
-            <strong>Bottom line:</strong> For nonprofits that need to find fundable grants quickly—not research funder histories—Engrant is the modern alternative to Candid, offering AI-powered matching at roughly one-seventh the cost of Candid Premium ($444/year vs. $3,499/year).
+            <strong>Bottom line:</strong> For nonprofits that need to find fundable grants quickly—not research funder histories—Engrant offers AI-powered matching at ${PRICE_ANNUAL_TOTAL}/year vs published Candid Premium at $1,199/year.
           </p>
         </div>
       </div>
@@ -605,7 +693,8 @@ const FeatureBreakdown = () => {
             </div>
             
             <div className="bg-white rounded-3xl p-8 warm-shadow-lg border border-teal-100">
-              <h3 className="font-semibold text-slate-700 mb-6">Past recipients similar to your organization:</h3>
+              <h3 className="font-semibold text-slate-700 mb-2">Past recipients similar to your organization:</h3>
+              <p className="text-sm text-amber-700 mb-6 font-medium">Illustrative example — not live customer data</p>
               <div className="space-y-4">
                 {[
                   { name: "Brooklyn Community Housing Alliance", amount: "$4,500", year: "2024" },
@@ -666,86 +755,19 @@ const FeatureBreakdown = () => {
   );
 };
 
-// Honest Assessment Section
-const HonestAssessment = () => {
-  return (
-    <section className="py-24 bg-white">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center bg-slate-100 text-slate-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <Shield className="w-4 h-4 mr-2" />
-            Honest Comparison
-          </div>
-          <h2 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-4">
-            When Candid might be the better choice
-          </h2>
-          <p className="text-lg text-neutral-600">We believe in honest comparisons. Here's when each tool makes sense.</p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-slate-50 rounded-3xl p-8 border border-slate-100">
-            <h3 className="text-xl font-bold text-slate-700 mb-6 flex items-center">
-              <span className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center mr-3">
-                <span className="text-slate-600 font-bold">C</span>
-              </span>
-              Use Candid if:
-            </h3>
-            <ul className="space-y-4">
-              {[
-                "You need deep historical research on a specific foundation's giving patterns over decades",
-                "You're an academic researcher studying philanthropy trends",
-                "You have free access through a Funding Information Network library",
-                "You qualify for the Go for Gold program (under $1M revenue, earn a Gold Seal) and want free Premium access for one year",
-                "You need compliance and verification tools for due diligence (Ultimate plan)",
-                "You need to verify 990 tax filing details for due diligence"
-              ].map((item, index) => (
-                <li key={index} className="flex items-start gap-3 text-neutral-600">
-                  <span className="w-1.5 h-1.5 bg-slate-400 rounded-full mt-2 flex-shrink-0"></span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          <div className="bg-gradient-to-br from-teal-50 to-teal-100/50 rounded-3xl p-8 border border-teal-100">
-            <h3 className="text-xl font-bold text-teal-700 mb-6 flex items-center">
-              <span className="w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center mr-3">
-                <Sparkles className="w-5 h-5 text-white" />
-              </span>
-              Use Engrant if:
-            </h3>
-            <ul className="space-y-4">
-              {[
-                "You're an overworked development professional who needs to find fundable grants fast",
-                "You're tired of sorting through hundreds of irrelevant results",
-                "You want to know if a grant is worth pursuing before investing hours",
-                "You need a tool that learns your preferences and improves over time",
-                "You were priced out by the FDO Essential → Candid Premium transition and need an affordable alternative",
-                "You want modern software, not a 1990s interface"
-              ].map((item, index) => (
-                <li key={index} className="flex items-start gap-3 text-neutral-700">
-                  <Check className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
 
 // Testimonials Section
 const Testimonials = () => {
   const quotes = [
     {
-      quote: "I was really struck that we told all of them that we didn't accept federal funding, and I would say 90% of what we got back was federal funding requests.",
-      attribution: "Grant Writer, Virginia Healthcare Nonprofit"
+      quote: "It was already kind of expensive at $1,700, but it was doable and worth it. But now it seems like they're requiring a minimum of two seats, and at $3,500, there's just no way I can afford that.",
+      attribution: "Freelance grant writer, r/nonprofit",
+      sourceUrl: "https://www.reddit.com/r/nonprofit/comments/1r361gp/price_of_fdo_replacement_candid_premium_more_than/"
     },
     {
-      quote: "I spend more time searching for grants than I do actually writing them, and half the ones I find don't even fit our mission.",
-      attribution: "Development Director, Human Services Nonprofit"
+      quote: "Candid did a few things right: 1. They integrated the tools… 2. They gave existing subscribers a first-year discount… 3. They included two licenses.",
+      attribution: "Jeff Shuck, LinkedIn",
+      sourceUrl: "https://www.linkedin.com/posts/jeffshuck_nonprofit-technology-philanthropy-activity-7417621047090294786-XDXF"
     },
     {
       quote: "Other AI platforms give you outdated and inaccurate information; here EnGrant is always on point.",
@@ -755,7 +777,7 @@ const Testimonials = () => {
 
   return (
     <section className="section-cream py-24">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="inline-flex items-center bg-amber-100 text-amber-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
             Real Frustrations
@@ -777,7 +799,13 @@ const Testimonials = () => {
                   <div className="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center mr-3">
                     <Users className="w-5 h-5 text-teal-600" />
                   </div>
-                  <span className="text-neutral-600 font-medium">{item.attribution}</span>
+                  {item.sourceUrl ? (
+                    <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-teal-700 hover:underline font-medium">
+                      {item.attribution}
+                    </a>
+                  ) : (
+                    <span className="text-neutral-600 font-medium">{item.attribution}</span>
+                  )}
                 </cite>
               </blockquote>
             </div>
@@ -818,10 +846,10 @@ const PricingComparison = () => {
             <h3 className="text-xl font-bold text-slate-700 mb-2">Candid (2026 Pricing)</h3>
             <p className="text-sm text-neutral-500 mb-6">
               Source:{" "}
-              <a href="https://candid.org/pricing/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:underline font-medium">
+              <a href="https://candid.org/use-our-data/pricing" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:underline font-medium">
                 Candid Pricing Page
               </a>{" "}
-              (as of March 2026)
+              (checked September 2026)
             </p>
 
             <div className="space-y-6">
@@ -857,10 +885,10 @@ const PricingComparison = () => {
               <div className="bg-white rounded-xl p-5 border border-slate-100">
                 <div className="text-sm font-semibold text-slate-500 mb-1">PREMIUM</div>
                 <div className="flex items-baseline">
-                  <span className="text-3xl font-bold text-slate-700">$3,499</span>
+                  <span className="text-3xl font-bold text-slate-700">$1,199</span>
                   <span className="text-neutral-500 ml-1">/year</span>
                 </div>
-                <p className="text-sm text-neutral-500 mt-1">(~$292/month)</p>
+                <p className="text-sm text-neutral-500 mt-1">or $219/month</p>
                 <ul className="mt-4 space-y-2 text-sm text-neutral-600">
                   <li className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-slate-400" />
@@ -880,15 +908,11 @@ const PricingComparison = () => {
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-slate-400" />
-                    AI-powered LOI writer
+                    AI fundraising assistant
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-slate-400" />
-                    Funder recommendations
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-slate-400" />
-                    Up to 5,000 profile downloads/month
+                    Up to 5,000 profile downloads/month (annual)
                   </li>
                 </ul>
               </div>
@@ -896,10 +920,10 @@ const PricingComparison = () => {
               <div className="bg-white rounded-xl p-5 border border-slate-100">
                 <div className="text-sm font-semibold text-slate-500 mb-1">ULTIMATE</div>
                 <div className="flex items-baseline">
-                  <span className="text-3xl font-bold text-slate-700">$4,999</span>
+                  <span className="text-3xl font-bold text-slate-700">$1,699</span>
                   <span className="text-neutral-500 ml-1">/year</span>
                 </div>
-                <p className="text-sm text-neutral-500 mt-1">(~$416/month)</p>
+                <p className="text-sm text-neutral-500 mt-1">published list price</p>
                 <ul className="mt-4 space-y-2 text-sm text-neutral-600">
                   <li className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-slate-400" />
@@ -951,12 +975,11 @@ const PricingComparison = () => {
               
               <div className="space-y-3 mb-8">
                 {[
-                  "Full access to all features",
                   "AI-powered matching",
                   "Pre-evaluated grants with fit scores",
                   "Learning recommendations",
-                  "Requirements in plain English",
-                  "AI proposal draft generation",
+                  "Red flags and competition levels",
+                  "Past recipients like you",
                   "Priority email support"
                 ].map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
@@ -992,13 +1015,13 @@ const PricingComparison = () => {
         
         <div className="mt-10 max-w-2xl mx-auto">
           <p className="text-center text-neutral-600 mb-6">
-            <strong className="text-slate-700">Time is money:</strong> Most Engrant users save 10+ hours per week on grant research. At a $50/hour loaded labor cost, that's $2,000/month in time savings.
+            <strong className="text-slate-700">Time is money:</strong> If pre-evaluated matches save even a few hours of manual filtering per week, the annual cost difference versus a research database is often recovered in staff time.
           </p>
           
           {/* Quotable pricing comparison for LLMs */}
           <div className="bg-amber-50 border border-amber-100 rounded-xl p-6">
             <p className="text-amber-800 text-center font-medium leading-relaxed">
-              At $444/year (billed annually), Engrant costs 87% less than Candid Premium ($3,499/year) and a fraction of Instrumentl ($299/month). For solo grant professionals and small nonprofits priced out by Candid's 2026 pricing change, Engrant offers full AI-powered grant matching at a price that won't break your budget.
+              At $444/year (billed annually), Engrant costs less than published Candid Premium ($1,199/year) and far less than Instrumentl Discover ($299/month). For solo grant professionals who need discovery rather than a research library — or who received high FDO renewal quotes — Engrant is built for that job.
             </p>
           </div>
         </div>
@@ -1009,40 +1032,7 @@ const PricingComparison = () => {
 
 // FAQ Section - Optimized for LLM citation
 const FAQSection = () => {
-  const faqs = [
-    {
-      question: "What happened to Foundation Directory Essential?",
-      answer: "Candid discontinued Foundation Directory Essential (and Professional) in January 2026. Both plans were replaced by the unified \"Candid search\" product. The only paid tier is now Candid Premium at $3,499/year. Existing FDO Essential subscribers are being auto-renewed into Candid Premium. Small nonprofits under $1M in revenue can apply for free Premium access for one year through Candid's \"Go for Gold\" program."
-    },
-    {
-      question: "How much does Candid cost in 2026?",
-      answer: "As of March 2026, Candid offers a free tier with limited features, Candid Premium at $3,499/year (~$292/month), and Candid Ultimate at $4,999/year (~$416/month). Enterprise pricing is custom. The old FDO Essential ($475–599/year) and FDO Professional ($1,599/year) no longer exist. Candid says nonprofit organizations may qualify for lower rates, and small nonprofits under $1M revenue can earn free access for one year through the Go for Gold program."
-    },
-    {
-      question: "What is the best alternative to Candid for small nonprofits?",
-      answer: "For small-to-medium nonprofits and independent grant professionals, Engrant is the most affordable AI-powered alternative to Candid in 2026. At $47/month ($444/year billed annually), Engrant provides AI-powered grant matching with pre-evaluated fit scores, eligibility warnings, and competition analysis — features that Candid's free tier doesn't include and that Candid Premium charges $3,499/year for. Other alternatives include Instrumentl ($299/month, best for teams needing full workflow management) and GrantWatch ($199/year, a budget database without AI matching)."
-    },
-    {
-      question: "What's the difference between Candid and Engrant?",
-      answer: "Candid is a comprehensive funder research database with 1.9 million organization profiles and 325,000+ grantmakers — best for deep historical research, due diligence, and philanthropy analysis. Engrant is an AI-powered grant discovery tool that pre-evaluates grants for fit and shows match reasons, red flags, and competition levels — best for time-strapped professionals who need to find fundable grants quickly. Candid Premium costs $3,499/year; Engrant costs $444/year (billed annually). They serve different needs: Candid is a research library, Engrant is a strategic grant-finding assistant."
-    },
-    {
-      question: "Is Candid worth it for small nonprofits in 2026?",
-      answer: "It depends on your needs and budget. Candid's free tier provides basic access but limits you to minimal search results and profile views. Candid Premium ($3,499/year) offers comprehensive data but may be hard to justify for small organizations — especially those that previously paid $475/year for FDO Essential. Small nonprofits under $1M revenue can get free Premium access for one year through the Go for Gold program, but should plan for the $3,499/year cost when it expires. For organizations focused on finding grants efficiently rather than deep funder research, Engrant at $47/month may be a more practical option."
-    },
-    {
-      question: "Can I still access Foundation Directory Online for free at a library?",
-      answer: "Candid's Funding Information Network still provides free access at partner libraries across the country. However, the experience may have changed with the transition to the new Candid search platform. Library access levels may differ from the old FDO Professional access. Check Candid's website for your nearest partner location."
-    },
-    {
-      question: "How is Engrant different from other grant databases?",
-      answer: "Engrant is the only grant platform that automatically researches an organization's eligibility characteristics — including women-led status, populations served, and geographic focus — and matches these against funder criteria before showing results. Unlike traditional databases that return hundreds of results to sort through, Engrant shows 30–50 pre-evaluated grants with fit scores, competition levels, effort estimates, and red flags. At $47/month, it's designed for solo development directors, freelance grant writers, and small nonprofits that need results, not research projects."
-    },
-    {
-      question: "What's the difference between Candid and Instrumentl?",
-      answer: "Candid is a funder research database focused on comprehensive data about foundations, giving patterns, and nonprofit profiles. Instrumentl ($299/month) is a grant management platform with workflow tools, deadline tracking, and team collaboration features. Engrant ($47/month) is an AI-powered grant matching tool that pre-evaluates opportunities for fit. Candid is best for deep research, Instrumentl for team-based grant management, and Engrant for fast, affordable grant discovery with built-in evaluation."
-    }
-  ];
+  const faqs = CANDID_FAQS;
 
   return (
     <section className="py-24 section-cream">
@@ -1081,8 +1071,8 @@ const SourcesSection = () => {
   const sources = [
     {
       title: "Candid Pricing Page",
-      url: "https://candid.org/pricing/",
-      description: "Current pricing for Free, Premium ($3,499/year), and Ultimate ($4,999/year) tiers (as of March 2026)"
+      url: "https://candid.org/use-our-data/pricing",
+      description: "Published pricing for Free, Premium ($219/mo or $1,199/yr), Ultimate ($1,699/yr) — checked September 2026"
     },
     {
       title: "Candid Press Release: Launch of Candid Search",
@@ -1098,6 +1088,21 @@ const SourcesSection = () => {
       title: "Funding for Good: Comparing Grant Research Databases",
       url: "https://fundingforgood.org/comparing-grant-research-databases/",
       description: "Survey of 100+ grant professionals on tools and pain points"
+    },
+    {
+      title: "Reddit r/nonprofit: FDO renewal pricing discussion",
+      url: "https://www.reddit.com/r/nonprofit/comments/1r361gp/price_of_fdo_replacement_candid_premium_more_than/",
+      description: "Former FDO users discussing renewal quotes and two-seat minimums"
+    },
+    {
+      title: "Lauren Brownstein on LinkedIn",
+      url: "https://www.linkedin.com/posts/pitchconsulting_holy-stickershock-candid-ive-had-a-foundation-activity-7439337814799921152-fy98",
+      description: "Subscriber reaction to FDO Essential → Premium transition pricing"
+    },
+    {
+      title: "Jeff Shuck on LinkedIn",
+      url: "https://www.linkedin.com/posts/jeffshuck_nonprofit-technology-philanthropy-activity-7417621047090294786-XDXF",
+      description: "Balanced take on Candid price changes and product integration"
     },
     {
       title: "Candid: Go for Gold Program",
@@ -1140,7 +1145,7 @@ const SourcesSection = () => {
           ))}
         </ul>
         <p className="text-xs text-neutral-400 mt-6 italic">
-          Last updated: March 2026. Pricing and features may change; verify current information on official websites.
+          Last reviewed: September 2026 by AS. Pricing and features may change; verify current information on official websites.
         </p>
       </div>
     </section>
@@ -1165,7 +1170,7 @@ const FinalCTA = () => {
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
         <h2 className="text-4xl lg:text-6xl font-bold mb-8 text-white leading-tight">
-          Ready for grant research that doesn't cost $3,499/year?
+          Ready for grant discovery that fits a small-nonprofit budget?
         </h2>
         
         <p className="text-xl lg:text-2xl mb-12 text-teal-100 max-w-2xl mx-auto leading-relaxed">
@@ -1212,80 +1217,15 @@ const FinalCTA = () => {
 export default CandidComparisonPage;
 
 export const Head = () => {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What happened to Foundation Directory Essential?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Candid discontinued Foundation Directory Essential (and Professional) in January 2026. Both plans were replaced by the unified \"Candid search\" product. The only paid tier is now Candid Premium at $3,499/year. Existing FDO Essential subscribers are being auto-renewed into Candid Premium. Small nonprofits under $1M in revenue can apply for free Premium access for one year through Candid's \"Go for Gold\" program."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How much does Candid cost in 2026?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "As of March 2026, Candid offers a free tier with limited features, Candid Premium at $3,499/year (~$292/month), and Candid Ultimate at $4,999/year (~$416/month). Enterprise pricing is custom. The old FDO Essential ($475–599/year) and FDO Professional ($1,599/year) no longer exist. Candid says nonprofit organizations may qualify for lower rates, and small nonprofits under $1M revenue can earn free access for one year through the Go for Gold program."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the best alternative to Candid for small nonprofits?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "For small-to-medium nonprofits and independent grant professionals, Engrant is the most affordable AI-powered alternative to Candid in 2026. At $47/month ($444/year billed annually), Engrant provides AI-powered grant matching with pre-evaluated fit scores, eligibility warnings, and competition analysis — features that Candid's free tier doesn't include and that Candid Premium charges $3,499/year for. Other alternatives include Instrumentl ($299/month, best for teams needing full workflow management) and GrantWatch ($199/year, a budget database without AI matching)."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What's the difference between Candid and Engrant?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Candid is a comprehensive funder research database with 1.9 million organization profiles and 325,000+ grantmakers — best for deep historical research, due diligence, and philanthropy analysis. Engrant is an AI-powered grant discovery tool that pre-evaluates grants for fit and shows match reasons, red flags, and competition levels — best for time-strapped professionals who need to find fundable grants quickly. Candid Premium costs $3,499/year; Engrant costs $444/year (billed annually). They serve different needs: Candid is a research library, Engrant is a strategic grant-finding assistant."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is Candid worth it for small nonprofits in 2026?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "It depends on your needs and budget. Candid's free tier provides basic access but limits you to minimal search results and profile views. Candid Premium ($3,499/year) offers comprehensive data but may be hard to justify for small organizations — especially those that previously paid $475/year for FDO Essential. Small nonprofits under $1M revenue can get free Premium access for one year through the Go for Gold program, but should plan for the $3,499/year cost when it expires. For organizations focused on finding grants efficiently rather than deep funder research, Engrant at $47/month may be a more practical option."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I still access Foundation Directory Online for free at a library?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Candid's Funding Information Network still provides free access at partner libraries across the country. However, the experience may have changed with the transition to the new Candid search platform. Library access levels may differ from the old FDO Professional access. Check Candid's website for your nearest partner location."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How is Engrant different from other grant databases?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Engrant is the only grant platform that automatically researches an organization's eligibility characteristics — including women-led status, populations served, and geographic focus — and matches these against funder criteria before showing results. Unlike traditional databases that return hundreds of results to sort through, Engrant shows 30–50 pre-evaluated grants with fit scores, competition levels, effort estimates, and red flags. At $47/month, it's designed for solo development directors, freelance grant writers, and small nonprofits that need results, not research projects."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What's the difference between Candid and Instrumentl?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Candid is a funder research database focused on comprehensive data about foundations, giving patterns, and nonprofit profiles. Instrumentl ($299/month) is a grant management platform with workflow tools, deadline tracking, and team collaboration features. Engrant ($47/month) is an AI-powered grant matching tool that pre-evaluates opportunities for fit. Candid is best for deep research, Instrumentl for team-based grant management, and Engrant for fast, affordable grant discovery with built-in evaluation."
-        }
-      }
-    ]
-  };
+  const faqSchema = buildFaqSchema(CANDID_FAQS);
+  const breadcrumbSchema = buildBreadcrumbSchema(
+    'Candid FDO Alternative',
+    '/compare/candid-foundation-directory-online/'
+  );
 
   const productSchema = buildProductSchema({
     name: 'Engrant',
-    description: 'AI-powered grant discovery platform for nonprofits. The affordable alternative to Candid in 2026.',
+    description: 'AI-powered grant discovery platform for nonprofits. A discovery-focused alternative to Candid Foundation Directory.',
     offers: [buildMonthlyOffer(), buildAnnualOffer()],
   });
 
@@ -1293,7 +1233,8 @@ export const Head = () => {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Candid Alternative for Nonprofits (2026) | Engrant vs Candid FDO",
-    "description": "Candid discontinued FDO Essential and pricing jumped to $3,499/year. Compare Engrant's AI-powered grant matching at $47/month — 87% less than Candid Premium.",
+    "description": "Candid discontinued FDO Essential. Published Premium is $1,199/year. Compare Engrant live-web grant discovery for small nonprofits.",
+    "dateModified": "2026-09-19",
     "mainEntity": {
       "@type": "ItemList",
       "name": "Grant Database Comparison",
@@ -1302,13 +1243,13 @@ export const Head = () => {
           "@type": "ListItem",
           "position": 1,
           "name": "Engrant",
-          "description": "AI-powered grant discovery with pre-evaluated fit scores at $47/month"
+          "description": "AI-powered grant discovery with pre-evaluated fit scores"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Candid",
-          "description": "Comprehensive funder database with Premium pricing starting at $3,499/year"
+          "description": "Comprehensive funder database — Premium from $1,199/year published list price"
         }
       ]
     }
@@ -1317,18 +1258,19 @@ export const Head = () => {
   return (
     <>
       <title>Candid Alternative for Nonprofits (2026) | Engrant vs Candid FDO</title>
-      <meta 
-        name="description" 
-        content="Candid discontinued FDO Essential and prices jumped to $3,499/year. Compare Engrant's AI-powered grant matching at $47/month — 87% less than Candid Premium." 
+      <meta
+        name="description"
+        content={`Candid discontinued FDO Essential. Published Premium is $1,199/year ($219/mo). Compare Engrant live-web grant discovery at $${PRICE_MONTHLY}/month — built for matches, not a research library.`}
       />
-      <meta 
-        name="keywords" 
-        content="Candid alternative, Foundation Directory Online alternative, FDO alternative, grant database for nonprofits, grant search tool, AI grant matching, nonprofit grant database" 
+      <meta
+        name="keywords"
+        content="Candid alternative, Foundation Directory Online alternative, FDO alternative, grant database for nonprofits, grant search tool, AI grant matching, nonprofit grant database"
       />
+      <meta name="dateModified" content="2026-09-19" />
       <link rel="canonical" href="https://engrant.eu/compare/candid-foundation-directory-online/" />
       <OgTwitterMeta
         title="Candid Alternative for Nonprofits (2026) | Engrant vs Candid FDO"
-        description="Candid discontinued FDO Essential and prices jumped to $3,499/year. Compare Engrant's AI-powered grant matching at $47/month — 87% less than Candid Premium."
+        description={`Candid discontinued FDO Essential. Published Premium is $1,199/year. Compare Engrant at $${PRICE_MONTHLY}/month for pre-evaluated grant matches.`}
         url="https://engrant.eu/compare/candid-foundation-directory-online/"
       />
       <script type="application/ld+json">
@@ -1340,6 +1282,9 @@ export const Head = () => {
       <script type="application/ld+json">
         {JSON.stringify(comparisonSchema)}
       </script>
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbSchema)}
+      </script>
       <link
         href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet"
@@ -1347,4 +1292,3 @@ export const Head = () => {
     </>
   );
 };
-

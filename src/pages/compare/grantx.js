@@ -8,6 +8,11 @@ import logo from '../../images/logo-horizontal-remove-background.com.png';
 import engrantExpanded from '../../images/Engrant-expanded.png';
 import Footer from '../../components/Footer';
 import LoomVideo from '../../components/ngo-search/LoomVideo';
+import LastReviewed from '../../components/compare/LastReviewed';
+import CompareAnswerBox from '../../components/compare/CompareAnswerBox';
+import NotForYouSection from '../../components/compare/NotForYouSection';
+import BuyerPersonasSection from '../../components/compare/BuyerPersonasSection';
+import CompareCrossLinks from '../../components/compare/CompareCrossLinks';
 import { OgTwitterMeta } from '../../utils/seoMeta';
 import {
   GEOGRAPHY_SHORT,
@@ -18,21 +23,124 @@ import {
   PRICE_VALID_UNTIL,
 } from '../../constants/positioning';
 import { buildAnnualOffer, buildMonthlyOffer, buildProductSchema } from '../../utils/siteSchema';
+import {
+  LAST_REVIEWED,
+  LAST_REVIEWED_LABEL,
+  buildBreadcrumbSchema,
+  buildFaqSchema,
+} from '../../utils/comparePageSchema';
+
+const GRANTX_FAQS = [
+  {
+    question: "What's the difference between Engrant and GrantX?",
+    answer: `Engrant and GrantX are both AI-powered grant discovery platforms, but they serve different audiences with different pricing models. Engrant costs $${PRICE_MONTHLY}/month (flat rate) with unlimited searches, targeting solo development professionals globally. GrantX uses credit-based pricing from $79–$2,499/month for U.S.-based organizations, with team collaboration features and optional expert proposal writing services. GrantX also charges a 5% performance fee on grants won through the platform (per grantx.com/faq).`,
+  },
+  {
+    question: 'Is Engrant or GrantX cheaper?',
+    answer: `Engrant has a lower entry price at $${PRICE_MONTHLY}/month (or $${PRICE_ANNUAL_PER_MONTH}/month annually) with unlimited searches. GrantX starts at $79/month for the Starter tier with 100 credits per month. GrantX also offers a free tier with 50 credits/month. Total cost depends on tier, credits, optional expert services, and whether you pay GrantX's 5% performance fee on awards won through the platform.`,
+  },
+  {
+    question: 'Does GrantX work for European organizations?',
+    answer: `GrantX explicitly states it works for U.S.-based organizations seeking grant funding. If you're based outside the US, Engrant may be a better fit — ${GEOGRAPHY_SHORT}.`,
+  },
+  {
+    question: 'Does Engrant have team features like GrantX?',
+    answer: 'Engrant is currently focused on solo development professionals and does not emphasize multi-seat team collaboration. If you need multiple team members, department-wide coordination, or shared workspaces, GrantX Professional ($199/month), Team ($499/month), or Enterprise ($2,499/month) tiers are designed for that.',
+  },
+  {
+    question: 'Can I get human help with proposals on Engrant?',
+    answer: 'Engrant includes AI proposal draft generation but does not offer human expert services. GrantX offers optional expert services at $15 per credit, including full federal proposal writing (100 credits/$1,500), application strategy (10 credits/$150), and advisory calls (2 credits/$30).',
+  },
+  {
+    question: "What's the difference between a grant database and live-web search?",
+    answer: 'GrantX markets a large U.S. funder database (900,000+ funders on their site) — comprehensive within that catalog, but still bounded by what they have indexed. Engrant runs parallel search agents across the live web, surfacing funders outside commercial database coverage. Each Engrant result arrives pre-evaluated for fit, eligibility, competition, and red flags for your specific organization.',
+  },
+  {
+    question: "What is GrantX's credit system?",
+    answer: 'GrantX uses credits for platform usage. Published tiers (verify on grantx.com/pricing): Free — 50 credits; Starter ($79) — 100 credits; Professional ($199) — 300 credits; Team ($499) — 1,000 credits; Enterprise ($2,499) — 6,000 credits. Credits are also used for optional expert services at $15 per credit. GrantX has reportedly run unmetered or pre-launch access at times — confirm current metering on their pricing page before you budget. Engrant uses a flat-rate model with unlimited searches instead of credits.',
+  },
+  {
+    question: 'What is GrantX\'s performance fee?',
+    answer: 'Per GrantX\'s FAQ (grantx.com/faq), GrantX charges a 5% performance fee on grants won through the platform. Factor that into total cost if you expect awards to flow through their system. Engrant does not charge a success or performance fee on grants you win.',
+  },
+  {
+    question: 'Which grant platform is best for small nonprofits?',
+    answer: `For solo development professionals at small nonprofits with limited budgets, Engrant at $${PRICE_MONTHLY}/month offers unlimited searches without credit tracking. For small U.S.-based nonprofits that want optional access to expert proposal writing services and team seats, GrantX's Starter tier at $79/month provides that pathway, though expert services and any performance fee on wins cost extra.`,
+  },
+];
 
 const GrantXComparisonPage = () => {
   return (
     <div className="bg-[#fffbf5] text-neutral-700 min-h-screen w-full">
         <Header />
+        <LastReviewed />
         <main className="w-full">
           <Hero />
+          <CompareAnswerBox
+            title="Short Answer: Is GrantX or Engrant right for me?"
+            answer={
+              <>
+                <strong className="text-slate-800">
+                  Choose GrantX for U.S. teams that want credit tiers, team seats, and optional expert help; choose Engrant for global coverage and flat unlimited search.
+                </strong>{' '}
+                GrantX catalogs 900,000+ U.S. funders with tiers from free (50 credits) to Enterprise ($2,499/month), plus a 5% performance fee on grants won through the platform. Engrant is ${PRICE_MONTHLY}/month with unlimited live-web discovery — not limited to a U.S.-only database.
+              </>
+            }
+            bullets={[
+              `Engrant: $${PRICE_MONTHLY}/month — unlimited searches, worldwide`,
+              'GrantX: Free 50 credits; Starter $79; Pro $199; Team $499; Enterprise $2,499',
+              'GrantX: 5% performance fee on grants won via the platform (per their FAQ)',
+              'GrantX: optional human proposal services; Engrant includes AI drafts, no success fee',
+              'Verify GrantX credit metering on their pricing page — access was unmetered at times pre-launch',
+            ]}
+          />
           <QuickComparisonSummary />
           <ComparisonTable />
           <KeyDifferencesExplained />
           <LoomVideo />
+          <BuyerPersonasSection
+            title="Which product for which kind of person"
+            personas={[
+              {
+                name: 'International NGO or non-U.S. organization',
+                description: 'You need funders outside the United States and cannot rely on a U.S.-only product.',
+                winner: 'Engrant',
+                verdict: 'global live-web discovery with flat unlimited pricing.',
+              },
+              {
+                name: 'Solo development professional who hates credit math',
+                description: 'You want predictable monthly cost and unlimited searches without tier upgrades.',
+                winner: 'Engrant',
+                verdict: `one plan at $${PRICE_MONTHLY}/month — no credits or performance fees on wins.`,
+              },
+              {
+                name: 'U.S. grant team with multiple seats and workflow needs',
+                description: 'You want credit-based tiers, shared access, and WorkBench-style coordination.',
+                winner: 'GrantX',
+                verdict: 'Professional, Team, or Enterprise tiers with seat limits that match team size.',
+              },
+              {
+                name: 'U.S. organization that may want human proposal help',
+                description: 'You like optional expert writing, strategy, and review services on top of software.',
+                winner: 'GrantX',
+                verdict: 'expert services purchased with credits alongside the core platform.',
+              },
+            ]}
+          />
+          <NotForYouSection
+            competitorHint="If you need GrantX's U.S. credit marketplace, team tiers, or performance-fee model, GrantX is the better fit."
+            items={[
+              'You need a U.S.-only grant marketplace with a large catalogued funder database (GrantX cites 900,000+ U.S. funders)',
+              'You want credit-based team tiers and multiple seats (Professional through Enterprise)',
+              'You are comfortable with a 5% performance fee on grants won through the platform',
+              'You want optional human expert proposal services integrated with discovery',
+            ]}
+          />
           <HonestAssessment />
           <ProblemRecognition />
           <PricingComparison />
           <FAQSection />
+          <CompareCrossLinks currentPath="/compare/grantx/" />
           <FinalCTA />
         </main>
         <Footer />
@@ -207,7 +315,7 @@ const QuickComparisonSummary = () => {
               </div>
               <div>
                 <span className="text-sm font-semibold text-neutral-500 uppercase tracking-wide">Key approach</span>
-                <p className="text-neutral-700 mt-1">Large database with workflow management and optional expert services</p>
+                <p className="text-neutral-700 mt-1">900,000+ U.S. funders, workflow tools, optional expert services, 5% performance fee on wins</p>
               </div>
             </div>
           </div>
@@ -238,6 +346,8 @@ const ComparisonTable = () => {
     { feature: "Team Collaboration", engrant: "Shared access", grantx: "Core feature (Pro tier+)", engrantCheck: true, grantxCheck: true },
     { feature: "Workflow Management", engrant: "Simple progress tracking", grantx: "WorkBench feature", engrantCheck: true, grantxCheck: true },
     { feature: "CSV Export", engrant: "Not included", grantx: "Yes (Starter+)", engrantCheck: false, grantxCheck: true },
+    { feature: "Funder coverage (claimed)", engrant: "Live web — not limited to one database", grantx: "900,000+ U.S. funders (catalogued database)", engrantCheck: true, grantxCheck: true },
+    { feature: "Performance fee on awards", engrant: "None", grantx: "5% on grants won through platform (per GrantX FAQ)", engrantCheck: true, grantxCheck: "partial" },
   ];
 
   return (
@@ -368,8 +478,15 @@ const KeyDifferencesExplained = () => {
               <p className="text-neutral-600 mb-4">
                 GrantX uses a credit system: Free (50 credits), Starter at $79 (100 credits), Professional at $199 (300 credits), Team at $499 (1,000 credits), and Enterprise at $2,499 (6,000 credits).
               </p>
-              <p className="text-neutral-600">
-                This model works well for organizations that need team collaboration features or want to scale usage across departments.
+              <p className="text-neutral-600 mb-4">
+                GrantX also charges a <strong className="text-slate-700">5% performance fee on grants won through the platform</strong> (stated on grantx.com/faq). Budget for that on top of subscription and expert-service credits.
+              </p>
+              <p className="text-neutral-600 text-sm bg-amber-50 border border-amber-100 rounded-lg p-3">
+                <strong className="text-slate-700">Credit metering:</strong> GrantX has offered unmetered or pre-launch access at times. Before you commit, verify how credits are counted on{' '}
+                <a href="https://app.grantx.com/pricing" target="_blank" rel="noopener noreferrer" className="text-teal-700 hover:underline">
+                  their pricing page
+                </a>
+                .
               </p>
             </div>
           </div>
@@ -424,10 +541,10 @@ const KeyDifferencesExplained = () => {
               </div>
               <p className="text-neutral-700 mb-4 font-semibold">U.S. focus</p>
               <p className="text-neutral-600 mb-4">
-                "Grantx works for any U.S.-based organization seeking grant funding."
+                GrantX markets <strong className="text-slate-700">900,000+ U.S. funders</strong> and states it works for U.S.-based organizations seeking grant funding — a U.S.-only audience, not international NGOs.
               </p>
               <p className="text-neutral-600">
-                GrantX is explicitly designed for organizations based in the United States.
+                If your mission spans Europe, Africa, or global bilateral funders, a U.S.-catalogued database is the wrong starting point.
               </p>
             </div>
           </div>
@@ -498,6 +615,10 @@ const HonestAssessment = () => {
             When Each Tool Might Be the Better Choice
           </h2>
           <p className="text-lg text-neutral-600">We believe in honest comparisons. Here's when each tool makes sense.</p>
+        </div>
+
+        <div className="max-w-3xl mx-auto mb-12 bg-slate-50 border border-slate-200 rounded-2xl p-6 text-neutral-600 text-sm leading-relaxed">
+          <strong className="text-slate-700">Third-party reviews:</strong> Independent reviews of GrantX are almost nonexistent as of {LAST_REVIEWED_LABEL} — no meaningful G2, Capterra, or Trustpilot footprint to cite. We are not featuring stray social posts as evidence. Treat marketing claims and your own trial as the main inputs.
         </div>
         
         <div className="grid md:grid-cols-2 gap-8">
@@ -720,8 +841,18 @@ const PricingComparison = () => {
               </div>
             </div>
             
-            <p className="text-sm text-neutral-600 mb-6">
+            <p className="text-sm text-neutral-600 mb-4">
               + Optional expert services at $15/credit
+            </p>
+            <p className="text-sm text-neutral-600 mb-4">
+              + 5% performance fee on grants won through GrantX (per{' '}
+              <a href="https://www.grantx.com/faq" target="_blank" rel="noopener noreferrer" className="text-teal-700 hover:underline">
+                grantx.com/faq
+              </a>
+              )
+            </p>
+            <p className="text-xs text-neutral-500 mb-6 bg-white rounded-lg p-3 border border-slate-100">
+              Credit limits and metering can change — GrantX has run unmetered access during pre-launch periods. Confirm current tiers on their pricing page before budgeting.
             </p>
             
             <a 
@@ -741,41 +872,6 @@ const PricingComparison = () => {
 
 // FAQ Section
 const FAQSection = () => {
-  const faqs = [
-    {
-      question: "What's the difference between Engrant and GrantX?",
-      answer: "Engrant and GrantX are both AI-powered grant discovery platforms, but they serve different audiences with different pricing models. Engrant costs $47/month (flat rate) with unlimited searches, targeting solo development professionals at small nonprofits globally. GrantX uses credit-based pricing from $79-$2,499/month, targeting U.S.-based organizations of all sizes including universities and research institutions, with team collaboration features and optional expert proposal writing services."
-    },
-    {
-      question: "Is Engrant or GrantX cheaper?",
-      answer: "Engrant has a lower entry price at $47/month (or $37/month annually) with unlimited searches. GrantX starts at $79/month for the Starter tier with 100 credits per month. GrantX also offers a free tier with 50 credits/month. The better value depends on your usage patterns and whether you need GrantX's team features or expert services."
-    },
-    {
-      question: "Does GrantX work for European organizations?",
-      answer: `GrantX explicitly states it works for "U.S.-based organizations." If you're based outside the US, Engrant may be a better fit — ${GEOGRAPHY_SHORT}.`
-    },
-    {
-      question: "Does Engrant have team features like GrantX?",
-      answer: "Engrant is currently focused on solo development professionals and doesn't emphasize team collaboration features. If you need multiple team members, department-wide coordination, or shared workspaces, GrantX's Professional ($199/month), Team ($499/month), or Enterprise ($2,499/month) tiers are designed for that."
-    },
-    {
-      question: "Can I get human help with proposals on Engrant?",
-      answer: "Engrant includes AI proposal draft generation but doesn't offer human expert services. GrantX offers optional expert services at $15 per credit, including full federal proposal writing (100 credits/$1,500), application strategy (10 credits/$150), and advisory calls (2 credits/$30)."
-    },
-    {
-      question: "What's the difference between a grant database and live-web search?",
-      answer: "GrantX searches a static database of funders it has catalogued — comprehensive within that database, but a database can only show what it covers. Engrant runs parallel search agents across the live web, surfacing funders outside commercial database coverage. Each result arrives pre-evaluated for fit, eligibility, competition, and red flags for your specific organization."
-    },
-    {
-      question: "What is GrantX's credit system?",
-      answer: "GrantX uses credits for platform usage. Each tier includes a monthly credit allocation: Free: 50 credits, Starter ($79): 100 credits, Professional ($199): 300 credits, Team ($499): 1,000 credits, Enterprise ($2,499): 6,000 credits. Credits are also used for optional expert services at $15 per credit. Engrant uses a flat-rate model with unlimited searches instead of credits."
-    },
-    {
-      question: "Which grant platform is best for small nonprofits?",
-      answer: "For solo development professionals at small nonprofits with limited budgets, Engrant at $47/month offers unlimited searches without credit tracking. For small U.S.-based nonprofits that want optional access to expert proposal writing services, GrantX's Starter tier at $79/month provides that pathway, though expert services cost extra."
-    }
-  ];
-
   return (
     <section id="faq" className="py-24 section-cream">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -792,7 +888,7 @@ const FAQSection = () => {
         </div>
         
         <div className="space-y-6">
-          {faqs.map((faq, index) => (
+          {GRANTX_FAQS.map((faq, index) => (
             <div key={index} className="bg-white rounded-2xl p-6 warm-shadow border border-neutral-100">
               <h3 className="text-lg font-bold text-slate-800 mb-3">
                 {faq.question}
@@ -887,61 +983,37 @@ const FinalCTA = () => {
 export default GrantXComparisonPage;
 
 export const Head = () => {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What's the difference between Engrant and GrantX?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Engrant costs $47/month (flat rate) with unlimited searches, targeting solo development professionals globally. GrantX uses credit-based pricing from $79-$2,499/month, targeting U.S.-based organizations with team collaboration features and optional expert services."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is Engrant or GrantX cheaper?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Engrant has a lower entry price at $47/month with unlimited searches. GrantX starts at $79/month with 100 credits. GrantX also offers a free tier with 50 credits/month."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does GrantX work for European organizations?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "GrantX explicitly serves U.S.-based organizations. Engrant is worldwide and not limited to any database's coverage area."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Which grant platform is best for small nonprofits?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "For solo professionals at small nonprofits with limited budgets, Engrant at $47/month offers unlimited searches. For U.S. nonprofits wanting optional expert proposal writing, GrantX Starter at $79/month provides that pathway."
-        }
-      }
-    ]
-  };
+  const faqSchema = buildFaqSchema(GRANTX_FAQS);
+  const breadcrumbSchema = buildBreadcrumbSchema(
+    'Engrant vs GrantX',
+    '/compare/grantx/'
+  );
 
   const productSchema = buildProductSchema({
     description: 'AI-powered grant discovery platform for solo development professionals',
     offers: [buildMonthlyOffer(), buildAnnualOffer()],
   });
 
+  const comparisonSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Engrant vs GrantX: Which Grant Discovery Tool Fits You? (2026)',
+    description: `Compare Engrant flat unlimited discovery vs GrantX U.S. credit tiers, 900k+ funders, and 5% performance fee on wins.`,
+    dateModified: LAST_REVIEWED,
+  };
+
   return (
     <>
-      <title>Engrant vs GrantX: Which Grant Discovery Tool Fits You? (2025)</title>
+      <title>Engrant vs GrantX: Which Grant Discovery Tool Fits You? (2026)</title>
       <meta 
         name="description" 
-        content="Compare Engrant and GrantX for grant discovery. Different pricing models, different audiences. Engrant: $47/month flat rate for solo professionals. GrantX: Credit-based tiers from $79-$2,499/month." 
+        content={`Compare Engrant and GrantX for grant discovery. Engrant: $${PRICE_MONTHLY}/month flat rate worldwide. GrantX: U.S.-only credit tiers $79–$2,499, 900k+ funders, 5% performance fee on wins.`}
       />
+      <meta name="dateModified" content={LAST_REVIEWED} />
       <link rel="canonical" href="https://engrant.eu/compare/grantx/" />
       <OgTwitterMeta
-        title="Engrant vs GrantX: Which Grant Discovery Tool Fits You? (2025)"
-        description="Compare Engrant and GrantX for grant discovery. Different pricing models, different audiences. Engrant: $47/month flat rate for solo professionals. GrantX: Credit-based tiers from $79-$2,499/month."
+        title="Engrant vs GrantX: Which Grant Discovery Tool Fits You? (2026)"
+        description={`Compare Engrant and GrantX. Flat unlimited discovery vs U.S. credit tiers, team seats, and 5% performance fee on grants won through GrantX.`}
         url="https://engrant.eu/compare/grantx/"
       />
       <script type="application/ld+json">
@@ -949,6 +1021,12 @@ export const Head = () => {
       </script>
       <script type="application/ld+json">
         {JSON.stringify(productSchema)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(comparisonSchema)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbSchema)}
       </script>
       <link
         href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap"

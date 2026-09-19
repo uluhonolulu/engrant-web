@@ -19,22 +19,120 @@ import {
 import { buildAnnualOffer, buildMonthlyOffer, buildProductSchema } from '../../utils/siteSchema';
 import { OgTwitterMeta } from '../../utils/seoMeta';
 import LoomVideo from '../../components/ngo-search/LoomVideo';
+import LastReviewed from '../../components/compare/LastReviewed';
+import CompareAnswerBox from '../../components/compare/CompareAnswerBox';
+import NotForYouSection from '../../components/compare/NotForYouSection';
+import BuyerPersonasSection from '../../components/compare/BuyerPersonasSection';
+import CompareCrossLinks from '../../components/compare/CompareCrossLinks';
+import {
+  LAST_REVIEWED,
+  buildBreadcrumbSchema,
+  buildFaqSchema,
+} from '../../utils/comparePageSchema';
+
+const FUNDSFORNGOS_FAQS = [
+  {
+    question: 'How much does fundsforNGOs Premium cost?',
+    answer: 'As of September 2026, the live signup at subscribetopremium.fundsforngos.org lists Premium at $199/year permanently discounted to $49/year for a single-user annual membership (online payment). Membership auto-renews; renew on time to keep the locked price. Online payments include a 7-day money-back guarantee per their FAQ.',
+  },
+  {
+    question: 'What is the best alternative to fundsforNGOs?',
+    answer: `For NGOs that need live-web discovery with org-specific evaluation, Engrant is a leading fundsforNGOs alternative at $${PRICE_MONTHLY}/month ($${PRICE_ANNUAL_TOTAL}/year billed annually). fundsforNGOs Premium is a curated alert list; Engrant searches beyond any one database.`,
+  },
+  {
+    question: "What's the difference between fundsforNGOs and Engrant?",
+    answer: 'fundsforNGOs Premium delivers curated funding alerts, a donor directory, and training from a human-maintained database — plus a large free resource library at fundsforngos.org. Engrant searches the live web and returns 30–50 grants pre-evaluated for your organization with fit scores and red flags. Signing up does not automatically win grants — fundsforNGOs states that clearly in their FAQ.',
+  },
+  {
+    question: 'When is fundsforNGOs the better choice?',
+    answer: 'fundsforNGOs fits NGOs in the Global South and internationally who want low-cost curated alerts ($49/year online), proposal templates, and free articles. Engrant fits when you need funders outside their catalog or org-specific fit intelligence.',
+  },
+  {
+    question: 'Does fundsforNGOs have AI-powered grant matching?',
+    answer: 'No. Premium is curated listings and email alerts, not AI matching or per-organization fit scoring. Engrant provides that on live-web results.',
+  },
+  {
+    question: 'Does Engrant work for NGOs outside the United States?',
+    answer: `Yes. ${GEOGRAPHY_SHORT} Engrant serves paying customers worldwide; fundsforNGOs is strong for international NGO awareness but app reviewers note UK/Canada-weighted listings.`,
+  },
+  {
+    question: 'Can I use fundsforNGOs and Engrant together?',
+    answer: 'Yes. Many NGOs use the free fundsforngos.org library and $49/year Premium alerts alongside Engrant for live-web discovery and fit scoring.',
+  },
+];
 
 const FundsforNGOsComparisonPage = () => {
   return (
     <div className="bg-[#fffbf5] text-neutral-700 min-h-screen w-full">
         <Header />
+        <LastReviewed />
         <main className="w-full">
           <Hero />
+          <CompareAnswerBox
+            title="Short Answer: Is fundsforNGOs or Engrant right for me?"
+            answer={
+              <>
+                <strong className="text-slate-800">
+                  Choose fundsforNGOs for $49/year curated alerts and free NGO resources; choose Engrant for live-web discovery with fit scores.
+                </strong>{' '}
+                Premium is a database-bounded alert service — not automatic grant wins.
+              </>
+            }
+            bullets={[
+              'fundsforNGOs Premium: $49/year online (list $199) — single user, 7-day money-back',
+              `Engrant: $${PRICE_MONTHLY}/month — 30–50 pre-evaluated live-web matches`,
+              'fundsforNGOs: strong Global South / international awareness + free library',
+              'Engrant: org-specific fit, competition, and red flags',
+            ]}
+          />
           <ProblemSection />
           <ComparisonTable />
           <KeyDifferences />
           <LoomVideo />
+          <BuyerPersonasSection
+            title="Which product for which kind of person"
+            personas={[
+              {
+                name: 'Small NGO in Africa or Asia on a minimal software budget',
+                description: 'Needs funding awareness and templates more than deep US foundation research.',
+                winner: 'fundsforNGOs',
+                verdict: '$49/year Premium plus free fundsforngos.org articles.',
+              },
+              {
+                name: 'NGO frustrated UK/Canada-heavy app listings',
+                description: 'Wants locally relevant funders beyond a curated alert feed.',
+                winner: 'Engrant',
+                verdict: 'live-web search tuned to your geography and mission.',
+              },
+              {
+                name: 'First-time grant seeker confused by free vs Premium',
+                description: 'Needs clarity that membership does not auto-win grants.',
+                winner: 'fundsforNGOs',
+                verdict: 'if you treat Premium as alerts + training, not a grant guarantee.',
+              },
+              {
+                name: 'Development lead who outgrew static alert lists',
+                description: 'Spends hours researching each alert for fit and eligibility.',
+                winner: 'Engrant',
+                verdict: 'pre-evaluated matches with fit scores and red flags.',
+              },
+            ]}
+          />
+          <NotForYouSection
+            competitorHint="If you need fundsforNGOs's $49/year alerts, donor directory, or free resource library, stay on Premium."
+            items={[
+              'You want the lowest-cost curated funding alerts for international NGOs',
+              'You rely on fundsforngos.org free articles and proposal samples',
+              'You are fine researching each listing yourself after email alerts',
+              'You understand Premium does not guarantee grants (per fundsforNGOs FAQ)',
+            ]}
+          />
           <HonestAssessment />
           <Testimonials />
           <PricingComparison />
           <FAQSection />
           <SourcesSection />
+          <CompareCrossLinks currentPath="/compare/fundsforngos/" />
           <FinalCTA />
         </main>
         <Footer />
@@ -140,33 +238,35 @@ const ProblemSection = () => {
   const problems = [
     {
       icon: Database,
-      title: "A curated database — not live-web discovery",
-      description: "fundsforNGOs Premium is a human-maintained list of funding opportunities with email alerts when new grants are added. Comprehensive within that database — but a database can only show what it covers.",
-      quote: null,
-      quoteSource: null,
-      sourceUrl: "https://support.fundsforngos.org/hc/en-us/articles/360038724933-What-is-included-in-the-Premium-Membership-",
+      title: "Curated alerts — not live-web discovery",
+      description: "Premium is a human-maintained opportunity list with email alerts. Valuable for awareness, but bounded by what their team catalogs.",
+      quote: "No. Your NGO will not get grants after signing up for the Premium Membership.",
+      quoteSource: "fundsforNGOs FAQ",
+      sourceUrl: "https://support.fundsforngos.org/hc/en-us",
       engrantAlternative: MECHANISM
     },
     {
-      icon: Search,
-      title: "Listings to research, not org-specific evaluation",
-      description: "fundsforNGOs sends curated opportunities and donor directory entries. Each listing still requires you to assess fit, eligibility, and competition for your specific organization.",
-      quote: null,
-      quoteSource: null,
-      engrantAlternative: "30-50 grants per search, each pre-evaluated with fit scores and red flags"
-    },
-    {
       icon: MapPin,
-      title: "Strong for developing-country NGOs — bounded by the database",
-      description: "fundsforNGOs is widely used by NGOs in Africa, Asia, and Latin America at $199/year (developing countries). The value is broad awareness plus training — but coverage is limited to what their team includes.",
-      quote: null,
-      quoteSource: null,
+      title: "Listings can skew toward some regions",
+      description: "App reviewers say funding can feel geared toward organizations in the UK and Canada relative to other regions — check fit for your country.",
+      quote: "Funding seem geared more to organizations in the UK and Canada...",
+      quoteSource: "Bette Lawrence-Water, Google Play (4★)",
+      sourceUrl: "https://play.google.com/store/apps/details?id=org.fundsforngos.premium",
       engrantAlternative: GEOGRAPHY_SHORT
     },
     {
+      icon: Search,
+      title: "Free vs Premium confusion",
+      description: "The free site and Premium app serve different purposes; users report unclear expectations about what paid membership delivers.",
+      quote: "The free version and premium are confusing...",
+      quoteSource: "JUSTIN JOHN GENDA, app review",
+      sourceUrl: "https://play.google.com/store/apps/details?id=org.fundsforngos.premium",
+      engrantAlternative: "One product: discovery with fit scores — 2-week free trial"
+    },
+    {
       icon: Eye,
-      title: "Training and templates — not fit intelligence",
-      description: "Premium membership includes proposal templates, webinars, and a donor directory with contact details. It does not provide AI fit scoring, competition analysis, or automated eligibility screening per organization.",
+      title: "Templates and training — not fit intelligence",
+      description: "Premium includes proposal templates, webinars, and donor directory contacts — not org-specific fit scoring or competition analysis.",
       quote: null,
       quoteSource: null,
       engrantAlternative: "Fit score, competition level, effort estimate, and red flags on every result"
@@ -238,13 +338,13 @@ const ComparisonTable = () => {
     { category: "Intelligence & Insights", feature: "Competition level", engrant: "Shows High/Medium/Low competition", competitor: "Not available", engrantCheck: true, competitorCheck: false },
     { category: "Intelligence & Insights", feature: "Application effort estimate", engrant: "Shows effort level required", competitor: "Not available", engrantCheck: true, competitorCheck: false },
     { category: "Intelligence & Insights", feature: "Red flags & warnings", engrant: "Proactive warnings (consortium required, etc.)", competitor: "Not available", engrantCheck: true, competitorCheck: false },
-    { category: "Intelligence & Insights", feature: "Past recipients like you", engrant: "Shows similar orgs that got funded", competitor: "Donor directory with funding priorities", engrantCheck: true, competitorCheck: "partial" },
+    { category: "Intelligence & Insights", feature: "Past recipients like you", engrant: "Shows similar orgs that got funded (illustrative examples in product)", competitor: "Donor directory with funding priorities", engrantCheck: true, competitorCheck: "partial" },
     { category: "Data & Coverage", feature: "Data source", engrant: "Live-web search (parallel agents, always current)", competitor: "Human-maintained curated database", engrantCheck: true, competitorCheck: "partial" },
     { category: "Data & Coverage", feature: "Coverage limit", engrant: "Not limited to what any one database covers", competitor: "Comprehensive within their database only", engrantCheck: true, competitorCheck: "partial" },
-    { category: "Data & Coverage", feature: "Geographic focus", engrant: GEOGRAPHY_SHORT, competitor: "Global NGO focus; tiered pricing by country", engrantCheck: true, competitorCheck: true },
+    { category: "Data & Coverage", feature: "Geographic focus", engrant: GEOGRAPHY_SHORT, competitor: "International / Global South focus; reviewers note UK/Canada skew in app", engrantCheck: true, competitorCheck: true },
     { category: "Educational Resources", feature: "Training & templates", engrant: "Focused on discovery — minimal learning needed", competitor: "Proposal templates, webinars, training materials", engrantCheck: "partial", competitorCheck: true },
-    { category: "Pricing", feature: "Annual cost (developing countries)", engrant: `$${PRICE_ANNUAL_TOTAL}/year ($${PRICE_ANNUAL_PER_MONTH}/month)`, competitor: "$199/year", engrantCheck: "partial", competitorCheck: true },
-    { category: "Pricing", feature: "Annual cost (developed countries)", engrant: `$${PRICE_ANNUAL_TOTAL}/year ($${PRICE_ANNUAL_PER_MONTH}/month)`, competitor: "$399/year", engrantCheck: "partial", competitorCheck: true },
+    { category: "Pricing", feature: "Annual Premium (online signup)", engrant: `$${PRICE_ANNUAL_TOTAL}/year ($${PRICE_ANNUAL_PER_MONTH}/month)`, competitor: "$49/year (list $199; single-user)", engrantCheck: "partial", competitorCheck: true },
+    { category: "Pricing", feature: "Refund / renewal", engrant: "2-week free trial", competitor: "7-day money-back (online); auto-renew with price lock if renewed on time", engrantCheck: true, competitorCheck: true },
     { category: "Pricing", feature: "Monthly option", engrant: `$${PRICE_MONTHLY}/month (no commitment)`, competitor: "Annual membership only (12 months from signup)", engrantCheck: true, competitorCheck: false },
     { category: "Pricing", feature: "Free trial", engrant: "2 weeks, no credit card", competitor: "7-day money-back on Premium (verify current policy)", engrantCheck: true, competitorCheck: "partial" },
     { category: "Best For", feature: "Target user", engrant: "NGOs needing live-web discovery with org-specific evaluation", competitor: "Budget-conscious NGOs wanting curated alerts plus training", engrantCheck: true, competitorCheck: true },
@@ -372,7 +472,7 @@ const KeyDifferences = () => {
                 Let AI do the searching — not your already-busy team
               </h2>
               <p className="text-lg text-neutral-600 mb-6 leading-relaxed">
-                With FundsforNGOs, you navigate separate databases (US Charitable, US Federal, US State Government, Canadian, International), select keywords from dropdown menus, choose geographic filters, and manually review each result. It's straightforward — but it's manual work.
+                With fundsforNGOs Premium, you browse curated opportunity lists and donor directory entries from email alerts — then research each listing for fit yourself.
               </p>
               <p className="text-lg text-neutral-600 mb-6 leading-relaxed">
                 Engrant works differently. Enter your organization name or website URL. Our AI researches your mission, programs, geography, and characteristics automatically. Within minutes, you're reviewing grants that actually fit — not setting up search parameters across multiple databases.
@@ -432,7 +532,7 @@ const KeyDifferences = () => {
                 Every grant scored and evaluated — not just listed
               </h2>
               <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
-                FundsforNGOs gives you funder names, locations, and brief descriptions. From there, you click into each profile to manually assess whether it's worth pursuing. That's how traditional databases work.
+                fundsforNGOs Premium gives you curated listings, donor priorities, and training materials. From there, you assess whether each alert is worth pursuing for your specific NGO.
               </p>
               <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
                 Engrant evaluates every grant before showing it to you. Each result comes with:
@@ -467,7 +567,7 @@ const KeyDifferences = () => {
           </div>
         </div>
         
-        {/* 4C: Real-Time Web vs Static 9,000-Funder Database */}
+        {/* 4C: Live-web vs curated alert lists */}
         <div className="mb-32">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -476,10 +576,10 @@ const KeyDifferences = () => {
                 Database Coverage
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-4 leading-tight">
-                Search the entire web — not just 9,000 funders
+                Live-web discovery vs curated alert lists
               </h2>
               <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-                FundsforNGOs curates a database of approximately 9,000 funders, focusing on active grantmakers. While curated quality matters, it means many opportunities are simply not in their system.
+                fundsforNGOs maintains a human-curated Premium database plus a large free knowledge base at fundsforngos.org. Engrant is not limited to what their editors include in each alert cycle.
               </p>
             </div>
             
@@ -487,12 +587,12 @@ const KeyDifferences = () => {
               <div className="grid md:grid-cols-2 gap-8 mb-6">
                 <div className="bg-slate-50 rounded-xl p-6 border border-slate-100">
                   <h3 className="font-semibold text-slate-700 mb-3 flex items-center">
-                    <span className="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center mr-2 text-sm font-bold text-slate-600">GS</span>
-                    FundsforNGOs
+                    <span className="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center mr-2 text-sm font-bold text-slate-600">FfN</span>
+                    fundsforNGOs
                   </h3>
-                  <div className="text-3xl font-bold text-slate-600 mb-2">~9,000</div>
-                  <p className="text-neutral-500 text-sm">curated funders in a static database</p>
-                  <p className="text-neutral-500 text-sm mt-2">11 results in a real-world test search</p>
+                  <div className="text-3xl font-bold text-slate-600 mb-2">$49/yr</div>
+                  <p className="text-neutral-500 text-sm">Premium online rate (list $199) — curated alerts</p>
+                  <p className="text-neutral-500 text-sm mt-2">Free resource library at fundsforngos.org</p>
                 </div>
                 <div className="bg-teal-50 rounded-xl p-6 border border-teal-100">
                   <h3 className="font-semibold text-teal-700 mb-3 flex items-center">
@@ -515,24 +615,30 @@ const KeyDifferences = () => {
           </div>
         </div>
         
-        {/* 4D: Geographic Precision */}
+        {/* Past recipients illustrative */}
+        <div className="mb-32">
+          <div className="max-w-4xl mx-auto bg-white rounded-3xl p-8 warm-shadow-lg border border-teal-100">
+            <h3 className="font-semibold text-slate-700 mb-2">Example: Past recipients similar to your organization</h3>
+            <p className="text-sm text-amber-700 mb-4 font-medium">Illustrative example — not live customer data</p>
+            <p className="text-neutral-600">Engrant shows peer funders for your org; fundsforNGOs Premium focuses on opportunity alerts and donor directory entries.</p>
+          </div>
+        </div>
+
+        {/* 4D: Geographic fit */}
         <div>
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center bg-amber-100 text-amber-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <MapPin className="w-4 h-4 mr-2" />
-              Geographic Precision
+              Geographic fit
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-6 leading-tight">
-              County and city-level matching — not just state
+              Org-specific geographic fit — not one-size-fits-all alerts
             </h2>
             <p className="text-lg text-neutral-600 leading-relaxed max-w-2xl mx-auto mb-4">
-              FundsforNGOs's geographic filtering only goes to the state level. In a test for a Chicago-based nonprofit, this meant results for counties nowhere near Chicago — wasting time on irrelevant opportunities.
+              Reviewers note funding listings can feel weighted toward the UK and Canada compared to other regions — verify each alert matches your country and sector.
             </p>
             <p className="text-lg text-teal-700 font-medium max-w-2xl mx-auto">
-              Engrant checks geographic eligibility at the county and city level, ensuring you only see grants you can actually apply for based on where you operate.
-            </p>
-            <p className="text-neutral-600 mt-4 max-w-2xl mx-auto">
-              For nonprofits serving specific communities, geographic precision eliminates wasted research hours.
+              Engrant evaluates whether each opportunity matches where you work — useful when alert feeds are broad or regionally skewed.
             </p>
           </div>
         </div>
@@ -567,12 +673,12 @@ const HonestAssessment = () => {
             </h3>
             <ul className="space-y-4">
               {[
-                "Your budget is extremely constrained — $199/year (developing countries) is the ceiling",
+                "Your budget is extremely constrained — $49/year online Premium is the ceiling",
                 "You want broad funding awareness via curated email alerts, not deep org-specific search",
                 "You value proposal templates, webinars, and training materials included in membership",
                 "You're new to grant seeking and want a low-cost entry point with educational support",
                 "A human-maintained database plus donor directory is sufficient for your workflow",
-                "You're in a developing country and fundsforNGOs's tiered pricing fits your budget",
+                "You want Global South / international coverage plus free articles at fundsforngos.org",
               ].map((item, index) => (
                 <li key={index} className="flex items-start gap-3 text-neutral-600">
                   <span className="w-1.5 h-1.5 bg-slate-400 rounded-full mt-2 flex-shrink-0"></span>
@@ -581,7 +687,7 @@ const HonestAssessment = () => {
               ))}
             </ul>
             <p className="text-neutral-500 text-sm mt-6 italic">
-              fundsforNGOs at $199/year (developing countries) is genuinely cheaper than Engrant's $444/year annual tier. For budget-constrained NGOs wanting awareness plus training, it is often the right starting point.
+              fundsforNGOs at $49/year online is genuinely cheaper than Engrant's annual tier. For budget-constrained NGOs wanting awareness plus training, it is often the right starting point.
             </p>
           </div>
           
@@ -664,8 +770,8 @@ const Testimonials = () => {
         <div className="bg-white rounded-2xl p-8 warm-shadow border border-teal-100">
           <div className="grid md:grid-cols-3 gap-6 text-center">
             <div>
-              <div className="text-3xl font-bold text-teal-600 mb-2">5+</div>
-              <div className="text-neutral-600">hours/week saved on grant research</div>
+              <div className="text-3xl font-bold text-teal-600 mb-2">Fewer</div>
+              <div className="text-neutral-600">hours researching low-fit alerts (varies by org)</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-teal-600 mb-2">30-50</div>
@@ -698,7 +804,7 @@ const PricingComparison = () => {
             How Much Does FundsforNGOs Cost?
           </h2>
           <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            Different models, different price points. Pricing checked August 2026 — this is a capability comparison, not a price-beating page.
+            Premium is $49/year online (list $199). Pricing checked September 2026 — capability comparison, not a price-beating page.
           </p>
         </div>
         
@@ -709,21 +815,18 @@ const PricingComparison = () => {
             
             <div className="space-y-4">
               <div className="bg-white rounded-xl p-5 border border-slate-100">
-                <div className="text-sm font-semibold text-slate-500 mb-1">DEVELOPING COUNTRIES</div>
-                <div className="flex items-baseline">
-                  <span className="text-3xl font-bold text-slate-700">$199</span>
-                  <span className="text-neutral-500 ml-1">/year</span>
+                <div className="text-sm font-semibold text-slate-500 mb-1">PREMIUM (ONLINE SIGNUP)</div>
+                <div className="flex items-baseline gap-2 flex-wrap">
+                  <span className="text-lg text-neutral-400 line-through">$199</span>
+                  <span className="text-3xl font-bold text-slate-700">$49</span>
+                  <span className="text-neutral-500">/year</span>
                 </div>
-                <p className="text-sm text-neutral-500 mt-1">Annual membership · 12 months from signup</p>
+                <p className="text-sm text-neutral-500 mt-1">Single-user annual · 7-day money-back (online) · auto-renew with price lock if renewed on time</p>
               </div>
 
-              <div className="bg-white rounded-xl p-5 border border-slate-100">
-                <div className="text-sm font-semibold text-slate-500 mb-1">DEVELOPED COUNTRIES</div>
-                <div className="flex items-baseline">
-                  <span className="text-3xl font-bold text-slate-700">$399</span>
-                  <span className="text-neutral-500 ml-1">/year</span>
-                </div>
-                <p className="text-sm text-neutral-500 mt-1">Annual membership · 12 months from signup</p>
+              <div className="bg-teal-50 rounded-xl p-5 border border-teal-100">
+                <div className="text-sm font-semibold text-teal-700 mb-1">FREE LIBRARY</div>
+                <p className="text-sm text-neutral-600">Articles, samples, and guides at fundsforngos.org — separate from Premium alerts</p>
               </div>
               
               <div className="pt-4">
@@ -749,7 +852,7 @@ const PricingComparison = () => {
                   {[
                     "Live-web search beyond their database",
                     "Org-specific fit scoring or eligibility evaluation",
-                    "Competition level or red flag analysis",
+                    "Guaranteed grants (per fundsforNGOs FAQ)",
                   ].map((item, index) => (
                     <div key={index} className="flex items-center gap-2 text-sm text-neutral-500">
                       <X className="w-4 h-4 text-rose-300 flex-shrink-0" />
@@ -760,7 +863,7 @@ const PricingComparison = () => {
               </div>
 
               <p className="text-sm text-neutral-500 italic">
-                Pricing checked August 2026 —{' '}
+                Pricing checked September 2026 —{' '}
                 <a href="https://subscribetopremium.fundsforngos.org/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:underline">
                   subscribetopremium.fundsforngos.org
                 </a>
@@ -847,7 +950,7 @@ const PricingComparison = () => {
         <div className="mt-10 max-w-3xl mx-auto">
           <div className="bg-amber-50 border border-amber-100 rounded-xl p-6">
             <p className="text-amber-800 text-center font-medium leading-relaxed">
-              fundsforNGOs is <strong>cheaper</strong> for developing-country NGOs ($199/year vs ${'$'}{PRICE_ANNUAL_TOTAL}/year). Engrant is the upgrade when you need funders outside database coverage — each one pre-evaluated for your organization, not delivered as a listing to research.
+              fundsforNGOs Premium at <strong>$49/year</strong> (online) is far below Engrant (${PRICE_ANNUAL_TOTAL}/year). Engrant is the upgrade when alert lists are not enough — each match pre-evaluated for your organization, not delivered as a listing to research.
             </p>
           </div>
         </div>
@@ -860,36 +963,7 @@ const PricingComparison = () => {
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = React.useState(null);
 
-  const faqs = [
-    {
-      question: "How much does fundsforNGOs cost?",
-      answer: `fundsforNGOs Premium costs $199/year for developing countries and $399/year for developed countries (checked August 2026 at subscribetopremium.fundsforngos.org). Membership is annual, valid 12 months from signup. It includes a curated funding opportunity list with email alerts, donor directory, proposal templates, and training resources. There is no monthly payment option.`
-    },
-    {
-      question: "What is the best alternative to fundsforNGOs?",
-      answer: `For NGOs that need live-web discovery with org-specific evaluation, Engrant is the leading fundsforNGOs alternative. At $${PRICE_MONTHLY}/month ($${PRICE_ANNUAL_TOTAL}/year billed annually), Engrant searches the live web for funders outside database coverage and returns each one pre-evaluated with fit scores, competition levels, and red flags.`
-    },
-    {
-      question: "What's the difference between fundsforNGOs and Engrant?",
-      answer: "fundsforNGOs is a human-maintained curated database with email alerts and training materials — excellent value at $199/year for developing countries. Engrant searches the live web and returns each funder pre-evaluated for your specific organization. The structural difference: fundsforNGOs can only show opportunities in their database; Engrant is not limited to what any one database covers."
-    },
-    {
-      question: "When is fundsforNGOs the better choice?",
-      answer: "fundsforNGOs is the better choice when your budget is extremely constrained ($199/year in developing countries), you want broad funding awareness via curated alerts rather than deep org-specific search, and you value included proposal templates and webinars. Engrant is the upgrade when you need funders outside commercial database coverage."
-    },
-    {
-      question: "Does fundsforNGOs have AI-powered grant matching?",
-      answer: "No. fundsforNGOs delivers curated listings and alerts from a human-maintained database. There is no AI matching, org-specific fit scoring, or automated eligibility screening. Engrant provides live-web search with pre-evaluation for each result."
-    },
-    {
-      question: "Does Engrant work for NGOs outside the United States?",
-      answer: `Yes. ${GEOGRAPHY_SHORT}. Engrant is used by paying customers in Africa, Latin America, Europe, and beyond — including NGOs that previously relied on fundsforNGOs.`
-    },
-    {
-      question: "Can I use fundsforNGOs and Engrant together?",
-      answer: "Yes. Some NGOs use fundsforNGOs for curated alerts and training materials at the lowest price point, while using Engrant for live-web discovery and org-specific evaluation. They serve different needs at different price points."
-    }
-  ];
+  const faqs = FUNDSFORNGOS_FAQS;
 
   return (
     <section id="faq" className="py-24 section-cream">
@@ -945,7 +1019,7 @@ const SourcesSection = () => {
     {
       title: "fundsforNGOs Premium Pricing",
       url: "https://subscribetopremium.fundsforngos.org/",
-      description: "Official pricing — $199/year developing countries, $399/year developed countries (checked August 2026)"
+      description: "Online signup — $49/year Premium (list $199), checked September 2026"
     },
     {
       title: "fundsforNGOs Support: Premium Membership",
@@ -993,7 +1067,7 @@ const SourcesSection = () => {
           ))}
         </ul>
         <p className="text-xs text-neutral-400 mt-6 italic">
-          Last updated: August 2026. Pricing and features may change; verify current information on official websites.
+          Last reviewed: September 2026 by AS. Pricing and features may change; verify current information on official websites.
         </p>
       </div>
     </section>
@@ -1076,52 +1150,11 @@ const FinalCTA = () => {
 export default FundsforNGOsComparisonPage;
 
 export const Head = () => {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How much does fundsforNGOs cost?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "fundsforNGOs Premium costs $199/year for developing countries and $399/year for developed countries (checked August 2026). Annual membership includes curated funding alerts, donor directory, proposal templates, and training resources."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the best alternative to fundsforNGOs?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "For NGOs needing live-web discovery with org-specific evaluation, Engrant is the leading fundsforNGOs alternative at $47/month ($444/year billed annually). It searches the live web for funders outside database coverage."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What's the difference between fundsforNGOs and Engrant?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "fundsforNGOs is a human-maintained curated database with email alerts ($199/year developing countries). Engrant searches the live web and returns each funder pre-evaluated for your organization. fundsforNGOs is bounded by what its database covers; Engrant is not limited to what any one database covers."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "When is fundsforNGOs the better choice?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "fundsforNGOs is the better choice when budget is extremely constrained, you want curated alerts plus training materials, and a human-maintained database is sufficient. Engrant is the upgrade for live-web discovery beyond database coverage."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does fundsforNGOs have AI-powered grant matching?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. fundsforNGOs delivers curated listings and alerts from a human-maintained database without org-specific AI fit scoring or eligibility evaluation."
-        }
-      }
-    ]
-  };
+  const faqSchema = buildFaqSchema(FUNDSFORNGOS_FAQS);
+  const breadcrumbSchema = buildBreadcrumbSchema(
+    'fundsforNGOs Alternative',
+    '/compare/fundsforngos/'
+  );
 
   const productSchema = buildProductSchema({
     description: 'AI-powered grant discovery for NGOs worldwide. Live-web search with org-specific pre-evaluation.',
@@ -1131,18 +1164,19 @@ export const Head = () => {
   return (
     <>
       <title>fundsforNGOs Alternative | Engrant vs fundsforNGOs (2026)</title>
-      <meta 
-        name="description" 
-        content="Compare Engrant vs fundsforNGOs for NGO grant discovery. fundsforNGOs: $199/year curated database + alerts. Engrant: live-web search with org-specific fit evaluation at $47/month." 
+      <meta
+        name="description"
+        content={`Compare Engrant vs fundsforNGOs. Premium: $49/year curated alerts. Engrant: $${PRICE_MONTHLY}/month live-web discovery with fit scores.`}
       />
-      <meta 
-        name="keywords" 
-        content="fundsforNGOs alternative, fundsforNGOs vs Engrant, NGO grant database, international grant search, AI grant matching, fundsforNGOs pricing" 
+      <meta
+        name="keywords"
+        content="fundsforNGOs alternative, fundsforNGOs vs Engrant, NGO grant database, international grant search, fundsforNGOs pricing"
       />
+      <meta name="dateModified" content={LAST_REVIEWED} />
       <link rel="canonical" href="https://engrant.eu/compare/fundsforngos/" />
       <OgTwitterMeta
         title="fundsforNGOs Alternative: Engrant vs fundsforNGOs Comparison"
-        description="Curated database alerts vs live-web discovery. Honest capability comparison for international NGOs."
+        description="Curated $49/year alerts vs live-web discovery with org-specific fit scores."
         url="https://engrant.eu/compare/fundsforngos/"
       />
       <script type="application/ld+json">
@@ -1150,6 +1184,9 @@ export const Head = () => {
       </script>
       <script type="application/ld+json">
         {JSON.stringify(productSchema)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbSchema)}
       </script>
       <link
         href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap"

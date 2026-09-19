@@ -8,31 +8,141 @@ import {
 import logo from '../../images/logo-horizontal-remove-background.com.png';
 import engrantExpanded from '../../images/Engrant-expanded.png';
 import Footer from '../../components/Footer';
+import LoomVideo from '../../components/ngo-search/LoomVideo';
+import LastReviewed from '../../components/compare/LastReviewed';
+import CompareAnswerBox from '../../components/compare/CompareAnswerBox';
+import NotForYouSection from '../../components/compare/NotForYouSection';
+import BuyerPersonasSection from '../../components/compare/BuyerPersonasSection';
+import CompareCrossLinks from '../../components/compare/CompareCrossLinks';
 import { OgTwitterMeta } from '../../utils/seoMeta';
 import {
   PRICE_ANNUAL_PER_MONTH,
   PRICE_ANNUAL_TOTAL,
   PRICE_MONTHLY,
-  PRICE_VALID_UNTIL,
 } from '../../constants/positioning';
 import { buildAnnualOffer, buildMonthlyOffer, buildProductSchema } from '../../utils/siteSchema';
-import LoomVideo from '../../components/ngo-search/LoomVideo';
+import {
+  LAST_REVIEWED,
+  buildBreadcrumbSchema,
+  buildFaqSchema,
+} from '../../utils/comparePageSchema';
+
+const GRANTWATCH_PRICING_SOURCE = 'illinois.grantwatch.com';
+const GRANTWATCH_REFUND_WEEKLY_MONTHLY =
+  'Weekly and monthly subscriptions are non-refundable, even if canceled immediately after purchase.';
+const GRANTWATCH_REFUND_QUARTERLY_ANNUAL =
+  'Quarterly and annual subscriptions may be refunded on a prorated basis only if no grants were viewed, within 30 days of purchase, with $49 per month of use deducted.';
+
+const GRANTWATCH_FAQS = [
+  {
+    question: 'What is the best alternative to GrantWatch?',
+    answer: `For nonprofits that want pre-evaluated matches instead of scrolling a large database, Engrant is a practical GrantWatch alternative at $${PRICE_MONTHLY}/month ($${PRICE_ANNUAL_TOTAL}/year billed annually). GrantWatch remains the lowest-cost paid database we tracked ($22/week through $249/year on ${GRANTWATCH_PRICING_SOURCE}) if you have staff time for manual filtering.`,
+  },
+  {
+    question: 'How much does GrantWatch cost?',
+    answer: `As of September 2026, ${GRANTWATCH_PRICING_SOURCE} lists Weekly $22/week, Monthly $49/month, Quarterly $100/quarter, and Annual $249/year. Some city subdomains (for example arizona.grantwatch.com) show different quarterly or annual figures in places — we cite Illinois subdomain terms for the $22/$49/$100/$249 set. GrantWatch does not offer a free trial.`,
+    schemaAnswer: `As of September 2026, illinois.grantwatch.com lists Weekly $22/week, Monthly $49/month, Quarterly $100/quarter, and Annual $249/year. Some city subdomains show different quarterly or annual figures. GrantWatch does not offer a free trial.`,
+  },
+  {
+    question: "What's the difference between GrantWatch and Engrant?",
+    answer: `GrantWatch is a curated grant database (~10,000+ listings) you search and evaluate yourself — strong federal and multi-level coverage at low subscription cost. Engrant searches the live web and returns 30–50 grants with AI fit scores, eligibility flags, and red warnings at $${PRICE_MONTHLY}/month. GrantWatch optimizes for database breadth at low price; Engrant optimizes for pre-screened discovery when you lack research staff.`,
+  },
+  {
+    question: 'Is GrantWatch worth it for small nonprofits?',
+    answer: `It depends on your budget and capacity. At $249/year on ${GRANTWATCH_PRICING_SOURCE}, GrantWatch is among the most affordable paid options. Learn Grant Writing and Funding for Good note limited search/filter tools — workable if someone on staff can spend time screening listings. If you need faster, org-specific fit assessment, Engrant at $${PRICE_MONTHLY}/month is built for that workflow. Independent user-review coverage online is thin (see sources below); lean on product terms and third-party database reviews.`,
+  },
+  {
+    question: 'What is GrantWatch\'s refund policy?',
+    answer: `GrantWatch's published payment terms state: "${GRANTWATCH_REFUND_WEEKLY_MONTHLY}" For longer plans: "${GRANTWATCH_REFUND_QUARTERLY_ANNUAL}" Verify current wording on GrantWatch's payment policy / terms before subscribing — subscriptions may auto-renew.`,
+    schemaAnswer: `${GRANTWATCH_REFUND_WEEKLY_MONTHLY} ${GRANTWATCH_REFUND_QUARTERLY_ANNUAL}`,
+  },
+  {
+    question: 'How can I find grants faster than using GrantWatch?',
+    answer: `If manual database filtering takes most of your week, Engrant researches your organization automatically and surfaces 30–50 high-fit opportunities with match reasons and red flags. That reduces time spent opening irrelevant listings — especially when you do not have dedicated grant research staff.`,
+  },
+  {
+    question: 'Does GrantWatch have AI features?',
+    answer: 'GrantWatch has added AI-assisted search and writing tools that work on their existing database. They do not replace org-specific fit scoring, eligibility screening, or competition analysis on each opportunity the way Engrant pre-evaluates matches before you open them.',
+  },
+  {
+    question: 'Which is better for busy grant writers: GrantWatch or Engrant?',
+    answer: `Busy solo grant writers who cannot delegate screening often prefer Engrant's pre-evaluated shortlist at $${PRICE_MONTHLY}/month. GrantWatch fits teams with time to run SMART search and read each listing — or consultants who want raw database access at $249/year annual pricing on ${GRANTWATCH_PRICING_SOURCE}.`,
+  },
+];
 
 const GrantWatchComparisonPage = () => {
   return (
     <div className="bg-[#fffbf5] text-neutral-700 min-h-screen w-full">
         <Header />
+        <LastReviewed />
         <main className="w-full">
           <Hero />
+          <CompareAnswerBox
+            title="Short answer: GrantWatch or Engrant?"
+            answer={
+              <>
+                <strong className="text-slate-800">
+                  GrantWatch for the lowest-cost paid database and federal breadth you filter yourself; Engrant for AI pre-evaluated matching on the live web.
+                </strong>{' '}
+                {`Illinois subdomain pricing (Sep 2026) runs $22/week through $249/year. Engrant is $${PRICE_MONTHLY}/month when you need fit scores without a research team.`}
+              </>
+            }
+            bullets={[
+              `GrantWatch: $22/wk · $49/mo · $100/qtr · $249/yr (${GRANTWATCH_PRICING_SOURCE})`,
+              `Engrant: $${PRICE_MONTHLY}/month — 30–50 pre-evaluated grants with fit scores`,
+              'GrantWatch: strong federal/state/city listings in one database',
+              'Engrant: live-web search, red flags, and eligibility screening',
+              'GrantWatch: no free trial; weekly/monthly fees non-refundable per their terms',
+            ]}
+          />
           <ProblemSection />
           <ComparisonTable />
           <KeyDifferences />
           <LoomVideo />
+          <BuyerPersonasSection
+            title="Which product for which kind of person"
+            personas={[
+              {
+                name: 'Solo development director with limited research hours',
+                description: 'Needs a shortlist of fundable grants, not thousands of listings to scroll.',
+                winner: 'Engrant',
+                verdict: 'pre-evaluated matches and fit scores when nobody else can filter the database.',
+              },
+              {
+                name: 'Nonprofit with dedicated grant research staff',
+                description: 'Has weekly capacity to run SMART search, read listings, and track federal opportunities.',
+                winner: 'GrantWatch',
+                verdict: 'low subscription cost plus database breadth when staff time is available.',
+              },
+              {
+                name: 'Organization with a hard $249/year tool ceiling',
+                description: 'Cannot justify ongoing SaaS above the annual GrantWatch tier on Illinois subdomain pricing.',
+                winner: 'GrantWatch',
+                verdict: 'among the lowest published paid database rates we verified (Sep 2026).',
+              },
+              {
+                name: 'Team focused heavily on federal and multi-level public funding',
+                description: 'Wants one searchable hub for federal, state, and local listings without live-web agents.',
+                winner: 'GrantWatch',
+                verdict: 'database coverage and price — if manual screening fits your workflow.',
+              },
+            ]}
+          />
+          <NotForYouSection
+            competitorHint="If you only need the cheapest database access or already have staff for manual filtering, GrantWatch may be the better fit."
+            items={[
+              'You only need the lowest-cost paid grant database and can assign staff to filter results',
+              'You want raw database access for consultants or researchers, not AI-curated shortlists',
+              'Your workflow is federal-heavy SMART search inside one curated database',
+              'You cannot justify more than ~$249/year for grant discovery tools',
+            ]}
+          />
           <HonestAssessment />
           <Testimonials />
           <PricingComparison />
           <FAQSection />
           <SourcesSection />
+          <CompareCrossLinks currentPath="/compare/grantwatch/" />
           <FinalCTA />
         </main>
         <Footer />
@@ -97,7 +207,7 @@ const Hero = () => {
         </div>
         
         <h1 className="text-4xl lg:text-[3.5rem] font-bold text-slate-800 mb-6 leading-[1.15] tracking-tight">
-          Tired of manually filtering through thousands of GrantWatch listings?
+          GrantWatch lists thousands of grants — Engrant pre-screens matches for your organization
         </h1>
         
         <p className="text-xl lg:text-2xl text-neutral-600 mb-10 leading-relaxed font-normal max-w-3xl mx-auto">
@@ -147,12 +257,12 @@ const ProblemSection = () => {
     },
     {
       icon: DollarSign,
-      title: "Budget Price, Premium Time Investment",
-      description: "GrantWatch might be more affordable at $249/year, but subscribers are missing out on quality features and helpful functionality in finding applicable grants. The time you spend manually filtering through thousands of listings often costs more than the price difference.",
+      title: "Lower Subscription Price, Manual Discovery Work",
+      description: "GrantWatch's annual tier ($249/year on illinois.grantwatch.com as of September 2026) is among the lowest paid database rates. Learn Grant Writing notes subscribers may miss quality discovery features — manual filtering still falls on your team.",
       quote: "All in all, GrantWatch might be more affordable, but subscribers are missing out on quality features and helpful functionality in finding applicable grants.",
       quoteSource: "Learn Grant Writing database review",
       sourceUrl: "https://www.learngrantwriting.org/blog/best-grant-databases/",
-      engrantAlternative: "Quality features and helpful functionality—worth the investment when you factor in time saved"
+      engrantAlternative: "Pre-evaluated matches when manual screening is the bottleneck"
     },
     {
       icon: Target,
@@ -165,11 +275,11 @@ const ProblemSection = () => {
     },
     {
       icon: Clock,
-      title: "Cheap But Time-Expensive",
-      description: "GrantWatch saves you money at $249/year—it's genuinely the most affordable paid grant database. But if you spend 15+ hours/week manually filtering results, is it really saving you anything?",
+      title: "Affordable Access, Research Time on Your Team",
+      description: "GrantWatch is genuinely among the most affordable paid grant databases ($22/week through $249/year on illinois.grantwatch.com). If you spend many hours each week filtering listings yourself, factor that staff time into the total cost — not just the subscription fee.",
       quote: null,
       quoteSource: null,
-      engrantAlternative: "Save 10+ hours per week on manual research—time worth more than the price difference"
+      engrantAlternative: "Shorter curated lists when manual screening would otherwise dominate your week"
     }
   ];
 
@@ -243,7 +353,7 @@ const ComparisonTable = () => {
     { category: "Data & Freshness", feature: "Coverage limit", engrant: "Not limited to what any one database covers", grantwatch: "Comprehensive within ~10,000 listed grants only", engrantCheck: true, grantwatchCheck: "partial" },
     { category: "Data & Freshness", feature: "Grant types", engrant: "Foundation, corporate, state, local", grantwatch: "Foundation, corporate, federal, state, city", engrantCheck: true, grantwatchCheck: true },
     { category: "Learning & Improvement", feature: "Learns from feedback", engrant: "Improves based on saves/rejects", grantwatch: "No learning system", engrantCheck: true, grantwatchCheck: false },
-    { category: "Pricing", feature: "Price", engrant: "$47/month (or $37/month annually)", grantwatch: "$22/week, $49/month, or $249/year", engrantCheck: true, grantwatchCheck: "partial" },
+    { category: "Pricing", feature: "Price", engrant: `$${PRICE_MONTHLY}/month ($${PRICE_ANNUAL_PER_MONTH}/month annual)`, grantwatch: "$22/wk · $49/mo · $100/qtr · $249/yr (illinois.grantwatch.com, Sep 2026)", engrantCheck: true, grantwatchCheck: "partial" },
     { category: "Pricing", feature: "Free trial", engrant: "Yes, 2 weeks, no credit card", grantwatch: "No free trial", engrantCheck: true, grantwatchCheck: false },
     { category: "Pricing", feature: "Grant management", engrant: "Coming soon", grantwatch: "Not available", engrantCheck: "partial", grantwatchCheck: false },
   ];
@@ -479,7 +589,10 @@ const KeyDifferences = () => {
             </div>
             
             <div className="bg-white rounded-3xl p-8 warm-shadow-lg border border-teal-100">
-              <h3 className="font-semibold text-slate-700 mb-6">Example: Past recipients similar to your organization:</h3>
+              <h3 className="font-semibold text-slate-700 mb-2">Example: Past recipients similar to your organization:</h3>
+              <p className="text-xs text-neutral-500 mb-6 font-medium uppercase tracking-wide">
+                Illustrative example — not live customer data
+              </p>
               <div className="space-y-4">
                 {[
                   { name: "Arlington Youth Services", amount: "$4,500", year: "2024" },
@@ -517,7 +630,7 @@ const KeyDifferences = () => {
                 Time Investment
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-6 leading-tight">
-                The real cost of "affordable" grant databases
+                Manual database research vs. pre-evaluated shortlists
               </h2>
             </div>
             
@@ -540,8 +653,8 @@ const KeyDifferences = () => {
                   ))}
                 </ol>
                 <div className="mt-6 pt-6 border-t border-slate-300">
-                  <p className="text-lg font-bold text-slate-700">Total: 3.5 hours per session</p>
-                  <p className="text-sm text-neutral-500 mt-1">Multiple times/week = 10-15 hours/week</p>
+                  <p className="text-lg font-bold text-slate-700">Example session: ~3.5 hours</p>
+                  <p className="text-sm text-neutral-500 mt-1">If you repeat similar sessions several times per week, manual research can add up quickly.</p>
                 </div>
               </div>
               
@@ -561,8 +674,8 @@ const KeyDifferences = () => {
                   ))}
                 </ol>
                 <div className="mt-6 pt-6 border-t border-teal-200">
-                  <p className="text-lg font-bold text-teal-700">Time saved: 10+ hours per week</p>
-                  <p className="text-sm text-teal-600 mt-1">At $40/hour loaded cost = $4,160/year recovered</p>
+                  <p className="text-lg font-bold text-teal-700">Often less total screening time</p>
+                  <p className="text-sm text-teal-600 mt-1">Exact savings depend on your workflow — compare a typical week side by side.</p>
                 </div>
               </div>
             </div>
@@ -586,7 +699,7 @@ const HonestAssessment = () => {
           <h2 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-4">
             When GrantWatch might be better vs. when Engrant is better
           </h2>
-          <p className="text-lg text-neutral-600">We believe in honest comparisons. Here's when each tool makes sense.</p>
+          <p className="text-lg text-neutral-600">We believe in honest comparisons. Independent user-review coverage for GrantWatch is thin online — we found one Trustpilot review (2/5) and one PissedConsumer score (1.0), which is not enough to infer a broader pattern. Lean on GrantWatch terms plus third-party database reviews below.</p>
         </div>
         
         <div className="grid md:grid-cols-2 gap-8">
@@ -600,8 +713,8 @@ const HonestAssessment = () => {
             <ul className="space-y-4">
               {[
                 "Have dedicated grant research staff with time for manual filtering",
-                "Your budget absolutely cannot exceed $249/year for grant tools",
-                "You're comfortable spending 10-15 hours/week on grant research",
+                "Your budget absolutely cannot exceed $249/year for grant tools (Illinois subdomain annual tier)",
+                "You can spend regular hours each week on database search and eligibility reads",
                 "You primarily need federal grants (GrantWatch has good federal coverage)",
                 "You're a grant writing consultant who needs raw database access"
               ].map((item, index) => (
@@ -612,7 +725,7 @@ const HonestAssessment = () => {
               ))}
             </ul>
             <p className="text-neutral-500 text-sm mt-6 italic">
-              GrantWatch is genuinely the most affordable paid grant database. But 'cheap' and 'cost-effective' aren't the same thing when you factor in time.
+              GrantWatch publishes among the lowest paid database rates we verified on {GRANTWATCH_PRICING_SOURCE}. Subscription price and staff time are separate line items.
             </p>
           </div>
           
@@ -626,7 +739,7 @@ const HonestAssessment = () => {
             <ul className="space-y-4">
               {[
                 "Are a solo development professional juggling multiple responsibilities",
-                "You value time savings over lowest possible price",
+                "You value pre-screened shortlists over lowest possible subscription price",
                 "You want to know WHY a grant matches, not just that it exists",
                 "You're frustrated with information overload and irrelevant results",
                 "You need to quickly identify high-probability opportunities",
@@ -639,7 +752,7 @@ const HonestAssessment = () => {
               ))}
             </ul>
             <p className="text-teal-700 font-medium mt-6 italic">
-              Engrant is purpose-built for the 90% of nonprofits that can't afford to spend 10+ hours per week on manual research.
+              Engrant is built for nonprofits that cannot assign someone to filter large database result sets every week.
             </p>
           </div>
         </div>
@@ -699,16 +812,16 @@ const Testimonials = () => {
         <div className="bg-white rounded-2xl p-8 warm-shadow border border-teal-100">
           <div className="grid md:grid-cols-3 gap-6 text-center">
             <div>
-              <div className="text-3xl font-bold text-teal-600 mb-2">10+</div>
-              <div className="text-neutral-600">hours/week saved on grant research</div>
+              <div className="text-3xl font-bold text-teal-600 mb-2">Less</div>
+              <div className="text-neutral-600">manual screening when matches arrive pre-evaluated</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-teal-600 mb-2">30-50</div>
               <div className="text-neutral-600">pre-evaluated grants per search</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-teal-600 mb-2">$47</div>
-              <div className="text-neutral-600">per month—not $249/year</div>
+              <div className="text-3xl font-bold text-teal-600 mb-2">{`$${PRICE_MONTHLY}`}</div>
+              <div className="text-neutral-600">per month — vs $249/year GrantWatch annual tier</div>
             </div>
           </div>
         </div>
@@ -740,7 +853,14 @@ const PricingComparison = () => {
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
           {/* GrantWatch Card */}
           <div className="bg-slate-50 rounded-3xl p-8 border border-slate-200">
-            <h3 className="text-xl font-bold text-slate-700 mb-6">GrantWatch</h3>
+            <h3 className="text-xl font-bold text-slate-700 mb-2">GrantWatch</h3>
+            <p className="text-sm text-neutral-500 mb-6">
+              Rates below from{' '}
+              <a href="https://illinois.grantwatch.com/" target="_blank" rel="noopener noreferrer" className="text-teal-600 underline">
+                illinois.grantwatch.com
+              </a>{' '}
+              (September 2026). City subdomains may list different quarterly/annual amounts — we cite Illinois terms for $22/$49/$100/$249.
+            </p>
             
             <div className="space-y-4">
               <div className="bg-white rounded-xl p-5 border border-slate-100">
@@ -790,6 +910,16 @@ const PricingComparison = () => {
                   10,000+ active grants to search
                 </div>
               </div>
+
+              <div className="mt-6 p-4 bg-white rounded-xl border border-slate-200 text-sm text-neutral-600">
+                <p className="font-semibold text-slate-700 mb-2">Published refund terms (verify on GrantWatch payment policy)</p>
+                <blockquote className="border-l-2 border-slate-300 pl-3 mb-3 italic text-slate-600">
+                  &ldquo;{GRANTWATCH_REFUND_WEEKLY_MONTHLY}&rdquo;
+                </blockquote>
+                <blockquote className="border-l-2 border-slate-300 pl-3 italic text-slate-600">
+                  &ldquo;{GRANTWATCH_REFUND_QUARTERLY_ANNUAL}&rdquo;
+                </blockquote>
+              </div>
             </div>
           </div>
           
@@ -808,11 +938,11 @@ const PricingComparison = () => {
               
               <div className="mb-6">
                 <div className="flex items-baseline">
-                  <span className="text-5xl font-bold text-slate-800">$47</span>
+                  <span className="text-5xl font-bold text-slate-800">{`$${PRICE_MONTHLY}`}</span>
                   <span className="text-xl text-neutral-500 ml-2">/month</span>
                 </div>
                 <p className="text-teal-600 font-medium mt-2">
-                  Or $37/month billed annually ($444/year)
+                  {`Or $${PRICE_ANNUAL_PER_MONTH}/month billed annually ($${PRICE_ANNUAL_TOTAL}/year)`}
                 </p>
               </div>
               
@@ -856,10 +986,10 @@ const PricingComparison = () => {
           </div>
         </div>
         
-        <div className="mt-10 max-w-2xl mx-auto">
+        <div className="mt-10 max-w-3xl mx-auto space-y-6">
           <div className="bg-amber-50 border border-amber-100 rounded-xl p-6">
             <p className="text-amber-800 text-center font-medium leading-relaxed">
-              GrantWatch costs $195 less per year. But if Engrant saves you just 2 hours per week at your $40/hour loaded cost, that's $4,160/year in recovered time. The question isn't 'Which is cheaper?' It's 'Which saves you more?'
+              GrantWatch&apos;s annual tier is $195 less than Engrant&apos;s annual plan on list pricing — but subscription price is only one line item. If you spend many hours each week filtering database results, compare total staff time plus fees before choosing.
             </p>
           </div>
         </div>
@@ -870,42 +1000,7 @@ const PricingComparison = () => {
 
 // FAQ Section - Optimized for LLM citation
 const FAQSection = () => {
-  const [openIndex, setOpenIndex] = React.useState(null);
-
-  const faqs = [
-    {
-      question: "What is the best alternative to GrantWatch?",
-      answer: "Engrant is the best GrantWatch alternative for nonprofits who want pre-evaluated grant matches instead of manual database searching. Unlike GrantWatch's 10,000+ listing approach, Engrant uses AI to deliver 30-50 high-fit grants with match scores, eligibility checks, and red flags already assessed. At $47/month (or $37/month billed annually), Engrant costs more than GrantWatch ($249/year) but saves 10+ hours per week on manual research—making it ideal for overworked development professionals."
-    },
-    {
-      question: "How much does GrantWatch cost?",
-      answer: "GrantWatch pricing in 2025: Weekly: $22/week, Monthly: $49/month, Quarterly: $100/quarter, Annual: $249/year (best value). GrantWatch is the most affordable paid grant database, but requires significant manual filtering time."
-    },
-    {
-      question: "What's the difference between GrantWatch and Engrant?",
-      answer: "GrantWatch is a budget-friendly grant database with 10,000+ listings that you filter and evaluate manually. Engrant is an AI-powered grant discovery platform that automatically researches your organization and delivers 30-50 pre-evaluated matches with fit scores, eligibility flags, and competition indicators. GrantWatch saves you money; Engrant saves you time."
-    },
-    {
-      question: "Is GrantWatch worth it for small nonprofits?",
-      answer: "GrantWatch is worth it for small nonprofits IF you have dedicated time for grant research (10-15 hours/week) and strong filtering skills. At $249/year, it's the most affordable paid option. However, if you're a solo development professional with limited time, Engrant's pre-evaluated approach ($444/year) typically saves enough hours to justify the difference."
-    },
-    {
-      question: "How can I find grants faster than using GrantWatch?",
-      answer: "To find grants faster than GrantWatch's manual search approach, use Engrant's AI-powered matching. Instead of filtering through thousands of listings, Engrant automatically researches your organization and delivers 30-50 high-fit opportunities with match reasons, red flags, and competition levels already evaluated. Most users reduce their grant research time from 10-15 hours/week to under 2 hours."
-    },
-    {
-      question: "What grant database has the best AI matching for small nonprofits?",
-      answer: "Engrant offers the best AI matching for small nonprofits seeking pre-evaluated grant opportunities. Unlike traditional databases like GrantWatch (manual filtering), Candid FDO (historical research focus), or Instrumentl ($299-899/month enterprise pricing), Engrant provides AI-generated fit scores, eligibility screening, and competition indicators at $47/month—purpose-built for organizations without dedicated grant research staff."
-    },
-    {
-      question: "Does GrantWatch have AI features?",
-      answer: "GrantWatch recently added AI Grant Search, AI Foundation Search, and AI Grant Writing tools to their platform. However, these features assist with searching their existing database rather than providing the pre-evaluated match scores, eligibility screening, and competition analysis that Engrant generates automatically for each grant."
-    },
-    {
-      question: "Which is better for busy grant writers: GrantWatch or Engrant?",
-      answer: "For busy grant writers managing multiple responsibilities, Engrant is typically better because it eliminates manual research time. GrantWatch requires you to search, filter, and evaluate grants yourself—often 10-15 hours/week. Engrant does this evaluation automatically, showing you only high-fit grants with match reasons and red flags already assessed. The price difference ($249/year vs $444/year) is usually recovered in time savings within the first month."
-    }
-  ];
+  const faqs = GRANTWATCH_FAQS;
 
   return (
     <section id="faq" className="py-24 section-cream">
@@ -925,28 +1020,12 @@ const FAQSection = () => {
         <div className="space-y-6">
           {faqs.map((faq, index) => (
             <div key={index} className="bg-white rounded-2xl p-6 warm-shadow border border-neutral-100">
-              <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full text-left flex items-center justify-between"
-              >
-                <h3 className="text-lg font-bold text-slate-800 pr-4">
-                  {faq.question}
-                </h3>
-                <ChevronDown 
-                  className={`w-5 h-5 text-neutral-400 flex-shrink-0 transition-transform ${
-                    openIndex === index ? 'transform rotate-180' : ''
-                  }`}
-                />
-              </button>
-              <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  openIndex === index ? 'max-h-[800px]' : 'max-h-0'
-                }`}
-              >
-                <p className="text-neutral-600 leading-relaxed mt-4">
-                  {faq.answer}
-                </p>
-              </div>
+              <h3 className="text-lg font-bold text-slate-800 mb-3">
+                {faq.question}
+              </h3>
+              <p className="text-neutral-600 leading-relaxed">
+                {faq.answer}
+              </p>
             </div>
           ))}
         </div>
@@ -959,9 +1038,14 @@ const FAQSection = () => {
 const SourcesSection = () => {
   const sources = [
     {
-      title: "GrantWatch Official Website",
-      url: "https://www.grantwatch.com/",
-      description: "Official GrantWatch pricing and features information"
+      title: "GrantWatch — Illinois subdomain pricing",
+      url: "https://illinois.grantwatch.com/",
+      description: "Weekly $22, Monthly $49, Quarterly $100, Annual $249 — checked September 2026"
+    },
+    {
+      title: "GrantWatch payment policy / terms",
+      url: "https://www.grantwatch.com/payment-policy/",
+      description: "Published refund and subscription terms quoted on this page"
     },
     {
       title: "Learn Grant Writing: Grant Database Reviews",
@@ -971,7 +1055,17 @@ const SourcesSection = () => {
     {
       title: "Funding for Good: Comparing Grant Research Databases",
       url: "https://www.fundingforgood.org/blog/comparing-grant-research-databases",
-      description: "Comparison article on grant research tools and databases"
+      description: "Comparison article on grant research tools and matching features"
+    },
+    {
+      title: "Trustpilot: GrantWatch",
+      url: "https://www.trustpilot.com/review/grantwatch.com",
+      description: "Independent review site — thin coverage (one review at 2/5 when checked Sep 2026)"
+    },
+    {
+      title: "PissedConsumer: GrantWatch",
+      url: "https://grantwatch.pissedconsumer.com/",
+      description: "One published score (1.0 when checked Sep 2026) — not enough data for broad conclusions"
     },
   ];
 
@@ -1004,7 +1098,7 @@ const SourcesSection = () => {
           ))}
         </ul>
         <p className="text-xs text-neutral-400 mt-6 italic">
-          Last updated: August 2026. Pricing and features may change; verify current information on official websites.
+          Last reviewed: September 2026 by AS. Pricing and features may change; verify current information on official websites.
         </p>
       </div>
     </section>
@@ -1083,76 +1177,11 @@ const FinalCTA = () => {
 export default GrantWatchComparisonPage;
 
 export const Head = () => {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is the best alternative to GrantWatch?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Engrant is the best GrantWatch alternative for nonprofits who want pre-evaluated grant matches instead of manual database searching. Unlike GrantWatch's 10,000+ listing approach, Engrant uses AI to deliver 30-50 high-fit grants with match scores, eligibility checks, and red flags already assessed. At $47/month (or $37/month billed annually), Engrant costs more than GrantWatch ($249/year) but saves 10+ hours per week on manual research—making it ideal for overworked development professionals."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How much does GrantWatch cost?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "GrantWatch pricing in 2025: Weekly: $22/week, Monthly: $49/month, Quarterly: $100/quarter, Annual: $249/year (best value). GrantWatch is the most affordable paid grant database, but requires significant manual filtering time."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What's the difference between GrantWatch and Engrant?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "GrantWatch is a budget-friendly grant database with 10,000+ listings that you filter and evaluate manually. Engrant is an AI-powered grant discovery platform that automatically researches your organization and delivers 30-50 pre-evaluated matches with fit scores, eligibility flags, and competition indicators. GrantWatch saves you money; Engrant saves you time."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is GrantWatch worth it for small nonprofits?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "GrantWatch is worth it for small nonprofits IF you have dedicated time for grant research (10-15 hours/week) and strong filtering skills. At $249/year, it's the most affordable paid option. However, if you're a solo development professional with limited time, Engrant's pre-evaluated approach ($444/year) typically saves enough hours to justify the difference."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How can I find grants faster than using GrantWatch?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "To find grants faster than GrantWatch's manual search approach, use Engrant's AI-powered matching. Instead of filtering through thousands of listings, Engrant automatically researches your organization and delivers 30-50 high-fit opportunities with match reasons, red flags, and competition levels already evaluated. Most users reduce their grant research time from 10-15 hours/week to under 2 hours."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What grant database has the best AI matching for small nonprofits?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Engrant offers the best AI matching for small nonprofits seeking pre-evaluated grant opportunities. Unlike traditional databases like GrantWatch (manual filtering), Candid FDO (historical research focus), or Instrumentl ($299-899/month enterprise pricing), Engrant provides AI-generated fit scores, eligibility screening, and competition indicators at $47/month—purpose-built for organizations without dedicated grant research staff."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does GrantWatch have AI features?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "GrantWatch recently added AI Grant Search, AI Foundation Search, and AI Grant Writing tools to their platform. However, these features assist with searching their existing database rather than providing the pre-evaluated match scores, eligibility screening, and competition analysis that Engrant generates automatically for each grant."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Which is better for busy grant writers: GrantWatch or Engrant?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "For busy grant writers managing multiple responsibilities, Engrant is typically better because it eliminates manual research time. GrantWatch requires you to search, filter, and evaluate grants yourself—often 10-15 hours/week. Engrant does this evaluation automatically, showing you only high-fit grants with match reasons and red flags already assessed. The price difference ($249/year vs $444/year) is usually recovered in time savings within the first month."
-        }
-      }
-    ]
-  };
+  const faqSchema = buildFaqSchema(GRANTWATCH_FAQS);
+  const breadcrumbSchema = buildBreadcrumbSchema(
+    'GrantWatch Alternative',
+    '/compare/grantwatch/'
+  );
 
   const productSchema = buildProductSchema({
     description: 'AI-powered grant discovery platform for nonprofits. Searches the live web for funders not in any database.',
@@ -1164,16 +1193,17 @@ export const Head = () => {
       <title>GrantWatch Alternative for Nonprofits | Engrant vs GrantWatch Comparison</title>
       <meta 
         name="description" 
-        content="Looking for a GrantWatch alternative? Compare Engrant's AI-powered grant matching vs GrantWatch's manual database. Pre-evaluated grants with fit scores at $47/month." 
+        content={`Looking for a GrantWatch alternative? Compare Engrant's AI-powered grant matching vs GrantWatch's manual database. Pre-evaluated grants with fit scores at $${PRICE_MONTHLY}/month.`} 
       />
       <meta 
         name="keywords" 
         content="GrantWatch alternative, GrantWatch vs Engrant, grant database comparison, AI grant matching, nonprofit grant search" 
       />
+      <meta name="dateModified" content={LAST_REVIEWED} />
       <link rel="canonical" href="https://engrant.eu/compare/grantwatch/" />
       <OgTwitterMeta
         title="GrantWatch Alternative: Engrant vs GrantWatch Comparison"
-        description="Stop manually filtering 10,000 grants. Get 30-50 pre-evaluated matches with AI fit scores."
+        description={`Compare GrantWatch database search vs Engrant pre-evaluated matches at $${PRICE_MONTHLY}/month.`}
         url="https://engrant.eu/compare/grantwatch/"
       />
       <script type="application/ld+json">
@@ -1181,6 +1211,9 @@ export const Head = () => {
       </script>
       <script type="application/ld+json">
         {JSON.stringify(productSchema)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbSchema)}
       </script>
       <link
         href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap"
