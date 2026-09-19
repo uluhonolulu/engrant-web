@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import saadEssamPhoto from '../../images/testimonials/saad-essam.jpg';
 
 const GRADIENT_VARIANTS = [
   { gradient: 'from-teal-200/40 to-amber-200/40', rotate: 'rotate-2' },
@@ -10,6 +11,14 @@ const GRADIENT_VARIANTS = [
 ];
 
 const testimonials = [
+  {
+    id: 'saad-essam',
+    quote:
+      'I like that Engrant is comprehensive, smart, and quick. It saves me time by providing more than 100 grants, classifying them by fit, and giving me a full profile and analysis of how each grant aligns with my foundation just from its website link. I double-checked the information and analysis, and mostly it was right. When grant amounts are not published, it gives me an estimated amount, what I should ask for, and what words to use or avoid. It is very easy to set up, and I think anyone can use it.',
+    name: 'Saad Essam',
+    role: "Grants Writer at N/a'an ku sê Foundation",
+    photo: saadEssamPhoto,
+  },
   {
     id: 'stacy-feder',
     quote:
@@ -136,9 +145,18 @@ const Testimonials = () => {
                         <div className="mt-auto" />
                       </div>
 
-                      <div className="absolute -bottom-2 -right-2 sm:-bottom-6 sm:-right-6 bg-white px-5 py-4 rounded-2xl warm-shadow-lg border border-amber-100 max-w-[calc(100%-0.5rem)]">
-                        <div className="text-sm font-semibold text-neutral-700">{item.name}</div>
-                        <div className="text-xs text-neutral-500 leading-snug">{item.role}</div>
+                      <div className="absolute -bottom-2 -right-2 sm:-bottom-6 sm:-right-6 bg-white px-5 py-4 rounded-2xl warm-shadow-lg border border-amber-100 max-w-[calc(100%-0.5rem)] flex items-center gap-3">
+                        {item.photo && (
+                          <img
+                            src={item.photo}
+                            alt=""
+                            className="w-10 h-10 rounded-full object-cover flex-shrink-0"
+                          />
+                        )}
+                        <div>
+                          <div className="text-sm font-semibold text-neutral-700">{item.name}</div>
+                          <div className="text-xs text-neutral-500 leading-snug">{item.role}</div>
+                        </div>
                       </div>
                     </div>
                   </div>
