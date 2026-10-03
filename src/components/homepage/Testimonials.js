@@ -1,7 +1,14 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import audreyTellezPhoto from '../../images/testimonials/audrey-tellez.jpg';
 import saadEssamPhoto from '../../images/testimonials/saad-essam.jpg';
+import stacyFederPhoto from '../../images/testimonials/stacy-feder.jpg';
+import shoshanaGrossmanCristPhoto from '../../images/testimonials/shoshana-grossman-crist.jpg';
+import loukasKimeritzePhoto from '../../images/testimonials/loukas-kimeritze.jpg';
+import magalieLalibertePhoto from '../../images/testimonials/magalie-laliberte.jpg';
+import williamJohnsonPhoto from '../../images/testimonials/william-johnson.jpg';
+import leahHargrovePhoto from '../../images/testimonials/leah-hargrove.jpg';
 
 const GRADIENT_VARIANTS = [
   { gradient: 'from-teal-200/40 to-amber-200/40', rotate: 'rotate-2' },
@@ -11,6 +18,14 @@ const GRADIENT_VARIANTS = [
 ];
 
 const testimonials = [
+  {
+    id: 'audrey-tellez',
+    quote:
+      'Engrant does everything Instrumentl could do — but easier. I spend less time entering information and more time looking at grants that are actually a good fit, with effort and competitiveness ratings I never had before. It does more, at a better price.',
+    name: 'Audrey Tellez',
+    role: 'Millions of Wonderful Things',
+    photo: audreyTellezPhoto,
+  },
   {
     id: 'saad-essam',
     quote:
@@ -25,6 +40,7 @@ const testimonials = [
       'Each grant breakdown covers exactly what I include in my funding strategies: eligibility, fit analysis, application steps, alignment considerations, and priority ranking - this was a huge benefit to see! The percentage ranking and "considerations" section mirror my own vetting process.',
     name: 'Stacy Feder',
     role: 'Grant Manager | Funding Strategist',
+    photo: stacyFederPhoto,
   },
   {
     id: 'shoshana-grossman-crist',
@@ -32,6 +48,7 @@ const testimonials = [
       "When I tried Engrant, I was honestly over . the . moon. ✨ Its AI is the best I've seen at identifying really aligned funders — quickly — no matter where in the world your organization works.",
     name: 'Shoshana Grossman-Crist',
     role: 'Founder of Social Impact Compass',
+    photo: shoshanaGrossmanCristPhoto,
   },
   {
     id: 'loukas-kimeritze',
@@ -39,6 +56,7 @@ const testimonials = [
       'The fact that it searches online is crazy to me, because the amount of output it gave me is really comprehensive.',
     name: 'Loukas Kimeritze',
     role: 'Funding Consultant',
+    photo: loukasKimeritzePhoto,
   },
   {
     id: 'magalie-laliberte',
@@ -46,6 +64,7 @@ const testimonials = [
       'Other AI platforms give you outdated and inaccurate information; here EnGrant is always on point.',
     name: 'Magalie Laliberté',
     role: 'Grant Strategist',
+    photo: magalieLalibertePhoto,
   },
   {
     id: 'william-johnson',
@@ -53,6 +72,7 @@ const testimonials = [
       "I am a premium member of Candid. But I never met this kind of tool. I've been through this for so many years, and what you did is what I was looking for.",
     name: 'William Johnson',
     role: 'Solidarity For Her Education And Empowerment',
+    photo: williamJohnsonPhoto,
   },
   {
     id: 'leah-hargrove',
@@ -60,6 +80,7 @@ const testimonials = [
       "I found two really strong grant opportunities that I wouldn't have found otherwise, and applied for one — the other I'll be applying for this week.",
     name: 'Leah Hargrove',
     role: 'Ladder to the Moon Network',
+    photo: leahHargrovePhoto,
   },
 ];
 

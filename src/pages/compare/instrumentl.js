@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import logo from '../../images/logo-horizontal-remove-background.com.png';
 import engrantExpanded from '../../images/Engrant-expanded.png';
+import audreyTellezPhoto from '../../images/testimonials/audrey-tellez.jpg';
 import Footer from '../../components/Footer';
 import LoomVideo from '../../components/ngo-search/LoomVideo';
 import LastReviewed from '../../components/compare/LastReviewed';
@@ -743,6 +744,26 @@ const Testimonials = () => {
   return (
     <section className="section-cream py-24">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-white rounded-3xl p-8 sm:p-10 warm-shadow-lg border border-teal-100 mb-16 relative">
+          <div className="absolute top-6 left-8 text-6xl text-teal-100 font-serif leading-none">"</div>
+          <blockquote className="relative">
+            <p className="text-xl sm:text-2xl text-neutral-700 leading-relaxed pt-8 mb-8">
+              Engrant does everything Instrumentl could do — but easier. I spend less time entering information and more time looking at grants that are actually a good fit, with effort and competitiveness ratings I never had before. It does more, at a better price.
+            </p>
+            <cite className="flex items-center gap-3 not-italic">
+              <img
+                src={audreyTellezPhoto}
+                alt=""
+                className="w-12 h-12 rounded-full object-cover flex-shrink-0"
+              />
+              <div>
+                <div className="text-neutral-700 font-semibold">Audrey Tellez</div>
+                <div className="text-neutral-500 text-sm">Millions of Wonderful Things</div>
+              </div>
+            </cite>
+          </blockquote>
+        </div>
+
         <div className="text-center mb-16">
           <div className="inline-flex items-center bg-amber-100 text-amber-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
             Real Frustrations
