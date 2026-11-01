@@ -6,6 +6,7 @@ import Footer from '../../components/Footer';
 import LastReviewed from '../../components/compare/LastReviewed';
 import { OgTwitterMeta } from '../../utils/seoMeta';
 import { LAST_REVIEWED } from '../../utils/comparePageSchema';
+import AppLink from '../../components/AppLink';
 
 const COMPARISONS = [
   {
@@ -69,12 +70,12 @@ const Header = () => {
             <img src={logo} alt="EnGrant Logo" className="h-11 w-auto rounded-lg align-middle" />
           </a>
           <div className="flex items-center space-x-4">
-            <a
-              href="https://app.engrant.eu/?utm_source=compare_hub&utm_medium=cta&utm_campaign=header_cta"
+            <AppLink
+              cta="header"
               className="btn-primary text-white px-6 py-2.5 rounded-full font-semibold inline-block shadow-md"
             >
               Try Engrant Free
-            </a>
+            </AppLink>
           </div>
         </div>
       </div>

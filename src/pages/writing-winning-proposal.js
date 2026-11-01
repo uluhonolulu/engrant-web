@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import logo from '../images/logo-horizontal-remove-background.com.png';
 import Footer from '../components/Footer';
+import AppLink from '../components/AppLink';
 import { OgTwitterMeta } from '../utils/seoMeta';
 
 const WritingWinningProposalPage = () => {
@@ -47,8 +48,8 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center space-x-4">
-            <a 
-              href="https://app.engrant.eu/?utm_source=writing_winning_proposal&utm_medium=cta&utm_campaign=header_cta"
+            <AppLink 
+              cta="header"
               onClick={() => {
                 if (typeof window !== 'undefined' && window.gtag) {
                   window.gtag('event', 'cta_click', {
@@ -59,7 +60,7 @@ const Header = () => {
               }}
               className="btn-primary text-white px-6 py-2.5 rounded-full font-semibold inline-block shadow-md">
               Try Engrant
-            </a>
+            </AppLink>
           </div>
         </div>
       </div>
@@ -89,8 +90,8 @@ const Hero = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-          <a 
-            href="https://app.engrant.eu/?utm_source=writing_winning_proposal&utm_medium=cta&utm_campaign=hero_cta"
+          <AppLink 
+            cta="hero"
             onClick={() => {
               if (typeof window !== 'undefined' && window.gtag) {
                 window.gtag('event', 'cta_click', {
@@ -101,7 +102,7 @@ const Hero = () => {
             }}
             className="btn-primary text-white px-10 py-4 rounded-full text-lg font-semibold shadow-lg inline-block">
             Start Writing with Engrant
-          </a>
+          </AppLink>
           <a href="#introduction" className="text-teal-700 hover:text-teal-800 font-medium flex items-center group">
             Read the guide
             <ChevronDown className="w-5 h-5 ml-1 group-hover:translate-y-1 transition-transform" />
@@ -133,8 +134,8 @@ const Introduction = () => {
             <p className="text-neutral-700 leading-relaxed mb-4">
               <strong className="text-teal-700">How Engrant helps:</strong> Engrant streamlines the entire proposal writing process by automatically generating comprehensive drafts that align with funder requirements. Our AI assumes your identity as the writer, ensuring every proposal maintains your organization's authentic voice and perspective.
             </p>
-            <a 
-              href="https://app.engrant.eu/?utm_source=writing_winning_proposal&utm_medium=cta&utm_campaign=introduction_cta"
+            <AppLink 
+              cta="introduction"
               onClick={() => {
                 if (typeof window !== 'undefined' && window.gtag) {
                   window.gtag('event', 'cta_click', {
@@ -146,7 +147,7 @@ const Introduction = () => {
               className="inline-flex items-center text-teal-700 hover:text-teal-800 font-semibold mt-4 group">
               Try Engrant now
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </AppLink>
           </div>
         </div>
       </div>
@@ -175,8 +176,8 @@ const StepOne = () => {
             <p className="text-neutral-700 leading-relaxed mb-4">
               <strong className="text-teal-700">How Engrant helps:</strong> Engrant automatically researches each funder's mission, priorities, and funding history before writing your proposal. Before generating any content, Engrant will ask you for any missing information needed to create a perfectly aligned proposal that speaks directly to what the funder values most.
             </p>
-            <a 
-              href="https://app.engrant.eu/?utm_source=writing_winning_proposal&utm_medium=cta&utm_campaign=step_one_cta"
+            <AppLink 
+              cta="step_one"
               onClick={() => {
                 if (typeof window !== 'undefined' && window.gtag) {
                   window.gtag('event', 'cta_click', {
@@ -188,7 +189,7 @@ const StepOne = () => {
               className="inline-flex items-center text-teal-700 hover:text-teal-800 font-semibold mt-4 group">
               Get aligned proposals with Engrant
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </AppLink>
           </div>
         </div>
       </div>
@@ -244,8 +245,8 @@ const StepTwo = () => {
             <p className="text-neutral-700 leading-relaxed mb-4">
               <strong className="text-teal-700">How Engrant helps:</strong> Engrant automatically structures all these components into a cohesive, compelling narrative. Before writing, Engrant will prompt you for any missing details about your problem statement, target audience, solution, and objectives to ensure every section is complete and compelling.
             </p>
-            <a 
-              href="https://app.engrant.eu/?utm_source=writing_winning_proposal&utm_medium=cta&utm_campaign=step_two_cta"
+            <AppLink 
+              cta="step_two"
               onClick={() => {
                 if (typeof window !== 'undefined' && window.gtag) {
                   window.gtag('event', 'cta_click', {
@@ -257,7 +258,7 @@ const StepTwo = () => {
               className="inline-flex items-center text-teal-700 hover:text-teal-800 font-semibold mt-4 group">
               Create complete proposals with Engrant
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </AppLink>
           </div>
         </div>
       </div>
@@ -317,8 +318,8 @@ const StepThree = () => {
             <p className="text-neutral-700 leading-relaxed mb-4">
               <strong className="text-teal-700">How Engrant helps:</strong> Engrant writes complete proposals from start to finish, assuming your identity as the writer to add a genuine human element to every proposal. Before generating content, Engrant will always ask you for any missing pieces of information to ensure nothing is left out. Once complete, you simply review and refine to make it perfect.
             </p>
-            <a 
-              href="https://app.engrant.eu/?utm_source=writing_winning_proposal&utm_medium=cta&utm_campaign=step_three_cta"
+            <AppLink 
+              cta="step_three"
               onClick={() => {
                 if (typeof window !== 'undefined' && window.gtag) {
                   window.gtag('event', 'cta_click', {
@@ -330,7 +331,7 @@ const StepThree = () => {
               className="inline-flex items-center text-teal-700 hover:text-teal-800 font-semibold mt-4 group">
               Start writing with Engrant
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </AppLink>
           </div>
         </div>
       </div>
@@ -359,8 +360,8 @@ const StepFour = () => {
             <p className="text-neutral-700 leading-relaxed mb-4">
               <strong className="text-teal-700">How Engrant helps:</strong> Engrant performs an automatic review of everything it creates, checking for consistency and removing AI artifacts to ensure your proposal reads naturally. However, human review is always required—Engrant provides you with a polished draft, but your final review ensures the proposal perfectly reflects your organization's voice and meets all requirements.
             </p>
-            <a 
-              href="https://app.engrant.eu/?utm_source=writing_winning_proposal&utm_medium=cta&utm_campaign=step_four_cta"
+            <AppLink 
+              cta="step_four"
               onClick={() => {
                 if (typeof window !== 'undefined' && window.gtag) {
                   window.gtag('event', 'cta_click', {
@@ -372,7 +373,7 @@ const StepFour = () => {
               className="inline-flex items-center text-teal-700 hover:text-teal-800 font-semibold mt-4 group">
               Get polished proposals with Engrant
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </AppLink>
           </div>
         </div>
       </div>
@@ -418,8 +419,8 @@ const Conclusion = () => {
             <p className="text-neutral-700 leading-relaxed mb-4">
               <strong className="text-teal-700">Ready to get started?</strong> Engrant makes it easy to write winning proposals that align with funder priorities. Try Engrant today and see how it transforms your grant writing process.
             </p>
-            <a 
-              href="https://app.engrant.eu/?utm_source=writing_winning_proposal&utm_medium=cta&utm_campaign=conclusion_cta"
+            <AppLink 
+              cta="conclusion"
               onClick={() => {
                 if (typeof window !== 'undefined' && window.gtag) {
                   window.gtag('event', 'cta_click', {
@@ -431,7 +432,7 @@ const Conclusion = () => {
               className="inline-flex items-center text-teal-700 hover:text-teal-800 font-semibold mt-4 group">
               Start writing winning proposals
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </AppLink>
           </div>
         </div>
       </div>
@@ -467,8 +468,8 @@ const FinalCTA = () => {
           Let Engrant handle the writing while you focus on refining and perfecting your proposals.
         </p>
         
-        <a 
-          href="https://app.engrant.eu/?utm_source=writing_winning_proposal&utm_medium=cta&utm_campaign=final_cta"
+        <AppLink 
+          cta="final"
           onClick={() => {
             if (typeof window !== 'undefined' && window.gtag) {
               window.gtag('event', 'cta_click', {
@@ -482,7 +483,7 @@ const FinalCTA = () => {
           <svg className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
-        </a>
+        </AppLink>
         
         <p className="text-teal-200 mt-8 flex items-center justify-center flex-wrap gap-x-6 gap-y-2">
           <span className="flex items-center">

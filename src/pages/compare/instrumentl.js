@@ -9,6 +9,7 @@ import logo from '../../images/logo-horizontal-remove-background.com.png';
 import engrantExpanded from '../../images/Engrant-expanded.png';
 import audreyTellezPhoto from '../../images/testimonials/audrey-tellez.jpg';
 import Footer from '../../components/Footer';
+import AppLink from '../../components/AppLink';
 import LoomVideo from '../../components/ngo-search/LoomVideo';
 import LastReviewed from '../../components/compare/LastReviewed';
 import CompareAnswerBox from '../../components/compare/CompareAnswerBox';
@@ -159,8 +160,8 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center space-x-4">
-            <a 
-              href="https://app.engrant.eu/?utm_source=instrumentl_comparison&utm_medium=cta&utm_campaign=header_cta"
+            <AppLink 
+              cta="header"
               onClick={() => {
                 if (typeof window !== 'undefined' && window.gtag) {
                   window.gtag('event', 'cta_click', {
@@ -171,7 +172,7 @@ const Header = () => {
               }}
               className="btn-primary text-white px-6 py-2.5 rounded-full font-semibold inline-block shadow-md">
               Find my grants
-            </a>
+            </AppLink>
           </div>
         </div>
       </div>
@@ -201,8 +202,8 @@ const Hero = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-          <a 
-            href="https://app.engrant.eu/?utm_source=instrumentl_comparison&utm_medium=cta&utm_campaign=hero_cta"
+          <AppLink 
+            cta="hero"
             onClick={() => {
               if (typeof window !== 'undefined' && window.gtag) {
                 window.gtag('event', 'cta_click', {
@@ -213,7 +214,7 @@ const Hero = () => {
             }}
             className="btn-primary text-white px-10 py-4 rounded-full text-lg font-semibold shadow-lg inline-block">
             Find my grants
-          </a>
+          </AppLink>
           <a href="#comparison" className="text-teal-700 hover:text-teal-800 font-medium flex items-center group">
             See how it works
             <ChevronDown className="w-5 h-5 ml-1 group-hover:translate-y-1 transition-transform" />
@@ -919,8 +920,8 @@ const PricingComparison = () => {
                 ))}
               </div>
               
-              <a 
-                href="https://app.engrant.eu/?utm_source=instrumentl_comparison&utm_medium=pricing&utm_campaign=pricing_cta"
+              <AppLink 
+                cta="pricing"
                 onClick={() => {
                   if (typeof window !== 'undefined' && window.gtag) {
                     window.gtag('event', 'cta_click', {
@@ -931,7 +932,7 @@ const PricingComparison = () => {
                 }}
                 className="w-full btn-primary text-white py-4 px-6 rounded-full font-semibold text-lg inline-block text-center shadow-lg">
                 Find my grants
-              </a>
+              </AppLink>
               
               <p className="text-center text-teal-600 font-medium mt-4 flex items-center justify-center">
                 <span className="w-2 h-2 bg-teal-500 rounded-full mr-2"></span>
@@ -1113,8 +1114,8 @@ const FinalCTA = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-          <a 
-            href="https://app.engrant.eu/?utm_source=instrumentl_comparison&utm_medium=cta&utm_campaign=final_cta"
+          <AppLink 
+            cta="final"
             onClick={() => {
               if (typeof window !== 'undefined' && window.gtag) {
                 window.gtag('event', 'cta_click', {
@@ -1128,7 +1129,7 @@ const FinalCTA = () => {
             <svg className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
-          </a>
+          </AppLink>
           <a 
             href="#how-it-works"
             className="text-white hover:text-amber-200 font-medium text-lg">

@@ -11,6 +11,7 @@ import {
   SMALL_NPO_DISCOUNT_PERCENT,
   TRIAL_MICRO,
 } from '../../constants/positioningEs';
+import AppLink from '../AppLink';
 
 const Pricing = () => {
   const features = [
@@ -52,12 +53,12 @@ const Pricing = () => {
               <span className="text-xl text-neutral-500 ml-2">/mes</span>
             </div>
             <p className="text-neutral-600 mb-6">Cancela cuando quieras</p>
-            <a
-              href="https://app.engrant.eu/?utm_source=convocatorias&utm_medium=pricing&utm_campaign=pricing_monthly_cta"
+            <AppLink
+              cta="pricing_monthly"
               className="w-full btn-primary text-white py-4 px-6 rounded-full font-semibold text-lg inline-block text-center shadow-lg"
             >
               {CTA_LABEL}
-            </a>
+            </AppLink>
           </div>
 
           <div className="relative bg-white rounded-3xl p-8 border-2 border-teal-300 warm-shadow-lg">
@@ -77,12 +78,12 @@ const Pricing = () => {
               Organizaciones pequeñas: {SMALL_NPO_DISCOUNT_PERCENT}% de descuento en el plan anual (${PRICE_ANNUAL_SMALL_NPO_PER_MONTH}/mes, ${PRICE_ANNUAL_SMALL_NPO_TOTAL}/año). Escríbenos a{' '}
               <a href="mailto:founder@engrant.eu" className="underline hover:text-amber-800">founder@engrant.eu</a>.
             </p>
-            <a
-              href="https://app.engrant.eu/?utm_source=convocatorias&utm_medium=pricing&utm_campaign=pricing_annual_cta"
+            <AppLink
+              cta="pricing_annual"
               className="w-full btn-primary text-white py-4 px-6 rounded-full font-semibold text-lg inline-block text-center shadow-lg"
             >
               {CTA_LABEL}
-            </a>
+            </AppLink>
           </div>
         </div>
 

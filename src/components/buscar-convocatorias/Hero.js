@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Compass, Globe, ShieldCheck } from 'lucide-react';
 import engrantCondensedEs from '../../images/Engrant-condensed-es.png';
 import { CTA_LABEL, TRIAL_MICRO } from '../../constants/positioningEs';
+import { buildAppHref } from '../../utils/appLink';
 
 const Hero = () => {
   const [orgUrl, setOrgUrl] = useState('');
@@ -115,8 +116,10 @@ const Hero = () => {
     }
 
     setError('');
-    window.location.href =
-      `https://app.engrant.eu/?utm_source=convocatorias&utm_medium=hero_search&utm_campaign=hero_search_cta&org_url=${encodeURIComponent(orgUrl)}`;
+    window.location.href = buildAppHref({
+      cta: 'hero_search',
+      params: { org_url: orgUrl },
+    });
   }
 };
 

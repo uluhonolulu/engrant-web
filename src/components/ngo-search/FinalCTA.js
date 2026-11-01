@@ -1,4 +1,5 @@
 import React from 'react';
+import AppLink from '../AppLink';
 
 const FinalCTA = () => {
   return (
@@ -27,8 +28,8 @@ const FinalCTA = () => {
           Describe your mission and see the eligible grants beyond your radar — with eligibility, deadlines, and application help built in.
         </p>
         
-        <a 
-          href="https://app.engrant.eu/?utm_source=ngo_search&utm_medium=cta&utm_campaign=final_cta"
+        <AppLink
+          cta="final"
           onClick={() => {
             if (typeof window !== 'undefined' && window.gtag) {
               window.gtag('event', 'cta_click', {
@@ -41,7 +42,7 @@ const FinalCTA = () => {
           <svg className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
-        </a>
+        </AppLink>
         
         <p className="text-teal-200 mt-8 flex items-center justify-center flex-wrap gap-x-6 gap-y-2">
           <span className="flex items-center">

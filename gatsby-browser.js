@@ -2,6 +2,7 @@ import './src/styles/global.css';
 import betterlytics from "@betterlytics/tracker";
 import mixpanel from 'mixpanel-browser';
 import posthog from 'posthog-js';
+import { captureInboundParams } from './src/utils/appLink';
 
 // Initialize Betterlytics when the client loads
 export const onClientEntry = () => {
@@ -32,6 +33,8 @@ export const onClientEntry = () => {
 
 // Track page views on route change
 export const onRouteUpdate = ({ location }) => {
+  captureInboundParams(location.search);
+
   if (typeof betterlytics !== 'undefined' && betterlytics.page) {
     betterlytics.page();
   }

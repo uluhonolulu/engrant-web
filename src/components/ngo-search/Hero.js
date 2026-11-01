@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Compass, Globe, CheckCircle, Calendar, PenTool } from 'lucide-react';
 import engrantCondensed from '../../images/Engrant-condensed.png';
+import { buildAppHref } from '../../utils/appLink';
 
 // RULE: Always import images using ES6 imports (import imageName from 'path/to/image.png')
 // Never use direct src paths like "/src/images/image.png" as they won't work in bundled builds
@@ -136,8 +137,10 @@ const Hero = () => {
     }
 
     setError('');
-    window.location.href =
-      `https://app.engrant.eu/?utm_source=ngo_search&utm_medium=hero_search&utm_campaign=hero_search_cta&org_url=${encodeURIComponent(orgUrl)}`;
+    window.location.href = buildAppHref({
+      cta: 'hero_search',
+      params: { org_url: orgUrl },
+    });
   }
 };
 

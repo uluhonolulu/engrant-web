@@ -18,6 +18,7 @@ import {
   buildProductSchema,
 } from '../utils/siteSchema';
 import { buildFaqSchema, OgTwitterMeta } from '../utils/seoMeta';
+import AppLink from '../components/AppLink';
 
 const PRICING_FAQ = [
   {
@@ -76,12 +77,12 @@ const PricingPage = () => {
                 Learn More
               </a>
             </nav>
-            <a
-              href="https://app.engrant.eu/?utm_source=pricing&utm_medium=cta&utm_campaign=header_cta"
+            <AppLink
+              cta="header"
               className="btn-primary text-white px-6 py-2.5 rounded-full font-semibold inline-block shadow-md"
             >
               Start Free Trial
-            </a>
+            </AppLink>
           </div>
         </div>
       </header>
@@ -101,12 +102,12 @@ const PricingPage = () => {
               <h2 className="text-sm font-bold text-neutral-500 tracking-wider mb-3">MONTHLY</h2>
               <p className="text-4xl font-bold text-neutral-700 mb-1">${PRICE_MONTHLY}<span className="text-xl font-normal text-neutral-500">/month</span></p>
               <p className="text-neutral-600 mb-6">Cancel anytime</p>
-              <a
-                href="https://app.engrant.eu/?utm_source=pricing&utm_medium=cta&utm_campaign=plan_monthly"
+              <AppLink
+                cta="plan_monthly"
                 className="btn-primary text-white px-6 py-3 rounded-full font-semibold inline-block shadow-md"
               >
                 Start Free Trial
-              </a>
+              </AppLink>
             </section>
 
             <section className="bg-white border-2 border-teal-300 rounded-2xl p-8 relative">
@@ -115,12 +116,12 @@ const PricingPage = () => {
               <p className="text-4xl font-bold text-neutral-700 mb-1">${PRICE_ANNUAL_PER_MONTH}<span className="text-xl font-normal text-neutral-500">/month</span></p>
               <p className="text-neutral-600 mb-1">Billed annually (${PRICE_ANNUAL_TOTAL}/year)</p>
               <p className="text-teal-600 font-medium mb-6">Save $120/year</p>
-              <a
-                href="https://app.engrant.eu/?utm_source=pricing&utm_medium=cta&utm_campaign=plan_annual"
+              <AppLink
+                cta="plan_annual"
                 className="btn-primary text-white px-6 py-3 rounded-full font-semibold inline-block shadow-md"
               >
                 Start Free Trial
-              </a>
+              </AppLink>
             </section>
           </div>
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { CTA_LABEL, TRIAL_MICRO } from '../../constants/positioningEs';
+import AppLink from '../AppLink';
 
 const FinalCTA = () => {
   return (
@@ -25,8 +26,8 @@ const FinalCTA = () => {
           Ingresa la organización. Obtén financiadores que no están en ninguna base de datos, cada uno ya evaluado por idoneidad, elegibilidad y señales de alerta.
         </p>
 
-        <a
-          href="https://app.engrant.eu/?utm_source=convocatorias&utm_medium=cta&utm_campaign=final_cta"
+        <AppLink
+          cta="final"
           onClick={() => {
             if (typeof window !== 'undefined' && window.gtag) {
               window.gtag('event', 'cta_click', {
@@ -39,7 +40,7 @@ const FinalCTA = () => {
           <svg className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
-        </a>
+        </AppLink>
 
         <p className="text-teal-200 mt-8 flex items-center justify-center">
           <span className="w-2 h-2 bg-amber-400 rounded-full mr-2"></span>

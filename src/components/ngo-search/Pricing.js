@@ -1,5 +1,6 @@
 import React from 'react';
 import { Check } from 'lucide-react';
+import AppLink from '../AppLink';
 
 const Pricing = () => {
   return (
@@ -78,8 +79,8 @@ const Pricing = () => {
                 </div>
               </div>
               
-              <a 
-                href="https://app.engrant.eu/?utm_source=ngo_search&utm_medium=pricing&utm_campaign=pricing_cta"
+              <AppLink
+                cta="pricing"
                 onClick={() => {
                   if (typeof window !== 'undefined' && window.gtag) {
                     window.gtag('event', 'cta_click', {
@@ -89,7 +90,7 @@ const Pricing = () => {
                 }}
                 className="w-full btn-primary text-white py-4 px-6 rounded-full font-semibold text-lg inline-block text-center shadow-lg">
                 Start Finding Grants
-              </a>
+              </AppLink>
             </div>
           </div>
         </div>

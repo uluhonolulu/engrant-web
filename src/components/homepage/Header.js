@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../../images/logo-horizontal-remove-background.com.png';
 import { CTA_LABEL } from '../../constants/positioning';
+import AppLink from '../AppLink';
 
 const Header = () => {
   return (
@@ -29,8 +30,8 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center space-x-4">
-            <a
-              href="https://app.engrant.eu/?utm_source=landing&utm_medium=cta&utm_campaign=header_cta"
+            <AppLink
+              cta="header"
               onClick={() => {
                 if (typeof window !== 'undefined' && window.gtag) {
                   window.gtag('event', 'cta_click', {
@@ -40,7 +41,7 @@ const Header = () => {
               }}
               className="btn-primary text-white px-6 py-2.5 rounded-full font-semibold inline-block shadow-md">
               {CTA_LABEL}
-            </a>
+            </AppLink>
           </div>
         </div>
       </div>
@@ -49,3 +50,4 @@ const Header = () => {
 };
 
 export default Header;
+

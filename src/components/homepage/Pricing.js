@@ -8,6 +8,7 @@ import {
   PRICE_MONTHLY,
   TRIAL_MICRO,
 } from '../../constants/positioning';
+import AppLink from '../AppLink';
 
 const Pricing = () => {
   const features = [
@@ -49,12 +50,12 @@ const Pricing = () => {
               <span className="text-xl text-neutral-500 ml-2">/month</span>
             </div>
             <p className="text-neutral-600 mb-6">Cancel anytime</p>
-            <a
-              href="https://app.engrant.eu/?utm_source=landing&utm_medium=pricing&utm_campaign=pricing_monthly_cta"
+            <AppLink
+              cta="pricing_monthly"
               className="w-full btn-primary text-white py-4 px-6 rounded-full font-semibold text-lg inline-block text-center shadow-lg"
             >
               {CTA_LABEL}
-            </a>
+            </AppLink>
           </div>
 
           <div className="relative bg-white rounded-3xl p-8 border-2 border-teal-300 warm-shadow-lg">
@@ -70,12 +71,12 @@ const Pricing = () => {
               Billed annually (${PRICE_ANNUAL_TOTAL}/year)
             </p>
             <p className="text-teal-600 font-medium mb-6">Save $120/year</p>
-            <a
-              href="https://app.engrant.eu/?utm_source=landing&utm_medium=pricing&utm_campaign=pricing_annual_cta"
+            <AppLink
+              cta="pricing_annual"
               className="w-full btn-primary text-white py-4 px-6 rounded-full font-semibold text-lg inline-block text-center shadow-lg"
             >
               {CTA_LABEL}
-            </a>
+            </AppLink>
           </div>
         </div>
 

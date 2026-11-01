@@ -4,6 +4,7 @@ import { FileText, ArrowRight, ChevronDown } from 'lucide-react';
 import logo from '../images/logo-horizontal-remove-background.com.png';
 import Footer from '../components/Footer';
 import { OgTwitterMeta } from '../utils/seoMeta';
+import AppLink from '../components/AppLink';
 
 const LearnMorePage = () => {
   return (
@@ -42,8 +43,8 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center space-x-4">
-            <a 
-              href="https://app.engrant.eu/?utm_source=learn_more&utm_medium=cta&utm_campaign=header_cta"
+            <AppLink
+              cta="header"
               onClick={() => {
                 if (typeof window !== 'undefined' && window.gtag) {
                   window.gtag('event', 'cta_click', {
@@ -54,7 +55,7 @@ const Header = () => {
               }}
               className="btn-primary text-white px-6 py-2.5 rounded-full font-semibold inline-block shadow-md">
               Try Engrant
-            </a>
+            </AppLink>
           </div>
         </div>
       </div>

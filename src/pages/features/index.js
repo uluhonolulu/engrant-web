@@ -12,6 +12,7 @@ import {
 import '../../styles/shared.css';
 import logo from '../../images/logo-horizontal-remove-background.com.png';
 import Footer from '../../components/Footer';
+import AppLink from '../../components/AppLink';
 
 const FeaturesIndexPage = () => {
   return (
@@ -22,12 +23,12 @@ const FeaturesIndexPage = () => {
             <a href="/" className="flex items-center">
               <img src={logo} alt="EnGrant Logo" className="h-11 w-auto rounded-lg align-middle" />
             </a>
-            <a
-              href="https://app.engrant.eu/?utm_source=features&utm_medium=cta&utm_campaign=header_cta"
+            <AppLink
+              cta="header"
               className="btn-primary text-white px-6 py-2.5 rounded-full font-semibold inline-block shadow-md"
             >
               Start Free Trial
-            </a>
+            </AppLink>
           </div>
         </div>
       </header>

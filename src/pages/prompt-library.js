@@ -4,6 +4,7 @@ import Header from '../components/ngo-search/Header';
 import Footer from '../components/Footer';
 import PromptCard from '../components/prompt-library/PromptCard';
 import { OgTwitterMeta } from '../utils/seoMeta';
+import AppLink from '../components/AppLink';
 
 const PromptLibraryPage = () => {
   // Prompt content embedded directly
@@ -1937,12 +1938,13 @@ Generate the proposal now.`;
                 </p>
               </div>
               <div className="flex-shrink-0">
-                <a
-                  href="https://app.engrant.eu/webinar-offer?utm_source=prompt_library&utm_medium=cta&utm_campaign=claim_discount"
+                <AppLink
+                  cta="claim_discount"
+                  path="/webinar-offer"
                   className="btn-primary text-white px-8 py-3 rounded-full font-semibold inline-block shadow-md hover:shadow-lg transition-all duration-200 text-center whitespace-nowrap"
                 >
                   Claim Your Discount
-                </a>
+                </AppLink>
               </div>
             </div>
           </div>

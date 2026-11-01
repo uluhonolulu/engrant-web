@@ -7,6 +7,7 @@ import {
 import logo from '../../images/logo-horizontal-remove-background.com.png';
 import engrantExpanded from '../../images/Engrant-expanded.png';
 import Footer from '../../components/Footer';
+import AppLink from '../../components/AppLink';
 import LoomVideo from '../../components/ngo-search/LoomVideo';
 import LastReviewed from '../../components/compare/LastReviewed';
 import CompareAnswerBox from '../../components/compare/CompareAnswerBox';
@@ -171,8 +172,8 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center space-x-4">
-            <a 
-              href="https://app.engrant.eu/?utm_source=grantx_comparison&utm_medium=cta&utm_campaign=header_cta"
+            <AppLink 
+              cta="header"
               onClick={() => {
                 if (typeof window !== 'undefined' && window.gtag) {
                   window.gtag('event', 'cta_click', {
@@ -183,7 +184,7 @@ const Header = () => {
               }}
               className="btn-primary text-white px-6 py-2.5 rounded-full font-semibold inline-block shadow-md">
               Try Engrant Free
-            </a>
+            </AppLink>
           </div>
         </div>
       </div>
@@ -213,8 +214,8 @@ const Hero = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-          <a 
-            href="https://app.engrant.eu/?utm_source=grantx_comparison&utm_medium=cta&utm_campaign=hero_cta"
+          <AppLink 
+            cta="hero"
             onClick={() => {
               if (typeof window !== 'undefined' && window.gtag) {
                 window.gtag('event', 'cta_click', {
@@ -225,7 +226,7 @@ const Hero = () => {
             }}
             className="btn-primary text-white px-10 py-4 rounded-full text-lg font-semibold shadow-lg inline-block">
             Try Engrant Free
-          </a>
+          </AppLink>
           <a 
             href="https://app.grantx.com/pricing" 
             target="_blank" 
@@ -779,8 +780,8 @@ const PricingComparison = () => {
                 ))}
               </div>
               
-              <a 
-                href="https://app.engrant.eu/?utm_source=grantx_comparison&utm_medium=pricing&utm_campaign=pricing_cta"
+              <AppLink 
+                cta="pricing"
                 onClick={() => {
                   if (typeof window !== 'undefined' && window.gtag) {
                     window.gtag('event', 'cta_click', {
@@ -791,7 +792,7 @@ const PricingComparison = () => {
                 }}
                 className="w-full btn-primary text-white py-4 px-6 rounded-full font-semibold text-lg inline-block text-center shadow-lg">
                 Try Engrant Free
-              </a>
+              </AppLink>
             </div>
           </div>
           
@@ -934,8 +935,8 @@ const FinalCTA = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-          <a 
-            href="https://app.engrant.eu/?utm_source=grantx_comparison&utm_medium=cta&utm_campaign=final_cta"
+          <AppLink 
+            cta="final"
             onClick={() => {
               if (typeof window !== 'undefined' && window.gtag) {
                 window.gtag('event', 'cta_click', {
@@ -949,7 +950,7 @@ const FinalCTA = () => {
             <svg className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
-          </a>
+          </AppLink>
           <a 
             href="https://app.grantx.com/pricing" 
             target="_blank" 
