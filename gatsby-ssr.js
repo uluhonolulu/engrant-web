@@ -5,6 +5,11 @@ var siteSchema = require("./src/utils/siteSchema");
 
 exports.onRenderBody = function ({ setHeadComponents }) {
   return setHeadComponents([
+    React.createElement("link", {
+      key: "preconnect-app-engrant",
+      rel: "preconnect",
+      href: "https://app.engrant.eu",
+    }),
     React.createElement("script", {
       key: "google-ads-gtag-loader",
       async: true,
